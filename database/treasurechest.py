@@ -16,6 +16,15 @@ class TreasureChestDatabase(dict):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
+        self['chest20'] = dict(
+            content=dict(itm1=dict(nam=PouchItemDatabase.wine,      qty=1),
+                         itm2=dict(nam=PouchItemDatabase.gold,      qty=1),
+                         itm3=dict(nam=PouchItemDatabase.grapes,    qty=1)),
+            condition=dict(pwd=dict(ask="Hoe heet Thomas?",
+                                    anw="thomas")
+                           )
+        )
+
         # ersin_forest_start
         self['chest1'] = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=2),
                                            itm2=dict(nam=PouchItemDatabase.herbs,         qty=3),
@@ -56,12 +65,5 @@ class TreasureChestDatabase(dict):
         """..."""
         text = ["Found:"]
         if condition:
-            if mec_v and not thf_v:
-                text = ["{} disarmed the trap and found:".format(mec_h)]
-            elif thf_v and not mec_v:
-                text = ["{} picked the lock and found:".format(thf_h)]
-            elif mec_v and thf_v:
-                text = ["{} disarmed the trap and {} picked the lock:".format(mec_h, thf_h)]
-            if mec_h == thf_h:
-                text = ["{} disarmed the trap and picked the lock:".format(mec_h)]
+            text = ["Correct ingevoerd! De kist bevat:"]
         return text

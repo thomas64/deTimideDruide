@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="70" height="50" tilewidth="16" tileheight="16" nextobjectid="18651">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="70" height="50" tilewidth="16" tileheight="16" nextobjectid="18652">
  <properties>
   <property name="title" value="Het Bos"/>
  </properties>
@@ -885,5 +885,7 @@
   <object id="18620" x="288" y="432" width="144" height="32"/>
   <object id="18621" x="384" y="560" width="64" height="32"/>
  </objectgroup>
- <objectgroup name="objects"/>
+ <objectgroup name="objects">
+  <object id="18651" name="chest20" x="224" y="272" width="32" height="32"/>
+ </objectgroup>
 </map>

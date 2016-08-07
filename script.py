@@ -38,6 +38,10 @@ class Script:
         data.inventory.add_i(eqp_item, verbose=False)
         pouch_item = PouchItem(**PouchItemDatabase.gold.value)
         data.pouch.add(pouch_item, 1, verbose=False)
+        pouch_item = PouchItem(**PouchItemDatabase.grapes.value)
+        data.pouch.add(pouch_item, 1, verbose=False)
+        pouch_item = PouchItem(**PouchItemDatabase.wine.value)
+        data.pouch.add(pouch_item, 1, verbose=False)
 
         data.map_name = 'ersin_forest_start'
         data.map_pos = 'start_game'     # dit is de naam van de startpositie object in de tmx map

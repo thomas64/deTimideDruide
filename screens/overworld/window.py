@@ -10,6 +10,7 @@ import pygame
 from components import ColorBox
 from components import ConfirmBox
 from components import Grid
+from components import InputBox2
 from components import Map
 from components import MessageBox
 from components import Player
@@ -623,6 +624,14 @@ class Window(object):
                             if thf_v < value:
                                 text = self.engine.data.treasure_chests.thf_text(chest_data['condition'][key])
                                 push_object = MessageBox(self.engine.gamestate, text)
+                                self.engine.gamestate.push(push_object)
+                                return
+                        elif key == "pwd":
+                            if value['anw'] == InputBox2(self.engine.audio, value['ask']).input_loop():
+                                pass
+                            else:
+                                push_object = MessageBox(self.engine.gamestate,
+                                                         ["Helaas, fout ingevoerd. De kist opent zich niet."])
                                 self.engine.gamestate.push(push_object)
                                 return
 
