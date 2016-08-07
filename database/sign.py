@@ -10,11 +10,18 @@ class SignDatabase(enum.Enum):
     """
     ...
     """
-    sign1 = ["Ersin Forest",
+    sign1 = ["Het Bos",
              "",
-             "North: Ersin Forest Cave",
-             "East: Ersin Forest Waterfall",
-             "South: Invernia Town"]
-    sign2 = ["Ersin Cave"]
-    sign3 = ["Ersin Waterfall"]
-    sign4 = ["Invernia Town"]
+             "Noord: Timide Druïde Grote",
+             "Oost: Moezel Waterval",
+             "Zuid: Trier"]
+    sign2 = ["Timide Druïde",
+             "",
+             "Aanwezig op:",
+             "Maandag:     18:00 - 19:00",
+             "Dinsdag:       18:00 - 19:00",
+             "Woensdag:   18:00 - 19:00",
+             "Donderdag:  18:00 - 19:00",
+             "Vrijdag:         18:00 - 19:00"]
+    sign3 = ["Moezel Waterval"]
+    sign4 = ["Trier"]

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="74" height="60" tilewidth="16" tileheight="16" nextobjectid="2423">
  <properties>
-  <property name="title" value="Ersin Forest"/>
+  <property name="title" value="Het Bos"/>
  </properties>
  <tileset firstgid="1" name="outside_a1" tilewidth="16" tileheight="16" tilecount="768" columns="32">
   <image source="tilesets/outside_a1.png" width="512" height="384"/>

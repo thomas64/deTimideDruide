@@ -5,14 +5,14 @@ class: MenuTitle
 
 import pygame
 
-TITLETEXT = "pyRPG"
+TITLETEXT = "De Timide Druïde"
 TITLEFONT = 'colonna'
-TITLEFONTSIZE = 100
-TITLEFONTCOLOR = pygame.Color("red")
-TITLEPOSX = 235
-TITLEPOSY = 50
+TITLEFONTSIZE = 150
+TITLEFONTCOLOR = pygame.Color("gray12")
+TITLEPOSX = 10
+TITLEPOSY = 10
 
-SUBTEXT = "THE HIDDEN VALLEY"
+SUBTEXT = ""
 SUBFONT = None
 SUBFONTSIZE = 50
 SUBFONTCOLOR = pygame.Color("gray36")

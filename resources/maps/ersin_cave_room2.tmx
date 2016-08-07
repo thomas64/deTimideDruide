@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="46" height="38" tilewidth="16" tileheight="16" nextobjectid="24076">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="46" height="38" tilewidth="16" tileheight="16" nextobjectid="24077">
  <properties>
-  <property name="title" value="Ersin Cave"/>
+  <property name="title" value="Druïde Grot"/>
  </properties>
  <tileset firstgid="1" name="ruleset" tilewidth="16" tileheight="16" tilecount="60" columns="10">
   <image source="tilesets/ruleset.png" width="160" height="96"/>
@@ -191,6 +191,9 @@
     <frame tileid="461" duration="300"/>
    </animation>
   </tile>
+ </tileset>
+ <tileset firstgid="5117" name="inside_c" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
+  <image source="tilesets/inside_c.png" width="512" height="512"/>
  </tileset>
  <layer name="under0 background" width="46" height="38">
   <data encoding="csv">
@@ -383,8 +386,8 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3435,3436,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,3403,3404,0,0,3603,3604,0,0,0,0,0,0,0,0,3603,3604,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3343,3344,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,3435,3436,0,0,3635,3636,0,0,0,0,0,0,0,0,3635,3636,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3375,3376,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3603,3604,0,0,0,0,0,0,0,0,3407,3408,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3635,3636,0,0,0,0,0,0,0,0,3439,3440,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5317,5318,0,0,0,0,0,0,0,3603,3604,0,0,0,0,0,0,0,0,3407,3408,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5349,5350,0,0,0,0,0,0,0,3635,3636,0,0,0,0,0,0,0,0,3439,3440,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,3539,3540,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,3571,3572,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -501,10 +504,11 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="low_blocker" visible="0">
+ <objectgroup name="low_blocker">
   <object id="24067" x="208" y="368" width="32" height="16"/>
   <object id="24068" x="304" y="400" width="32" height="16"/>
   <object id="24071" x="208" y="176" width="96" height="48"/>
+  <object id="24076" x="288" y="336" width="32" height="16"/>
  </objectgroup>
  <objectgroup name="high_blocker" visible="0">
   <object id="24042" x="304" y="208" width="128" height="112"/>
@@ -521,9 +525,7 @@
   <object id="24069" x="400" y="336" width="32" height="16"/>
   <object id="24072" x="624" y="288" width="32" height="64"/>
  </objectgroup>
- <objectgroup name="objects">
-  <object id="24075" name="sparkly2" x="240" y="208" width="32" height="32"/>
- </objectgroup>
+ <objectgroup name="objects"/>
  <layer name="set" width="46" height="38" visible="0">
   <data encoding="csv">
 31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,

@@ -43,8 +43,8 @@ SKILBOXX, SKILBOXY = 349, 118
 SKILBOXW, SKILBOXH = 329, 640
 INVBOXX, INVBOXY = 688, 118
 INVBOXW, INVBOXH = 329, 340
-PCHBOXX, PCHBOXY = 688, 468
-PCHBOXW, PCHBOXH = 329, 290
+PCHBOXX, PCHBOXY = 688, 168
+PCHBOXW, PCHBOXH = 329, 590
 SPELBOXX, SPELBOXY = 1027, 118
 SPELBOXW, SPELBOXH = 329, 640
 
@@ -66,7 +66,7 @@ class Display(object):
 
         self.key_input = None           # dit is voor de mousepress op een button.
 
-        self.cur_hero = self.engine.data.party['alagos']    # todo, dit moet nog de hero die aan de beurt is worden
+        self.cur_hero = self.engine.data.party['noppie']    # todo, dit moet nog de hero die aan de beurt is worden
 
         self.party = list(self.engine.data.party.values())
         self.hc = self.party.index(self.cur_hero)
@@ -96,12 +96,12 @@ class Display(object):
         for index, hero in enumerate(self.party):
             self.hero_boxes.append(HeroBox((HEROBOXX + index * HEROBOXVAR, HEROBOXY), index, hero))
 
-        self.stats_box = StatsBox((STATBOXX,        STATBOXY), STATBOXW, STATBOXH)
-        self.info_box = InfoBox((INFOBOXX,          INFOBOXY), INFOBOXW, INFOBOXH)
-        self.skills_box = SkillsBox((SKILBOXX,      SKILBOXY), SKILBOXW, SKILBOXH)
-        self.inventory_box = InventoryBox((INVBOXX, INVBOXY),  INVBOXW,  INVBOXH)
+        # self.stats_box = StatsBox((STATBOXX,        STATBOXY), STATBOXW, STATBOXH)
+        # self.info_box = InfoBox((INFOBOXX,          INFOBOXY), INFOBOXW, INFOBOXH)
+        # self.skills_box = SkillsBox((SKILBOXX,      SKILBOXY), SKILBOXW, SKILBOXH)
+        # self.inventory_box = InventoryBox((INVBOXX, INVBOXY),  INVBOXW,  INVBOXH)
         self.pouch_box = PouchBox((PCHBOXX,         PCHBOXY),  PCHBOXW,  PCHBOXH)
-        self.spells_box = SpellsBox((SPELBOXX,      SPELBOXY), SPELBOXW, SPELBOXH)
+        # self.spells_box = SpellsBox((SPELBOXX,      SPELBOXY), SPELBOXW, SPELBOXH)
 
     def on_enter(self):
         """
@@ -117,7 +117,7 @@ class Display(object):
             if choice == yes:
                 self.engine.data.party.remove(self.cur_hero)
                 # update daarna het party scherm
-                self.cur_hero = self.engine.data.party['alagos']
+                self.cur_hero = self.engine.data.party['noppie']
                 self.party = list(self.engine.data.party.values())
                 self.hc = self.party.index(self.cur_hero)
                 self._init_boxes()
@@ -144,16 +144,16 @@ class Display(object):
             self.hovered_equipment_item = None
             self.info_label = ""
 
-            if self.stats_box.rect.collidepoint(event.pos):
-                self.info_label = self.stats_box.mouse_hover(event)
-            elif self.skills_box.rect.collidepoint(event.pos):
-                self.info_label = self.skills_box.mouse_hover(event)
-            elif self.invclick_box and self.invclick_box.rect.collidepoint(event.pos):
-                self.info_label, self.hovered_equipment_item = self.invclick_box.mouse_hover(event)
-            elif self.inventory_box.rect.collidepoint(event.pos):
-                self.info_label = self.inventory_box.mouse_hover(event)
-            elif self.spells_box.rect.collidepoint(event.pos):
-                self.info_label = self.spells_box.mouse_hover(event)
+            # if self.stats_box.rect.collidepoint(event.pos):
+            #     self.info_label = self.stats_box.mouse_hover(event)
+            # elif self.skills_box.rect.collidepoint(event.pos):
+            #     self.info_label = self.skills_box.mouse_hover(event)
+            # elif self.invclick_box and self.invclick_box.rect.collidepoint(event.pos):
+            #     self.info_label, self.hovered_equipment_item = self.invclick_box.mouse_hover(event)
+            # elif self.inventory_box.rect.collidepoint(event.pos):
+            #     self.info_label = self.inventory_box.mouse_hover(event)
+            # elif self.spells_box.rect.collidepoint(event.pos):
+            #     self.info_label = self.spells_box.mouse_hover(event)
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
 
@@ -179,12 +179,12 @@ class Display(object):
                         self.engine.gamestate.push(self.leave_box)
 
                 # als er in de inventory box wordt geklikt
-                if self.inventory_box.rect.collidepoint(event.pos):
-                    # krijg de positie en equipment_type terug
-                    boxpos, equipment_type = self.inventory_box.mouse_click(event)
-                    # als er geen clickbox is en wel een equipment_type, geef dan een clickbox weer
-                    if not self.invclick_box and equipment_type:
-                        self.invclick_box = InvClickBox(boxpos, equipment_type, self.party, self.inventory)
+                # if self.inventory_box.rect.collidepoint(event.pos):
+                #     # krijg de positie en equipment_type terug
+                #     boxpos, equipment_type = self.inventory_box.mouse_click(event)
+                #     # als er geen clickbox is en wel een equipment_type, geef dan een clickbox weer
+                #     if not self.invclick_box and equipment_type:
+                #         self.invclick_box = InvClickBox(boxpos, equipment_type, self.party, self.inventory)
 
                 for button in self.buttons:
                     button_press = button.single_click(event)
@@ -242,11 +242,11 @@ class Display(object):
 
         self.cur_hero = self.party[self.hc]
 
-        self.stats_box.update(self.cur_hero, self.hovered_equipment_item)
-        self.skills_box.update(self.cur_hero, self.hovered_equipment_item)
-        self.inventory_box.update(self.cur_hero)
+        # self.stats_box.update(self.cur_hero, self.hovered_equipment_item)
+        # self.skills_box.update(self.cur_hero, self.hovered_equipment_item)
+        # self.inventory_box.update(self.cur_hero)
         self.pouch_box.update(self.pouch)
-        self.spells_box.update(self.cur_hero)
+        # self.spells_box.update(self.cur_hero)
 
     def render(self):
         """
@@ -260,12 +260,12 @@ class Display(object):
         for hero_box in self.hero_boxes:
             hero_box.render(self.screen, self.hc)
 
-        self.stats_box.render(self.screen)
-        self.info_box.render(self.screen, self.info_label)
-        self.skills_box.render(self.screen)
-        self.inventory_box.render(self.screen)
+        # self.stats_box.render(self.screen)
+        # self.info_box.render(self.screen, self.info_label)
+        # self.skills_box.render(self.screen)
+        # self.inventory_box.render(self.screen)
         self.pouch_box.render(self.screen)
-        self.spells_box.render(self.screen)
+        # self.spells_box.render(self.screen)
         if self.invclick_box:
             self.invclick_box.render(self.screen)
 

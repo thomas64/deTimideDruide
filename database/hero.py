@@ -17,7 +17,7 @@ class HeroDatabase(enum.Enum):
     """
     Alle heroes uit het spel als Enum met een dict voor de waarden.
     """
-    alagos = dict(nam="Alagos", spr=PATH+"01s_alagos.png", fac=PATH+"01f_alagos.png",
+    noppie = dict(nam="Noppie", spr=PATH+"01s_alagos.png", fac=PATH+"01f_alagos.png",
                   lev=1, scl=SchoolType.spl,
                   int=18, wil=12, dex=15, agi=15, edu=15, str=15, sta=30,
                   alc=0, dip=0, hlr=0, lor=0, mec=0, mer=0, ran=0, stl=1, thf=0, trb=1, war=3, wiz=1,

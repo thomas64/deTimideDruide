@@ -32,7 +32,7 @@ class Script:
         data.sparklies = SparklyDatabase()
 
         # Vul de party aan met de eerste hero
-        data.party.add(data.heroes['alagos'], verbose=False)
+        data.party.add(data.heroes['noppie'], verbose=False)
 
         eqp_item = EquipmentItem(**WeaponDatabase.bronzemace.value)
         data.inventory.add_i(eqp_item, verbose=False)

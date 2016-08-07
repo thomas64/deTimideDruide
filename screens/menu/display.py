@@ -18,11 +18,11 @@ BACKGROUNDCOLOR2 = pygame.Color("white")
 MENUFONTCOLOR1 = pygame.Color("white")
 MENUFONTCOLOR2 = pygame.Color("yellow")
 MENUFONTCOLOR3 = pygame.Color("black")
-MENUFONTCOLOR4 = pygame.Color("red")
+MENUFONTCOLOR4 = pygame.Color("white")
 
 MENUH = 1.5
-MENUX = -305
-MENUY = -50
+MENUX = -455
+MENUY = 100
 
 
 class Display(object):
