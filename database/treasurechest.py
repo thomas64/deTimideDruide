@@ -19,7 +19,9 @@ class TreasureChestDatabase(dict):
         self['chest20'] = dict(
             content=dict(itm1=dict(nam=PouchItemDatabase.wine,      qty=1),
                          itm2=dict(nam=PouchItemDatabase.gold,      qty=1),
-                         itm3=dict(nam=PouchItemDatabase.grapes,    qty=1)),
+                         itm3=dict(nam=PouchItemDatabase.grapes,    qty=1),
+                         itm4=dict(nam=PouchItemDatabase.shroom,    qty=1),
+                         itm5=dict(nam=PouchItemDatabase.cauldron,  qty=1)),
             condition=dict(pwd=dict(ask="Hoe heet Thomas?",
                                     anw="thomas")
                            )
