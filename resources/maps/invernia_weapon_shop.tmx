@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="36" tilewidth="16" tileheight="16" nextobjectid="37">
  <properties>
-  <property name="title" value="Invernia Town"/>
+  <property name="title" value="Trier"/>
  </properties>
  <tileset firstgid="1" name="invernia_weapon_shop" tilewidth="16" tileheight="16" tilecount="1596" columns="42">
   <image source="tilesets/invernia_weapon_shop.png" width="672" height="608"/>
@@ -330,10 +330,5 @@
   <object id="15" x="304" y="128" width="64" height="32"/>
   <object id="16" x="528" y="128" width="32" height="32"/>
  </objectgroup>
- <objectgroup name="objects">
-  <object id="29" name="shop1" x="176" y="208" width="32" height="48"/>
-  <object id="34" name="person17" type="w" x="496" y="192" width="32" height="32"/>
-  <object id="35" name="person74" type="w" x="208" y="336" width="32" height="32"/>
-  <object id="36" name="person14" type="w" x="144" y="336" width="32" height="32"/>
- </objectgroup>
+ <objectgroup name="objects"/>
 </map>

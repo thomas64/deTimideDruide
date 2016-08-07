@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="44" tilewidth="16" tileheight="16" nextobjectid="99">
  <properties>
-  <property name="title" value="Invernia Town"/>
+  <property name="title" value="Trier"/>
  </properties>
  <tileset firstgid="1" name="invernia_house_big_2f" tilewidth="16" tileheight="16" tilecount="2024" columns="44">
   <image source="tilesets/invernia_house_big_2f.png" width="704" height="736"/>
@@ -395,19 +395,5 @@
   <object id="77" x="432" y="384" width="64" height="32"/>
   <object id="78" x="128" y="384" width="64" height="32"/>
  </objectgroup>
- <objectgroup name="objects">
-  <object id="91" name="person1" x="112" y="240" width="32" height="32">
-   <properties>
-    <property name="direction" value="east"/>
-   </properties>
-  </object>
-  <object id="92" name="person2" x="176" y="240" width="32" height="32">
-   <properties>
-    <property name="direction" value="west"/>
-   </properties>
-  </object>
-  <object id="93" name="person3" type="w" x="512" y="208" width="32" height="32"/>
-  <object id="94" name="person4" type="w" x="496" y="176" width="32" height="32"/>
-  <object id="98" name="person73" type="w" x="160" y="448" width="32" height="32"/>
- </objectgroup>
+ <objectgroup name="objects"/>
 </map>

@@ -16,7 +16,7 @@ SEXT = 's.png'
 class PeopleDatabase(enum.Enum):
     """..."""
 
-    person1000 = dict(name='druid01',     text=["*Hick*"])
+    person100 = dict(name='druid01',     text=["*Hick*"])
 
     # standard characters
     person1 = dict(name='boy01',         text=["Hi mister."])

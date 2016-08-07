@@ -12,7 +12,7 @@ class SignDatabase(enum.Enum):
     """
     sign1 = ["Het Bos",
              "",
-             "Noord: Timide Druïde Grote",
+             "Noord: Timide Druïde Grot",
              "Oost: Moezel Waterval",
              "Zuid: Trier"]
     sign2 = ["Timide Druïde",
@@ -24,4 +24,4 @@ class SignDatabase(enum.Enum):
              "Donderdag:  18:00 - 19:00",
              "Vrijdag:         18:00 - 19:00"]
     sign3 = ["Moezel Waterval"]
-    sign4 = ["Trier"]
+    sign4 = ["Welkom in Trier"]

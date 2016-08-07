@@ -111,7 +111,7 @@ class Map(object):
                 self.inns.append(inn_object)
             elif obj.name == 'person100':
                 maandag1 = datetime.datetime(2016, 8, 7, 11, 31)
-                maandag2 = datetime.datetime(2016, 8, 7, 11, 32)
+                maandag2 = datetime.datetime(2016, 8, 7, 18, 32)
                 timestamp = datetime.datetime.now()
                 print(timestamp)
                 if maandag1 < timestamp < maandag2:
