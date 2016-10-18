@@ -38,14 +38,16 @@ class PeopleDatabase(enum.Enum):
     person14 = dict(name='oldman02',     text=["How do you do?"])
     person15 = dict(name='oldwoman01',   text=["How do you do?"])
     person16 = dict(name='oldwoman02',   text=["How do you do?"])
-    person17 = dict(name='animal01',     face=False, text=["Meow"])
-    person18 = dict(name='animal02',     face=False, text=["Bow wow"])
-    person19 = dict(name='animal03',     face=False, text=["Cluck cluck"])
+    person17 = dict(name='animal01',     text=["Meow"])
+    person18 = dict(name='animal02',     text=["Woof"])
+    person19 = dict(name='animal03',     text=["Cluck"])
 
     # invernia_forest_center
+    person76 = dict(name='soldier01',    quest=QuestDatabase.quest3)
+    # invernia_forest_cave
     person50 = dict(name='boy01',        quest=QuestDatabase.quest1)
     # invernia_forest_waterfall
-    person51 = dict(name='man54',        text=["It's so beautiful, I can watch this scenery for hours."])
+    person51 = dict(name='man54',        quest=QuestDatabase.quest4)
 
     # invernia_town
     person52 = dict(name='boy01',        text=["Hi mister!", "We're playing hide and seek.",
@@ -84,9 +86,8 @@ class PeopleDatabase(enum.Enum):
     # invernia_weapon_shop
     person74 = dict(name='youngman02',   quest=QuestDatabase.quest2)
     # invernia_armor_shop
-    person75 = dict(name='youngwoman02', subquest=QuestDatabase.quest2)
+    person75 = dict(name='youngwoman02', quest=QuestDatabase.quest2)
 
 for person in PeopleDatabase:
-    if not person.value['name'].startswith('animal'):
-        person.value['face'] = PATH+person.value['name']+FEXT
+    person.value['face'] = PATH+person.value['name']+FEXT
     person.value['sprite'] = PATH+person.value['name']+SEXT
