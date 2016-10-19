@@ -114,17 +114,6 @@ class Map(object):
                 if not obj.type:
                     self.high_blocker_rects.append(inn_object.get_blocker())
                 self.inns.append(inn_object)
-            elif obj.name == 'person100':
-                maandag1 = datetime.datetime(2016, 8, 7, 11, 31)
-                maandag2 = datetime.datetime(2016, 8, 7, 18, 32)
-                timestamp = datetime.datetime.now()
-                print(timestamp)
-                if maandag1 < timestamp < maandag2:
-                    person_object = Person(obj.name, PeopleDatabase[obj.name].value['sprite'],
-                                           self._pg_rect(obj), OBJECTLAYER, self._has_dir(obj, 'direction'), None)
-                    self.high_blocker_rects.append(person_object.get_blocker())
-                    self.people.append(person_object)
-
             elif obj.name.startswith('person'):
                 # als er in obj.type iets staat, dan is het een walking person
                 if obj.type:
