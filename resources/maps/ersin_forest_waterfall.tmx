@@ -1200,10 +1200,5 @@
  </objectgroup>
  <objectgroup name="objects" visible="0">
   <object id="1" name="sign3" type="2" x="448" y="560" width="32" height="32"/>
-  <object id="2" name="person51" x="704" y="848" width="32" height="32">
-   <properties>
-    <property name="direction" value="north"/>
-   </properties>
-  </object>
  </objectgroup>
 </map>

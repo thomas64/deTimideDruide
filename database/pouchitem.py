@@ -28,7 +28,7 @@ class PouchItemDatabase(enum.Enum):
     gemstones = dict(nam="Gemstones",       srt=4, spr=GEMSTONEIMG)
     proofnote = dict(nam="Proofnote",       srt=5, spr=NOTEPIMG)
 
-    grapes = dict(nam="Grapes",  srt=4, spr=GRAPESPATH)
-    wine = dict(nam="Wine",      srt=5, spr=WINEPATH)
-    shroom = dict(nam="Shrooms", srt=6, spr=SHROOMSPATH)
-    cauldron = dict(nam="Magic Cauldron", srt=7, spr=CAULDRONPATH)
+    grapes = dict(nam="Grapes",             srt=6, spr=GRAPESPATH)
+    wine = dict(nam="Wine",                 srt=7, spr=WINEPATH)
+    shroom = dict(nam="Shrooms",            srt=8, spr=SHROOMSPATH)
+    cauldron = dict(nam="Magic Cauldron",   srt=9, spr=CAULDRONPATH)

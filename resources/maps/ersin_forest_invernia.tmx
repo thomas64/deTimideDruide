@@ -1219,13 +1219,6 @@
   <object id="128" x="32" y="336" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="objects">
-  <object id="1" name="person76" x="32" y="176" width="32" height="192"/>
-  <object id="2" name="blocker" type="quest3" x="32" y="192" width="16" height="176"/>
-  <object id="120" name="person77" x="896" y="416" width="32" height="32">
-   <properties>
-    <property name="direction" value="west"/>
-   </properties>
-  </object>
   <object id="131" name="note6" x="448" y="432" width="32" height="32"/>
   <object id="132" name="note7" x="192" y="288" width="32" height="32"/>
  </objectgroup>

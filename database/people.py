@@ -17,9 +17,9 @@ SEXT = 's.png'
 class PeopleDatabase(enum.Enum):
     """Mogelijkheid om time1 en time2 op te nemen als een person op een specifiek tijdstip aanwezig moet zijn."""
 
-    person100 = dict(name='druid01',     text=["*Hick*"])
+    person100 = dict(name='druid01',     text=[["*Hick*"]])
 
-    person200 = dict(name='troll01',     text=["*Grunt*"])
+    person200 = dict(name='troll01',     text=[["*Grunt*"]])
 
 
     # standard characters

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="140" height="140" tilewidth="16" tileheight="16" nextobjectid="465">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="140" height="140" tilewidth="16" tileheight="16" nextobjectid="466">
  <tileset firstgid="1" name="ersin_forest_center" tilewidth="16" tileheight="16" tilecount="1798" columns="62">
   <image source="tilesets/ersin_forest_center.png" width="992" height="464"/>
  </tileset>
@@ -1655,8 +1655,7 @@
   <object id="444" x="1856" y="1248" width="32" height="48"/>
  </objectgroup>
  <objectgroup name="objects">
-  <object id="455" name="note5" x="1856" y="1280" width="32" height="16"/>
-  <object id="459" name="sign5" type="1" x="672" y="1776" width="32" height="32"/>
-  <object id="464" name="person50" type="w" x="544" y="2016" width="32" height="32"/>
+  <object id="459" name="sign1" type="1" x="672" y="1776" width="32" height="32"/>
+  <object id="465" name="chest20" x="1120" y="1888" width="32" height="32"/>
  </objectgroup>
 </map>
