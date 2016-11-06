@@ -43,14 +43,14 @@ SMALLLINEHEIGHT = 30
 EXTRAFACESIZE = 20
 LINESNEXTTOFACE = 3
 
-BUYBOXWIDTH = 1/4
+BUYBOXWIDTH = 3/16
 BUYBOXHEIGHT = 3/4
 BUYBOXPOSX = 2/5
 BUYBOXPOSY = 1/6
 
-SELLBOXWIDTH = 1/4      # van het scherm
+SELLBOXWIDTH = 5/16     # van het scherm
 SELLBOXHEIGHT = 3/4
-SELLBOXPOSX = 2/3       # x op 2/3 van het scherm
+SELLBOXPOSX = 15/24     # x op 15/24 van het scherm
 SELLBOXPOSY = 1/6
 
 EXTRAHEIGHT = 0         # zodat de laatste item er voor helft op komt
@@ -115,14 +115,7 @@ class Display(object):
             COLORKEY, FONTCOLOR)
 
         self.info_label = ""
-
-        self.buy_click = False
-        self.sell_click = False
-        self.selected_item = None
-        self.tot_quantity = 0
-        self.sel_quantity = []
-        self.value = 0
-        self.confirm_box = None
+        self._reset_vars()
 
     def _init_selectors(self):
         self.selectors = pygame.sprite.Group()
@@ -197,6 +190,15 @@ class Display(object):
         height = self.screen.get_height() * INFOBOXHEIGHT
         self.infobox = InfoBox(self._set_x(INFOBOXPOSX), self._set_y(INFOBOXPOSY), int(width), int(height))
 
+    def _reset_vars(self):
+        self.buy_click = False
+        self.sell_click = False
+        self.selected_item = None
+        self.tot_quantity = 0
+        self.sel_quantity = []
+        self.value = 0
+        self.confirm_box = None
+
     def on_enter(self):
         """
         Wanneer deze state op de stack komt, voer dit uit.
@@ -231,13 +233,7 @@ class Display(object):
                 else:
                     self.engine.audio.play_sound(SFX.menu_select)
 
-            self.buy_click = False
-            self.sell_click = False
-            self.selected_item = None
-            self.tot_quantity = 0
-            self.sel_quantity = []
-            self.value = 0
-            self.confirm_box = None
+            self._reset_vars()
 
     # noinspection PyMethodMayBeStatic
     def on_exit(self):
@@ -263,10 +259,9 @@ class Display(object):
             self.sellbox.cur_item = None
 
             if self.buybox.rect.collidepoint(event.pos):
-                self.info_label = self.buybox.mouse_hover(event)
-
+                nothing, self.info_label = self.buybox.mouse_hover(event)
             if self.sellbox.rect.collidepoint(event.pos):
-                self.info_label = self.sellbox.mouse_hover(event)
+                nothing, self.info_label = self.sellbox.mouse_hover(event)
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
 

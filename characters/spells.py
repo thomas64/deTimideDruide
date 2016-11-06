@@ -15,7 +15,7 @@ class Spell(object):
     """
     ...
     """
-    TRAININGSCOSTS = (200, 80, 120, 160, 200, 240, 280, 320, 360, 400, "Max")
+    TRAININGSCOSTS = (20, 8, 12, 16, 20, 24, 28, 32, 36, 40, "Max")
     MAXIMUM = 10
     ICON = SPRITEPATH
 
@@ -30,6 +30,41 @@ class Spell(object):
         self.REQ = None        # todo
         self.COST = None       # todo
         self.qty = None
+        self.DESC = None
+
+    @property
+    def nxt_lev(self):
+        """
+        ...
+        :return:
+        """
+        quantity = self.qty + 1
+        if quantity == self.MAXIMUM + 1:
+            quantity = "Max"
+        return quantity
+
+    @property
+    def gold_cost(self):
+        """
+        ...
+        :return:
+        """
+        return self.TRAININGSCOSTS[self.qty]
+
+    @property
+    def xp_cost(self):
+        """
+        ...
+        :return:
+        """
+        xp_for_next_level = round(self.UPG * ((self.qty + 1)**2))
+        if self.qty == self.MAXIMUM:
+            xp_for_next_level = "Max"
+        return xp_for_next_level
+        # todo, loremaster skill gebruiken voor 'korting'
+        # oude uit vb:
+        # return self.UPG * (self.qty ^ 2 + 2 * self.qty + 1)
+        # - (((self.UPG * (self.qty ^ 2 + 2 * self.qty + 1)) / 100) * p(hc).lor3)
 
     def upgrade(self, quantity):
         """
@@ -38,10 +73,10 @@ class Spell(object):
         :return:
         """
         if self.qty >= self.MAXIMUM:
-            return print("Spell is al aan de max, kan niet.")
+            return False, ["You cannot learn {} any further.".format(self.NAM)]
         else:
             self.qty += quantity
-            return print("Spell met 1 opgehoogd, gelukt.")
+            return True, None
 
     def set_desc(self, text):
         """
@@ -56,6 +91,13 @@ class Spell(object):
                 "Requires: {}".format(self.REQ),
                 "Stamina Cost: {}".format(self.COST))
 
+    def show_info(self):
+        """
+        show_info is polymorph met EquipmentItem()
+        :return:
+        """
+        return self.DESC
+
 
 # Neutral ##############################################################################################################
 class DispelNaming(Spell):
@@ -67,7 +109,7 @@ class DispelNaming(Spell):
         self.SRT = 10
         self.SCL = SchoolType.ntl
         self.MIN = 2
-        self.UPG = 320
+        self.UPG = 3.2
         self.qty = quantity
         self.COL = 224
         self.ROW = 32
@@ -83,7 +125,7 @@ class DispelNecro(Spell):
         self.SRT = 20
         self.SCL = SchoolType.ntl
         self.MIN = 2
-        self.UPG = 320
+        self.UPG = 3.2
         self.qty = quantity
         self.COL = 224
         self.ROW = 32
@@ -100,7 +142,7 @@ class DispelStar(Spell):
         self.SRT = 30
         self.SCL = SchoolType.ntl
         self.MIN = 2
-        self.UPG = 320
+        self.UPG = 3.2
         self.qty = quantity
         self.COL = 224
         self.ROW = 32
@@ -116,7 +158,7 @@ class Mirror(Spell):
         self.SRT = 40
         self.SCL = SchoolType.ntl
         self.MIN = 6
-        self.UPG = 200
+        self.UPG = 2
         self.qty = quantity
         self.COL = 352
         self.ROW = 96
@@ -134,7 +176,7 @@ class VsElemental(Spell):
         self.SRT = 50
         self.SCL = SchoolType.ntl
         self.MIN = 1
-        self.UPG = 240
+        self.UPG = 2.4
         self.qty = quantity
         self.COL = 256
         self.ROW = 32
@@ -151,7 +193,7 @@ class VsNaming(Spell):
         self.SRT = 60
         self.SCL = SchoolType.ntl
         self.MIN = 1
-        self.UPG = 240
+        self.UPG = 2.4
         self.qty = quantity
         self.COL = 256
         self.ROW = 32
@@ -168,7 +210,7 @@ class VsNecromancy(Spell):
         self.SRT = 70
         self.SCL = SchoolType.ntl
         self.MIN = 1
-        self.UPG = 240
+        self.UPG = 2.4
         self.qty = quantity
         self.COL = 256
         self.ROW = 32
@@ -185,7 +227,7 @@ class VsStar(Spell):
         self.SRT = 80
         self.SCL = SchoolType.ntl
         self.MIN = 1
-        self.UPG = 240
+        self.UPG = 2.4
         self.qty = quantity
         self.COL = 256
         self.ROW = 32
@@ -203,7 +245,7 @@ class AirShield(Spell):
         self.SRT = 110
         self.SCL = SchoolType.elm
         self.MIN = 1
-        self.UPG = 320
+        self.UPG = 3.2
         self.qty = quantity
         self.COL = 352
         self.ROW = 128
@@ -221,7 +263,7 @@ class Debilitation(Spell):
         self.SRT = 120
         self.SCL = SchoolType.elm
         self.MIN = 2
-        self.UPG = 320
+        self.UPG = 3.2
         self.qty = quantity
         self.COL = 128
         self.ROW = 128
@@ -237,7 +279,7 @@ class DragonFlames(Spell):
         self.SRT = 130
         self.SCL = SchoolType.elm
         self.MIN = 2
-        self.UPG = 520
+        self.UPG = 5.2
         self.qty = quantity
         self.COL = 32
         self.ROW = 0
@@ -255,7 +297,7 @@ class Fireball(Spell):
         self.SRT = 140
         self.SCL = SchoolType.elm
         self.MIN = 5
-        self.UPG = 400
+        self.UPG = 4
         self.qty = quantity
         self.COL = 64
         self.ROW = 0
@@ -273,7 +315,7 @@ class Immolation(Spell):
         self.SRT = 150
         self.SCL = SchoolType.elm
         self.MIN = 4
-        self.UPG = 160
+        self.UPG = 1.6
         self.qty = quantity
         self.COL = 0
         self.ROW = 0
@@ -291,7 +333,7 @@ class RemovePoison(Spell):
         self.SRT = 160
         self.SCL = SchoolType.elm
         self.MIN = 2
-        self.UPG = 80
+        self.UPG = 0.8
         self.qty = quantity
         self.COL = 192
         self.ROW = 128
@@ -307,7 +349,7 @@ class Strength(Spell):
         self.SRT = 170
         self.SCL = SchoolType.elm
         self.MIN = 1
-        self.UPG = 160
+        self.UPG = 1.6
         self.qty = quantity
         self.COL = 0
         self.ROW = 192
@@ -325,7 +367,7 @@ class Wind(Spell):
         self.SRT = 180
         self.SCL = SchoolType.elm
         self.MIN = 2
-        self.UPG = 520
+        self.UPG = 5.2
         self.qty = quantity
         self.COL = 352
         self.ROW = 32
@@ -344,7 +386,7 @@ class Banishing(Spell):
         self.SRT = 210
         self.SCL = SchoolType.nmg
         self.MIN = 4
-        self.UPG = 520
+        self.UPG = 5.2
         self.qty = quantity
         self.COL = 64
         self.ROW = 32
@@ -361,7 +403,7 @@ class Endurance(Spell):
         self.SRT = 220
         self.SCL = SchoolType.nmg
         self.MIN = 2
-        self.UPG = 320
+        self.UPG = 3.2
         self.qty = quantity
         self.COL = 160
         self.ROW = 192
@@ -379,7 +421,7 @@ class SenseAura(Spell):
         self.SRT = 230
         self.SCL = SchoolType.nmg
         self.MIN = 3
-        self.UPG = 400
+        self.UPG = 4
         self.qty = quantity
         self.COL = 0
         self.ROW = 32
@@ -397,7 +439,7 @@ class Teleportation(Spell):
         self.SRT = 240
         self.SCL = SchoolType.nmg
         self.MIN = 8
-        self.UPG = 320
+        self.UPG = 3.2
         self.qty = quantity
         self.COL = 96
         self.ROW = 32
@@ -414,7 +456,7 @@ class Weakness(Spell):
         self.SRT = 250
         self.SCL = SchoolType.nmg
         self.MIN = 2
-        self.UPG = 320
+        self.UPG = 3.2
         self.qty = quantity
         self.COL = 32
         self.ROW = 32
@@ -433,7 +475,7 @@ class FrozenDoom(Spell):
         self.SRT = 310
         self.SCL = SchoolType.str
         self.MIN = 6
-        self.UPG = 600
+        self.UPG = 6
         self.qty = quantity
         self.COL = 320
         self.ROW = 96
@@ -451,7 +493,7 @@ class SolarWrath(Spell):
         self.SRT = 320
         self.SCL = SchoolType.str
         self.MIN = 4
-        self.UPG = 80
+        self.UPG = 0.8
         self.qty = quantity
         self.COL = 256
         self.ROW = 128
@@ -467,7 +509,7 @@ class StellarGravity(Spell):
         self.SRT = 330
         self.SCL = SchoolType.str
         self.MIN = 2
-        self.UPG = 320
+        self.UPG = 3.2
         self.qty = quantity
         self.COL = 224
         self.ROW = 128
@@ -483,7 +525,7 @@ class WebOfStarlight(Spell):
         self.SRT = 340
         self.SCL = SchoolType.str
         self.MIN = 3
-        self.UPG = 400
+        self.UPG = 4
         self.qty = quantity
         self.COL = 96
         self.ROW = 96
@@ -502,7 +544,7 @@ class Whitefire(Spell):
         self.SRT = 350
         self.SCL = SchoolType.str
         self.MIN = 6
-        self.UPG = 600
+        self.UPG = 6
         self.qty = quantity
         self.COL = 128
         self.ROW = 96
@@ -522,7 +564,7 @@ class ControlZombies(Spell):
         self.SRT = 410
         self.SCL = SchoolType.ncy
         self.MIN = 3
-        self.UPG = 400
+        self.UPG = 4
         self.qty = quantity
         self.COL = 160
         self.ROW = 32
@@ -542,7 +584,7 @@ class Haste(Spell):
         self.SRT = 420
         self.SCL = SchoolType.ncy
         self.MIN = 4
-        self.UPG = 520
+        self.UPG = 5.2
         self.qty = quantity
         self.COL = 96
         self.ROW = 192
@@ -562,7 +604,7 @@ class WallOfBones(Spell):
         self.SRT = 430
         self.SCL = SchoolType.ncy
         self.MIN = 5
-        self.UPG = 520
+        self.UPG = 5.2
         self.qty = quantity
         self.COL = 224
         self.ROW = 0
@@ -581,7 +623,7 @@ class SpiritShield(Spell):
         self.SRT = 440
         self.SCL = SchoolType.ncy
         self.MIN = 3
-        self.UPG = 400
+        self.UPG = 4
         self.qty = quantity
         self.COL = 352
         self.ROW = 128

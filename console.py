@@ -103,6 +103,13 @@ class Console:
         print("Corrupt gamedata.")
 
     @staticmethod
+    def error_unknown_map_object():
+        """
+        Map()
+        """
+        print("Unknown Map Object.")
+
+    @staticmethod
     def container_is_full(container_name):
         """
         Inventory.add_i()
@@ -199,3 +206,10 @@ class Console:
         """
         print("Not enough {}.".format(item_name))
         print("You need {} more {}.".format(item_price - item_quantity, item_name))
+
+    @staticmethod
+    def error_unknown_column_key():
+        """
+        ListBox.render()
+        """
+        print("Not 'icon' or 'text'.")

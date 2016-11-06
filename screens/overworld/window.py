@@ -96,7 +96,8 @@ class Window(object):
         """
         Maak een nieuwe map aan met de hero's in het veld.
         """
-        self.current_map = Map(self.engine.data.map_name)
+        # treasurechest database moet meegegeven worden, want is object en geen enum. is voor tijdelijke kistjes.
+        self.current_map = Map(self.engine.data.map_name, self.engine.data.treasure_chests)
         self.group = self.current_map.view
         self.grid_sprite = None
         self.cbox_sprites = []
@@ -108,6 +109,10 @@ class Window(object):
             if pos.name == start_pos:                  # van alle start_possen, welke komt overeen met 'start_game'
                 start_pos = pos.x, pos.y               # zet dan de x,y waarde op dié start_pos, maak van de string
                 break                                  # dus weer een point.
+            # maar het kan ook de '1' of '9' zijn van .to_nr, voor warpen op dezelfde map.
+            if pos.type == start_pos:                   # kijk dan niet naar de .name, maar naar de .type van de tmx.
+                start_pos = pos.x, pos.y
+                break
 
         for pos in self.current_map.start_pos:                                   # in een .tmx map kun je bij start_pos
             if getattr(pos, 'direction', None) and (pos.x, pos.y) == start_pos:  # een 'direction' property meegeven.
@@ -157,12 +162,14 @@ class Window(object):
         """
         # als er iets in de lijst van temp blockers staat:
         if len(self.current_map.temp_blocker_rects) > 0:
-            # de naam van de tempblocker is de key van de quest. als de eerste uit de lijst explicitiet deze is:
-            the_quest = self.engine.data.logbook.get(self.current_map.temp_blocker_rects[0].name)
-            # bekijk dan of hij al rewarded is:
-            if the_quest is not None and the_quest.is_rewarded():
-                # haal dan de temp blocker weg
-                self.current_map.temp_blocker_rects = []
+            # van 0 tot 3 bijv
+            for i in range(0, len(self.current_map.temp_blocker_rects), 1):
+                # de naam van de tempblocker is de key van de quest. haal die uit het logbook op basis van de naam.
+                the_quest = self.engine.data.logbook.get(self.current_map.temp_blocker_rects[i].name)
+                # bekijk dan of hij al rewarded is:
+                if the_quest is not None and the_quest.is_rewarded():
+                    # haal dan die temp blocker uit de lijst
+                    del self.current_map.temp_blocker_rects[i]
 
     def align(self):
         """
@@ -336,9 +343,9 @@ class Window(object):
                 self.cbox_sprites[index].rect.topleft = unit.rect.topleft  # F11 zijn toegevoegd zijn de unit.rects
 
         # Centreer op de hero als de kaart groter is dan de window.
-        if self.current_map.width >= self.width and \
-           self.current_map.height >= self.height:
-            self.group.center(self.party_sprites[0].rect.center)
+        # if self.current_map.width >= self.width and \
+        #    self.current_map.height >= self.height:
+        self.group.center(self.party_sprites[0].rect.center)
 
         # update de plaatjes van de objecten
         for obj in self.current_map.chests:
@@ -420,7 +427,11 @@ class Window(object):
             portal_nr = self.party_sprites[0].rect.collidelist(self.current_map.portals)
             self.prev_map_name = self.current_map.portals[portal_nr].from_name
             self.engine.data.map_name = self.current_map.portals[portal_nr].to_name
-            self.engine.data.map_pos = self.prev_map_name       # zet de point om naar een string naam.
+            # als de kaartnamen hetzelfde zijn, dus als hij op dezelfde map warpt, gebruik dan .to_nr
+            if self.prev_map_name == self.engine.data.map_name:
+                self.engine.data.map_pos = self.current_map.portals[portal_nr].to_nr
+            else:
+                self.engine.data.map_pos = self.prev_map_name       # zet de point om naar een string naam.
             self.load_map()
             self.engine.gamestate.push(Transition(self.engine.gamestate, full_screen=False))
 
@@ -490,7 +501,9 @@ class Window(object):
 
             school_sprite.turn(self.party_sprites[0].rect)
 
-            push_object = screens.school.Display(self.engine, school_data['face'])
+            push_object = screens.school.Display(self.engine,
+                                                 school_data['content'],
+                                                 school_data['face'])
             self.engine.gamestate.push(push_object)
             self.engine.gamestate.push(Transition(self.engine.gamestate))
 
@@ -542,8 +555,9 @@ class Window(object):
 
             # of als hij dat niet heeft
             else:
-                push_object = MessageBox(self.engine.gamestate, person_data['text'], person_data['face'])
-                self.engine.gamestate.push(push_object)
+                for text_part in reversed(person_data['text']):
+                    push_object = MessageBox(self.engine.gamestate, text_part, person_data['face'])
+                    self.engine.gamestate.push(push_object)
 
     def check_notes(self, check_rect):
         """
@@ -556,8 +570,13 @@ class Window(object):
             object_nr = check_rect.collidelist(self.current_map.notes)
             note_id = self.current_map.notes[object_nr].name
             note_text = NoteDatabase[note_id].value
-            for text_part in reversed(note_text):
-                push_object = MessageBox(self.engine.gamestate, text_part)
+            if type(note_text) == list:
+                for text_part in reversed(note_text):
+                    push_object = MessageBox(self.engine.gamestate, text_part)
+                    self.engine.gamestate.push(push_object)
+            # een plaatje alleen is een string en geen list.
+            else:
+                push_object = MessageBox(self.engine.gamestate, [""], note_text)
                 self.engine.gamestate.push(push_object)
 
     def check_signs(self):

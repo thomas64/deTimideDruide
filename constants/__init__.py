@@ -234,10 +234,12 @@ class MapMusic(enum.Enum):
     Alle tmx kaarten op een rij, met de muziek erachter en ambient sound.
     De key's komen precies overeen met de .tmx namen. De values[0] en [1] komen overeen met de .ogg namen.
     """
-    ersin_forest_start =        "ersin_forest",  "birds"
     ersin_forest_waterfall =    "ersin_forest",  "river"
     ersin_forest_center =       "ersin_forest",  "birds"
     ersin_forest_cave =         "ersin_forest",  "birds"
+    ersin_forest_pond =         "ersin_pond",    "birds"
+    ersin_forest_invernia =     "ersin_forest",  "birds"
+    ersin_forest_hole =         "ersin_cave",    None
     ersin_cave_room1 =          "ersin_cave",    None
     ersin_cave_room2 =          "ersin_cave",    None
     ersin_cave_room3 =          "ersin_cave",    None
@@ -260,25 +262,27 @@ class MapTitle(enum.Enum):
     Alle tmx kaarten op een rij, met de Titel hoe die in beeld komt erachter.
     De key's komen precies overeen met de .tmx namen.
     """
-    ersin_forest_start =        "Het Bos"
-    ersin_forest_waterfall =    "Het Bos"
-    ersin_forest_center =       "Het Bos"
-    ersin_forest_cave =         "Het Bos"
-    ersin_cave_room1 =          "Druïde Grot"
-    ersin_cave_room2 =          "Druïde Grot"
-    ersin_cave_room3 =          "Druïde Grot"
-    invernia_town =             "Trier"
-    invernia_armor_shop =       "Trier"
-    invernia_weapon_shop =      "Trier"
-    invernia_item_shop =        "Trier"
-    invernia_inn_1f =           "Trier"
-    invernia_inn_2f =           "Trier"
-    invernia_guild =            "Trier"
-    invernia_school =           "Trier"
-    invernia_house_big_1f =     "Trier"
-    invernia_house_big_2f =     "Trier"
-    invernia_house_left =       "Trier"
-    invernia_house_right =      "Trier"
+    ersin_forest_waterfall =    "Ersin Forest"
+    ersin_forest_center =       "Ersin Forest"
+    ersin_forest_cave =         "Ersin Forest"
+    ersin_forest_pond =         "Ersin Forest"
+    ersin_forest_invernia =     "Ersin Forest"
+    ersin_forest_hole =         "Ersin Forest"
+    ersin_cave_room1 =          "Ersin Cave"
+    ersin_cave_room2 =          "Ersin Cave"
+    ersin_cave_room3 =          "Ersin Cave"
+    invernia_town =             "Invernia Town"
+    invernia_armor_shop =       "Invernia Town"
+    invernia_weapon_shop =      "Invernia Town"
+    invernia_item_shop =        "Invernia Town"
+    invernia_inn_1f =           "Invernia Town"
+    invernia_inn_2f =           "Invernia Town"
+    invernia_guild =            "Invernia Town"
+    invernia_school =           "Invernia Town"
+    invernia_house_big_1f =     "Invernia Town"
+    invernia_house_big_2f =     "Invernia Town"
+    invernia_house_left =       "Invernia Town"
+    invernia_house_right =      "Invernia Town"
 
 
 class SFX(enum.Enum):
@@ -292,9 +296,11 @@ class SFX(enum.Enum):
     step_stone = 5
     step_wood = 6
     step_carpet = 7
-    coins = 8
-    chest = 9
-    sparkly = 10
+    cancel = 8
+    coins = 9
+    scroll = 10
+    chest = 11
+    sparkly = 12
 
 
 class Keys(enum.Enum):

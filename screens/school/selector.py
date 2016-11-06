@@ -9,6 +9,8 @@ import pygame
 
 
 LINECOLOR = pygame.Color("black")
+SELECTCOLOR = pygame.Color("red")
+LINETHICKNESS = 1
 PATH = 'resources/sprites/heroes/'
 
 SPRITEPOSX = 32
@@ -20,13 +22,13 @@ class Selector(pygame.sprite.Sprite):
     """
     ...
     """
-    def __init__(self, x, y, hero_name):
+    def __init__(self, x, y, hero):
         super().__init__()
 
-        self.hero_name = hero_name
+        self.hero = hero
 
-        self.image = self._load_selected_image(PATH, hero_name.lower())
-        pygame.draw.rect(self.image, LINECOLOR, self.image.get_rect(), 1)
+        self.image = self._load_selected_image(PATH, hero.NAM.lower())
+        pygame.draw.rect(self.image, LINECOLOR, self.image.get_rect(), LINETHICKNESS)
         self.rect = self.image.get_rect()
         self.rect.topleft = x, y
 
@@ -48,4 +50,13 @@ class Selector(pygame.sprite.Sprite):
         :param event: pygame.MOUSEBUTTONDOWN uit shopscreen
         """
         if self.rect.collidepoint(event.pos):
-            return self.hero_name
+            return self.hero
+
+    def update(self, hero):
+        """
+        ...
+        """
+        if hero == self.hero:
+            pygame.draw.rect(self.image, SELECTCOLOR, self.image.get_rect(), LINETHICKNESS)
+        else:
+            pygame.draw.rect(self.image, LINECOLOR, self.image.get_rect(), LINETHICKNESS)

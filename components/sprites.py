@@ -6,6 +6,7 @@ class: Grid
 class: Sign
 class: TreasureChest
 class: Sparkly
+class: VisionRadius
 """
 
 import pygame
@@ -216,7 +217,7 @@ class Sparkly(pygame.sprite.Sprite):
     """
     De animerende Sparkly Sprite.
     """
-    def __init__(self, sparkly_id, rect, objectlayer):
+    def __init__(self, sparkly_id, rect, objectlayer, dont_show_sprite):
         super().__init__()
 
         self.sparkly_id = sparkly_id
@@ -234,20 +235,56 @@ class Sparkly(pygame.sprite.Sprite):
 
         self.image = self.image_list[self.index]
 
+        # als er in dont_show_sprite iets staat, dan is het een transparante sprite.
+        self.show_sprite = True
+        if dont_show_sprite:
+            self.show_sprite = False
+            self.image = self.image_list[0]
+
     def update(self, taken, dt):
         """
         Verandert elke zoveel milliseconde het sub plaatje.
         :param taken: integer 0 of 1, uit de SparklyDatabase
         :param dt: self.clock.tick(FPS)/1000.0
         """
-        if taken == 1:
-            self.image = self.image_list[0]
-            return
+        if self.show_sprite:
 
-        self.speed += dt
-        if self.speed > SPARKLYSPEED:
-            self.speed = 0
-            self.index += 1
-            if self.index >= len(self.image_list):
-                self.index = 1
-            self.image = self.image_list[self.index]
+            if taken == 1:
+                self.image = self.image_list[0]
+                return
+
+            self.speed += dt
+            if self.speed > SPARKLYSPEED:
+                self.speed = 0
+                self.index += 1
+                if self.index >= len(self.image_list):
+                    self.index = 1
+                self.image = self.image_list[self.index]
+
+
+class VisionRadius(pygame.sprite.Sprite):
+    """
+    Zwarte mist rondom de speler
+    """
+    def __init__(self, window_width, window_height, layer):
+        super().__init__()
+
+        self._layer = layer
+        self.image = pygame.Surface((window_width*2, window_height*2))
+        self.image.fill((0, 0, 0, 255))
+        self.image = self.image.convert_alpha()
+
+        # pygame.draw.circle(self.image, (0, 0, 0, 0), (window_width, window_height), size)
+        radius = 255
+        delta = 1
+        while radius > 1:
+            pygame.draw.circle(self.image, (0, 0, 0, radius), (window_width, window_height), radius)
+            radius -= delta
+
+        self.rect = self.image.get_rect()
+
+    def update(self, position):
+        """
+        Verplaats de circel met de hero mee.
+        """
+        self.rect.center = position
