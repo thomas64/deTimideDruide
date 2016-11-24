@@ -5,8 +5,11 @@ class: BaseBox
 
 import pygame
 
+from console import Console
+from constants import Keys
 
 BACKGROUNDCOLOR = pygame.Color("black")
+LINECOLOR = pygame.Color("white")
 
 FONTCOLOR1 = pygame.Color("white")
 FONTCOLOR2 = pygame.Color("yellow")
@@ -19,20 +22,28 @@ POSCOLOR2 = pygame.Color("lightgreen")
 NEGCOLOR1 = pygame.Color("red")
 NEGCOLOR2 = pygame.Color("orangered")
 
+TITLEX, TITLEY = 7, 1
+SCROLLSPEED = 20
+BOTTOMSPACER = 20  # tegen bottom ghosting. deze maakt de layerheight net iets langer.
+ICONOFFSET = -6
+
+ROWFORRECTS = 3  # in alle party boxen zitten de rects in row[3]
+MOUSEHOVERWIDTH = 200
+
+TITLERECT = (1, 1, 327, 35)  # 327 = boxwidth - 2
+
 
 class BaseBox(object):
     """
     De base class voor de boxen, de andere boxen kunnen hiervan erven.
     """
     def __init__(self, position, width, height):
+        self.box_width = width
+        self.box_height = height
         self.surface = pygame.Surface((width, height))
         self.surface = self.surface.convert()
         self.rect = self.surface.get_rect()
         self.rect.topleft = position
-
-        self.background = pygame.Surface(self.surface.get_size())
-        self.background.fill(BACKGROUNDCOLOR)
-        self.background = self.background.convert()
 
         self.largefont = pygame.font.SysFont(FONT, LARGEFONTSIZE)
         self.normalfont = pygame.font.SysFont(FONT, NORMALFONTSIZE)
@@ -41,8 +52,60 @@ class BaseBox(object):
 
         self.cur_item = None
 
+        self.linecolor = LINECOLOR
+        self.title_x, self.title_y = TITLEX, TITLEY
+        self.iconoffset = ICONOFFSET
+
+        self.title = None
+        self.rowheight = None
+        self.total_columns = []
+        self.column1x = None
+        self.columnsy = None
+
         self.table_data = []
         self.table_view = []
+
+        self.run_once = True    # eenmalig voor de _setup_scroll_layer te doen voor de child classes.
+
+    def _setup_scroll_layer(self):
+        # stel de scroll layer in
+        self.layer_height = BOTTOMSPACER + self.columnsy + len(self.table_view) * self.rowheight
+        if self.layer_height < self.box_height:
+            self.layer_height = self.box_height
+        self.layer = pygame.Surface((self.box_width, self.layer_height))
+        self.layer = self.layer.convert()
+        self.lay_rect = self.layer.get_rect()
+        self.lay_rect.topleft = self.rect.topleft
+
+        self.background = pygame.Surface((self.box_width, self.layer_height))
+        self.background.fill(BACKGROUNDCOLOR)
+        self.background = self.background.convert()
+
+    def _update_rects_in_layer_rect_with_offset(self):
+        """
+        Voeg de rects toe in row[3] van table_data waarmee gecorrespondeert kan worden met de muis bijvoorbeeld.
+        Deze rects zijn variabel omdat er gescrollt kan worden, daarom wordt lay_rect voor de offset gebruikt.
+        De offset is weer nodig omdat de rects in een box staat die weer een eigen positie op het scherm heeft.
+        Na het scrollen wordt deze telkens weer geupdate.
+        """
+        for index, row in enumerate(self.table_data):
+            row[ROWFORRECTS] = pygame.Rect(self.lay_rect.x + self.column1x,
+                                           self.lay_rect.y + self.columnsy + index * self.rowheight,
+                                           MOUSEHOVERWIDTH, self.rowheight+1)
+
+    def mouse_scroll(self, event):
+        """
+        Registreert of scrolwiel gebruikt wordt. Verplaatst de layer dan omhoog of omlaag.
+        :param event: pygame.MOUSEBUTTONDOWN uit partyscreen
+        """
+        if event.button == Keys.Scrollup.value:
+            if self.lay_rect.y - self.rect.y < 0:
+                self.lay_rect.y += SCROLLSPEED
+        elif event.button == Keys.Scrolldown.value:
+            if self.lay_rect.y - self.rect.y > self.rect.height - self.layer_height:
+                self.lay_rect.y -= SCROLLSPEED
+
+        self._update_rects_in_layer_rect_with_offset()
 
     def mouse_hover(self, event):
         """
@@ -85,6 +148,7 @@ class BaseBox(object):
 
     def _create_rect_with_offset(self, index, text, columnxx, columnsy, rowheight):
         """
+        OP DIT MOMENT NIET MEER IN GEBRUIK! toen het scrollen van de boxen er was, is deze vervangen door update_rects()
         self.rect is de hele box zelf. Die heeft ook een position op het scherm, vandaar dat de position een soort
         offset moet krijgen hier.
         """
@@ -134,3 +198,32 @@ class BaseBox(object):
         elif value < 0:
             value = "(" + str(value) + ")"
             col.append(self.normalfont.render(value, True, negcolor).convert_alpha())
+
+    def render(self, screen):
+        """
+        Surface tekent layer, de rest gaat op de layer, en screen tekent de surface.
+        :param screen: self.screen van partyscreen
+        """
+        self.surface.blit(self.layer, (0, self.lay_rect.y - self.rect.y))
+        self.layer.blit(self.background, (0, 0))
+        pygame.draw.rect(self.surface, self.linecolor, self.surface.get_rect(), 1)
+
+        # zwarte background achter de titel. is voor scrollen.
+        pygame.draw.rect(self.surface, BACKGROUNDCOLOR, pygame.Rect(TITLERECT))
+        self.surface.blit(self.title, (self.title_x, self.title_y))
+
+        for index, row in enumerate(self.table_view):
+            for row_nr, columnx in enumerate(self.total_columns):
+                if columnx[0] == 'icon':
+                    self.layer.blit(
+                        row[row_nr],
+                        (columnx[1], self.columnsy + self.iconoffset + index * self.rowheight))
+                elif columnx[0] == 'text':
+                    self.layer.blit(
+                        row[row_nr],
+                        (columnx[1], self.columnsy + index * self.rowheight))
+                else:
+                    Console.error_unknown_column_key()
+                    raise KeyError
+
+        screen.blit(self.surface, self.rect.topleft)

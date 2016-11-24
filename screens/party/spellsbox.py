@@ -8,18 +8,14 @@ import pygame
 from .basebox import BaseBox
 
 
-LINECOLOR = pygame.Color("white")
-
-TITLEX, TITLEY = 7, 1
 COLUMN1X = 50
 COLUMN2X = 90
 COLUMN3X = 220
-COLUMNSY = 60
+COLUMNSY = 50
 ROWHEIGHT = 34
-ICONOFFSET = -6
-
 
 TITLE = "Spells"
+TOTALCOLUMNS = (('icon', COLUMN1X), ('text', COLUMN2X), ('text', COLUMN3X))
 
 
 class SpellsBox(BaseBox):
@@ -30,6 +26,10 @@ class SpellsBox(BaseBox):
         super().__init__(position, width, height)
 
         self.title = None
+        self.rowheight = ROWHEIGHT
+        self.total_columns = TOTALCOLUMNS
+        self.column1x = COLUMN1X
+        self.columnsy = COLUMNSY
 
     def update(self, hero):
         """
@@ -46,10 +46,6 @@ class SpellsBox(BaseBox):
                 [spell.ICON, spell.NAM + " :", str(spell.qty), None, spell.DESC, spell.COL, spell.ROW]
             )
 
-        # vul row[3] kolom. hierin staan de rects van row[1]. rect is voor muisklik.
-        for index, row in enumerate(self.table_data):
-            row[3] = self._create_rect_with_offset(index, row[1], COLUMN2X, COLUMNSY, ROWHEIGHT)
-
         # maak dan een nieuwe tabel aan met de tekst en icons, maar dan gerendered.
         self.table_view = []
         for index, row in enumerate(self.table_data):
@@ -58,18 +54,8 @@ class SpellsBox(BaseBox):
             self.table_view[index].append(self.normalfont.render(row[1], True, self._get_color(index)).convert_alpha())
             self.table_view[index].append(self.normalfont.render(row[2], True, self.fontcolor1).convert_alpha())
 
-    def render(self, screen):
-        """
-        En teken dan al die data op de surface en die op de screen.
-        :param screen: self.screen van partyscreen
-        """
-        self.surface.blit(self.background, (0, 0))
-        pygame.draw.rect(self.background, LINECOLOR, self.surface.get_rect(), 1)
-
-        self.surface.blit(self.title, (TITLEX, TITLEY))
-        for index, row in enumerate(self.table_view):
-            self.surface.blit(row[0], (COLUMN1X, COLUMNSY + ICONOFFSET + index * ROWHEIGHT))
-            self.surface.blit(row[1], (COLUMN2X, COLUMNSY + index * ROWHEIGHT))
-            self.surface.blit(row[2], (COLUMN3X, COLUMNSY + index * ROWHEIGHT))
-
-        screen.blit(self.surface, self.rect.topleft)
+        if self.run_once:
+            self.run_once = False
+            self._setup_scroll_layer()
+        # vul row[3] kolom. hierin staan de rects van row[1]. rect is voor muisklik.
+        self._update_rects_in_layer_rect_with_offset()

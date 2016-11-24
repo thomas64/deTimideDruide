@@ -8,27 +8,24 @@ import pygame.gfxdraw
 
 from .basebox import BaseBox
 
-
-LINECOLOR = pygame.Color("white")
-
-TITLEX, TITLEY = 7, 1
+BACKGROUNDCOLOR = pygame.Color("black")
 
 TITLE = "Inventory"
 STICKMANPATH = "resources/sprites/stickman.png"
-STICKMANPOS = 60
+STICKMANPOS = 35
 EQUIPMENTITEMBOXCOLOR = (100, 0, 0, 128)
-WPNBOX = pygame.Rect(77,  165, 33, 33)
-SLDBOX = pygame.Rect(213, 165, 33, 33)
-HLMBOX = pygame.Rect(143,  70, 33, 33)
-AMUBOX = pygame.Rect(143, 130, 33, 33)
-ARMBOX = pygame.Rect(160, 165, 33, 33)
-CLKBOX = pygame.Rect(128, 165, 33, 33)
-BRCBOX = pygame.Rect(77,  197, 33, 33)
-GLVBOX = pygame.Rect(77,  229, 33, 33)
-RNGBOX = pygame.Rect(213, 229, 33, 33)
-BLTBOX = pygame.Rect(143, 207, 33, 33)
-BTSBOX = pygame.Rect(143, 270, 33, 33)
-ACYBOX = pygame.Rect(213, 197, 33, 33)
+WPNBOX = pygame.Rect(77,  140, 33, 33)
+SLDBOX = pygame.Rect(213, 140, 33, 33)
+HLMBOX = pygame.Rect(143,  45, 33, 33)
+AMUBOX = pygame.Rect(143, 105, 33, 33)
+ARMBOX = pygame.Rect(160, 140, 33, 33)
+CLKBOX = pygame.Rect(128, 140, 33, 33)
+BRCBOX = pygame.Rect(77,  172, 33, 33)
+GLVBOX = pygame.Rect(77,  204, 33, 33)
+RNGBOX = pygame.Rect(213, 204, 33, 33)
+BLTBOX = pygame.Rect(143, 182, 33, 33)
+BTSBOX = pygame.Rect(143, 245, 33, 33)
+ACYBOX = pygame.Rect(213, 172, 33, 33)
 # de volgorde van deze lijst is belangrijk. hij moet gelijk zijn aan Hero.equipment_tuple()
 EQUIPMENTITEMBOXES = (WPNBOX, SLDBOX, HLMBOX, AMUBOX, ARMBOX, CLKBOX, BRCBOX, GLVBOX, RNGBOX, BLTBOX, BTSBOX, ACYBOX)
 SUBSURW, SUBSURH = 32, 32
@@ -40,6 +37,10 @@ class InventoryBox(BaseBox):
     """
     def __init__(self, position, width, height):
         super().__init__(position, width, height)
+
+        self.background = pygame.Surface(self.surface.get_size())
+        self.background.fill(BACKGROUNDCOLOR)
+        self.background = self.background.convert()
 
         self.title = self.largefont.render(TITLE, True, self.fontcolor1).convert_alpha()
         self.stickman = pygame.image.load(STICKMANPATH).convert()
@@ -105,9 +106,9 @@ class InventoryBox(BaseBox):
         :param screen: self.screen van partyscreen
         """
         self.surface.blit(self.background, (0, 0))
-        pygame.draw.rect(self.background, LINECOLOR, self.surface.get_rect(), 1)
+        pygame.draw.rect(self.background, self.linecolor, self.surface.get_rect(), 1)
 
-        self.surface.blit(self.title, (TITLEX, TITLEY))
+        self.surface.blit(self.title, (self.title_x, self.title_y))
         # positioneer stickman in het midden
         self.surface.blit(self.stickman, ((self.surface.get_width() - self.stickman.get_width()) / 2, STICKMANPOS))
 
@@ -115,7 +116,7 @@ class InventoryBox(BaseBox):
             # teken een doorzichtige box
             pygame.gfxdraw.box(self.surface, BOX, EQUIPMENTITEMBOXCOLOR)
             # teken het lijntje eromheen
-            pygame.draw.rect(self.surface, LINECOLOR, BOX, 1)
+            pygame.draw.rect(self.surface, self.linecolor, BOX, 1)
             # teken de icon
             self.surface.blit(self.equipment_item_sprites[index], BOX)
 
