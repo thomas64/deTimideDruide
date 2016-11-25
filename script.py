@@ -43,6 +43,6 @@ class Script:
         pouch_item = PouchItem(**PouchItemDatabase.wine.value)
         data.pouch.add(pouch_item, 1, verbose=False)
 
-        data.map_name = 'ersin_forest_center'
+        data.map_name = 'braserie_ad_waal'
         data.map_pos = 'start_game'     # dit is de naam van de startpositie object in de tmx map
-        data.map_dir = Direction.South
+        data.map_dir = Direction.East

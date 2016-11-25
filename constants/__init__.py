@@ -240,55 +240,21 @@ class MapMusic(enum.Enum):
     Alle tmx kaarten op een rij, met de muziek erachter en ambient sound.
     De key's komen precies overeen met de .tmx namen. De values[0] en [1] komen overeen met de .ogg namen.
     """
-    ersin_forest_waterfall =    "ersin_forest",  "river"
-    ersin_forest_center =       "ersin_forest",  "birds"
-    ersin_forest_cave =         "ersin_forest",  "birds"
-    ersin_forest_pond =         "ersin_pond",    "birds"
-    ersin_forest_invernia =     "ersin_forest",  "birds"
-    ersin_forest_hole =         "ersin_cave",    None
-    ersin_cave_room1 =          "ersin_cave",    None
-    ersin_cave_room2 =          "ersin_cave",    None
-    ersin_cave_room3 =          "ersin_cave",    None
-    invernia_town =             "invernia_town", "town"
-    invernia_armor_shop =       "invernia_town", None
-    invernia_weapon_shop =      "invernia_town", None
-    invernia_item_shop =        "invernia_town", None
-    invernia_inn_1f =           "invernia_town", None
-    invernia_inn_2f =           "invernia_town", None
-    invernia_guild =            "invernia_town", "fire"
-    invernia_school =           "invernia_town", None
-    invernia_house_big_1f =     "invernia_town", None
-    invernia_house_big_2f =     "invernia_town", None
-    invernia_house_left =       "invernia_town", None
-    invernia_house_right =      "invernia_town", None
-
+    braserie_ad_waal = "ersin_forest",  "river"
+    braserie_altena  = "invernia_town", "fire"
+    brug_od_waal     = "ersin_forest",  "river"
+    # ersin_forest_center =       "ersin_forest",  "birds"
+    # invernia_town =             "invernia_town", "town"
+    # ersin_forest_hole =         "ersin_cave",    None
 
 class MapTitle(enum.Enum):
     """
     Alle tmx kaarten op een rij, met de Titel hoe die in beeld komt erachter.
     De key's komen precies overeen met de .tmx namen.
     """
-    ersin_forest_waterfall =    "Ersin Forest"
-    ersin_forest_center =       "Ersin Forest"
-    ersin_forest_cave =         "Ersin Forest"
-    ersin_forest_pond =         "Ersin Forest"
-    ersin_forest_invernia =     "Ersin Forest"
-    ersin_forest_hole =         "Ersin Forest"
-    ersin_cave_room1 =          "Ersin Cave"
-    ersin_cave_room2 =          "Ersin Cave"
-    ersin_cave_room3 =          "Ersin Cave"
-    invernia_town =             "Invernia Town"
-    invernia_armor_shop =       "Invernia Town"
-    invernia_weapon_shop =      "Invernia Town"
-    invernia_item_shop =        "Invernia Town"
-    invernia_inn_1f =           "Invernia Town"
-    invernia_inn_2f =           "Invernia Town"
-    invernia_guild =            "Invernia Town"
-    invernia_school =           "Invernia Town"
-    invernia_house_big_1f =     "Invernia Town"
-    invernia_house_big_2f =     "Invernia Town"
-    invernia_house_left =       "Invernia Town"
-    invernia_house_right =      "Invernia Town"
+    braserie_ad_waal = "Braserie aan de Waal"
+    braserie_altena  = "Braserie Altena"
+    brug_od_waal     = "Brug over de Waal"
 
 
 class SFX(enum.Enum):
