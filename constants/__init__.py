@@ -240,10 +240,10 @@ class MapMusic(enum.Enum):
     Alle tmx kaarten op een rij, met de muziek erachter en ambient sound.
     De key's komen precies overeen met de .tmx namen. De values[0] en [1] komen overeen met de .ogg namen.
     """
-    braserie_ad_waal  = "ersin_forest",  "river"
+    braserie_ad_waal  = "ersin_forest",  "birds"
     braserie_altena   = "invernia_town", "fire"
-    brug_od_waal      = "ersin_forest",  "river"
-    kasteel_batenburg = "invernia_town", "river"
+    brug_od_waal      = "ersin_forest",  "birds"
+    kasteel_batenburg = "ersin_forest",  "birds"
     # ersin_forest_center =       "ersin_forest",  "birds"
     # invernia_town =             "invernia_town", "town"
     # ersin_forest_hole =         "ersin_cave",    None
