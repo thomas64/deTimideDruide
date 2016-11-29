@@ -12,6 +12,7 @@ from constants import GameState
 from constants import Keys
 from constants import SFX
 
+from screens.alchemist.display import Display as Alchemist
 from .herobox import HeroBox
 from .infobox import InfoBox
 from .invclickbox import InvClickBox
@@ -108,10 +109,15 @@ class Display(object):
         # self.spells_box = SpellsBox((SPELBOXX,      SPELBOXY), SPELBOXW, SPELBOXH)
 
     def _reset_vars(self):
+        # variabelen voor klikken van upgrade stat
         self.upgrade_click = None
         self.selected_stat = None
         self.xp_cost = 0
         self.confirm_box = None
+
+        # variabelen voor klikken van een skill voor bijv alchemist screen
+        self.skill_click = None
+        self.selected_skill = None
 
     def on_enter(self):
         """
@@ -190,6 +196,9 @@ class Display(object):
                 if self._handle_stat_box_click(event):
                     return
 
+                if self._handle_skill_box_click(event):
+                    return
+
                 # als de clickbox er is en er wordt buiten geklikt, laat hem dan verdwijnen.
                 if self.invclick_box and not self.invclick_box.rect.collidepoint(event.pos):
                     self.invclick_box = None
@@ -200,23 +209,24 @@ class Display(object):
                     return  # anders vangt hij ook nog andere clicks hieronder in deze methode af
 
                 # als er op een herobox wordt geklikt of het kruisje daarvan.
+                old_hc = self.hc
                 for hero_box in self.hero_boxes:
                     self.hc, leave_party = hero_box.mouse_click(event, self.hc)
                     if leave_party:
-                        text = ["Do you want me to leave your party?",
-                                "",
-                                "Yes, you may leave.",
-                                "No, I want you to stay."]
-                        self.leave_box = ConfirmBox(self.engine.gamestate, self.engine.audio, text, self.cur_hero.FAC)
-                        self.engine.gamestate.push(self.leave_box)
+                        self._leave_party()
+                        return
+                new_hc = self.hc
+                if new_hc != old_hc:
+                    self._init_boxes()
 
                 # als er in de inventory box wordt geklikt
                 # if self.inventory_box.rect.collidepoint(event.pos):
-                #     # krijg de positie en equipment_type terug
-                #     boxpos, equipment_type = self.inventory_box.mouse_click(event)
-                #     # als er geen clickbox is en wel een equipment_type, geef dan een clickbox weer
-                #     if not self.invclick_box and equipment_type:
-                #         self.invclick_box = InvClickBox(boxpos, equipment_type, self.party, self.inventory)
+                #   # krijg de positie en equipment_type terug
+                    # boxpos, equipment_type = self.inventory_box.mouse_click(event)
+                #   # als er geen clickbox is en wel een equipment_type, geef dan een clickbox weer
+                    # if not self.invclick_box and equipment_type:
+                    #     self.invclick_box = InvClickBox(boxpos, equipment_type, self.party, self.inventory)
+                    # return
 
                 for button in self.buttons:
                     button_press = button.single_click(event)
@@ -234,6 +244,7 @@ class Display(object):
                     self.spells_box.mouse_scroll(event)
                 if self.pouch_box.rect.collidepoint(event.pos):
                     self.pouch_box.mouse_scroll(event)
+                return
 
         elif event.type == pygame.KEYDOWN:
 
@@ -248,6 +259,8 @@ class Display(object):
                 self._previous()
             elif event.key == Keys.Next.value:
                 self._next()
+            elif event.key == Keys.Delete.value:
+                self._leave_party()
             # elif event.key == pygame.K_m:
             #     self.party[0].lev.qty += 1
 
@@ -336,12 +349,39 @@ class Display(object):
             return True
         return False
 
+    def _handle_skill_box_click(self, event):
+        """
+        ...
+        :param event:
+        :return:
+        """
+        if self.skills_box.rect.collidepoint(event.pos):
+            self.skill_click, self.selected_skill = self.skills_box.mouse_click(event)
+            if self.skill_click:
+                if self.selected_skill == self.cur_hero.alc:
+                    self.engine.audio.play_sound(SFX.menu_select)
+                    push_object = Alchemist(self.engine)
+                    self.engine.gamestate.push(push_object)
+            self._reset_vars()
+            return True
+        return False
+
+    def _leave_party(self):
+        text = ["Do you want me to leave your party?",
+                "",
+                "Yes, you may leave.",
+                "No, I want you to stay."]
+        self.leave_box = ConfirmBox(self.engine.gamestate, self.engine.audio, text, self.cur_hero.FAC)
+        self.engine.gamestate.push(self.leave_box)
+
     def _previous(self):
         self.hc -= 1
         if self.hc < 0:
             self.hc = len(self.party) - 1
+        self._init_boxes()
 
     def _next(self):
         self.hc += 1
         if self.hc > len(self.party) - 1:
             self.hc = 0
+        self._init_boxes()
