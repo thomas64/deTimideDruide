@@ -188,12 +188,12 @@ class Display(object):
 
             if event.button == Keys.Leftclick.value:
 
-                if self._handle_stat_box_click(event):   # als er op een statsbox item geklikt wordt
-                    return
-                if self._handle_skill_box_click(event):  # of skillbox
-                    return
-                if self._handle_pouch_box_click(event):  # of pouchbox
-                    return
+                # if self._handle_stat_box_click(event):   # als er op een statsbox item geklikt wordt
+                #     return
+                # if self._handle_skill_box_click(event):  # of skillbox
+                #     return
+                # if self._handle_pouch_box_click(event):  # of pouchbox
+                #     return
 
                 # als de clickbox er is en er wordt buiten geklikt, laat hem dan verdwijnen.
                 if self.invclick_box and not self.invclick_box.rect.collidepoint(event.pos):
@@ -236,8 +236,8 @@ class Display(object):
             elif event.button in (Keys.Scrollup.value, Keys.Scrolldown.value):
                 if self.invclick_box and self.invclick_box.rect.collidepoint(event.pos):
                     self.invclick_box.mouse_scroll(event)
-                if self.spells_box.rect.collidepoint(event.pos):
-                    self.spells_box.mouse_scroll(event)
+                # if self.spells_box.rect.collidepoint(event.pos):
+                #     self.spells_box.mouse_scroll(event)
                 if self.pouch_box.rect.collidepoint(event.pos):
                     self.pouch_box.mouse_scroll(event)
                 return
