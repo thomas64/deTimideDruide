@@ -21,6 +21,7 @@ class PeopleDatabase(enum.Enum):
 
     person200 = dict(name='troll01',     text=[["*Grunt*"]])
 
+    person300 = dict(name='soldier01',   text=[["  .  .  .  "]])
 
     # standard characters
     person1 = dict(name='boy01',         text=[["Hi mister."]])
