@@ -39,7 +39,7 @@ class SellBox(ListBox):
         self.column1x = COLUMN1X    # deze is voor de baseclass
         self.row_nr_with_rect = 6   # row[6]
         self.row_nr_with_obj = 5    # row[5]
-        self._update_rects_in_layer_rect_with_offset(self.row_nr_with_rect)
+        self._update_rects_in_layer_rect_with_offset()
 
     def _fill_table_data(self, equipment_type, party, inventory):
 
@@ -50,7 +50,7 @@ class SellBox(ListBox):
             for pouch_item_obj in inventory.get_all_pouch_items():
                 # party is hier shopdatabase
                 for pouch_item_dict in party.values():
-                    if pouch_item_obj.NAM == pouch_item_dict['nam']:
+                    if pouch_item_obj.NAM == pouch_item_dict.value['nam']:
                         pouch_item_spr = pygame.image.load(pouch_item_obj.SPR).convert_alpha()
                         pouch_item_nam = pouch_item_obj.NAM
                         pouch_item_val = str(round(pouch_item_obj.VAL / 2 + ((pouch_item_obj.VAL / 200) * self.sale)))

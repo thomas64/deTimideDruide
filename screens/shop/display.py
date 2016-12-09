@@ -19,7 +19,7 @@ from constants import EquipmentType
 from constants import WeaponType
 from database import PouchItemDatabase
 from database import ShopDatabase
-from inventoryitems import PouchItem
+import inventoryitems
 
 from .buybox import BuyBox
 from .infobox import InfoBox
@@ -116,6 +116,8 @@ class Display(object):
             BTNWIDTH, BTNHEIGHT, (self.background.get_width() + CLOSEX, CLOSEY), CLOSELBL, Keys.Exit.value,
             COLORKEY, FONTCOLOR)
 
+        self.gold_object = inventoryitems.factory_pouch_item(PouchItemDatabase.gold)
+
         self.info_label = ""
         self._reset_vars()
 
@@ -129,13 +131,13 @@ class Display(object):
                 # omdat alle wapens in wpn zitten moet de database opnieuw opgebouwd worden met alleen de juiste wapens
                 for weapon_itm in WeaponDatabase:
                     if weapon_itm.value['skl'] == shoptype:
-                        self.databases[shoptype.name][weapon_itm.name] = weapon_itm.value
+                        self.databases[shoptype.name][weapon_itm.name] = weapon_itm
 
             # pouchitems zijn een tuple, zie shopdatabase, equipmentitems zijn enum.
             elif type(shoptype) == tuple:
                 self.databases[shoptype[0].name] = collections.OrderedDict()
                 for pouch_itm in shoptype[1]:
-                    self.databases[shoptype[0].name][pouch_itm.name] = pouch_itm.value
+                    self.databases[shoptype[0].name][pouch_itm.name] = pouch_itm
 
                 # maak van de tuple in de lijst een enum, net zoals de rest uit lijst.
                 self.shoptype_list[index] = shoptype[0]
@@ -153,7 +155,7 @@ class Display(object):
                 enum_db = getattr(lib, db_select[shoptype.name])  # enum_db is bijv HelmetDatabase
                 for equipment_itm in enum_db:
                     if equipment_itm.value['typ'] == shoptype:
-                        self.databases[shoptype.name][equipment_itm.name] = equipment_itm.value
+                        self.databases[shoptype.name][equipment_itm.name] = equipment_itm
 
             # voeg selector objecten toe
             self.selectors.add(Selector(self._set_x(SELECTORPOSX) + index * SELECTORWIDTH,
@@ -202,9 +204,9 @@ class Display(object):
         if self.material_list:
             # maak eerst buy_db weer leeg
             buy_database = collections.OrderedDict()
-            for itm_key, itm_value in self.databases[self.shoptype.name].items():
-                if itm_value.get('mtr') in self.material_list:
-                    buy_database[itm_key] = itm_value
+            for itm_enum in self.databases[self.shoptype.name].values():
+                if itm_enum.value.get('mtr') in self.material_list:
+                    buy_database[itm_enum.name] = itm_enum
         self.buybox = BuyBox(self._set_x(BUYBOXPOSX), self._set_y(BUYBOXPOSY), int(width), int(height),
                              buy_database, self.sum_merchant)
 
@@ -232,9 +234,8 @@ class Display(object):
                 choice = self.confirm_box.cur_item
                 yes = self.confirm_box.TOPINDEX
                 if choice == yes:
-                    gold = PouchItem(**PouchItemDatabase.gold.value)
-                    if self.engine.data.pouch.remove(gold, self.value):     # deze if is eigenlijk overbodig maar
-                        # als het een pouchitem is moet het in de pouch
+                    if self.engine.data.pouch.remove(self.gold_object, self.value):  # deze if is eigenlijk overbodig
+                        # maar als het een pouchitem is moet het in de pouch
                         if self.selected_item.TYP == EquipmentType.itm:
                             self.engine.data.pouch.add(self.selected_item)
                         else:
@@ -257,8 +258,7 @@ class Display(object):
                         self.engine.data.pouch.remove(self.selected_item, quantity)
                     else:
                         self.engine.data.inventory.remove_i(self.selected_item, quantity)
-                    gold = PouchItem(**PouchItemDatabase.gold.value)
-                    self.engine.data.pouch.add(gold, self.value * quantity)
+                    self.engine.data.pouch.add(self.gold_object, self.value * quantity)
                     self.engine.audio.play_sound(SFX.coins)
                     self._init_sellbox()
                 else:
@@ -290,9 +290,11 @@ class Display(object):
             self.sellbox.cur_item = None
 
             if self.buybox.rect.collidepoint(event.pos):
-                nothing, self.info_label = self.buybox.mouse_hover(event)
+                selected_name, self.info_label = self.buybox.mouse_hover(event)
+                self.sellbox.duplicate_selection(selected_name)
             if self.sellbox.rect.collidepoint(event.pos):
-                nothing, self.info_label = self.sellbox.mouse_hover(event)
+                selected_name, self.info_label = self.sellbox.mouse_hover(event)
+                self.buybox.duplicate_selection(selected_name)
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
 
@@ -337,11 +339,9 @@ class Display(object):
         # cheat voor geld erbij ctrl+
         if key_input[pygame.K_LCTRL] or key_input[pygame.K_RCTRL]:
             if key_input[pygame.K_KP_PLUS]:
-                gold = PouchItem(**PouchItemDatabase.gold.value)
-                self.engine.data.pouch.add(gold, 1, False)
+                self.engine.data.pouch.add(self.gold_object, 1, False)
             elif key_input[pygame.K_KP_MINUS]:
-                gold = PouchItem(**PouchItemDatabase.gold.value)
-                self.engine.data.pouch.remove(gold, 1, False)
+                self.engine.data.pouch.remove(self.gold_object, 1, False)
 
     def update(self, dt):
         """
@@ -351,7 +351,7 @@ class Display(object):
         """
         for selector in self.selectors:
             selector.update(self.shoptype)
-        self.gold_amount = self.engine.data.pouch['gold'].qty
+        self.gold_amount = self.engine.data.pouch.get_quantity(self.gold_object)
 
     def render(self):
         """

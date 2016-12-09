@@ -8,7 +8,7 @@ import pygame
 from components import ListBox
 from constants import EquipmentType
 from inventoryitems import EquipmentItem
-from inventoryitems import PouchItem
+import inventoryitems
 
 COLUMN1X = 0
 COLUMN2X = 34
@@ -38,16 +38,16 @@ class BuyBox(ListBox):
         self.column1x = COLUMN1X    # deze is voor de baseclass
         self.row_nr_with_rect = 3   # row[3]
         self.row_nr_with_obj = 4    # row[4]
-        self._update_rects_in_layer_rect_with_offset(self.row_nr_with_rect)
+        self._update_rects_in_layer_rect_with_offset()
 
     def _fill_table_data(self, equipment_database):
 
         for equipment_item in equipment_database.values():
 
             # speciaal alleen voor pouchitems
-            if equipment_item['typ'] == EquipmentType.itm:
+            if equipment_item.value['typ'] == EquipmentType.itm:
 
-                pouch_item_obj = PouchItem(**equipment_item)
+                pouch_item_obj = inventoryitems.factory_pouch_item(equipment_item)
                 pouch_item_spr = pygame.image.load(pouch_item_obj.SPR).convert_alpha()
                 pouch_item_nam = pouch_item_obj.NAM
                 pouch_item_val = str(round(pouch_item_obj.VAL - ((pouch_item_obj.VAL / 100) * self.sale)))
@@ -57,8 +57,8 @@ class BuyBox(ListBox):
                 )
 
             else:
-                if equipment_item['shp']:
-                    equipment_item_obj = EquipmentItem(**equipment_item)
+                if equipment_item.value['shp']:
+                    equipment_item_obj = EquipmentItem(**equipment_item.value)
                     equipment_item_spr = pygame.image.load(equipment_item_obj.SPR).subsurface(
                         equipment_item_obj.COL, equipment_item_obj.ROW, self.subsurw, self.subsurh).convert_alpha()
                     equipment_item_nam = equipment_item_obj.NAM

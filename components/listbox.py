@@ -58,19 +58,41 @@ class ListBox(object):
 
         self.cur_item = None
 
-        self.background = None
-        self.table_data = []
-        self.table_view = []
         self.total_columns = []
         self.column1x = None
+        self.row_nr_with_rect = None
+        self.row_nr_with_obj = None
+        self.table_data = []
+        self.table_view = []
         self.layer = None
         self.lay_rect = None
         self.layer_height = None
-        self.row_nr_with_rect = None
-        self.row_nr_with_obj = None
+        self.background = None
+
+    def _setup_table_view(self):
+        """
+        Zet table_data om in een visuele weergave.
+        Drie mogelijkheden voor een weergave. icon, subicon en text.
+        subicon is voor een icon die subsurface nodig heeft.
+        """
+        normalfont = pygame.font.SysFont(self.font, self.fontsize)
+
+        for index, row in enumerate(self.table_data):
+            self.table_view.append(list())
+            for row_nr, columnx in enumerate(self.total_columns):
+                if columnx[0] == 'icon':
+                    self.table_view[index].append(pygame.image.load(row[row_nr]).convert_alpha())
+                elif columnx[0] == 'subicon':
+                    self.table_view[index].append(
+                        pygame.image.load(row[row_nr]).subsurface(
+                            row[self.row_nr_with_obj].COL, row[self.row_nr_with_obj].ROW, 32, 32).convert_alpha())
+                elif columnx[0] == 'text':
+                    self.table_view[index].append(normalfont.render(row[row_nr], True, self.fontcolor).convert_alpha())
 
     def _setup_scroll_layer(self):
-        # stel de scroll layer in
+        """
+        Stel de scroll layer in.
+        """
         self.layer_height = self.columnsy + len(self.table_view) * self.rowheight
         if self.layer_height < self.box_height:
             self.layer_height = self.box_height
@@ -83,7 +105,7 @@ class ListBox(object):
         self.background.fill(self.colorkey)
         self.background = self.background.convert()
 
-    def _update_rects_in_layer_rect_with_offset(self, row_nr):
+    def _update_rects_in_layer_rect_with_offset(self):
         """
         Voeg de rects toe in row[6] van table_data waarmee gecorrespondeert kan worden met de muis bijvoorbeeld.
         Deze rects zijn variabel omdat er gescrollt kan worden, daarom wordt lay_rect voor de offset gebruikt.
@@ -91,8 +113,9 @@ class ListBox(object):
         Na het scrollen wordt deze telkens weer geupdate.
         """
         for index, row in enumerate(self.table_data):
-            row[row_nr] = pygame.Rect(self.lay_rect.x + self.column1x, self.lay_rect.y + COLUMNSY + index * ROWHEIGHT,
-                                      self.box_width, ROWHEIGHT+1)
+            row[self.row_nr_with_rect] = pygame.Rect(
+                                        self.lay_rect.x + self.column1x, self.lay_rect.y + COLUMNSY + index * ROWHEIGHT,
+                                        self.box_width, ROWHEIGHT+1)
 
     def mouse_scroll(self, event):
         """
@@ -103,10 +126,16 @@ class ListBox(object):
             if self.lay_rect.y - self.rect.y < 0:
                 self.lay_rect.y += SCROLLSPEED
         elif event.button == Keys.Scrolldown.value:
-            if self.lay_rect.y - self.rect.y > self.rect.height - self.layer_height + 2:  # +2 is nodig tegen scroll-
-                self.lay_rect.y -= SCROLLSPEED                                            # ghosting bij hoogte 1/4
+            if self.lay_rect.y - self.rect.y > self.rect.height - self.layer_height:
+                self.lay_rect.y -= SCROLLSPEED
 
-        self._update_rects_in_layer_rect_with_offset(self.row_nr_with_rect)
+        # om na het scrollen eventueel weer netjes uit te lijnen
+        if self.lay_rect.bottom < self.rect.bottom:
+            self.lay_rect.bottom = self.rect.bottom - 1  # de - 1 is nodig omdat er een line border is om de box.
+        if self.lay_rect.top > self.rect.top:
+            self.lay_rect.top = self.rect.top
+
+        self._update_rects_in_layer_rect_with_offset()
 
     def mouse_hover(self, event):
         """
@@ -121,14 +150,36 @@ class ListBox(object):
                 return row[self.row_nr_with_obj].NAM, row[self.row_nr_with_obj].show_info()
         return None, None
 
+    def mouse_click(self, event):
+        """
+        :param event: pygame.MOUSEBUTTONDOWN uit school display.
+        """
+        for index, row in enumerate(self.table_data):
+            if row[self.row_nr_with_rect].collidepoint(event.pos):
+                self.cur_item = index
+                selected_object = row[self.row_nr_with_obj]
+                # selected_spell (=selected_object) heeft dus eventueel .qty = 0
+                return True, selected_object
+        return False, None
+
     def duplicate_selection(self, selected_object_name):
         """
         Deze roept de selectie aan. Hij doet dat op basis van de meegegeven naam uit de andere list.
+        Verplaatst de layer indien de selectie uit beeld gaat.
         :param selected_object_name: de naam van bijv de spell "Fireball"
         """
         for index, row in enumerate(self.table_data):
             if row[self.row_nr_with_obj].NAM == selected_object_name:
                 self.cur_item = index
+                selection = self.cur_item * ROWHEIGHT
+                area_above_box = self.rect.top - self.lay_rect.top
+                area_below_box = self.rect.bottom - self.lay_rect.bottom + self.layer_height - ROWHEIGHT
+                if selection > area_below_box:
+                    self.lay_rect.top = self.rect.top - (selection - self.box_height + ROWHEIGHT)
+                    self._update_rects_in_layer_rect_with_offset()
+                elif selection < area_above_box:
+                    self.lay_rect.top = self.rect.top - selection
+                    self._update_rects_in_layer_rect_with_offset()
                 break
 
     def render(self, screen):
@@ -157,7 +208,7 @@ class ListBox(object):
 
         for index, row in enumerate(self.table_view):
             for row_nr, columnx in enumerate(self.total_columns):
-                if columnx[0] == 'icon':
+                if columnx[0] in ('icon', 'subicon'):
                     self.layer.blit(
                         row[row_nr],
                         (columnx[1] + self.iconoffset, self.columnsy + self.iconoffset + index * self.rowheight))

@@ -122,10 +122,43 @@ class Alchemist(Skill):
     """
     def __init__(self, quantity):
         super().__init__(SkillType.alc.value, SkillType.alc.name, 12, quantity)
-        self.DESC = "Allows the character to manufacture various potions out of Herbs, Spices and Gemstones. " \
+        self.DESC = "Allows the character to manufacture various magical potions out of Herbs, Spices and Gemstones. " \
                     "A higher Alchemist rank means a wider variety of possible potions and a higher chance to " \
                     "successfully create a potion. " \
                     "Click on the Alchemist skill name in the party screen to open the potion manufacturing screen."
+        self.STA_COST = 3
+
+    def welcome_text(self, hero_name):
+        """..."""
+        return ("It is here where {} can manufacture".format(hero_name),
+                "various magical potions.",
+                "In the 'Create' box you see all the potions",
+                "that you are able to manufacture with your",
+                "current Alchemist rank of {}. The percentage states the".format(self.tot),
+                "chance of success with the creation of that specific potion.",
+                "More powerful potions have a lower chance of success.",
+                "A higher Alchemist rank will increase that chance.",
+                "The 'Pouch' box shows your current inventory of potions. The",
+                "number shows the quantity of that potion in your possession.",
+                "When the process of creating a potion fails, the components",
+                "(Herbs, Spices and Gemstones) and the potion are lost.",
+                "The creation of a potion will also use up some stamina.")
+
+    def get_percentage(self, potion_alc_lev):
+        """
+        De formule voor de chance of success te bepalen bij het maken van een potion.
+        :param potion_alc_lev: minimale alchemist level wat deze potion nodig heeft
+        :return: percentage
+        """
+        # met een gelijke chm rank als min potion rank, heb je steeds 40% kans op succes.
+        # dus je hebt steeds 60% te stijgen in de levels
+        percentage = round(40 + (self.tot - potion_alc_lev) * (60 / (10 - potion_alc_lev)))
+        if percentage == 100:
+            return 99
+        elif percentage > 100:
+            return 100
+        else:
+            return percentage
 
 
 class Diplomat(Skill):
