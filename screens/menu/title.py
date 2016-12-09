@@ -19,11 +19,11 @@ SUBFONTCOLOR = pygame.Color("gray36")
 SUBPOSX = 200
 SUBPOSY = 160
 
-VERSIONTEXT = "Speciale (Uitgeklede) Noppe Event Editie pyRPG v1.03"
+VERSIONTEXT = "Special Edition pyRPG v1.03"
 VERSIONFONT = 'verdana'
 VERSIONFONTSIZE = 12
 VERSIONFONTCOLOR = pygame.Color("white")
-VERSIONPOSX = -350
+VERSIONPOSX = -200
 VERSIONPOSY = -20
 
 

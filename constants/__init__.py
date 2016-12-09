@@ -245,7 +245,9 @@ class MapMusic(enum.Enum):
     brug_od_waal      = "ersin_forest",      "birds"
     kasteel_batenburg = "kasteel_batenburg", "birds"
     schuur_batenburg  = "schuur_batenburg",  None
-    huis_batenburg    = "huis_batenburg",    None
+    huis_batenburg    = "huis_batenburg",    "fire"
+    kerker_batenburg  = "schuur_batenburg",  None
+    grensovergang     = "ersin_forest",      "birds"
     # invernia_town     = "invernia_town",     "town"
 
 
@@ -260,6 +262,8 @@ class MapTitle(enum.Enum):
     kasteel_batenburg = "Kasteel Batenburg"
     schuur_batenburg  = "Kasteel Batenburg"
     huis_batenburg    = "Kasteel Batenburg"
+    kerker_batenburg  = "Kasteel Batenburg"
+    grensovergang     = "Grensovergang Duitsland"
 
 
 class SFX(enum.Enum):
