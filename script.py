@@ -45,4 +45,4 @@ class Script:
 
         data.map_name = 'braserie_ad_waal'
         data.map_pos = 'start_game'     # dit is de naam van de startpositie object in de tmx map
-        data.map_dir = Direction.East
+        data.map_dir = Direction.South
