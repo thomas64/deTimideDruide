@@ -7,6 +7,7 @@ import pygame
 
 from constants import GameState
 from constants import Keys
+from constants import SFX
 
 from .screencapture import ScreenCapture
 
@@ -31,11 +32,16 @@ class MessageBox(object):
     """
     Geeft een bericht weer op het scherm.
     """
-    def __init__(self, gamestate, raw_text, face_image=None, spr_image=None, scr_capt=None):
+    def __init__(self, gamestate, audio, raw_text, face_image=None, spr_image=None, scr_capt=None, sound=SFX.message,
+                 last=False):
         """
         :param spr_image: list van loaded images
         """
         self.gamestate = gamestate
+        self.audio = audio
+        self.audio_first_time = False
+        self.sound = sound
+        self.last = last
         self.screen = pygame.display.get_surface()
         self.name = GameState.MessageBox
 
@@ -89,12 +95,17 @@ class MessageBox(object):
         """
         if event.type == pygame.KEYDOWN:
             if event.key == Keys.Exit.value:
-                self.gamestate.pop()
+                self._exit()
             elif event.key in Keys.Select.value:
-                self.gamestate.pop()
+                self._exit()
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == Keys.Leftclick.value:
-                self.gamestate.pop()
+                self._exit()
+
+    def _exit(self):
+        if self.last:
+            self.audio.play_sound(SFX.done)
+        self.gamestate.pop()
 
     def render(self):
         """
@@ -134,4 +145,10 @@ class MessageBox(object):
         pass
 
     def update(self, dt):
-        pass
+        """
+        Laat een evt geluid horen, eenmalig.
+        """
+        if self.sound:
+            if self.audio_first_time is False:
+                self.audio_first_time = True
+                self.audio.play_sound(self.sound)

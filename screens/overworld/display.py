@@ -6,6 +6,7 @@ class: Display
 import pygame
 
 from components import Button
+from components import Transition
 from constants import GameState
 from constants import Keys
 from constants import SFX
@@ -170,10 +171,11 @@ class Display(object):
 
     def _show_pause_menu(self):
         self.engine.audio.play_sound(SFX.menu_select)
-
         push_object = screens.menu.create_menu(GameState.PauseMenu, self.engine)
         self.engine.gamestate.push(push_object)
 
     def _show_party_screen(self):
+        self.engine.audio.play_sound(SFX.scroll)
         push_object = screens.party.Display(self.engine)
         self.engine.gamestate.push(push_object)
+        self.engine.gamestate.push(Transition(self.engine.gamestate))

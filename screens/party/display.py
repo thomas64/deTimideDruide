@@ -8,6 +8,7 @@ import pygame
 from components import Button
 from components import ConfirmBox
 from components import MessageBox
+from components import Transition
 from constants import GameState
 from constants import Keys
 from constants import SFX
@@ -127,6 +128,7 @@ class Display(object):
         if self.leave_box:
             choice = self.leave_box.cur_item
             yes = self.leave_box.TOPINDEX
+            self.engine.audio.play_sound(SFX.menu_select)
             if choice == yes:
                 self.engine.data.party.remove(self.cur_hero)
                 # update daarna het party scherm
@@ -142,7 +144,7 @@ class Display(object):
             choice = self.confirm_box.cur_item
             yes = self.confirm_box.TOPINDEX
             if choice == yes:
-                self.engine.audio.play_sound(SFX.menu_select)
+                self.engine.audio.play_sound(SFX.upgrade)
                 self.cur_hero.exp.rem -= self.xp_cost
                 self.selected_stat.upgrade()
                 self._init_boxes()
@@ -200,7 +202,7 @@ class Display(object):
                     self.invclick_box = None
 
                 elif self.invclick_box and self.invclick_box.rect.collidepoint(event.pos):
-                    if self.invclick_box.mouse_click(event, self.engine.gamestate, self.cur_hero):
+                    if self.invclick_box.mouse_click(event, self.engine.gamestate, self.engine.audio, self.cur_hero):
                         self.invclick_box = None
                     return  # anders vangt hij ook nog andere clicks hieronder in deze methode af
 
@@ -213,21 +215,23 @@ class Display(object):
                         return
                 new_hc = self.hc
                 if new_hc != old_hc:
+                    self.engine.audio.play_sound(SFX.menu_switch)
                     self._init_boxes()
 
                 # als er in de inventory box wordt geklikt
                 # if self.inventory_box.rect.collidepoint(event.pos):
-                #   # krijg de positie en equipment_type terug
+                    # krijg de positie en equipment_type terug
                     # boxpos, equipment_type = self.inventory_box.mouse_click(event)
-                #   # als er geen clickbox is en wel een equipment_type, geef dan een clickbox weer
+                    # als er geen clickbox is en wel een equipment_type, geef dan een clickbox weer
                     # if not self.invclick_box and equipment_type:
+                    #     self.engine.audio.play_sound(SFX.menu_switch)
                     #     self.invclick_box = InvClickBox(boxpos, equipment_type, self.party, self.inventory)
                     # return
 
                 for button in self.buttons:
                     button_press = button.single_click(event)
                     if button_press == Keys.Exit.value:
-                        self.engine.gamestate.pop()
+                        self._close()
                     elif button_press == Keys.Prev.value:
                         self._previous()
                     elif button_press == Keys.Next.value:
@@ -250,7 +254,7 @@ class Display(object):
             self.info_label = ""
 
             if event.key in (Keys.Exit.value, Keys.Inv.value):
-                self.engine.gamestate.pop()
+                self._close()
             elif event.key == Keys.Prev.value:
                 self._previous()
             elif event.key == Keys.Next.value:
@@ -329,18 +333,18 @@ class Display(object):
                 self.xp_cost = self.selected_stat.xp_cost
                 success, text = self.selected_stat.is_able_to_upgrade(self.cur_hero.exp.rem)
                 if success:
-                    self.engine.audio.play_sound(SFX.menu_select)
-                    text = ["You have {} XP Remaining.".format(self.cur_hero.exp.rem),
+                    text = ["{}: {}  --> {}.".format(self.selected_stat.NAM,
+                                                     self.selected_stat.qty, self.selected_stat.qty + 1),
+                            "You have {} XP Remaining.".format(self.cur_hero.exp.rem),
                             "Are you sure you wish to train",
                             "the stat {} for {} XP?".format(self.selected_stat.NAM, self.xp_cost),
                             "",
                             "Yes",
                             "No"]
-                    self.confirm_box = ConfirmBox(self.engine.gamestate, self.engine.audio, text)
+                    self.confirm_box = ConfirmBox(self.engine.gamestate, self.engine.audio, text, sound=SFX.message)
                     self.engine.gamestate.push(self.confirm_box)
                 else:
-                    self.engine.audio.play_sound(SFX.menu_cancel)
-                    push_object = MessageBox(self.engine.gamestate, text)
+                    push_object = MessageBox(self.engine.gamestate, self.engine.audio, text, sound=SFX.menu_cancel)
                     self.engine.gamestate.push(push_object)
                     self._reset_vars()
             return True
@@ -356,9 +360,10 @@ class Display(object):
             skill_click, selected_skill = self.skills_box.mouse_click(event)
             if skill_click:
                 if selected_skill == self.cur_hero.alc:
-                    self.engine.audio.play_sound(SFX.menu_select)
+                    self.engine.audio.play_sound(SFX.scroll)
                     push_object = Alchemist(self.engine, self.cur_hero)
                     self.engine.gamestate.push(push_object)
+                    self.engine.gamestate.push(Transition(self.engine.gamestate))
             return True
         return False
 
@@ -374,12 +379,10 @@ class Display(object):
                 # todo, maken dat in battle je niet op deze manier potions kan drinken.
                 able, message = selected_item.use(self.cur_hero)
                 if able and message:
-                    self.engine.audio.play_sound(SFX.menu_select)
-                    push_object = MessageBox(self.engine.gamestate, message)
+                    push_object = MessageBox(self.engine.gamestate, self.engine.audio, message, sound=SFX.message)
                     self.engine.gamestate.push(push_object)
                 elif not able and message:
-                    self.engine.audio.play_sound(SFX.menu_cancel)
-                    push_object = MessageBox(self.engine.gamestate, message)
+                    push_object = MessageBox(self.engine.gamestate, self.engine.audio, message, sound=SFX.menu_cancel)
                     self.engine.gamestate.push(push_object)
             return True
         return False
@@ -390,17 +393,25 @@ class Display(object):
                     "",
                     "Yes, you may leave.",
                     "No, I want you to stay."]
-            self.leave_box = ConfirmBox(self.engine.gamestate, self.engine.audio, text, self.cur_hero.FAC)
+            self.leave_box = ConfirmBox(self.engine.gamestate, self.engine.audio,
+                                        text, self.cur_hero.FAC, sound=SFX.message)
             self.engine.gamestate.push(self.leave_box)
 
     def _previous(self):
+        self.engine.audio.play_sound(SFX.menu_switch)
         self.hc -= 1
         if self.hc < 0:
             self.hc = len(self.party) - 1
         self._init_boxes()
 
     def _next(self):
+        self.engine.audio.play_sound(SFX.menu_switch)
         self.hc += 1
         if self.hc > len(self.party) - 1:
             self.hc = 0
         self._init_boxes()
+
+    def _close(self):
+        self.engine.audio.play_sound(SFX.scroll)
+        self.engine.gamestate.pop()
+        self.engine.gamestate.push(Transition(self.engine.gamestate))

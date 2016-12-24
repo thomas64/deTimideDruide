@@ -117,6 +117,7 @@ class Audio(object):
         if currentstate == GameState.OptionsMenu or \
            self.engine.gamestate.prev_state == GameState.OptionsMenu or \
            self.engine.gamestate.prev_state == GameState.MessageBox or \
+           self.engine.gamestate.prev_state == GameState.ConfirmBox or \
            self.engine.gamestate.prev_state == GameState.Shop or \
            self.engine.gamestate.prev_state == GameState.FadeBlack:
             return
@@ -154,6 +155,7 @@ class Audio(object):
         if currentstate == GameState.OptionsMenu or \
            self.engine.gamestate.prev_state == GameState.OptionsMenu or \
            self.engine.gamestate.prev_state == GameState.MessageBox or \
+           self.engine.gamestate.prev_state == GameState.ConfirmBox or \
            self.engine.gamestate.prev_state == GameState.Shop or \
            self.engine.gamestate.prev_state == GameState.FadeBlack:
             return
@@ -249,5 +251,5 @@ class Audio(object):
         Speel de juiste voetstap geluiden af op de juiste ondergrond.
         """
         # todo, deze magic numbers moeten nog weg
-        sfx_num = str(random.randint(1, 2))
+        sfx_num = str(random.randint(1, 4))
         self.play_sound(self.footstep+sfx_num)
