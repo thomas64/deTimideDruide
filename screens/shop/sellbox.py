@@ -6,6 +6,7 @@ class: SellBox
 import pygame
 
 from components import ListBox
+from constants import ColumnType
 from constants import EquipmentType
 
 
@@ -15,7 +16,11 @@ COLUMN3X = 68
 COLUMN4X = 102
 COLUMN5X = 350
 
-TOTALCOLUMNS = (('icon', COLUMN1X), ('icon', COLUMN2X), ('text', COLUMN3X), ('text', COLUMN4X), ('text', COLUMN5X))
+TOTALCOLUMNS = ((ColumnType.f_icon, COLUMN1X, "", ""),
+                (ColumnType.f_icon, COLUMN2X, "", ""),
+                (ColumnType.text,   COLUMN3X, "Item", "Qty:"),
+                (ColumnType.text,   COLUMN4X, "Item", "Name:"),
+                (ColumnType.text,   COLUMN5X, "Gold", "Value:"))
 
 
 class SellBox(ListBox):
@@ -27,6 +32,11 @@ class SellBox(ListBox):
 
         self.sale = sum_merchant
 
+        self.total_columns = TOTALCOLUMNS
+        self.column1x = COLUMN1X    # deze is voor de baseclass
+        self.row_nr_with_rect = 6   # row[6]
+        self.row_nr_with_obj = 5    # row[5]
+
         self.table_data = []
         self._fill_table_data(equipment_type, party, inventory)
         self.table_view = []
@@ -34,11 +44,6 @@ class SellBox(ListBox):
         self._setup_scroll_layer()
 
         self.cur_item = None
-
-        self.total_columns = TOTALCOLUMNS
-        self.column1x = COLUMN1X    # deze is voor de baseclass
-        self.row_nr_with_rect = 6   # row[6]
-        self.row_nr_with_obj = 5    # row[5]
         self._update_rects_in_layer_rect_with_offset()
 
     def _fill_table_data(self, equipment_type, party, inventory):
@@ -49,8 +54,12 @@ class SellBox(ListBox):
             # inventory is hier pouch
             for pouch_item_obj in inventory.get_all_pouch_items():
                 # party is hier shopdatabase
-                for pouch_item_dict in party.values():
-                    if pouch_item_obj.NAM == pouch_item_dict.value['nam']:
+                # * deze twee regels en break onderaan uitgezet, zodat de itm shop alles laat zien om te sellen.
+                # * niet alleen wat hij ook verkoopt.
+                # for pouch_item_dict in party.values():
+                #     if pouch_item_obj.NAM == pouch_item_dict.value['nam']:
+                # * deze if regel is bij het uitzetten van boven 2 regels toegevoegd, om niet alles te kunnen sellen.
+                if pouch_item_obj.is_sellable():
                         pouch_item_spr = pygame.image.load(pouch_item_obj.SPR).convert_alpha()
                         pouch_item_nam = pouch_item_obj.NAM
                         pouch_item_val = str(round(pouch_item_obj.VAL / 2 + ((pouch_item_obj.VAL / 200) * self.sale)))
@@ -60,7 +69,7 @@ class SellBox(ListBox):
                              # row[5],      row[6], [7]
                              pouch_item_obj, None,  ""]
                         )
-                        break
+                        # break
 
         else:
             # hieronder volgt bijna een exacte kopie van invclickbox
@@ -112,20 +121,6 @@ class SellBox(ListBox):
                         # row[5],   row[6], [7]
                      equipment_item, None, ""]
                 )
-
-    def _setup_table_view(self):
-        """
-        Zet table_data om in een visuele weergave.
-        """
-        normalfont = pygame.font.SysFont(self.font, self.fontsize)
-
-        for index, row in enumerate(self.table_data):
-            self.table_view.append(list())
-            self.table_view[index].append(row[0])
-            self.table_view[index].append(row[1])
-            self.table_view[index].append(normalfont.render(row[2], True, self.fontcolor).convert_alpha())
-            self.table_view[index].append(normalfont.render(row[3], True, self.fontcolor).convert_alpha())
-            self.table_view[index].append(normalfont.render(row[4], True, self.fontcolor).convert_alpha())
 
     def mouse_click(self, event):
         """

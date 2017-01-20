@@ -4,6 +4,9 @@ class: Skill
 class: etc
 """
 
+import random
+
+from constants import HealingType
 from constants import SkillType
 
 
@@ -117,9 +120,7 @@ class Skill(object):
 
 
 class Alchemist(Skill):
-    """
-    ...
-    """
+    """..."""
     def __init__(self, quantity):
         super().__init__(SkillType.alc.value, SkillType.alc.name, 12, quantity)
         self.DESC = "Allows the character to manufacture various magical potions out of Herbs, Spices and Gemstones. " \
@@ -172,14 +173,38 @@ class Diplomat(Skill):
 
 
 class Healer(Skill):
-    """
-    ...
-    """
+    """..."""
     def __init__(self, quantity):
         super().__init__(SkillType.hlr.value, SkillType.hlr.name, 8, quantity)
-        self.DESC = "Allows the character to heal another character in combat. " \
-                    "Character may use herbs to double the amount of damage restored. " \
-                    "A higher Healer rank means more restoration of damage."
+        self.DESC = "Allows the character to heal another character. " \
+                    "Character may use herbs to double the amount of health restored. " \
+                    "A higher Healer rank means more restoration of health."
+        self.STA_COST = 3
+        self.HRB_COST = 3
+
+    def welcome_text(self, hero_name):
+        """..."""
+        return ("It is here where {} can heal".format(hero_name),
+                "other party members. The current",
+                "Healer rank of {} is {}. A higher".format(hero_name, self.tot),
+                "Healer rank means more restoration of health.",
+                "In the 'Party' box you see everyone except the",
+                "healer itself. Click on someone to heal him/ her.",
+                "Healing someone will use up some Stamina.",
+                "Below here you can select 2 types of healing",
+                "practices. The 'Heal with Herbs' will also use up",
+                "some Herbs, but it will double the healing effect.")
+
+    def get_healpoints(self, healing_type):
+        """
+        Op basis van een healing_type, geef healpoints terug.
+        """
+        if healing_type == HealingType.hands:
+            return self.tot * 2 + 5
+        elif healing_type == HealingType.herbs:
+            return (self.tot * 2 + 5) * 2
+        else:
+            raise AttributeError
 
 
 class Loremaster(Skill):
@@ -193,14 +218,59 @@ class Loremaster(Skill):
 
 
 class Mechanic(Skill):
-    """
-    ...
-    """
+    """..."""
     def __init__(self, quantity):
         super().__init__(SkillType.mec.value, SkillType.mec.name, 4, quantity)
-        self.DESC = "Allows the character to upgrade inventory with metals. The process also costs gold. " \
-                    "A higher Mechanic rank means a higher chance to successfully upgrade an item. " \
-                    "The item is destroyed when upgrade is unsuccessful."
+        self.DESC = "Allows the character to disarm traps on chests. Also allows the character to make equipment " \
+                    "items from Cloth, Leather, Wood and Metals. A higher Mechanic rank means a better quality " \
+                    "of the custom made equipment items. " \
+                    "Click on the Mechanic skill name in the party screen to open the equipment item creation screen."
+        self.STA_COST = 3
+
+    def welcome_text(self, hero_name):
+        """..."""
+        return ("It is here where {} can create".format(hero_name),
+                "custom equipment items.",
+                "Below here you can select one the",
+                "possible types of equipment. In the",
+                "'Create' box you see all the equipment items that",
+                "you are able to create.",
+                "Besides the needed materials, creating an",
+                "equipment item will also use up some stamina.",
+                "The current Mechanic rank of {} is {}. A higher".format(hero_name, self.tot),
+                "Mechanic rank will result in better property",
+                "values of the newly created equipment item.",
+                "The 'Inventory' box shows your current inventory",
+                "of pouch- and equipment items.")
+
+    def get_eqp_itm_attr_value(self, min_value, max_value):
+        """
+        Geef een waarde terug op basis van de huidige skill rank in de meegegeven reeks.
+        Op basis van random gauss.
+        """
+        # bereken de range. abs omdat in het geval van bijv min_str de waarden omgedraaid kunnen zijn.
+        num_range = abs(max_value - min_value)
+        # hoe groot is 1 stapje over de range als er in totaal 10 stapjes zijn.
+        step = num_range / 9
+        # zet de mec skill om naar de juiste positie in de range
+        if max_value < min_value:
+            target = min_value - (self.tot * step) + step
+        else:
+            target = min_value + (self.tot * step) - step
+        # pak een willekeurige plek op de range op basis van de target met normaalverdeling.
+        result = random.gauss(target, step * 2)
+
+        # even de waarden omdraaien voor bijv min_str. want daar is laag 'goed' en hoog 'slecht'
+        if max_value < min_value:
+            min_value, max_value = max_value, min_value
+
+        # als hij te hoog of te laag is, zet hem dan gelijk aan de max of min.
+        if result > max_value:
+            result = max_value
+        elif result < min_value:
+            result = min_value
+
+        return round(result)
 
 
 class Merchant(Skill):

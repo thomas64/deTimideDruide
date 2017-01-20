@@ -29,6 +29,25 @@ class PouchItem(object):
         """
         return None, None
 
+    def is_sellable(self):
+        """
+        Als een PouchItem geen .VAL waarde heeft is hij niet verkoopbaar in winkels.
+        :return: True of False
+        """
+        if hasattr(self, 'VAL'):
+            return True
+        return False
+
+    def is_resource(self):
+        """
+        Als de value waarde 1 is, dan is het een resource.
+        :return:
+        """
+        if hasattr(self, 'VAL'):
+            if self.VAL == 1:
+                return True
+        return False
+
 
 class HealingPotion(PouchItem):
     """

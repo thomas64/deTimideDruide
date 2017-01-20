@@ -4,12 +4,15 @@ class: PouchBox
 """
 
 from components import ListBox
+from constants import ColumnType
 
 COLUMN1X = 0
 COLUMN2X = 34
-COLUMN3X = 200
+COLUMN3X = 68
 
-TOTALCOLUMNS = (('icon', COLUMN1X), ('text', COLUMN2X), ('text', COLUMN3X))
+TOTALCOLUMNS = ((ColumnType.icon, COLUMN1X, "", ""),
+                (ColumnType.text, COLUMN2X, "Item", "Qty:"),
+                (ColumnType.text, COLUMN3X, "Item", "Name:"))
 
 
 class PouchBox(ListBox):
@@ -36,8 +39,8 @@ class PouchBox(ListBox):
     def _fill_table_data(self, pouch):
 
         for pouch_item_obj in pouch.get_all_pouch_items():
-            if hasattr(pouch_item_obj, 'VAL'):  # todo, hij checkt nu op 'VAL' of hij wat laat zien in deze lijst. okee?
+            if pouch_item_obj.is_sellable():
                 self.table_data.append(
-                    # row[0],                   row[1],           row[2],               row[3],      row[4]
-                    [pouch_item_obj.SPR, pouch_item_obj.NAM, str(pouch_item_obj.qty), pouch_item_obj, None]
+                    # row[0],                   row[1],              row[2],             row[3],      row[4]
+                    [pouch_item_obj.SPR, str(pouch_item_obj.qty), pouch_item_obj.NAM, pouch_item_obj, None]
                 )

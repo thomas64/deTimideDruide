@@ -3,6 +3,7 @@
 class: GameState
 class: Direction
 class: PersonState
+class: HealingType
 class: EquipmentType
 class: WeaponType
 class: ItemMaterial
@@ -17,6 +18,7 @@ class: MapMusic
 class: MapTitle
 class: SFX
 class: Keys
+class: ColumnType
 """
 
 import enum
@@ -61,6 +63,14 @@ class PersonState(enum.Enum):
     """
     Resting = 1
     Moving = 2
+
+
+class HealingType(enum.Enum):
+    """
+    Alle manieren voor een Healer Skill.
+    """
+    hands = "Lay on Hands"
+    herbs = "Heal with Herbs"
 
 
 class EquipmentType(enum.Enum):
@@ -331,3 +341,13 @@ class Keys(enum.Enum):
     Leftclick = 1
     Scrollup = 4
     Scrolldown = 5
+
+
+class ColumnType(enum.Enum):
+    """
+    Mogelijke kolom typen voor ListBoxen
+    """
+    icon = 1
+    s_icon = 2  # sub icon
+    f_icon = 3  # formatted icon
+    text = 4

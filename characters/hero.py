@@ -75,13 +75,13 @@ class Hero(object):
 
         # hier kan zeker None ingevuld worden omdat gamestate hierbij zeker weten niet zal pushen een messagebox.
         if kwargs[EquipmentType.wpn.name]:
-            self.set_equipment_item(None, None, inventoryitems.EquipmentItem(**kwargs[EquipmentType.wpn.name].value))
+            self.set_equipment_item(None, None, inventoryitems.factory_equipment_item(kwargs[EquipmentType.wpn.name]))
         # kwargs['sld'] moet bestaan om de if te mogen doen.
         # maar de uitkomst moet niet None zijn om aan de voorwaarde te voldoen.
         if kwargs[EquipmentType.sld.name]:
-            self.set_equipment_item(None, None, inventoryitems.EquipmentItem(**kwargs[EquipmentType.sld.name].value))
+            self.set_equipment_item(None, None, inventoryitems.factory_equipment_item(kwargs[EquipmentType.sld.name]))
         if kwargs[EquipmentType.arm.name]:
-            self.set_equipment_item(None, None, inventoryitems.EquipmentItem(**kwargs[EquipmentType.arm.name].value))
+            self.set_equipment_item(None, None, inventoryitems.factory_equipment_item(kwargs[EquipmentType.arm.name]))
 
         self.scl = containers.School(kwargs['scl'])
         if kwargs.get('spl'):
@@ -278,7 +278,7 @@ class Hero(object):
         :return: is het equippen gelukt?
         """
         # ga door de waarden van alle attributen van hero heen.
-        for key_eqp_item, value_eqp_item in self.__dict__.items():
+        for key_eqp_item, value_eqp_item in vars(self).items():
             # als de attribute van type eqp_item is, (en dat weet hij omdat new_eqp_item ook van type eqp_item is)
             if isinstance(value_eqp_item, type(new_equipment_item)):
                 # als de type van het equipment item overeenkomt met het type van de nieuwe equipment item
@@ -435,3 +435,10 @@ class Hero(object):
         Zet alleen de .sta.cur waarde om naar de .qty waarde.
         """
         self.sta.cur = self.sta.qty
+
+    def show_info(self):
+        """
+        show_info is polymorph met EquipmentItem()
+        :return:
+        """
+        return self.NAM

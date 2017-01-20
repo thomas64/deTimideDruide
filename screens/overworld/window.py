@@ -31,12 +31,11 @@ from database import SignDatabase
 
 from database import PouchItemDatabase
 
-from inventoryitems import EquipmentItem
 import inventoryitems
 
-import screens.school
-import screens.shop
-import screens.trainer
+from screens import School
+from screens import Shop
+from screens import Trainer
 
 
 BACKGROUNDCOLOR = pygame.Color("gray12")
@@ -481,9 +480,9 @@ class Window(object):
                     if spr.person_id == shop_id:
                         spr.turn(self.party_sprites[0].rect)
 
-            push_object = screens.shop.Display(self.engine, shop_data['content'],
-                                               shop_data.get('material'),  # material is geen garantie
-                                               shop_data['face'])
+            self.engine.audio.play_sound(SFX.scroll)
+            # material is geen garantie, daarom heeft die .get()
+            push_object = Shop(self.engine, shop_data['content'], shop_data.get('material'), shop_data['face'])
             self.engine.gamestate.push(push_object)
             self.engine.gamestate.push(Transition(self.engine.gamestate))
 
@@ -498,7 +497,8 @@ class Window(object):
 
             school_sprite.turn(self.party_sprites[0].rect)
 
-            push_object = screens.school.Display(self.engine, school_data['content'], school_data['face'])
+            self.engine.audio.play_sound(SFX.scroll)
+            push_object = School(self.engine, school_data['content'], school_data['face'])
             self.engine.gamestate.push(push_object)
             self.engine.gamestate.push(Transition(self.engine.gamestate))
 
@@ -516,7 +516,8 @@ class Window(object):
                     if spr.person_id == trainer_id:
                         spr.turn(self.party_sprites[0].rect)
 
-            push_object = screens.trainer.Display(self.engine, trainer_data['content'], trainer_data['face'])
+            self.engine.audio.play_sound(SFX.scroll)
+            push_object = Trainer(self.engine, trainer_data['content'], trainer_data['face'])
             self.engine.gamestate.push(push_object)
             self.engine.gamestate.push(Transition(self.engine.gamestate))
 
@@ -684,7 +685,7 @@ class Window(object):
         """
         for key, value in content_data.items():
             if key.startswith('eqp'):
-                equipment_item = EquipmentItem(**value['nam'].value)
+                equipment_item = inventoryitems.factory_equipment_item(value['nam'])
                 equipment_item_spr = pygame.image.load(equipment_item.SPR).subsurface(
                     equipment_item.COL, equipment_item.ROW, ICONSIZE, ICONSIZE).convert_alpha()
                 self.engine.data.inventory.add_i(equipment_item, quantity=value['qty'])

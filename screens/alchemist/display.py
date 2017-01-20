@@ -5,231 +5,98 @@ class: Display
 
 import random
 
-import pygame
-
-from components import Button
 from components import MessageBox
-from components import Transition
+from components import Parchment
+
 from constants import GameState
-from constants import Keys
 from constants import SFX
+
 from database import PouchItemDatabase
+
 import inventoryitems
 
-from screens.shop.infobox import InfoBox
 from .createbox import CreateBox
 from .pouchbox import PouchBox
 
 
-BACKGROUNDCOLOR = pygame.Color("black")
-BACKGROUNDSPRITE = 'resources/sprites/parchment.png'
-COLORKEY = pygame.Color("white")
-FONTCOLOR = pygame.Color("black")
-FONT = 'colonna'
-LARGEFONTSIZE = 100
-NORMALFONTSIZE = 50
-MIDDLEFONTSIZE = 40
-SMALLFONTSIZE = 20
-
-CREATETITLE = "Create"
-POUCHTITLE = "Pouch"
-TITLEPOSX = 1/16
-TITLEPOSY = 1/32
-FACEPOSX = 1/16
-FACEPOSY = 3/16
-EXTRAFACESIZEX = 20
-EXTRAFACESIZEY = 0
-LINESNEXTTOFACE = 4
-SMALLLINEHEIGHT = 27
-
-STATITLE = "Stamina {}: "
-STATITLEPOSX = 1/16
-STATITLEPOSY = 75/100
-
-CREATEBOXWIDTH = 3/16
-CREATEBOXHEIGHT = 73/100
-CREATEBOXPOSX = 47/100
-CREATEBOXPOSY = 6/32
-
-POUCHBOXWIDTH = 3/16     # van het scherm
-POUCHBOXHEIGHT = 73/100
-POUCHBOXPOSX = 72/100     # x op 72/100 van het scherm
-POUCHBOXPOSY = 6/32
-
-EXTRAHEIGHT = 0         # zodat de laatste item er voor helft op komt
-
-INFOBOXWIDTH = 25/100
-INFOBOXHEIGHT = 11/100
-INFOBOXPOSX = 1/16
-INFOBOXPOSY = 81/100
-
-BTNWIDTH = 70
-BTNHEIGHT = 40
-CLOSELBL = "Close"
-CLOSEX, CLOSEY = -100, 40    # negatieve x omdat de positie van rechts bepaald wordt.
+SOURCETITLE1 = "Stamina {}: {}"
 
 
-class Display(object):
+class Display(Parchment):
     """
     ...
     """
     def __init__(self, engine, hero):
-        self.engine = engine
+        super().__init__(engine, "Create", "Pouch")
 
-        self.screen = pygame.display.get_surface()
         self.name = GameState.Shop
-        self.background = pygame.image.load(BACKGROUNDSPRITE).convert_alpha()
-        self.background = pygame.transform.scale(self.background, self.screen.get_size())
 
-        self.largefont = pygame.font.SysFont(FONT, LARGEFONTSIZE)
-        self.normalfont = pygame.font.SysFont(FONT, NORMALFONTSIZE)
-        self.middlefont = pygame.font.SysFont(FONT, MIDDLEFONTSIZE)
-        self.smallfont = pygame.font.SysFont(FONT, SMALLFONTSIZE)
-        self.create_title = self.largefont.render(CREATETITLE, True, FONTCOLOR).convert_alpha()
-        self.pouch_title = self.largefont.render(POUCHTITLE, True, FONTCOLOR).convert_alpha()
+        self.main_title_pos_x = 1 / 16
+        self.main_title_pos_y = 1 / 32
+        self.source_title1 = SOURCETITLE1
+        self.source_title1_pos_x = 1 / 16
+        self.source_title1_pos_y = 75 / 100
+        self.sub_title_pos_x = 5
+        self.sub_title_pos_y1 = 15 / 100
+        self.sub_title_pos_y2 = 17 / 100
+
+        self.face_pos_x = 1 / 16
+        self.face_pos_y = 3 / 16
+        self.extra_face_size_x = 20
+        self.extra_face_size_y = 0
+        self.lines_next_to_face = 4
+        self.small_line_height = 27
+
+        self.leftbox_width = 3 / 16
+        self.leftbox_height = 73 / 100
+        self.leftbox_pos_x = 47 / 100
+        self.leftbox_pos_y = 6 / 32
+        self.rightbox_width = 3 / 16
+        self.rightbox_height = 73 / 100
+        self.rightbox_pos_x = 72 / 100
+        self.rightbox_pos_y = 6 / 32
+        self.infobox_width = 25 / 100
+        self.infobox_height = 11 / 100
+        self.infobox_pos_x = 1 / 16
+        self.infobox_pos_y = 81 / 100
 
         self.cur_hero = hero
-        self._init_face()
+        self._init_face_and_text(self.cur_hero.FAC, self.cur_hero.alc.welcome_text(self.cur_hero.NAM))
         self._init_boxes()
-
-        self.close_button = Button(
-            BTNWIDTH, BTNHEIGHT, (self.background.get_width() + CLOSEX, CLOSEY), CLOSELBL, Keys.Exit.value,
-            COLORKEY, FONTCOLOR)
-
-        self.info_label = ""
-
-    def _init_face(self):
-        face_image = pygame.image.load(self.cur_hero.FAC).convert_alpha()
-        self.background.blit(face_image, (self._set_x(FACEPOSX), self._set_y(FACEPOSY)))
-
-        for index, line in enumerate(self.cur_hero.alc.welcome_text(self.cur_hero.NAM)):
-            rline = self.smallfont.render(line, True, FONTCOLOR).convert_alpha()
-            if index < LINESNEXTTOFACE:
-                self.background.blit(rline,
-                                     (self._set_x(FACEPOSX) + face_image.get_width() + EXTRAFACESIZEX,
-                                      self._set_y(FACEPOSY) + EXTRAFACESIZEY + index * SMALLLINEHEIGHT))
-            else:
-                self.background.blit(rline,
-                                     (self._set_x(FACEPOSX),
-                                      self._set_y(FACEPOSY) + EXTRAFACESIZEY + index * SMALLLINEHEIGHT))
+        self._init_buttons()
 
     def _init_boxes(self):
+        self._init_infobox()
         self._init_createbox()
         self._init_pouchbox()
-        self._init_infobox()
 
     def _init_createbox(self):
-        width = self.screen.get_width() * CREATEBOXWIDTH
-        height = self.screen.get_height() * CREATEBOXHEIGHT + EXTRAHEIGHT
+        width = self.screen.get_width() * self.leftbox_width
+        height = self.screen.get_height() * self.leftbox_height
         # zoek in de PouchItemDatabase naar de enum keys die eindigen op _pot of _flk en stop die allemaal in een list.
         # en zoek ook naar potions die juiste alc skill waarde hebben om gemaakt te kunnen worden.
-        self.createbox = CreateBox(self._set_x(CREATEBOXPOSX), self._set_y(CREATEBOXPOSY), int(width), int(height),
-                                   [itm for itm in PouchItemDatabase
-                                    if itm.name[-4:] in ('_pot', '_flk') and
-                                    self.cur_hero.alc.tot >= itm.value['alc']], self.cur_hero.alc)
+        database = list()
+        for itm in PouchItemDatabase:
+            if itm.name[-4:] in ('_pot', '_flk') and self.cur_hero.alc.tot >= itm.value['alc']:
+                database.append(itm)
+        self.leftbox = CreateBox(self._set_x(self.leftbox_pos_x), self._set_y(self.leftbox_pos_y),
+                                 int(width), int(height), database, self.cur_hero.alc)
 
     def _init_pouchbox(self):
-        width = self.screen.get_width() * POUCHBOXWIDTH
-        height = self.screen.get_height() * POUCHBOXHEIGHT + EXTRAHEIGHT
-        self.pouchbox = PouchBox(self._set_x(POUCHBOXPOSX), self._set_y(POUCHBOXPOSY), int(width), int(height),
-                                 self.engine.data.pouch)
+        width = self.screen.get_width() * self.rightbox_width
+        height = self.screen.get_height() * self.rightbox_height
+        self.rightbox = PouchBox(self._set_x(self.rightbox_pos_x), self._set_y(self.rightbox_pos_y),
+                                 int(width), int(height), self.engine.data.pouch)
 
-    def _init_infobox(self):
-        width = self.screen.get_width() * INFOBOXWIDTH
-        height = self.screen.get_height() * INFOBOXHEIGHT
-        self.infobox = InfoBox(self._set_x(INFOBOXPOSX), self._set_y(INFOBOXPOSY), int(width), int(height))
-
-    # noinspection PyMissingOrEmptyDocstring
-    def on_enter(self):
-        pass
-
-    # noinspection PyMissingOrEmptyDocstring
-    def on_exit(self):
-        pass
-
-    def single_input(self, event):
-        """
-        Handelt de muis en keyboard input af.
-        :param event: pygame.event.get()
-        """
-        if event.type == pygame.MOUSEMOTION:
-            self.info_label = ""
-            self.createbox.cur_item = None
-            self.pouchbox.cur_item = None
-
-            if self.createbox.rect.collidepoint(event.pos):
-                selected_name, self.info_label = self.createbox.mouse_hover(event)
-                self.pouchbox.duplicate_selection(selected_name)
-            if self.pouchbox.rect.collidepoint(event.pos):
-                selected_name, self.info_label = self.pouchbox.mouse_hover(event)
-                self.createbox.duplicate_selection(selected_name)
-
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-
-            if event.button == Keys.Leftclick.value:
-                if self.close_button.single_click(event) == Keys.Exit.value:
-                    self._close()
-                if self._handle_create_box_click(event):
-                    return
-
-            elif event.button in (Keys.Scrollup.value, Keys.Scrolldown.value):
-                if self.createbox.rect.collidepoint(event.pos):
-                    self.createbox.mouse_scroll(event)
-                if self.pouchbox.rect.collidepoint(event.pos):
-                    self.pouchbox.mouse_scroll(event)
-
-        elif event.type == pygame.KEYDOWN:
-            if event.key == Keys.Exit.value:
-                self._close()
-
-    # noinspection PyMethodMayBeStatic
-    def multi_input(self, key_input, mouse_pos, dt):
-        """
-        ...
-        :param key_input: pygame.key.get_pressed()
-        :param mouse_pos: pygame.mouse.get_pos()
-        :param dt: self.clock.tick(FPS)/1000.0
-        """
-        pass
-
-    # noinspection PyMethodMayBeStatic
     def update(self, dt):
         """
-        ...
         :param dt: self.clock.tick(FPS)/1000.0
         """
-        pass
+        self.main_title = self.cur_hero.alc.NAM
+        self.source_title1 = SOURCETITLE1.format(self.cur_hero.NAM, str(self.cur_hero.sta.cur))
 
-    def render(self):
-        """
-        Teken alles op het scherm.
-        """
-        self.screen.fill(BACKGROUNDCOLOR)
-        self.screen.blit(self.background, (0, 0))
-
-        alc_title = self.largefont.render(self.cur_hero.alc.NAM, True, FONTCOLOR).convert_alpha()
-        self.screen.blit(alc_title, (self._set_x(TITLEPOSX), self._set_y(TITLEPOSY)))
-
-        self.screen.blit(self.create_title, ((self._set_x(CREATEBOXPOSX)) +
-                                             (self.screen.get_width() * CREATEBOXWIDTH / 2) -
-                                             (self.create_title.get_width() / 2),
-                                             self._set_y(TITLEPOSY)))
-        self.screen.blit(self.pouch_title, ((self._set_x(POUCHBOXPOSX)) +
-                                            (self.screen.get_width() * POUCHBOXWIDTH / 2) -
-                                            (self.pouch_title.get_width() / 2),
-                                            self._set_y(TITLEPOSY)))
-
-        sta_title = self.middlefont.render(
-                    STATITLE.format(self.cur_hero.NAM) + str(self.cur_hero.sta.cur), True, FONTCOLOR).convert_alpha()
-        self.screen.blit(sta_title, (self._set_x(STATITLEPOSX), self._set_y(STATITLEPOSY)))
-
-        self.infobox.render(self.screen, self.info_label)
-        self.createbox.render(self.screen)
-        self.pouchbox.render(self.screen)
-        self.close_button.render(self.screen, FONTCOLOR, True)
-
-    def _handle_create_box_click(self, event):
-        create_click, selected_potion = self.createbox.mouse_click(event)
+    def _handle_leftbox_click(self, event):
+        create_click, selected_potion = self.leftbox.mouse_click(event)
         if create_click:
             herbs = inventoryitems.factory_pouch_item(PouchItemDatabase.herbs)
             spices = inventoryitems.factory_pouch_item(PouchItemDatabase.spices)
@@ -247,7 +114,7 @@ class Display(object):
                 self.engine.gamestate.push(push_object)
                 return True
             elif self.cur_hero.sta.cur < self.cur_hero.alc.STA_COST:
-                text = ["You do not have enough stamina",
+                text = ["{} does not have enough stamina".format(self.cur_hero.NAM),
                         "to create that {}.".format(selected_potion.NAM)]
                 push_object = MessageBox(self.engine.gamestate, self.engine. audio, text, sound=SFX.menu_cancel)
                 self.engine.gamestate.push(push_object)
@@ -277,14 +144,3 @@ class Display(object):
             self._init_boxes()
             return True
         return False
-
-    def _set_x(self, posx):
-        return self.screen.get_width() * posx
-
-    def _set_y(self, posy):
-        return self.screen.get_height() * posy
-
-    def _close(self):
-        self.engine.audio.play_sound(SFX.scroll)
-        self.engine.gamestate.pop()
-        self.engine.gamestate.push(Transition(self.engine.gamestate))

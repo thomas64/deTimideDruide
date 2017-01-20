@@ -16,13 +16,40 @@ SPRITEPATH = 'resources/sprites/icons/equipment/weapon1.png'
 
 class WeaponDatabase(enum.Enum):
     """
-    Een lege Enum.
+    Een lege Enum. (met customs)
     """
+    customsword = dict(nam="Custom Sword", srt=1, val=2, shp=False, min_str='X', dam='X', hit='X', skl=WeaponType.swd, col=0,   row=672,
+                       min_min_str=25, max_min_str=5, min_dam=10, max_dam=24, min_hit=35, max_hit=75,
+                       cus=True, clt=2, ltr=3, wod=4,  mtl=20,
+                       desc=("Creating a Custom Sword requires 2 Cloth, 3 Leather, 4 Wood and 20 metals.", " ",
+                             "Min. Strength: 5 - 25", "Hit Chance: 35% - 75%", "Damage: 10 - 24"))
+    customaxe = dict(nam="Custom Axe",     srt=2, val=2, shp=False, min_str='X', dam='X', hit='X', skl=WeaponType.haf, col=32,  row=672,
+                     min_min_str=31, max_min_str=11, min_dam=16, max_dam=30, min_hit=25, max_hit=65,
+                     cus=True, clt=2, ltr=3, wod=6,  mtl=18,
+                     desc=("Creating a Custom Sword requires 2 Cloth, 3 Leather, 4 Wood and 20 metals.", " ",
+                           "Min. Strength: 11 - 31", "Hit Chance: 25% - 65%", "Damage: 16 - 30"))
+    customspear = dict(nam="Custom Spear", srt=3, val=2, shp=False, min_str='X', dam='X', hit='X', skl=WeaponType.pol, col=64,  row=672,
+                       min_min_str=21, max_min_str=7, min_dam=4, max_dam=18, min_hit=45, max_hit=85,
+                       cus=True, clt=3, ltr=4, wod=10, mtl=12,
+                       desc=("Creating a Custom Spear requires 3 Cloth, 4 Leather, 10 Wood and 12 metals.", " ",
+                             "Min. Strength: 7 - 21", "Hit Chance: 45% - 85%", "Damage: 4 - 18"))
+    custombow = dict(nam="Custom Bow",     srt=4, val=2, shp=False, min_int='X', dam='X', hit='X', skl=WeaponType.mis, col=96,  row=672,
+                     min_min_int=30, max_min_int=13, min_dam=10, max_dam=24, min_hit=35, max_hit=75,
+                     cus=True, clt=5, ltr=2, wod=20, mtl=2,
+                     desc=("Creating a Custom Bow requires 5 Cloth, 2 Leather, 20 Wood and 2 metals.", " ",
+                           "Min. Intelligence: 13 - 30", "Hit Chance: 35% - 75%", "Damage: 10 - 24"))
+    customknife = dict(nam="Custom Knife", srt=5, val=2, shp=False, min_str='X', dam='X', hit='X', skl=WeaponType.thr, col=128, row=672,
+                       min_min_str=29, max_min_str=3, min_dam=4, max_dam=18, min_hit=25, max_hit=65,
+                       cus=True, clt=1, ltr=2, wod=1,  mtl=15,
+                       desc=("Creating a Custom Knife requires 1 Cloth, 2 Leather, 1 Wood and 15 metals.", " ",
+                             "Min. Strength: 3 - 29", "Hit Chance: 25% - 65%", "Damage: 4 - 18"))
 
 
-# Vul de OrderedDict self met de gecombineerde data.
+for equipment_item in WeaponDatabase:
+    equipment_item.value['typ'] = EquipmentType.wpn
+    equipment_item.value['spr'] = SPRITEPATH
 
-# todo, upgradable, min_mech, metals zijn nog niet verwerkt.
+# Vul de Enum met de gecombineerde data.
 
 #                     val, min int, min str, dam, srt, col,     mtr[6]
 weapon_material = {
@@ -79,7 +106,7 @@ for material_key, material_value in weapon_material.items():
             temp_weapon_dict[raw_key_name] = dict(
                 nam=(material_key + " " + type_key + " " + upgraded_key).strip(),
 
-                # puur voor sortering in de winkels
+                # voor sortering in de winkels
                 srt=material_value[4] + type_value[7] + upgraded_value[3],
 
                 # berekening value: material * type * upgraded

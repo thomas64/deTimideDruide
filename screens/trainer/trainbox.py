@@ -1,9 +1,10 @@
 
 """
-class: LearnBox
+class: TrainBox
 """
 
 from components import ListBox
+from constants import ColumnType
 
 COLUMN1X = 0
 COLUMN2X = 34
@@ -11,10 +12,14 @@ COLUMN3X = 234
 COLUMN4X = 284
 COLUMN5X = 334
 
-TOTALCOLUMNS = (('icon', COLUMN1X), ('text', COLUMN2X), ('text', COLUMN3X), ('text', COLUMN4X), ('text', COLUMN5X))
+TOTALCOLUMNS = ((ColumnType.icon, COLUMN1X, "", ""),
+                (ColumnType.text, COLUMN2X, "Spell", "Name:"),
+                (ColumnType.text, COLUMN3X, "Next", "Rank:"),
+                (ColumnType.text, COLUMN4X, "Gold", "Cost:"),
+                (ColumnType.text, COLUMN5X, "XP", "Cost:"))
 
 
-class LearnBox(ListBox):
+class TrainBox(ListBox):
     """
     De box waarin de te leren skills te zien zijn.
     Deze class is bijna identiek aan LearnBox van School.

@@ -15,13 +15,21 @@ SPRITEPATH = 'resources/sprites/icons/equipment/armor1.png'
 
 class ArmorDatabase(enum.Enum):
     """
-    Een lege Enum.
+    Een lege Enum. (met alleen een custom erin.)
     """
+    # waarde 'X' betekent dat hij nog gevuld moet worden in Mechanic Screen
+    customarmor = dict(nam="Custom Armor", srt=1, val=2, shp=False, wht='X', prt='X', stl='X', col=0, row=192,
+                       min_wht=16, max_wht=1, min_prt=1, max_prt=16, min_stl=-15, max_stl=0,
+                       cus=True, clt=6, ltr=9, wod=2, mtl=15,
+                       desc=("Creating a Custom Armor requires 6 Cloth, 9 Leather, 2 Wood and 15 metals.", " ",
+                             "Weight: 1 - 16", "Protection: 1 - 16", "Stealth: -15 - 0"))
+
+for equipment_item in ArmorDatabase:
+    equipment_item.value['typ'] = EquipmentType.arm
+    equipment_item.value['spr'] = SPRITEPATH
 
 
 # Vul de Enum met de gecombineerde data.
-
-# todo, upgradable, min_mech, metals zijn nog niet verwerkt.
 
 #                     val, wht, prt, stl,  srt, row,      mtr[6]
 armor_material = {
@@ -58,7 +66,7 @@ for material_key, material_value in armor_material.items():
             temp_armor_dict[raw_key_name] = dict(
                 nam=(type_key + " " + material_key + " " + upgraded_key).strip(),
 
-                # puur voor sortering in de database, omdat geen enum is
+                # voor sortering in de database
                 srt=material_value[4] + type_value[4] + upgraded_value[4],
 
                 # berekening value: material * type * upgraded

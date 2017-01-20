@@ -5,17 +5,19 @@ class: PouchBox
 
 import pygame
 
+from constants import ColumnType
+
 from .basebox import BaseBox
 
 
-COLUMN1X = 50
-COLUMN2X = 90
-COLUMN3X = 240
+COLUMN1X = 25
+COLUMN2X = COLUMN1X + 40
+COLUMN3X = COLUMN2X + 130
 COLUMNSY = 50
 ROWHEIGHT = 30
 
 TITLE = "Pouch"
-TOTALCOLUMNS = (('icon', COLUMN1X), ('text', COLUMN2X), ('text', COLUMN3X))
+TOTALCOLUMNS = ((ColumnType.icon, COLUMN1X), (ColumnType.text, COLUMN2X), (ColumnType.text, COLUMN3X))
 
 
 class PouchBox(BaseBox):
