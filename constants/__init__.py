@@ -260,6 +260,7 @@ class MapMusic(enum.Enum):
     huis_batenburg    = "huis_batenburg",    "fire"
     kerker_batenburg  = "schuur_batenburg",  None
     grensovergang     = "ersin_forest",      "birds"
+    kruising          = "ersin_forest",      "birds"
     # invernia_town     = "invernia_town",     "town"
 
 
@@ -276,6 +277,7 @@ class MapTitle(enum.Enum):
     huis_batenburg    = "Kasteel Batenburg"
     kerker_batenburg  = "Kasteel Batenburg"
     grensovergang     = "Grensovergang Duitsland"
+    kruising          = "Kruising"
 
 
 class SFX(enum.Enum):
