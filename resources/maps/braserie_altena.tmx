@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="54" height="44" tilewidth="16" tileheight="16" nextobjectid="31">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="54" height="44" tilewidth="16" tileheight="16" nextobjectid="40">
  <tileset firstgid="1" name="braserie_altena" tilewidth="16" tileheight="16" tilecount="1056" columns="44">
   <image source="braserie_altena.png" width="704" height="384"/>
  </tileset>
@@ -440,5 +440,20 @@
   <object id="7" x="480" y="144" width="288" height="32"/>
   <object id="8" x="224" y="144" width="96" height="32"/>
  </objectgroup>
- <objectgroup name="objects"/>
+ <objectgroup name="objects">
+  <object id="31" name="hero" type="nel" x="128" y="480" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="32" name="hero" type="peter" x="224" y="480" width="32" height="32">
+   <properties>
+    <property name="direction" value="west"/>
+   </properties>
+  </object>
+  <object id="35" name="note3" x="128" y="96" width="64" height="48"/>
+  <object id="37" name="person400" type="w" x="640" y="192" width="32" height="32"/>
+  <object id="38" name="person401" x="480" y="224" width="32" height="32"/>
+  <object id="39" name="note9" x="320" y="128" width="32" height="16"/>
+ </objectgroup>
 </map>

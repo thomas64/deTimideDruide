@@ -94,7 +94,7 @@ class Display(object):
 
         self.key_input = None           # dit is voor de mousepress op een button.
 
-        self.cur_hero = self.engine.data.party['noppie']    # todo, dit moet nog de hero die aan de beurt is worden
+        self.cur_hero = self.engine.data.party['brann']    # todo, dit moet nog de hero die aan de beurt is worden
 
         self.party = list(self.engine.data.party.values())
         self.hc = self.party.index(self.cur_hero)
@@ -155,7 +155,7 @@ class Display(object):
             if choice == yes:
                 self.engine.data.party.remove(self.cur_hero)
                 # update daarna het party scherm
-                self.cur_hero = self.engine.data.party['noppie']
+                self.cur_hero = self.engine.data.party['brann']
                 self.party = list(self.engine.data.party.values())
                 self.hc = self.party.index(self.cur_hero)
                 self._init_boxes()

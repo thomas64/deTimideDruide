@@ -21,7 +21,44 @@ class PeopleDatabase(enum.Enum):
 
     person200 = dict(name='troll01',     text=[["*Grunt*"]])
 
-    person300 = dict(name='soldier01',   text=[["  .  .  .  "]])
+    person300 = dict(name='soldier01',   text=[["Goedendag."],
+                                               ["Welkom in Batenburg."]])
+
+    person301 = dict(name='soldier01',   text=[["Het is niet toegestaan de kasteelmuur te betreden."],
+                                               ["Dus opzouten!!!"]])
+
+    person400 = dict(name='man50',      text=[["Wat zeg je?", "Of ik de druïde ken?"],
+                                              ["Ooh, je bedoelt Zwammix?",
+                                               "Of zeg maar gerust Zwamniks.",
+                                               "Zoveel zegt hij namelijk niet."],
+                                              ["Jaren geleden heb ik hem hier nog gezien met ene Bato.",
+                                               "De Druïde zei geen woord.",
+                                               "Zijn vriend was iets spraakzamer."],
+                                              ["Hij had het over stenen die bij zijn kasteel begraven waren.",
+                                               "Hier aan de wand hangt een kaart.",
+                                               "Daar zou je het kasteel op moeten kunnen vinden."],
+                                              ["Waarom deze stenen daar waren begraven kon ik niet verstaan.",
+                                               "Maar uit de gebaren van de druïde meende ik te begrijpen dat",
+                                               "jaren later deze stenen nog van pas zouden komen. "],
+                                              ["Zijn vriend had het over een soep. ",
+                                               "Maar vanwege zijn zwakke gestel kon hij de druïde niet ",
+                                               "helpen om de soep te maken. "],
+                                              ["Bij hun vertrek zijn ze iets vergeten mee te nemen.",
+                                               "Waar heb ik dat toch gelaten? Het moet hier ergens zijn..."]])
+
+    person401 = dict(name='brann01',     text=[["Kraaa. Die stenen waar de barman het over heeft. Kraa.",
+                                                "We moeten die zien te vinden."],
+                                               ["Jaaa. Bij zijn kasteel zijn de stenen begraaaaven.",
+                                                "Baaaato is zijn naaaaam."],
+                                               ["  .  .  .  "],
+                                               ["Jaaa. Deze kaart moet het zijn. Kraaa.",
+                                                "Trek van plaats naar plaats 1 rechte lijn."],
+                                               ["Kraaa. Laaaten we gaaaaan."]])
+
+    person402 = dict(name='soldier01',     text=[["Halt! U komt het ryck van Nimmegen niet in.",
+                                                  "Ik heb orders van de keizer. Keer terug!"]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 13, 12, 00))
 
     # standard characters
     person1 = dict(name='boy01',         text=[["Hi mister."]])

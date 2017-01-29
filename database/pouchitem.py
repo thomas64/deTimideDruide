@@ -30,8 +30,25 @@ NOTEPIMG = os.path.join(POUCHPATH, "note.png")
 
 GRAPESPATH = "resources/sprites/icons/pouch/grapes.png"
 WINEPATH = "resources/sprites/icons/pouch/wine.png"
-SHROOMSPATH = "resources/sprites/icons/pouch/shrooms.png"
 CAULDRONPATH = "resources/sprites/icons/pouch/cauldron.png"
+
+SHROOMSPATH = "resources/sprites/icons/pouch/shrooms.png"
+DROPPINGSPATH = "resources/sprites/icons/pouch/droppings.png"
+ROSEPATH = "resources/sprites/icons/pouch/rose.png"
+LADYBUGPATH = "resources/sprites/icons/pouch/ladybug.png"
+WOOLPATH = "resources/sprites/icons/pouch/wool.png"
+SHELLSPATH = "resources/sprites/icons/pouch/shells.png"
+POPPYPATH = "resources/sprites/icons/pouch/poppy.png"
+CANTHARELPATH = "resources/sprites/icons/pouch/cantharel.png"
+WEEGBREEPATH = "resources/sprites/icons/pouch/weegbree.png"
+BERKENSCHORSPATH = "resources/sprites/icons/pouch/berkenschors.png"
+MARETAKPATH = "resources/sprites/icons/pouch/maretak.png"
+SPIDERWEBPATH = "resources/sprites/icons/pouch/spiderweb.png"
+FLUITEKRUIDPATH = "resources/sprites/icons/pouch/fluitekruid.png"
+KNOFLOOKPATH = "resources/sprites/icons/pouch/knoflook.png"
+SHALLOTPATH = "resources/sprites/icons/pouch/shallot.png"
+TOMAATPATH = "resources/sprites/icons/pouch/tomaat.png"
+DOPERWTENPATH = "resources/sprites/icons/pouch/doperwten.png"
 
 
 class PouchItemDatabase(enum.Enum):
@@ -131,10 +148,27 @@ class PouchItemDatabase(enum.Enum):
     #                            "Weakness, Exhaustion, and Wraith Touch. It has no effect out of combat. Creating a "
     #                            "Restore Potion requires 2 Gemstones, 2 Spices and an Alchemist rank of at least 3.")
 
-    grapes = dict(nam="Grapes",                     srt=6, spr=GRAPESPATH,              desc="")
-    wine = dict(nam="Wine",                         srt=7, spr=WINEPATH,                desc="")
-    shroom = dict(nam="Shrooms",                    srt=8, spr=SHROOMSPATH,             desc="")
-    cauldron = dict(nam="Magic Cauldron",           srt=9, spr=CAULDRONPATH,            desc="")
+    grapes = dict(nam="Druiven",                    srt=6, spr=GRAPESPATH,          desc="")
+    wine = dict(nam="Wijn",                         srt=7, spr=WINEPATH,            desc="")
+    cauldron = dict(nam="Magische Ketel",           srt=8, spr=CAULDRONPATH,        desc="")
+
+    droppings = dict(nam="Lepus stercora",          srt=9, spr=DROPPINGSPATH,       desc="")
+    shroom = dict(nam="Agaricus bisporus",          srt=10, spr=SHROOMSPATH,        desc="")
+    rose = dict(nam="Surrexit petalis",             srt=11, spr=ROSEPATH,           desc="")
+    ladybug = dict(nam="Coccinellidae",             srt=12, spr=LADYBUGPATH,        desc="")
+    wool = dict(nam="Oves Lana",                    srt=13, spr=WOOLPATH,           desc="")
+    shells = dict(nam="Conchis",                    srt=14, spr=SHELLSPATH,         desc="")
+    poppy = dict(nam="Papaver somniferum",          srt=15, spr=POPPYPATH,          desc="")
+    cantharel = dict(nam="Cantharellus cibarius",   srt=16, spr=CANTHARELPATH,      desc="")
+    weegbree = dict(nam="Plantago",                 srt=17, spr=WEEGBREEPATH,       desc="")
+    berkenschors = dict(nam="Betulis cortice",      srt=18, spr=BERKENSCHORSPATH,   desc="")
+    maretak = dict(nam="Visci",                     srt=19, spr=MARETAKPATH,        desc="")
+    spiderweb = dict(nam="Araneo",                  srt=20, spr=SPIDERWEBPATH,      desc="")
+    fluitekruid = dict(nam="Fluitekruid",           srt=21, spr=FLUITEKRUIDPATH,    desc="")
+    knoflook = dict(nam="Knoflook",                 srt=22, spr=KNOFLOOKPATH,       desc="")
+    shallot = dict(nam="Shallot",                   srt=23, spr=SHALLOTPATH,        desc="")
+    tomaat = dict(nam="Tomaat",                     srt=24, spr=TOMAATPATH,         desc="")
+    doperwten = dict(nam="Doperwten",               srt=25, spr=DOPERWTENPATH,      desc="")
 
 
 for itm in PouchItemDatabase:

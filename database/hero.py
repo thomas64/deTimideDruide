@@ -17,14 +17,14 @@ class HeroDatabase(enum.Enum):
     """
     Alle heroes uit het spel als Enum met een dict voor de waarden.
     """
-    noppie = dict(nam="Noppie", spr=PATH+"01s_alagos.png", fac=PATH+"01f_alagos.png",
-                  lev=1, scl=SchoolType.spl,
-                  int=18, wil=12, dex=15, agi=15, edu=15, str=15, sta=30,
-                  alc=0, dip=0, hlr=0, lor=0, mec=0, mer=0, ran=0, stl=1, thf=0, trb=1, war=3, wiz=1,
-                  haf=1, mis=3, pol=0, shd=3, swd=3, thr=0,
-                  wpn=WeaponDatabase.bronzeshortsword,
-                  sld=ShieldDatabase.woodenbuckler,
-                  arm=ArmorDatabase.lightleatherarmor)
+    brann = dict(nam="Brann", spr=PATH+"01s_alagos.png", fac=PATH+"01f_alagos.png",
+                 lev=1, scl=SchoolType.spl,
+                 int=18, wil=12, dex=15, agi=15, edu=15, str=15, sta=30,
+                 alc=0, dip=0, hlr=0, lor=0, mec=0, mer=0, ran=0, stl=1, thf=0, trb=1, war=3, wiz=1,
+                 haf=1, mis=3, pol=0, shd=3, swd=3, thr=0,
+                 wpn=WeaponDatabase.bronzeshortsword,
+                 sld=ShieldDatabase.woodenbuckler,
+                 arm=ArmorDatabase.lightleatherarmor)
     luana = dict(nam="Luana", spr=PATH+"02s_luana.png", fac=PATH+"02f_luana.png",
                  lev=1, scl=SchoolType.elm,
                  int=14, wil=10, dex=22, agi=20, edu=10, str=8, sta=20,
@@ -59,7 +59,7 @@ class HeroDatabase(enum.Enum):
                   sld=None,
                   arm=ArmorDatabase.lightleatherarmor,
                   spl=dict(DragonFlames=2))
-    galen = dict(nam="Galen", spr=PATH+"06s_galen.png", fac=PATH+"06f_galen.png",
+    peter = dict(nam="Peter", spr=PATH+"06s_galen.png", fac=PATH+"06f_galen.png",
                  lev=4, scl=SchoolType.non,
                  int=15, wil=15, dex=18, agi=10, edu=20, str=25, sta=40,
                  alc=-1, dip=0, hlr=0, lor=0, mec=0, mer=0, ran=4, stl=3, thf=0, trb=0, war=5, wiz=-1,
@@ -102,14 +102,14 @@ class HeroDatabase(enum.Enum):
                  sld=None, 
                  arm=ArmorDatabase.mediumsteelarmor,
                  spl=dict(VsStar=7, Banishing=7, SenseAura=7, Teleportation=7))
-    onarr = dict(nam="Onarr", spr=PATH+"11s_onarr.png", fac=PATH+"11f_onarr.png",
-                 lev=18, scl=SchoolType.non,
-                 int=30, wil=25, dex=23, agi=15, edu=30, str=25, sta=60,
-                 alc=-1, dip=0, hlr=4, lor=6, mec=0, mer=0, ran=0, stl=0, thf=0, trb=7, war=9, wiz=-1,
-                 haf=8, mis=-1, pol=8, shd=9, swd=5, thr=8,
-                 wpn=WeaponDatabase.steelpoleaxe,
-                 sld=ShieldDatabase.steelkite,
-                 arm=ArmorDatabase.heavysteelarmor)
+    nel = dict(nam="Nel", spr=PATH+"11s_onarr.png", fac=PATH+"11f_onarr.png",
+               lev=18, scl=SchoolType.non,
+               int=30, wil=25, dex=23, agi=15, edu=30, str=25, sta=60,
+               alc=-1, dip=0, hlr=4, lor=6, mec=0, mer=0, ran=0, stl=0, thf=0, trb=7, war=9, wiz=-1,
+               haf=8, mis=-1, pol=8, shd=9, swd=5, thr=8,
+               wpn=WeaponDatabase.steelpoleaxe,
+               sld=ShieldDatabase.steelkite,
+               arm=ArmorDatabase.heavysteelarmor)
     duilio = dict(nam="Duilio", spr=PATH+"12s_duilio.png", fac=PATH+"12f_duilio.png",
                   lev=22, scl=SchoolType.elm,
                   int=25, wil=25, dex=30, agi=20, edu=25, str=25, sta=75,
@@ -187,18 +187,11 @@ class HeroDatabase(enum.Enum):
                     "Hahaha, ofcourse we can help each other.",
                     "Uuuuuhmmm... No.")
 
-        elif hero_raw == cls.galen.name:
-            return ("Good day young man.",
-                    "It has been a while since I've seen battle,",
-                    "but in my younger days my reputation was",
-                    "fearsome. I even saved the King's life once...",
-                    "But enough about that.",
-                    "I need to be in Dalenok Town and I would like",
-                    "to join you when you are ready to go to there.",
-                    "My axe will be of service to you.",
+        elif hero_raw == cls.peter.name:
+            return ("Goedemorgen, ik heet Peter Noppe. Aangenaam.",
                     "",
-                    "I would definitely need your axe and reputation.",
-                    "I don't need to go to Dalenok Town, I'm sorry.")
+                    "Ik kies jou.",
+                    "Sorry, ik kies iemand anders.")
 
         elif hero_raw == cls.raiko.name:  # p(1).xpt >= 300000 - ((300000 / 100) * sale)
             return ("Hello, I want to be knight.",
@@ -242,16 +235,11 @@ class HeroDatabase(enum.Enum):
                     "You seem confident... Welcome I think?",
                     "Yes, I can.")
 
-        elif hero_raw == cls.onarr.name:  # p(1).xpt >= 1500000 - ((1500000 / 100) * sale)
-            return ("Good afternoon lad, what a lovely day.",
-                    "It makes me want to sing about it.",
-                    "Willst thou join me? La-la-la-la-la!",
-                    "Perhaps I canst accompany thou on",
-                    "thy quest and make it a little brighter?",
-                    "May I join ye in thy group?",
+        elif hero_raw == cls.nel.name:  # p(1).xpt >= 1500000 - ((1500000 / 100) * sale)
+            return ("Goedemorgen, ik heet Nel Noppe. Aangenaam.",
                     "",
-                    "Troubadours are always welcome.",
-                    "I'm more of a heavy metal type.")
+                    "Ik kies jou.",
+                    "Sorry, ik kies iemand anders.")
 
         elif hero_raw == cls.duilio.name:  # gold >= 90000 - ((90000 / 100) * sale)
             return ("Hmpf... Let me join.",

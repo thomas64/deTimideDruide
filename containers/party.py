@@ -48,7 +48,7 @@ class Party(collections.OrderedDict):
         Haal heroes weg uit de party
         :param hero: Hero Object
         """
-        if hero.RAW == 'noppie':
+        if hero.RAW == 'brann':
             Console.error_leader_not_leave_party()
             raise AttributeError
         elif hero.RAW in self:
