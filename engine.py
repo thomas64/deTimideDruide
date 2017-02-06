@@ -3,11 +3,13 @@
 class: GameEngine
 """
 
+import threading
+
 import pygame
 import pygame.gfxdraw
 
 from audio import Audio
-# from console import Console
+from console import Console
 from constants import GameState
 from constants import Keys
 import screens.menu
@@ -42,11 +44,14 @@ class GameEngine(object):
         self.audio = Audio(self)
 
         self.running = False
+        self.all_maps_loaded = False
+        self.wait_for_transition_before_loading_music = False
+        self.try_to_load_music = False
 
         self.clock = pygame.time.Clock()
         self.playtime = 0.0
         self.dt = 0.0
-        self.key_timer = 0.0
+        self.key_timer = 2.0  # kaarten laad tijd
         self.state_timer = 0.0
 
         self.debugfont = pygame.font.SysFont(DEBUGFONT, DEBUGFONTSIZE)
@@ -54,6 +59,22 @@ class GameEngine(object):
         self.mouse_input = None
 
         self.show_debug = False
+        self.debug_mode = False
+        self.fps = FPS
+
+        threading.Thread(target=self.load_all_maps).start()
+
+    def load_all_maps(self):
+        """..."""
+        from constants import MapTitle
+        import pytmx
+        map_path = 'resources/maps/'
+        Console.load_all_maps()
+        # noinspection PyTypeChecker
+        for map_name in MapTitle:
+            map_name.value.append(pytmx.load_pygame(map_path + map_name.name + '.tmx'))
+        self.all_maps_loaded = True
+        Console.maps_loaded()
 
     def on_enter(self):
         """
@@ -69,7 +90,7 @@ class GameEngine(object):
         """
         while self.running:
             # limit the redraw speed to 60 frames per second
-            self.dt = self.clock.tick(FPS)/1000.0
+            self.dt = self.clock.tick(self.fps)/1000.0
             self.playtime += self.dt
 
             for event in pygame.event.get():
@@ -91,14 +112,16 @@ class GameEngine(object):
         if event.type == pygame.KEYDOWN:
             # Console.keyboard_down(event.key, event.unicode)
 
-            if event.key == Keys.Debug.value:
-                # simple boolean swith
-                self.show_debug ^= True
-            if event.key == Keys.Kill.value:
-                # todo, deze, de key en de methode moeten uiteindelijk weg.
-                self._kill_game()
+            if self.debug_mode:
+                if event.key == Keys.Debug.value:
+                    # simple boolean swith
+                    self.show_debug ^= True
+                if event.key == Keys.Kill.value:
+                    # todo, deze, de key en de methode moeten uiteindelijk weg.
+                    self._kill_game()
 
-        self.gamestate.peek().single_input(event)
+        if self.key_timer == 0.0:
+            self.gamestate.peek().single_input(event)
 
     def multi_input(self):
         """
@@ -121,12 +144,12 @@ class GameEngine(object):
         """
         if self.key_timer > 0.0:
             self.key_timer -= self.dt
-        if self.key_timer < 0.0:
+        if self.key_timer <= 0.0:
             self.key_timer = 0.0
 
         if self.state_timer > 0.0:
             self.state_timer -= self.dt
-        if self.state_timer < 0.0:
+        if self.state_timer < 0.0:  # todo, wat nou als hij precies op 0.0 uitkomt?
             self.state_timer = 0.0
             self.gamestate.pop()
 
@@ -149,6 +172,16 @@ class GameEngine(object):
         import sys
         pygame.quit()
         sys.exit()
+
+    def change_fps(self):
+        """..."""
+        old_fps = self.fps
+        if self.fps < 100:
+            self.fps += 40
+        else:
+            self.fps = 20
+        new_fps = self.fps
+        return old_fps, new_fps
 
     def _show_debug(self):
         if self.show_debug:
@@ -176,6 +209,7 @@ class GameEngine(object):
                 hero = self.gamestate.peek().window.party_sprites[0]
                 text2 = (
                     "map:               {}".format(self.data.map_name),
+                    "prev_map:          {}".format(self.gamestate.peek().window.prev_map_name),
                     "zoom:              {:.1f}".format(self.gamestate.peek().window.current_map.map_layer.zoom),
                     "time_up:           {}".format(hero.time_up),
                     "time_down:         {}".format(hero.time_down),

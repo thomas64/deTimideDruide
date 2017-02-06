@@ -6,7 +6,6 @@ class: Map
 import datetime
 
 import pygame
-import pytmx
 import pyscroll
 
 from .namedrect import NamedRect
@@ -28,11 +27,11 @@ from database import PeopleDatabase
 from database import SchoolDatabase
 from database import ShopDatabase
 from database import TrainerDatabase
+from database import TreasureChestDatabase
 
 
-MAPPATH = 'resources/maps/'
-
-# de zes object layers in een tmx map
+# de zeven object layers in een tmx map
+EVENTS = "events"
 OBJECTS = "objects"
 HIGHBLOCKER = "high_blocker"
 LOWBLOCKER = "low_blocker"
@@ -51,10 +50,8 @@ class Map(object):
     """
     Bevat allemaal lijsten van rects.
     """
-    def __init__(self, name, treasure_chests_database):
-        map_tmx = MAPPATH + name + '.tmx'
-
-        tmx_data = pytmx.load_pygame(map_tmx)
+    def __init__(self, name):
+        tmx_data = MapTitle[name].value[1]
         map_data = pyscroll.TiledMapData(tmx_data)
         self.map_layer = pyscroll.BufferedRenderer(map_data, (WINDOWWIDTH, WINDOWHEIGHT))
         self.map_layer.zoom = 2
@@ -67,11 +64,11 @@ class Map(object):
         self.window_width = WINDOWWIDTH
         self.window_height = WINDOWHEIGHT
 
-        self.title = MapTitle[name].value
+        self.title = MapTitle[name].value[0]
 
         self.high_blocker_rects = []
         self.low_blocker_rects = []
-        self.temp_blocker_rects = []
+        self.quest_blocker_rects = []
         self.sounds = []
         self.start_pos = []
         self.portals = []
@@ -83,6 +80,8 @@ class Map(object):
         self.people = []
         self.notes = []
         self.signs = []
+        self.text_events = []
+        self.move_events = []
         self.chests = []
         self.sparkly = []
 
@@ -96,10 +95,17 @@ class Map(object):
             self.start_pos.append(Portal(obj.name, self._pg_rect(obj), name, obj.type, self._has_dir(obj, 'direction')))
         for obj in tmx_data.get_layer_by_name(PORTALS):
             self.portals.append(Portal(name, self._pg_rect(obj), obj.name, obj.type))
+        for obj in tmx_data.get_layer_by_name(EVENTS):
+            if obj.name.startswith('text'):
+                # in obj.type kan iets staan, als daar bijv zwart staat, dan heeft het text_event een zwarte achtergrond
+                self.text_events.append(NamedRect(obj.name, self._pg_rect(obj), obj.type))
+            elif obj.name.startswith('move'):
+                self.move_events.append(NamedRect(obj.name, self._pg_rect(obj)))
+
         for obj in tmx_data.get_layer_by_name(OBJECTS):
             if obj.name == 'blocker':
                 # in obj.type staat de bijbehorende quest key.
-                self.temp_blocker_rects.append(NamedRect(obj.type, self._pg_rect(obj)))
+                self.quest_blocker_rects.append(NamedRect(obj.type, self._pg_rect(obj)))
             elif obj.name.startswith('shop'):
                 shop_object = Person(obj.name, ShopDatabase[obj.name].value['sprite'],
                                      self._pg_rect(obj), OBJECTLAYER, self._has_dir(obj, 'direction'), obj.type)
@@ -157,9 +163,9 @@ class Map(object):
                 self.high_blocker_rects.append(sign_object.get_blocker())
                 self.signs.append(sign_object)
             elif obj.name.startswith('chest'):
-                if treasure_chests_database[obj.name].get('time1'):
-                    time1 = treasure_chests_database[obj.name]['time1']
-                    time2 = treasure_chests_database[obj.name]['time2']
+                if 'time1' in TreasureChestDatabase[obj.name].value:
+                    time1 = TreasureChestDatabase[obj.name].value['time1']
+                    time2 = TreasureChestDatabase[obj.name].value['time2']
                     timestamp = datetime.datetime.now()
                     if time1 < timestamp < time2:
                         chest_object = TreasureChest(obj.name, self._pg_rect(obj), OBJECTLAYER)
@@ -203,6 +209,21 @@ class Map(object):
         if hasattr(obj, attr):
             return Direction[obj.direction.title()]
         return None
+
+    def remove_rewarded_quest_blockers(self, logbook):
+        """
+        verwijder eventueel quest blockers weer
+        """
+        # als er iets in de lijst van quest blockers staat:
+        if len(self.quest_blocker_rects) > 0:
+            # van 0 tot 3 bijv
+            for i in range(0, len(self.quest_blocker_rects), 1):
+                # de naam van de quest blocker is de key van de quest. haal die uit het logbook op basis van de naam.
+                the_quest = logbook.get(self.quest_blocker_rects[i].name)
+                # bekijk dan of hij al rewarded is:
+                if the_quest is not None and the_quest.is_rewarded():
+                    # haal dan die quest blocker uit de lijst
+                    del self.quest_blocker_rects[i]
 
     def get_position(self, from_map_name, from_pos_nr):
         """

@@ -721,4 +721,5 @@
  <objectgroup name="objects" visible="0">
   <object id="104" name="person300" x="1152" y="672" width="32" height="32"/>
  </objectgroup>
+ <objectgroup name="events"/>
 </map>

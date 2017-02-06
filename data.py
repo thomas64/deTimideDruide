@@ -13,13 +13,15 @@ class Data(object):
     def __init__(self):
 
         self.heroes = dict()
+        self.logbook = dict()
         self.treasure_chests = dict()
         self.sparklies = dict()
+        self.move_events = dict()
+        self.text_events = dict()
 
         self.party = containers.Party()
         self.inventory = containers.Inventory()
         self.pouch = containers.Pouch()
-        self.logbook = containers.Logbook()
 
         self.map_name = None
         self.map_pos = None

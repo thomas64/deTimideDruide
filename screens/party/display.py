@@ -68,7 +68,7 @@ SPELBOXW, SPELBOXH = 240, 600
 PCHBOXX, PCHBOXY =  1093, 133
 PCHBOXW, PCHBOXH =   240, 600
 
-NEWMAPTIMEOUT = 0.5
+NEWMAPTIMEOUT = 1.0
 
 
 class Display(object):
@@ -179,11 +179,8 @@ class Display(object):
     def on_exit(self):
         """
         Wanneer deze state onder een andere state van de stack komt, voer dit uit.
-        Wanneer de party is aangepast herlaadt dan de map voor visuele update.
         """
-        if self.party_changed:
-            self.engine.key_timer = NEWMAPTIMEOUT
-            self.engine.gamestate.deep_peek().window.load_map()
+        pass
 
     def single_input(self, event):
         """
@@ -417,7 +414,8 @@ class Display(object):
                 # todo, maken dat in battle je niet op deze manier potions kan drinken.
                 able, message = selected_item.use(self.cur_hero)
                 if able and message:
-                    push_object = MessageBox(self.engine.gamestate, self.engine.audio, message, sound=SFX.message)
+                    push_object = MessageBox(self.engine.gamestate, self.engine.audio, message, sound=SFX.message,
+                                             last=(False if type(message) == list else True))  # een img is een string.
                     self.engine.gamestate.push(push_object)
                 elif not able and message:
                     push_object = MessageBox(self.engine.gamestate, self.engine.audio, message, sound=SFX.menu_cancel)
@@ -450,6 +448,15 @@ class Display(object):
         self._init_boxes()
 
     def _close(self):
+        # Wanneer de party is aangepast herlaad dan de map voor visuele update.
+        if self.party_changed:
+            self.engine.key_timer = NEWMAPTIMEOUT
+            self.engine.gamestate.deep_peek().window.load_map()
+
+        # deze 2 regels zijn eigenlijk lelijke oplossingen. ze zijn er om de muziek goed te zetten
+        self.engine.try_to_load_music = True
+        self.engine.gamestate.deep_peek().window.prev_map_name = None
+
         self.engine.audio.play_sound(SFX.scroll)
-        self.engine.gamestate.pop()
         self.engine.gamestate.push(Transition(self.engine.gamestate))
+        self.engine.gamestate.deep_pop()

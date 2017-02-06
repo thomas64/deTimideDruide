@@ -17,6 +17,7 @@ from components import Player
 from components import Transition
 
 from constants import Direction
+from constants import PersonState
 from constants import Keys
 from constants import SFX
 
@@ -28,6 +29,7 @@ from database import ShopDatabase
 from database import TrainerDatabase
 from database import NoteDatabase
 from database import SignDatabase
+from database import TreasureChestDatabase
 
 from database import PouchItemDatabase
 
@@ -43,7 +45,9 @@ GRIDCOLOR = pygame.Color("gray36")
 HEROCOLOR = pygame.Color("blue")
 HIGHBLOCKERCOLOR = pygame.Color("yellow")
 LOWBLOCKERCOLOR = pygame.Color("purple")
-SHOPCOLOR = pygame.Color("black")
+OBJECTCOLOR = pygame.Color("black")
+WANDERBOXCOLOR = pygame.Color("green")
+TEXTEVENTCOLOR = pygame.Color("red")
 
 PLAYERLAYER = 5
 
@@ -57,7 +61,7 @@ CBOXLAYER = 9
 GRIDSIZE = 32
 ICONSIZE = 32
 
-NEWMAPTIMEOUT = 0.5  # minimale keyblock. Zonder deze timer kun je op de movement keys drukken terwijl de map laadt.
+NEWMAPTIMEOUT = 1.0  # minimale keyblock. Zonder deze timer kun je op de movement keys drukken terwijl de map laadt.
 
 
 class Window(object):
@@ -94,12 +98,17 @@ class Window(object):
         self.person_face = None
         self.person_id = None
 
+        self.auto_move_event = False
+        self.auto_move_script = list()
+        self.auto_move_script_index = 0
+        self.auto_move_part = list()
+        self.auto_move_timer = 0
+
     def load_map(self):
         """
         Maak een nieuwe map aan met de hero's in het veld.
         """
-        # treasurechest database moet meegegeven worden, want is object en geen enum. is voor tijdelijke kistjes.
-        self.current_map = Map(self.engine.data.map_name, self.engine.data.treasure_chests)
+        self.current_map = Map(self.engine.data.map_name)
         self.group = self.current_map.view
         self.grid_sprite = None
         self.cbox_sprites = []
@@ -136,31 +145,6 @@ class Window(object):
         self.group.add(self.current_map.signs)
         self.group.add(self.current_map.chests)
         self.group.add(self.current_map.sparkly)
-
-        self.remove_temp_blockers()
-
-        # de eerste keer dat deze 2 draaien is Overworld nog niet op de gamestack gepushed. daarom herstart begintune.
-        self.engine.audio.set_bg_music(self.engine.gamestate.peek().name)
-        self.engine.audio.set_bg_sounds(self.engine.gamestate.peek().name)
-
-        # want deze is alleen nodig voor de audio, dus nadien weghalen.
-        # hij wordt vanaf nu (22-06-2016) ook voor beginpositie bepaling gebruikt, maar hij mag nog steeds weg nadien.
-        self.prev_map_name = None
-
-    def remove_temp_blockers(self):
-        """
-        verwijder eventueel temp blockers weer
-        """
-        # als er iets in de lijst van temp blockers staat:
-        if len(self.current_map.temp_blocker_rects) > 0:
-            # van 0 tot 3 bijv
-            for i in range(0, len(self.current_map.temp_blocker_rects), 1):
-                # de naam van de tempblocker is de key van de quest. haal die uit het logbook op basis van de naam.
-                the_quest = self.engine.data.logbook.get(self.current_map.temp_blocker_rects[i].name)
-                # bekijk dan of hij al rewarded is:
-                if the_quest is not None and the_quest.is_rewarded():
-                    # haal dan die temp blocker uit de lijst
-                    del self.current_map.temp_blocker_rects[i]
 
     def align(self):
         """
@@ -232,8 +216,6 @@ class Window(object):
                                     self.quest_box.cur_item, self.quest_box.TOPINDEX, self.quest_box.scr_capt,
                                     self.person_id, self.display_loot)
 
-            self.remove_temp_blockers()
-
             self.quest_box = None
             self.person_face = None
             self.person_id = None
@@ -246,45 +228,52 @@ class Window(object):
         if event.type == pygame.KEYDOWN:
 
             if event.key == Keys.Align.value:
-                self.party_sprites[0].align_to_grid(GRIDSIZE)
-                self.align()
+                if self.engine.debug_mode:
+                    self.party_sprites[0].align_to_grid(GRIDSIZE)
+                    self.align()
 
             elif event.key == Keys.Grid.value:
-                if self.grid_sprite is None:
-                    self.grid_sprite = Grid(self.current_map.width, self.current_map.height,
-                                            GRIDCOLOR, GRIDSIZE, GRIDLAYER)
-                    self.group.add(self.grid_sprite)
-                else:
-                    self.group.remove(self.grid_sprite)
-                    self.grid_sprite = None
+                if self.engine.debug_mode:
+                    if self.grid_sprite is None:
+                        self.grid_sprite = Grid(self.current_map.width, self.current_map.height,
+                                                GRIDCOLOR, GRIDSIZE, GRIDLAYER)
+                        self.group.add(self.grid_sprite)
+                    else:
+                        self.group.remove(self.grid_sprite)
+                        self.grid_sprite = None
 
             elif event.key == Keys.Cbox.value:
-                if len(self.cbox_sprites) == 0:                             # als de lijst leeg is.
-                    for unit in self.party_sprites:
-                        self.cbox_sprites.append(ColorBox(unit.rect, HEROCOLOR, CBOXLAYER))
-                    for rect in self.current_map.high_blocker_rects:
-                        self.cbox_sprites.append(ColorBox(rect, HIGHBLOCKERCOLOR, CBOXLAYER))
-                    for rect in self.current_map.low_blocker_rects:
-                        self.cbox_sprites.append(ColorBox(rect, LOWBLOCKERCOLOR, CBOXLAYER))
-                    for obj in self.current_map.people:
-                        if getattr(obj, 'wander_area', None):
-                            self.cbox_sprites.append(ColorBox(obj.wander_area, SHOPCOLOR, CBOXLAYER))
-                    for obj_group in (self.current_map.heroes,
-                                      self.current_map.shops,
-                                      self.current_map.schools,
-                                      self.current_map.trainers,
-                                      self.current_map.inns,
-                                      self.current_map.people,
-                                      self.current_map.notes,
-                                      self.current_map.signs,
-                                      self.current_map.chests,
-                                      self.current_map.sparkly):
-                        for obj in obj_group:
-                            self.cbox_sprites.append(ColorBox(obj.rect, SHOPCOLOR, CBOXLAYER))
-                    self.group.add(self.cbox_sprites)
-                else:
-                    self.group.remove(self.cbox_sprites)
-                    self.cbox_sprites = []
+                if self.engine.debug_mode:
+                    if len(self.cbox_sprites) == 0:                             # als de lijst leeg is.
+                        for unit in self.party_sprites:
+                            self.cbox_sprites.append(ColorBox(unit.rect, HEROCOLOR, CBOXLAYER))
+                        for rect in self.current_map.high_blocker_rects:
+                            self.cbox_sprites.append(ColorBox(rect, HIGHBLOCKERCOLOR, CBOXLAYER))
+                        for rect in self.current_map.low_blocker_rects:
+                            self.cbox_sprites.append(ColorBox(rect, LOWBLOCKERCOLOR, CBOXLAYER))
+                        for obj in self.current_map.people:
+                            if getattr(obj, 'wander_area', None):
+                                self.cbox_sprites.append(ColorBox(obj.wander_area, WANDERBOXCOLOR, CBOXLAYER))
+                        for obj_group in (self.current_map.text_events,
+                                          self.current_map.move_events):
+                            for obj in obj_group:
+                                self.cbox_sprites.append(ColorBox(obj.rect, TEXTEVENTCOLOR, CBOXLAYER))
+                        for obj_group in (self.current_map.heroes,
+                                          self.current_map.shops,
+                                          self.current_map.schools,
+                                          self.current_map.trainers,
+                                          self.current_map.inns,
+                                          self.current_map.people,
+                                          self.current_map.notes,
+                                          self.current_map.signs,
+                                          self.current_map.chests,
+                                          self.current_map.sparkly):
+                            for obj in obj_group:
+                                self.cbox_sprites.append(ColorBox(obj.rect, OBJECTCOLOR, CBOXLAYER))
+                        self.group.add(self.cbox_sprites)
+                    else:
+                        self.group.remove(self.cbox_sprites)
+                        self.cbox_sprites = []
 
     def multi_input(self, key_input, mouse_pos, dt):
         """
@@ -294,29 +283,37 @@ class Window(object):
         :param mouse_pos: pygame.mouse.get_pos()
         :param dt: self.clock.tick(FPS)/1000.0
         """
-        if key_input[Keys.Zoomplus.value[0]] or key_input[Keys.Zoomplus.value[1]]:
-            value = self.current_map.map_layer.zoom + ZOOMSPEED
-            if value < MAXZOOM:
-                self.current_map.map_layer.zoom = value
-        elif key_input[Keys.Zoommin.value[0]] or key_input[Keys.Zoommin.value[1]]:
-            value = self.current_map.map_layer.zoom - ZOOMSPEED
-            if value > MINZOOM:
-                self.current_map.map_layer.zoom = value
-        elif key_input[Keys.Zoomreset.value[0]] or key_input[Keys.Zoomreset.value[1]]:
-            self.current_map.map_layer.zoom = DEFZOOM
 
-        self.party_sprites[0].speed(key_input)
-        self.party_sprites[0].direction(key_input, dt)
-        # todo, moet dit niet naar de unit class?
-        self.party_sprites[0].check_blocker(self.current_map.high_blocker_rects,
-                                            self.current_map.low_blocker_rects,
-                                            self.current_map.temp_blocker_rects,
-                                            [sprite.get_blocker() for sprite in self.current_map.people if
-                                             getattr(sprite, 'wander_area', None)],  # alleen maar lopende sprites,
-                                            None,                                    # standing sprites hebben al een
-                                            self.current_map.width,                  # blocker
-                                            self.current_map.height,
-                                            dt)
+        # geen key_input mogelijk bij automatisch bewegen
+        if not self.auto_move_event:
+
+            if self.engine.debug_mode:
+                if key_input[Keys.Zoomplus.value[0]] or key_input[Keys.Zoomplus.value[1]]:
+                    value = self.current_map.map_layer.zoom + ZOOMSPEED
+                    if value < MAXZOOM:
+                        self.current_map.map_layer.zoom = value
+                elif key_input[Keys.Zoommin.value[0]] or key_input[Keys.Zoommin.value[1]]:
+                    value = self.current_map.map_layer.zoom - ZOOMSPEED
+                    if value > MINZOOM:
+                        self.current_map.map_layer.zoom = value
+                elif key_input[Keys.Zoomreset.value[0]] or key_input[Keys.Zoomreset.value[1]]:
+                    self.current_map.map_layer.zoom = DEFZOOM
+
+            if self.engine.debug_mode:
+                self.party_sprites[0].speed(key_input)
+            self.party_sprites[0].direction(key_input, dt)
+            # todo, moet dit niet naar de unit class?
+            self.party_sprites[0].check_blocker(self.current_map.high_blocker_rects,
+                                                self.current_map.low_blocker_rects,
+                                                self.current_map.quest_blocker_rects,
+                                                [sprite.get_blocker() for sprite in self.current_map.people if
+                                                 getattr(sprite, 'wander_area', None)],  # alleen maar lopende sprites,
+                                                None,                                    # standing sprites hebben al
+                                                self.current_map.width,                  # een blocker
+                                                self.current_map.height,
+                                                dt)
+        else:
+            self.run_move_event(dt)
 
         self.leader_trail(dt)
 
@@ -330,7 +327,9 @@ class Window(object):
         """
         # Is de hero tegen een soundobject of een portal aangelopen
         self.check_sounds()
+        self.check_text_events()  # deze staat voor portals vanwege een evt vloeiende Transition.
         self.check_portals()
+        self.check_move_events()
 
         # Update locaties (indien F11).
         # misschien gaat dit een probleem geven wanneer ingame de party grootte wordt gewijzigd.
@@ -351,6 +350,8 @@ class Window(object):
         for obj in self.current_map.sparkly:
             sparkly_data = self.engine.data.sparklies[obj.sparkly_id]
             obj.update(sparkly_data['taken'], dt)
+        # en update eventuele quest blockers
+        self.current_map.remove_rewarded_quest_blockers(self.engine.data.logbook)
 
         # beweeg wandering people.
         # er staan niet alleen maar wandering in c_m.people, ook standing people, maar update wordt daarbij ge-pass-t
@@ -403,6 +404,38 @@ class Window(object):
                 ps.movespeed = self.leader_history[index][4]
                 ps.animate(dt, make_sound=False)
 
+    def run_move_event(self, dt):
+        """
+        Beweeg de hero automatisch indien
+        """
+        if self.auto_move_event:
+
+            if self.auto_move_part[0] == PersonState.Moving:
+                self.party_sprites[0].last_direction = self.auto_move_part[1]
+                self.party_sprites[0].move_direction = self.auto_move_part[1]
+                self.party_sprites[0].auto_move(dt)
+            elif self.auto_move_part[0] == PersonState.Resting:
+                self.party_sprites[0].last_direction = self.auto_move_part[1]
+                self.party_sprites[0].move_direction = None
+                self.party_sprites[0].auto_move(dt)
+
+            # handel de automatisch beweging timer af.
+            # auto_move_part[2] is de timer. [1] is de direction. [0] is de personstate
+            if self.auto_move_timer > 0.0:
+                self.auto_move_timer -= dt
+            if self.auto_move_timer <= 0.0:
+                # als hij aan het eind van het move script is.
+                if self.auto_move_script_index >= len(self.auto_move_script) - 1:
+                    self.auto_move_event = False
+                    self.auto_move_script = None
+                    self.auto_move_script_index = 0
+                    self.auto_move_part = None
+                    self.auto_move_timer = 0
+                else:
+                    self.auto_move_script_index += 1
+                    self.auto_move_part = self.auto_move_script[self.auto_move_script_index]
+                    self.auto_move_timer = self.auto_move_part[2]  # [2] is de timer
+
     def check_sounds(self):
         """
         Bekijk op de kaart met welke sound de voeten colliden.
@@ -427,8 +460,71 @@ class Window(object):
             self.engine.data.map_pos = self.prev_map_name       # zet de point om naar een string naam.
             # als er een .to_nr is, namelijk het obj.type van een portal, gebruik dan .to_nr voor lokatiebepaling
             self.portal_to_nr = self.current_map.portals[portal_nr].to_nr
+            self.engine.audio.fade_bg_music_when_loading_a_new_map()
+            self.engine.audio.fade_bg_sounds_when_loading_a_new_map()
+            self.engine.try_to_load_music = True
             self.load_map()
             self.engine.gamestate.push(Transition(self.engine.gamestate, full_screen=False))
+
+    def check_text_events(self):
+        """
+        Bekijk of hij collide met een text event. Laat dan een reeks msgboxen zien.
+        Verwijder daarna het eenmalige event.
+        """
+        if not self.party_sprites[0].is_highspeed_moving():
+            if len(self.party_sprites[0].rect.collidelistall(self.current_map.text_events)) == 1:
+                object_nr = self.party_sprites[0].rect.collidelist(self.current_map.text_events)
+                event_name = self.current_map.text_events[object_nr].name
+                event_text = self.engine.data.text_events[event_name]['text']
+
+                if event_text:
+
+                    # kan een boolean of een functie zijn
+                    event_condition = self.engine.data.text_events[event_name]['condition']
+                    # kijk of het een functie is
+                    if callable(event_condition):
+                        # voer met de () erachter de methode uit die in die dict staat.
+                        event_condition = event_condition(None, self.engine.data)  # de None is voor niet static method.
+                        # en maak er een boolean van
+                    if event_condition:
+
+                        # zwarte of normale achtergrond?
+                        scr_capt = None  # normale achtergrond
+                        if self.current_map.text_events[object_nr].opt:  # als er iets in .opt staat
+                            self.engine.gamestate.push(Transition(self.engine.gamestate, full_screen=False))
+                            scr_capt = False  # zwarte achtergrond
+
+                        event_face = self.engine.data.text_events[event_name]['face']
+                        event_face.reverse()
+                        for i, text_part in enumerate(reversed(event_text)):
+                            push_object = MessageBox(self.engine.gamestate, self.engine.audio, text_part,
+                                                     face_image=event_face[i], scr_capt=scr_capt,
+                                                     last=(True if i == 0 else False))
+                            self.engine.gamestate.push(push_object)
+
+                        self.engine.data.text_events[event_name]['text'] = None
+                        self.engine.data.text_events[event_name]['face'] = None
+                        self.engine.data.text_events[event_name]['condition'] = False
+
+    def check_move_events(self):
+        """
+        Collide je met een move_event. Zet daarna uit.
+        """
+        if not self.party_sprites[0].is_highspeed_moving():
+            if len(self.party_sprites[0].rect.collidelistall(self.current_map.move_events)) == 1:
+                object_nr = self.party_sprites[0].rect.collidelist(self.current_map.move_events)
+                event_name = self.current_map.move_events[object_nr].name
+                event_data = self.engine.data.move_events[event_name]
+
+                # voer maar 1x uit
+                if event_data['condition']:
+                    event_data['condition'] = False
+
+                    self.auto_move_event = True
+                    self.auto_move_script = event_data['movement']
+                    self.auto_move_script_index = 0
+                    self.auto_move_part = self.auto_move_script[self.auto_move_script_index]
+                    self.auto_move_timer = self.auto_move_part[2]  # [2] is de timer
 
     def action_button(self):
         """
@@ -554,10 +650,8 @@ class Window(object):
 
             # maar dan, als de persoon een quest heeft
             if person_data.get('quest'):
-                # stop hem in data.logbook en haal de juiste self.quest_data er weer uit.
                 quest_key = person_data['quest'].name
-                quest_value = person_data['quest'].value
-                the_quest = self.engine.data.logbook.add_quest(quest_key, quest_value)
+                the_quest = self.engine.data.logbook[quest_key]
                 # het gezicht is in on_enter() weer nodig, vandaar deze declaratie.
                 self.person_face = person_data['face']
                 # idem voor person_id
@@ -585,14 +679,12 @@ class Window(object):
             object_nr = check_rect.collidelist(self.current_map.notes)
             note_id = self.current_map.notes[object_nr].name
             note_text = NoteDatabase[note_id].value
-            if type(note_text) == list:
-                for i, text_part in enumerate(reversed(note_text)):
-                    push_object = MessageBox(self.engine.gamestate, self.engine.audio, text_part,
-                                             last=(True if i == 0 else False))
-                    self.engine.gamestate.push(push_object)
-            # een plaatje alleen is een string en geen list.
-            else:
-                push_object = MessageBox(self.engine.gamestate, self.engine.audio, [""], note_text, last=True)
+            # als het nog geen list (wat moet), bijvoorbeeld bij een plaatje, maak dan van de "string" een ["string"]
+            if type(note_text) != list:
+                note_text = [note_text]
+            for i, text_part in enumerate(reversed(note_text)):
+                push_object = MessageBox(self.engine.gamestate, self.engine.audio, text_part,
+                                         last=(True if i == 0 else False))
                 self.engine.gamestate.push(push_object)
 
     def check_signs(self):
@@ -626,14 +718,14 @@ class Window(object):
                         if key == "mec":
                             mec_v, mec_h = self.engine.data.party.get_highest_value_of_skill(key)
                             if mec_v < value:
-                                text = self.engine.data.treasure_chests.mec_text(chest_data['condition'][key])
+                                text = TreasureChestDatabase.mec_text(chest_data['condition'][key])
                                 push_object = MessageBox(self.engine.gamestate, self.engine.audio, text)
                                 self.engine.gamestate.push(push_object)
                                 return
                         elif key == "thf":
                             thf_v, thf_h = self.engine.data.party.get_highest_value_of_skill(key)
                             if thf_v < value:
-                                text = self.engine.data.treasure_chests.thf_text(chest_data['condition'][key])
+                                text = TreasureChestDatabase.thf_text(chest_data['condition'][key])
                                 push_object = MessageBox(self.engine.gamestate, self.engine.audio, text)
                                 self.engine.gamestate.push(push_object)
                                 return
@@ -650,8 +742,7 @@ class Window(object):
 
                 if chest_data['content']:
                     chest_data['opened'] = 1
-                    text = self.engine.data.treasure_chests.open_chest(chest_data.get('condition'),
-                                                                       mec_v, mec_h, thf_v, thf_h)
+                    text = TreasureChestDatabase.open_chest(chest_data.get('condition'), mec_v, mec_h, thf_v, thf_h)
                     image = []
                     text, image = self.display_loot(chest_data['content'], text, image)
                     chest_data['content'] = dict()

@@ -44,8 +44,8 @@ class Player(Person):
         self.last_direction = direction
         self.move_direction = None
 
-        self.movespeed = 0
-        self.step_count = 0
+        self.movespeed = MOVESPEED2
+        self.step_count = STEPSPEED  # direct uit stilstand animeren
         self.step_animation = 0
 
         self.time_up = 0
@@ -67,6 +67,37 @@ class Player(Person):
             self.movespeed = MOVESPEED3
         elif key_input[Keys.Mvspeed1_1.value] or key_input[Keys.Mvspeed1_2.value]:
             self.movespeed = MOVESPEED1
+
+    def auto_move(self, dt, movespeed=MOVESPEED1):
+        """
+        Verzet de positie in de opgegeven richting.
+        """
+        self.movespeed = MOVESPEED2  # hij beweegt standaard met movespeed1, maar de animatie gaat met MS2.
+        self.old_position = list(self.rect.topleft)
+
+        if self.move_direction == Direction.North:
+            self.full_sprite.set_clip(self.north_states[0])
+        elif self.move_direction == Direction.West:
+            self.full_sprite.set_clip(self.west_states[0])
+        elif self.move_direction == Direction.East:
+            self.full_sprite.set_clip(self.east_states[0])
+        else:
+            self.full_sprite.set_clip(self.south_states[0])
+        self.image = self.full_sprite.subsurface(self.full_sprite.get_clip())
+
+        if self.move_direction == Direction.North:
+            self.true_position[1] -= movespeed * dt
+        elif self.move_direction == Direction.South:
+            self.true_position[1] += movespeed * dt
+        elif self.move_direction == Direction.West:
+            self.true_position[0] -= movespeed * dt
+        elif self.move_direction == Direction.East:
+            self.true_position[0] += movespeed * dt
+
+        self.rect.x = round(self.true_position[0])
+        self.rect.y = round(self.true_position[1])
+
+        self.animate(dt)
 
     def direction(self, key_input, dt):
         """
@@ -167,13 +198,13 @@ class Player(Person):
         self.rect.topleft = (round(self.rect.x / grid_size) * grid_size, round(self.rect.y / grid_size) * grid_size)
         self.feet.midbottom = self.rect.midbottom
 
-    def check_blocker(self, high_blockers, low_blockers, temp_blockers, walking_blockers,
+    def check_blocker(self, high_blockers, low_blockers, quest_blockers, walking_blockers,
                       moverange, map_width, map_height, dt):
         """
         Bekijk of de unit tegen een andere sprite aan loopt.
         :param high_blockers: lijst van rects van map1.high_blocker_rects
         :param low_blockers: lijst van rects van map1.low_blocker_rects
-        :param temp_blockers: lijst van blockers die door quests weg zijn te krijgen.
+        :param quest_blockers: lijst van blockers die door quests weg zijn te krijgen.
         :param walking_blockers: lijst van rects van walking people
         :param moverange: jouw moverange sprite
         :param map_width: breedte van de map
@@ -183,17 +214,17 @@ class Player(Person):
         t = False   # deze variabele is er om te kijken of true_pos aangepast moet worden aan het eind.
 
         # als je snel rent, gewoon door muren heen gaan.
-        if self.movespeed != MOVESPEED4:
+        if not self.is_highspeed_moving():
 
-            # tempblockers zijn named rects, dat werkt niet bij move_side ed, vandaar deze tijdelijke omzetting.
-            tb = []  # lege tempblocker list
-            for named_rect in temp_blockers:
-                tb.append(named_rect.rect)
+            # quest blockers zijn named rects, dat werkt niet bij move_side ed, vandaar deze tijdelijke omzetting.
+            qb = []  # lege quest blocker list
+            for named_rect in quest_blockers:
+                qb.append(named_rect.rect)
 
             # maak kopieen van de lijsten, zodat er eventueel wat uit verwijderd kan worden
             hb = high_blockers.copy()
             lb = low_blockers.copy()
-            lb = lb + tb  # temp blockers worden bij low blockers gestopt
+            lb = lb + qb  # quest blockers worden bij low blockers gestopt
             wb = walking_blockers.copy()
 
             # loop tegen de rand van een high_blocker aan
@@ -230,9 +261,9 @@ class Player(Person):
                 return
 
             # loop recht tegen een high_ of low_blocker aan
-            # hier zit tb nog een keer in bij lb
+            # hier zit qb nog een keer in bij lb
             while self.rect.collidelist(high_blockers) > -1 or \
-                    self.rect.collidelist(low_blockers + tb) > -1 or \
+                    self.rect.collidelist(low_blockers + qb) > -1 or \
                     self.rect.collidelist(walking_blockers) > -1:
                 self._move_back()
                 t = True
@@ -371,7 +402,7 @@ class Player(Person):
         # return clipped_rect
 
     def _get_frame(self, frame_set, dt, make_sound):
-        if self.movespeed != MOVESPEED4:  # geen animatie of geluid bij MOVESPEED4
+        if not self.is_highspeed_moving():  # geen animatie of geluid bij MOVESPEED4
             self.step_count += self.movespeed * dt
             if self.step_count > STEPSPEED:
                 self.step_count = 0
@@ -396,6 +427,12 @@ class Player(Person):
            self.time_left > 0 or self.time_right > 0:
             return True
         return False
+
+    def is_highspeed_moving(self):
+        """
+        Bekijkt of de user op MOVESPEED4 aan het bewegen is.
+        """
+        return self.movespeed == MOVESPEED4
 
     def get_check_rect(self):
         """

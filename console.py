@@ -33,7 +33,7 @@ class Console:
         StateMachine.push()
         :param state: Enum
         """
-        print("Game pushed {} on stack.".format(state))
+        print("Game pushed {} on top of stack.".format(state))
 
     @staticmethod
     def state_pop(state):
@@ -41,7 +41,15 @@ class Console:
         StateMachine.pop()
         :param state: Enum
         """
-        print("Game popped {} off stack.".format(state))
+        print("Game popped {} from top of stack.".format(state))
+
+    @staticmethod
+    def state_deep_pop(state):
+        """
+        StateMachine.deep_pop()
+        :param state: Enum
+        """
+        print("Game popped {} from inside of stack.".format(state))
 
     @staticmethod
     def state_clear():
@@ -51,28 +59,42 @@ class Console:
         print("Game cleared all states from stack.")
 
     @staticmethod
-    def load_options():
+    def load_settings():
         """
         Audio._load_cfg()
         Video._load_cfg()
         """
-        print("Loading options file...")
+        print("Loading settings file...")
 
     @staticmethod
-    def write_options():
+    def write_settings():
         """
         Audio.write_cfg()
         Video.write_cfg()
         """
-        print("Writing options files...")
+        print("Writing settings files...")
 
     @staticmethod
-    def corrupt_options():
+    def corrupt_settings():
         """
         Video._load_cfg()
         Audio._load_cfg()
         """
-        print("Corrupt options file.")
+        print("Corrupt settings file.")
+
+    @staticmethod
+    def load_all_maps():
+        """
+        Engine.load_all_maps()
+        """
+        print("Loading world maps...")
+
+    @staticmethod
+    def maps_loaded():
+        """
+        Engine.load_all_maps()
+        """
+        print("World maps loaded.")
 
     @staticmethod
     def load_gamedata():

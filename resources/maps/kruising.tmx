@@ -1498,4 +1498,5 @@
   <object id="161" x="672" y="640" width="32" height="16"/>
  </objectgroup>
  <objectgroup name="objects"/>
+ <objectgroup name="events"/>
 </map>

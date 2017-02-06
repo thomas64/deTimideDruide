@@ -35,7 +35,11 @@ class MessageBox(object):
     def __init__(self, gamestate, audio, raw_text, face_image=None, spr_image=None, scr_capt=None, sound=SFX.message,
                  last=False):
         """
+        :param raw_text: dit is een list die aangeleverd moet worden. Als het alleen een string is, dan wordt het
+        een plaatje die gebruikt maakt van face_image.
         :param spr_image: list van loaded images
+        :param scr_capt: een vorige scr_capt meegeven, niets meegeven = nieuwe capt, False = zwart scherm.
+        :param last: is het de laatste msgbox uit een reeks? True of False. Geef dan het afsluit geluidje 'done'.
         """
         self.gamestate = gamestate
         self.audio = audio
@@ -47,11 +51,21 @@ class MessageBox(object):
 
         if scr_capt is None:
             self.scr_capt = ScreenCapture()
+        elif scr_capt is False:
+            self.scr_capt = ScreenCapture(black_background=True)
         else:
             self.scr_capt = scr_capt
 
         self.font = pygame.font.SysFont(FONT, FONTSIZE)
-        self.raw_text = raw_text
+
+        # een plaatje alleen is een string en geen list. zet dus om indien nodig.
+        if type(raw_text) == list:
+            self.raw_text = raw_text
+        else:
+            self.raw_text = [""]
+            face_image = raw_text
+            raw_text = [""]
+
         self.vis_text = []
         self.face_image = face_image
         self.face_image_width = 0
@@ -97,6 +111,8 @@ class MessageBox(object):
             if event.key == Keys.Exit.value:
                 self._exit()
             elif event.key in Keys.Select.value:
+                self._exit()
+            elif event.key == Keys.Action.value:
                 self._exit()
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == Keys.Leftclick.value:

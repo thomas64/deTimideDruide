@@ -23,6 +23,7 @@ class: ColumnType
 
 import enum
 
+import aenum
 import pygame
 
 
@@ -34,7 +35,7 @@ class GameState(enum.Enum):
     MainMenu = 1
     LoadMenu = "Load Game"
     SaveMenu = "Save Game"
-    OptionsMenu = 4
+    SettingsMenu = 4
     PauseMenu = 5
 
     Overworld = 6
@@ -228,8 +229,7 @@ class SpellType(enum.Enum):
 
 class QuestType(enum.Enum):
     """..."""
-    FetchItemWithRewardQuest = 1
-    FetchItemWithoutRewardQuest = 2
+    FetchItemQuest = 1
     PersonMessageQuest = 3
     ReceiveItemQuest = 4
     EnemyQuest = 9
@@ -264,20 +264,21 @@ class MapMusic(enum.Enum):
     # invernia_town     = "invernia_town",     "town"
 
 
-class MapTitle(enum.Enum):
+class MapTitle(aenum.NoAliasEnum):
     """
     Alle tmx kaarten op een rij, met de Titel hoe die in beeld komt erachter.
+    Ze staan in een lijst, want later worden de tmx data's aan de lijst toegevoegd.
     De key's komen precies overeen met de .tmx namen.
     """
-    braserie_ad_waal  = "Braserie aan de Waal"
-    braserie_altena   = "Braserie Altena"
-    brug_od_waal      = "Brug over de Waal"
-    kasteel_batenburg = "Kasteel Batenburg"
-    schuur_batenburg  = "Kasteel Batenburg"
-    huis_batenburg    = "Kasteel Batenburg"
-    kerker_batenburg  = "Kasteel Batenburg"
-    grensovergang     = "Grensovergang Duitsland"
-    kruising          = "Kruising"
+    braserie_ad_waal  = ["Braserie aan de Waal"]
+    braserie_altena   = ["Braserie Altena"]
+    brug_od_waal      = ["Brug over de Waal"]
+    kasteel_batenburg = ["Kasteel Batenburg"]
+    schuur_batenburg  = ["Kasteel Batenburg"]
+    huis_batenburg    = ["Kasteel Batenburg"]
+    kerker_batenburg  = ["Kasteel Batenburg"]
+    grensovergang     = ["Grensovergang Duitsland"]
+    kruising          = ["Kruising"]
 
 
 class SFX(enum.Enum):

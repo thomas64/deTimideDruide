@@ -746,4 +746,5 @@
   <object id="121" x="944" y="176" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="objects" visible="0"/>
+ <objectgroup name="events"/>
 </map>

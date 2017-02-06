@@ -456,4 +456,5 @@
   <object id="38" name="person401" x="480" y="224" width="32" height="32"/>
   <object id="39" name="note9" x="320" y="128" width="32" height="16"/>
  </objectgroup>
+ <objectgroup name="events"/>
 </map>

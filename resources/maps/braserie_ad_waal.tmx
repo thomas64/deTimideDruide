@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="96" tilewidth="16" tileheight="16" nextobjectid="162">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="96" tilewidth="16" tileheight="16" nextobjectid="164">
  <tileset firstgid="1" name="braserie_ad_waal" tilewidth="16" tileheight="16" tilecount="2079" columns="63">
   <image source="braserie_ad_waal.png" width="1008" height="528"/>
  </tileset>
@@ -1060,7 +1060,7 @@
   <object id="151" name="brug_od_waal" type="2" x="1248" y="544" width="16" height="112"/>
  </objectgroup>
  <objectgroup name="start_pos">
-  <object id="85" name="start_game" x="352" y="496" width="16" height="16"/>
+  <object id="85" name="start_game" x="352" y="384" width="16" height="16"/>
   <object id="146" name="braserie_altena" x="320" y="496" width="16" height="16">
    <properties>
     <property name="direction" value="East"/>
@@ -1194,5 +1194,9 @@
  </objectgroup>
  <objectgroup name="objects">
   <object id="161" name="note8" x="512" y="352" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup name="events">
+  <object id="162" name="text1" x="352" y="512" width="16" height="16"/>
+  <object id="163" name="move1" x="352" y="400" width="16" height="16"/>
  </objectgroup>
 </map>

@@ -1434,4 +1434,5 @@
   <object id="284" name="person300" x="704" y="624" width="32" height="32"/>
   <object id="295" name="note13" x="384" y="320" width="32" height="32"/>
  </objectgroup>
+ <objectgroup name="events"/>
 </map>
