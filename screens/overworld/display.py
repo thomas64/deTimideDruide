@@ -90,10 +90,9 @@ class Display(object):
         Wanneer deze state op de stack komt, voer dit uit.
         Zet muziek en achtergrond geluiden indien nodig.
         """
-        if self.engine.wait_for_transition_before_loading_music is False:
-            self.engine.audio.set_bg_music(self.name)
-            self.engine.audio.set_bg_sounds(self.name)
-            self.engine.try_to_load_music = False
+        self.engine.audio.set_bg_music(self.engine.force_bg_music)
+        self.engine.audio.set_bg_sounds(self.engine.force_bg_music)
+        self.engine.force_bg_music = False
 
         self.window.on_enter()
 
@@ -105,10 +104,12 @@ class Display(object):
         """
         pass
 
-    def single_input(self, event):
+    def single_input(self, event, gamestate, audio):
         """
         Handelt de muis en keyboard input af.
         :param event: pygame.event.get()
+        :param gamestate:
+        :param audio:
         """
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == Keys.Leftclick.value:
@@ -143,10 +144,12 @@ class Display(object):
 
         self.window.multi_input(self.key_input, mouse_pos, dt)
 
-    def update(self, dt):
+    def update(self, dt, gamestate, audio):
         """
         Update de window.
         :param dt: self.clock.tick(FPS)/1000.0
+        :param gamestate:
+        :param audio:
         """
         self.window.update(dt)
 
@@ -180,4 +183,4 @@ class Display(object):
         self.engine.audio.play_sound(SFX.scroll)
         push_object = Party(self.engine)
         self.engine.gamestate.push(push_object)
-        self.engine.gamestate.push(Transition(self.engine.gamestate))
+        self.engine.gamestate.push(Transition())

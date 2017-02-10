@@ -7,12 +7,15 @@ import threading
 
 import pygame
 import pygame.gfxdraw
+import pytmx
 
 from audio import Audio
 from console import Console
 from constants import GameState
 from constants import Keys
+from constants import MapTitle
 import screens.menu
+from screens import Overworld
 from statemachine import StateMachine
 from video import Video
 
@@ -45,13 +48,12 @@ class GameEngine(object):
 
         self.running = False
         self.all_maps_loaded = False
-        self.wait_for_transition_before_loading_music = False
-        self.try_to_load_music = False
+        self.force_bg_music = False
 
         self.clock = pygame.time.Clock()
         self.playtime = 0.0
         self.dt = 0.0
-        self.key_timer = 2.0  # kaarten laad tijd
+        self.key_timer = 0.0
         self.state_timer = 0.0
 
         self.debugfont = pygame.font.SysFont(DEBUGFONT, DEBUGFONTSIZE)
@@ -66,13 +68,15 @@ class GameEngine(object):
 
     def load_all_maps(self):
         """..."""
-        from constants import MapTitle
-        import pytmx
         map_path = 'resources/maps/'
         Console.load_all_maps()
-        # noinspection PyTypeChecker
-        for map_name in MapTitle:
-            map_name.value.append(pytmx.load_pygame(map_path + map_name.name + '.tmx'))
+        try:
+            # noinspection PyTypeChecker
+            for map_name in MapTitle:
+                map_name.value.append(pytmx.load_pygame(map_path + map_name.name + '.tmx'))
+        except pygame.error:
+            # bij het sluiten van het spel voordat alle kaarten geladen zijn.
+            pass
         self.all_maps_loaded = True
         Console.maps_loaded()
 
@@ -93,24 +97,40 @@ class GameEngine(object):
             self.dt = self.clock.tick(self.fps)/1000.0
             self.playtime += self.dt
 
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    self.running = False
-                self.single_input(event)
-            self.multi_input()
-            self.update()
-            self.render()
+            if not self.gamestate.is_empty():
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        self.running = False
+                    self.single_input(event)
+                self.multi_input()
+                self.update()
+                self.render()
             pygame.display.flip()
+
+            # pop() het laadscherm wanneer dat kan.
+            if not self.gamestate.is_empty():
+                if self.gamestate.peek().name == GameState.LoadScreen:
+                    if self.all_maps_loaded:
+                        self.gamestate.pop()
+
+            # als de stack leeg is, push Overworld. Dit vanwege geluid en kaarten laden.
+            if self.gamestate.is_empty():
+                if self.all_maps_loaded:
+                    self.gamestate.push(Overworld(self))
 
     def single_input(self, event):
         """
         Handelt de muis en keyboard input af.
         :param event: pygame.event.get()
         """
+        if event.type == pygame.MOUSEMOTION:
+            pygame.mouse.set_visible(True)
+
         # if event.type == pygame.MOUSEBUTTONDOWN:          # todo, tijdelijk staan ze uit
         #     Console.mouse_down(event.pos, event.button)
         if event.type == pygame.KEYDOWN:
             # Console.keyboard_down(event.key, event.unicode)
+            pygame.mouse.set_visible(False)
 
             if self.debug_mode:
                 if event.key == Keys.Debug.value:
@@ -121,7 +141,7 @@ class GameEngine(object):
                     self._kill_game()
 
         if self.key_timer == 0.0:
-            self.gamestate.peek().single_input(event)
+            self.gamestate.peek().single_input(event, self.gamestate, self.audio)
 
     def multi_input(self):
         """
@@ -153,7 +173,7 @@ class GameEngine(object):
             self.state_timer = 0.0
             self.gamestate.pop()
 
-        self.gamestate.peek().update(self.dt)
+        self.gamestate.peek().update(self.dt, self.gamestate, self.audio)
 
     def render(self):
         """
@@ -255,6 +275,8 @@ class GameEngine(object):
             except AttributeError:
                 pass
             text2 = (
+                "",
+                "prev_state:        {}".format(self.gamestate.prev_state),
                 "",
                 "StateStack:"
             )
