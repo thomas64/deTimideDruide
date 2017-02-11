@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="54" height="44" tilewidth="16" tileheight="16" nextobjectid="64">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="54" height="44" tilewidth="16" tileheight="16" nextobjectid="65">
  <tileset firstgid="1" name="braserie_altena" tilewidth="16" tileheight="16" tilecount="1056" columns="44">
   <image source="braserie_altena.png" width="704" height="384"/>
  </tileset>
@@ -516,8 +516,9 @@
   <object id="52" name="person501" type="w" x="256" y="432" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events">
-  <object id="60" name="text2" x="128" y="160" width="64" height="16"/>
-  <object id="61" name="text3" x="480" y="288" width="288" height="32"/>
+  <object id="60" name="text2" x="128" y="160" width="96" height="16"/>
+  <object id="61" name="text3" x="448" y="320" width="320" height="32"/>
+  <object id="64" name="text3" x="448" y="240" width="64" height="80"/>
   <object id="62" name="text4" x="640" y="624" width="32" height="16"/>
   <object id="63" name="text5" x="320" y="160" width="96" height="16"/>
  </objectgroup>
