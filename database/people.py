@@ -60,6 +60,22 @@ class PeopleDatabase(enum.Enum):
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
                      time2=datetime.datetime(2017,  5, 13, 12, 00))
 
+    person500 = dict(name='roelfke01',      text=[["Hoi. Ik ben Roelfke."],
+                                                  ["Wat leuk dat je er bent!"],
+                                                  ["Verzamel je team maar snel bij elkaar."]])
+    person501 = dict(name='sieger01',       text=[["Hi. Ik ben Sieger."],
+                                                  ["Zijn jullie klaar voor een avontuur?"],
+                                                  ["Maak jullie borst maar nat!"]])
+    person502 = dict(name='thomas01',       text=[["Hallo. Ik ben Thomas.", "Het brein achter deze wereld."],
+                                                  ["Doet iets het niet? Dan kun je bij mij terecht."]])
+    person503 = dict(name='machteld01',     text=[["Hoi. Ik ben Machteld."],
+                                                  ["Ik zal lekker voor jullie koken als",
+                                                   "jullie goed je best doen! Succes!"]])
+    person504 = dict(name='dianne01',       text=[["Hoi. Ik ben Dianne.", "Moeder van Nynke."],
+                                                  ["Nynke! Niet te dicht bij de openhaard!"]])
+    person505 = dict(name='nynke01',        text=[["Huhuhu. MHUAAAA!!!"]])
+    person506 = dict(name='boaz01',         text=[["AAP!!"]])
+
     # standard characters
     person1 = dict(name='boy01',         text=[["Hi mister."]])
     person2 = dict(name='boy02',         text=[["Hi mister."]])

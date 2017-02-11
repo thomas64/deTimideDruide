@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="54" height="44" tilewidth="16" tileheight="16" nextobjectid="40">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="54" height="44" tilewidth="16" tileheight="16" nextobjectid="58">
  <tileset firstgid="1" name="braserie_altena" tilewidth="16" tileheight="16" tilecount="1056" columns="44">
   <image source="braserie_altena.png" width="704" height="384"/>
  </tileset>
@@ -441,6 +441,11 @@
   <object id="8" x="224" y="144" width="96" height="32"/>
  </objectgroup>
  <objectgroup name="objects">
+  <object id="40" name="hero" type="simon" x="448" y="384" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
   <object id="31" name="hero" type="nel" x="128" y="480" width="32" height="32">
    <properties>
     <property name="direction" value="east"/>
@@ -451,10 +456,63 @@
     <property name="direction" value="west"/>
    </properties>
   </object>
+  <object id="41" name="hero" type="gerdienke" x="544" y="384" width="32" height="32">
+   <properties>
+    <property name="direction" value="west"/>
+   </properties>
+  </object>
   <object id="35" name="note3" x="128" y="96" width="64" height="48"/>
   <object id="37" name="person400" type="w" x="640" y="192" width="32" height="32"/>
   <object id="38" name="person401" x="480" y="224" width="32" height="32"/>
   <object id="39" name="note9" x="320" y="128" width="32" height="16"/>
+  <object id="43" name="hero" type="anita" x="288" y="384" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="44" name="hero" type="jurritjan" x="384" y="352" width="32" height="32">
+   <properties>
+    <property name="direction" value="west"/>
+   </properties>
+  </object>
+  <object id="45" name="hero" type="anja" x="384" y="448" width="32" height="32">
+   <properties>
+    <property name="direction" value="west"/>
+   </properties>
+  </object>
+  <object id="48" name="hero" type="lourens" x="640" y="256" width="32" height="32">
+   <properties>
+    <property name="direction" value="north"/>
+   </properties>
+  </object>
+  <object id="49" name="hero" type="teake" x="576" y="256" width="32" height="32">
+   <properties>
+    <property name="direction" value="north"/>
+   </properties>
+  </object>
+  <object id="50" name="person500" x="672" y="480" width="32" height="32">
+   <properties>
+    <property name="direction" value="south"/>
+   </properties>
+  </object>
+  <object id="52" name="person501" type="w" x="256" y="432" width="32" height="32"/>
+  <object id="53" name="person502" x="128" y="352" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="54" name="person503" x="224" y="352" width="32" height="32">
+   <properties>
+    <property name="direction" value="west"/>
+   </properties>
+  </object>
+  <object id="55" name="person504" x="288" y="480" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="56" name="person505" type="w" x="224" y="208" width="32" height="32"/>
+  <object id="57" name="person506" type="w" x="288" y="208" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

@@ -25,40 +25,40 @@ class HeroDatabase(enum.Enum):
                  wpn=WeaponDatabase.bronzeshortsword,
                  sld=ShieldDatabase.woodenbuckler,
                  arm=ArmorDatabase.lightleatherarmor)
-    luana = dict(nam="Luana", spr=PATH+"02s_luana.png", fac=PATH+"02f_luana.png",
-                 lev=1, scl=SchoolType.elm,
-                 int=14, wil=10, dex=22, agi=20, edu=10, str=8, sta=20,
-                 alc=0, dip=0, hlr=0, lor=0, mec=1, mer=0, ran=0, stl=3, thf=3, trb=0, war=0, wiz=0,
-                 haf=-1, mis=-1, pol=0, shd=-1, swd=1, thr=2,
-                 wpn=WeaponDatabase.bronzedagger,
-                 sld=None, 
-                 arm=ArmorDatabase.lightleatherarmor)
-    grindan = dict(nam="Grindan", spr=PATH+"03s_grindan.png", fac=PATH+"03f_grindan.png",
-                   lev=8, scl=SchoolType.non,
-                   int=10, wil=8, dex=25, agi=10, edu=20, str=20, sta=40,
-                   alc=-1, dip=0, hlr=0, lor=0, mec=0, mer=0, ran=0, stl=1, thf=-1, trb=0, war=4, wiz=-1,
-                   haf=0, mis=-1, pol=0, shd=2, swd=4, thr=2,
-                   wpn=WeaponDatabase.bronzelongsword,
-                   sld=ShieldDatabase.bronzeheater,
-                   arm=ArmorDatabase.heavybronzearmor)
-    rydalin = dict(nam="Rydalin", spr=PATH+"04s_rydalin.png", fac=PATH+"04f_rydalin.png",
-                   lev=3, scl=SchoolType.nmg,
-                   int=22, wil=16, dex=20, agi=15, edu=16, str=10, sta=31,
-                   alc=0, dip=0, hlr=0, lor=1, mec=0, mer=1, ran=0, stl=0, thf=0, trb=0, war=0, wiz=4,
-                   haf=0, mis=-1, pol=3, shd=0, swd=3, thr=-1,
-                   wpn=WeaponDatabase.bronzestaff,
-                   sld=None, 
-                   arm=ArmorDatabase.mediumleatherarmor,
-                   spl=dict(VsNecromancy=1, Endurance=4, SenseAura=1, Weakness=4))
-    codrif = dict(nam="Codrif", spr=PATH+"05s_codrif.png", fac=PATH+"05f_codrif.png",
-                  lev=2, scl=SchoolType.elm,
-                  int=22, wil=18, dex=15, agi=12, edu=15, str=10, sta=20,
-                  alc=3, dip=0, hlr=0, lor=2, mec=2, mer=0, ran=0, stl=0, thf=0, trb=0, war=0, wiz=2,
-                  haf=-1, mis=-1, pol=0, shd=-1, swd=1, thr=1,
-                  wpn=WeaponDatabase.bronzedagger,
-                  sld=None,
-                  arm=ArmorDatabase.lightleatherarmor,
-                  spl=dict(DragonFlames=2))
+    gerdienke = dict(nam="Gerdienke", spr=PATH+"02s_luana.png", fac=PATH+"02f_luana.png",
+                     lev=1, scl=SchoolType.elm,
+                     int=14, wil=10, dex=22, agi=20, edu=10, str=8, sta=20,
+                     alc=0, dip=0, hlr=0, lor=0, mec=1, mer=0, ran=0, stl=3, thf=3, trb=0, war=0, wiz=0,
+                     haf=-1, mis=-1, pol=0, shd=-1, swd=1, thr=2,
+                     wpn=WeaponDatabase.bronzedagger,
+                     sld=None,
+                     arm=ArmorDatabase.lightleatherarmor)
+    anita = dict(nam="Anita", spr=PATH+"03s_grindan.png", fac=PATH+"03f_grindan.png",
+                 lev=8, scl=SchoolType.non,
+                 int=10, wil=8, dex=25, agi=10, edu=20, str=20, sta=40,
+                 alc=-1, dip=0, hlr=0, lor=0, mec=0, mer=0, ran=0, stl=1, thf=-1, trb=0, war=4, wiz=-1,
+                 haf=0, mis=-1, pol=0, shd=2, swd=4, thr=2,
+                 wpn=WeaponDatabase.bronzelongsword,
+                 sld=ShieldDatabase.bronzeheater,
+                 arm=ArmorDatabase.heavybronzearmor)
+    anja = dict(nam="Anja", spr=PATH+"04s_rydalin.png", fac=PATH+"04f_rydalin.png",
+                lev=3, scl=SchoolType.nmg,
+                int=22, wil=16, dex=20, agi=15, edu=16, str=10, sta=31,
+                alc=0, dip=0, hlr=0, lor=1, mec=0, mer=1, ran=0, stl=0, thf=0, trb=0, war=0, wiz=4,
+                haf=0, mis=-1, pol=3, shd=0, swd=3, thr=-1,
+                wpn=WeaponDatabase.bronzestaff,
+                sld=None,
+                arm=ArmorDatabase.mediumleatherarmor,
+                spl=dict(VsNecromancy=1, Endurance=4, SenseAura=1, Weakness=4))
+    lourens = dict(nam="Lourens", spr=PATH+"05s_codrif.png", fac=PATH+"05f_codrif.png",
+                   lev=2, scl=SchoolType.elm,
+                   int=22, wil=18, dex=15, agi=12, edu=15, str=10, sta=20,
+                   alc=3, dip=0, hlr=0, lor=2, mec=2, mer=0, ran=0, stl=0, thf=0, trb=0, war=0, wiz=2,
+                   haf=-1, mis=-1, pol=0, shd=-1, swd=1, thr=1,
+                   wpn=WeaponDatabase.bronzedagger,
+                   sld=None,
+                   arm=ArmorDatabase.lightleatherarmor,
+                   spl=dict(DragonFlames=2))
     peter = dict(nam="Peter", spr=PATH+"06s_galen.png", fac=PATH+"06f_galen.png",
                  lev=4, scl=SchoolType.non,
                  int=15, wil=15, dex=18, agi=10, edu=20, str=25, sta=40,
@@ -67,15 +67,15 @@ class HeroDatabase(enum.Enum):
                  wpn=WeaponDatabase.ironaxe,
                  sld=ShieldDatabase.irontarge,
                  arm=ArmorDatabase.mediumironarmor)
-    raiko = dict(nam="Raiko", spr=PATH+"07s_raiko.png", fac=PATH+"07f_raiko.png",
-                 lev=12, scl=SchoolType.non,
-                 int=6, wil=11, dex=14, agi=8, edu=30, str=30, sta=60,
-                 alc=-1, dip=0, hlr=0, lor=-1, mec=0, mer=0, ran=0, stl=1, thf=-1, trb=-1, war=6, wiz=-1,
-                 haf=0, mis=-1, pol=6, shd=4, swd=6, thr=-1,
-                 wpn=WeaponDatabase.ironbroadsword,
-                 sld=ShieldDatabase.ironkite,
-                 arm=ArmorDatabase.heavyironarmor)
-    kiara = dict(nam="Kiara", spr=PATH+"08s_kiara.png", fac=PATH+"08f_kiara.png",
+    jurritjan = dict(nam="Jurrit Jan", spr=PATH+"07s_raiko.png", fac=PATH+"07f_raiko.png",
+                     lev=12, scl=SchoolType.non,
+                     int=6, wil=11, dex=14, agi=8, edu=30, str=30, sta=60,
+                     alc=-1, dip=0, hlr=0, lor=-1, mec=0, mer=0, ran=0, stl=1, thf=-1, trb=-1, war=6, wiz=-1,
+                     haf=0, mis=-1, pol=6, shd=4, swd=6, thr=-1,
+                     wpn=WeaponDatabase.ironbroadsword,
+                     sld=ShieldDatabase.ironkite,
+                     arm=ArmorDatabase.heavyironarmor)
+    teake = dict(nam="Teake", spr=PATH+"08s_kiara.png", fac=PATH+"08f_kiara.png",
                  lev=12, scl=SchoolType.elm,
                  int=15, wil=10, dex=30, agi=30, edu=20, str=15, sta=40,
                  alc=0, dip=0, hlr=1, lor=0, mec=0, mer=4, ran=0, stl=5, thf=8, trb=0, war=0, wiz=4,
@@ -110,15 +110,15 @@ class HeroDatabase(enum.Enum):
                wpn=WeaponDatabase.steelpoleaxe,
                sld=ShieldDatabase.steelkite,
                arm=ArmorDatabase.heavysteelarmor)
-    duilio = dict(nam="Duilio", spr=PATH+"12s_duilio.png", fac=PATH+"12f_duilio.png",
-                  lev=22, scl=SchoolType.elm,
-                  int=25, wil=25, dex=30, agi=20, edu=25, str=25, sta=75,
-                  alc=5, dip=10, hlr=0, lor=5, mec=0, mer=5, ran=5, stl=5, thf=5, trb=10, war=10, wiz=10,
-                  haf=10, mis=-1, pol=10, shd=10, swd=10, thr=10,
-                  wpn=WeaponDatabase.silvershortsword,
-                  sld=ShieldDatabase.silvertarge,
-                  arm=ArmorDatabase.mediumsilverarmor,
-                  spl=dict(Fireball=6, AirShield=9, Strength=9, Debilitation=9, Mirror=9))
+    simon = dict(nam="Simon", spr=PATH+"12s_duilio.png", fac=PATH+"12f_duilio.png",
+                 lev=22, scl=SchoolType.elm,
+                 int=25, wil=25, dex=30, agi=20, edu=25, str=25, sta=75,
+                 alc=5, dip=10, hlr=0, lor=5, mec=0, mer=5, ran=5, stl=5, thf=5, trb=10, war=10, wiz=10,
+                 haf=10, mis=-1, pol=10, shd=10, swd=10, thr=10,
+                 wpn=WeaponDatabase.silvershortsword,
+                 sld=ShieldDatabase.silvertarge,
+                 arm=ArmorDatabase.mediumsilverarmor,
+                 spl=dict(Fireball=6, AirShield=9, Strength=9, Debilitation=9, Mirror=9))
     iellwen = dict(nam="Iellwen", spr=PATH+"13s_iellwen.png", fac=PATH+"13f_iellwen.png",
                    lev=20, scl=SchoolType.str,
                    int=30, wil=25, dex=30, agi=25, edu=30, str=20, sta=60,
@@ -144,75 +144,47 @@ class HeroDatabase(enum.Enum):
         :param hero_raw:
         'sale' is totaal van diplomat van hele party.
         """
-        if hero_raw == cls.luana.name:  # p(1).xpt >= 3000 - ((3000 / 100) * sale)
-            return ("Hi Alagos!",
-                    "We've been friends since childhood and I always",
-                    "wanted to go where you went to protect you...",
-                    "But this time you're out of your league and now",
-                    "I NEED to go with you to protect you.",
-                    "So, whatcha say?",
+        if hero_raw == cls.gerdienke.name:  # p(1).xpt >= 3000 - ((3000 / 100) * sale)
+            return ("Ik ben Gerdienke.",
                     "",
-                    "I will endure your presence Luana, thanks.",
-                    "But this time I don't WANT your protection.")
+                    "Welkom.",
+                    "Nee toch niet.")
 
-        elif hero_raw == cls.grindan.name:  # p(1).xpt >= 21000 - ((21000 / 100) * sale)
-            return ("Come here squire!",
-                    "You are always in for mischief, and I have to get you out of",
-                    "trouble for more than I like. And this time AGAIN I probably",
-                    "cannot let you go on some adventure all by yourself and get",
-                    "yourself killed. So I will join you now!",
+        elif hero_raw == cls.anita.name:  # p(1).xpt >= 21000 - ((21000 / 100) * sale)
+            return ("Ik ben Anita.",
                     "",
-                    "Sir, yes sir!",
-                    "Well, what do you know, look at the time! I need to be somewhere.")
+                    "Welkom.",
+                    "Nee toch niet.")
 
-        elif hero_raw == cls.rydalin.name:  # p(1).xpt >= 15000 - ((15000 / 100) * sale)
-            return ("Greetings Alagos, please let me go with you.",
-                    "I am looking for a cure for a friend of mine and",
-                    "if you go to Gertior maybe I can find that cure",
-                    "over there. They are known for their healingcraft.",
-                    "But I still need to prep myself a little bit.",
-                    "May I join you in your travels?",
+        elif hero_raw == cls.anja.name:  # p(1).xpt >= 15000 - ((15000 / 100) * sale)
+            return ("Ik ben Anja.",
                     "",
-                    "Of course Rydalin, I would like your company.",
-                    "I'm sorry, already so many people joined me.")
+                    "Welkom.",
+                    "Nee toch niet.")
 
-        elif hero_raw == cls.codrif.name:  # p(1).xpt >= 9000 - ((9000 / 100) * sale)
-            return ("Uhmm...",
-                    "What's your name again? I think I have met you before.",
-                    "I'm sorry, I am so often a little confused.",
-                    "Uhm... What was I saying? You look like you are off to",
-                    "somewhere interesting. Maybe if I join you I can help",
-                    "you... or help me? I don't know. Uuhhm, yes?",
+        elif hero_raw == cls.lourens.name:  # p(1).xpt >= 9000 - ((9000 / 100) * sale)
+            return ("Ik ben Lourens.",
                     "",
-                    "Hahaha, of course we can help each other.",
-                    "Uuuuuhmmm... No.")
+                    "Welkom.",
+                    "Nee toch niet.")
 
         elif hero_raw == cls.peter.name:
-            return ("Goedemorgen, ik heet Peter Noppe. Aangenaam.",
+            return ("Ik ben Peter.",
                     "",
-                    "Ik kies jou.",
-                    "Sorry, ik kies iemand anders.")
+                    "Welkom.",
+                    "Nee toch niet.")
 
-        elif hero_raw == cls.raiko.name:  # p(1).xpt >= 300000 - ((300000 / 100) * sale)
-            return ("Hello, I want to be knight.",
-                    "May I join you?",
-                    "I very strong!",
-                    "I join you, then you also stronger.",
+        elif hero_raw == cls.jurritjan.name:  # p(1).xpt >= 300000 - ((300000 / 100) * sale)
+            return ("Ik ben Jurrit-Jan.",
                     "",
-                    "Yes, your strength does come in handy.",
-                    "No thanks, I am looking for intelligence on this journey.")
+                    "Welkom.",
+                    "Nee toch niet.")
 
-        elif hero_raw == cls.kiara.name:  # gold >= 10000 - ((10000 / 100) * sale)
-            return ("Hey there sugar.",
-                    "You are looking handsome today. Your party sure",
-                    "could use me. I am skilled in all sorts of ways if",
-                    "you know what I mean. If I may join you, my whole",
-                    "skillset will be yours.",
-                    "Isn't that a pleasant thought? Your strong arms are",
-                    "in dire need of some sensitivity.",
+        elif hero_raw == cls.teake.name:  # gold >= 10000 - ((10000 / 100) * sale)
+            return ("Ik ben Teake.",
                     "",
-                    "Uhmm, sure.",
-                    "I'm married.")
+                    "Welkom.",
+                    "Nee toch niet.")
 
         elif hero_raw == cls.luthais.name:  # p(1).xpt >= 1200000 - ((1200000 / 100) * sale)
             return ("How do you do?",
@@ -236,16 +208,16 @@ class HeroDatabase(enum.Enum):
                     "Yes, I can.")
 
         elif hero_raw == cls.nel.name:  # p(1).xpt >= 1500000 - ((1500000 / 100) * sale)
-            return ("Goedemorgen, ik heet Nel Noppe. Aangenaam.",
+            return ("Ik ben Nel.",
                     "",
-                    "Ik kies jou.",
-                    "Sorry, ik kies iemand anders.")
+                    "Welkom.",
+                    "Nee toch niet.")
 
-        elif hero_raw == cls.duilio.name:  # gold >= 90000 - ((90000 / 100) * sale)
-            return ("Hmpf... Let me join.",
+        elif hero_raw == cls.simon.name:  # gold >= 90000 - ((90000 / 100) * sale)
+            return ("Ik ben Simon.",
                     "",
-                    "Okaaay.",
-                    "...")
+                    "Welkom.",
+                    "Nee toch niet.")
 
         elif hero_raw == cls.iellwen.name:  # special item?
             return ("Hail, traveler.",
