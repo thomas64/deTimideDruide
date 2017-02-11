@@ -136,7 +136,7 @@ class Window(object):
                 self.group.add(hero)
                 # voeg alleen nu een blocker toe als de hero er daadwerkelijk is.
                 # dit zit niet in de map class vanwege imports. maar nu moet hij in window al 2x checken op dit.
-                self.current_map.high_blocker_rects.append(hero.get_blocker())
+                # self.current_map.high_blocker_rects.append(hero.get_blocker()) uitgezet vanwege niet sidesteppen.
         self.group.add(self.current_map.shops)
         self.group.add(self.current_map.schools)
         self.group.add(self.current_map.trainers)
@@ -681,6 +681,9 @@ class Window(object):
                                              last=(True if i == 0 else False))
                     self.engine.gamestate.push(push_object)
 
+                if person_sprite.person_id == PeopleDatabase.person400.name:
+                    self.engine.data.barman_gepraat = True
+
     def check_notes(self, check_rect):
         """
         Bekijk met welke note objectnummer hij in de list collide.
@@ -698,6 +701,11 @@ class Window(object):
             for i, text_part in enumerate(reversed(note_text)):
                 push_object = MessageBox(text_part, last=(True if i == 0 else False))
                 self.engine.gamestate.push(push_object)
+
+            if note_id == NoteDatabase.note3.name:
+                self.engine.data.kaart_bekeken = True
+            elif note_id == NoteDatabase.note9.name:
+                self.engine.data.recept_bekeken = True
 
     def check_signs(self):
         """

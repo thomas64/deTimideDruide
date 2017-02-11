@@ -47,15 +47,6 @@ class PeopleDatabase(enum.Enum):
                                               ["Bij hun vertrek zijn ze iets vergeten mee te nemen.",
                                                "Waar heb ik dat toch gelaten? Het moet hier ergens zijn..."]])
 
-    person401 = dict(name='brann01',     text=[["Kraaa. Die stenen waar de barman het over heeft. Kraa.",
-                                                "We moeten die zien te vinden."],
-                                               ["Jaaa. Bij zijn kasteel zijn de stenen begraaaaven.",
-                                                "Baaaato is zijn naaaaam."],
-                                               ["  .  .  .  "],
-                                               ["Jaaa. Deze kaart moet het zijn. Kraaa.",
-                                                "Trek van plaats naar plaats 1 rechte lijn."],
-                                               ["Kraaa. Laaaten we gaaaaan."]])
-
     person402 = dict(name='soldier01',     text=[["Halt! U komt het ryck van Nimmegen niet in.",
                                                   "Ik heb orders van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
@@ -63,7 +54,7 @@ class PeopleDatabase(enum.Enum):
 
     person500 = dict(name='roelfke01',      text=[["Hoi. Ik ben Roelfke."],
                                                   ["Wat leuk dat je er bent!"],
-                                                  ["Verzamel je team maar snel bij elkaar."]])
+                                                  ["Verzamel je eigen team maar snel bij elkaar."]])
     person501 = dict(name='sieger01',       text=[["Hi. Ik ben Sieger."],
                                                   ["Zijn jullie klaar voor een avontuur?"],
                                                   ["Maak jullie borst maar nat!"]])
@@ -73,7 +64,7 @@ class PeopleDatabase(enum.Enum):
                                                   ["Ik zal lekker voor jullie koken als",
                                                    "jullie goed je best doen! Succes!"]])
     person504 = dict(name='dianne01',       text=[["Hoi. Ik ben Dianne.", "Moeder van Nynke."],
-                                                  ["Nynke! Niet te dicht bij de openhaard!"]])
+                                                  ["Nynke! Niet te dicht bij de open haard!"]])
     person505 = dict(name='nynke01',        text=[["Huhuhu. MHUAAAA!!!"]])
     person506 = dict(name='boaz01',         text=[["AAP!!"]])
 

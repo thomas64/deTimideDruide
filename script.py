@@ -98,6 +98,10 @@ class Script:
 
         data.custom_inventory_counter = 0
 
+        data.kaart_bekeken = False
+        data.barman_gepraat = False
+        data.recept_bekeken = False
+
     @staticmethod
     def intro_text():
         """..."""

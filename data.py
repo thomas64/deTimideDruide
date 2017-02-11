@@ -29,3 +29,7 @@ class Data(object):
         self.map_dir = None
 
         self.custom_inventory_counter = 0
+
+        self.kaart_bekeken = False
+        self.barman_gepraat = False
+        self.recept_bekeken = False
