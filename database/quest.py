@@ -30,7 +30,7 @@ class QuestDatabase(enum.Enum):
                   )
 
     quest2 = dict(qtype=QuestType.PersonMessageQuest,
-                  reward=dict(itm1=dict(nam=PouchItemDatabase.gold,     qty=1)),
+                  reward=dict(itm1=dict(nam=PouchItemDatabase.gold,     qty=1)),  # mag ook =None zijn.
                   people=dict(person74='main',
                               person75='sub1'),
                   text=dict(person74=([["How are you?"], ["May I ask you something?"],
@@ -75,11 +75,24 @@ class QuestDatabase(enum.Enum):
                          ["By the way, have you been bothered", "by that halfwit soldier at our town?",
                           "He has taken it up on himself to prevent", "monsters for entering the town!"],
                          ["That may be noble, but he is not able", "to see the difference between a normal",
-                          "person and an evil monster."], ["So he asks for proof?!?"],
+                          "person and an evil monster."], ["And now he asks for proof?!?"],
                          ["I'll give you a 'Proof of not being a monster',",
                           "because you seem a normal person to me.", "*sigh*"]],
                         [[" "]], [[" "]], [[" "]],
                         [["It's so beautiful, I can watch this scenery for hours."],
                          ["    .       .       .       .       .       .       ."],
                          ["Did you 'prove' that you are not a monster?"]])
+                  )
+
+    quest5 = dict(qtype=QuestType.GoSomewhereQuest,
+                  condition=False,  # deze gaat naar True als je op de plek bent geweest.
+                  reward=dict(eqp1=dict(nam=WeaponDatabase.titaniumlongsword,  qty=1)),  # mag =None zijn.
+                  text=([["Hi mister!"], ["There is this magical place in", "the forest where animals can talk."],
+                         ["Have you seen it?"], ["You have to go and take a look!"]],
+                        [["Have you been to the magical place", "where animals can talk?"]],
+                        ["Tell the girl you saw it but could not believe it?", "",
+                         "Yes, the faith of a child is important.", "No, I won't believe animals can talk!"],
+                        [["You have been there!!"], ["I love doggies."],
+                         ["You can have this if you keep it our secret."]],
+                        [["Animals really can talk, can they?"]])
                   )
