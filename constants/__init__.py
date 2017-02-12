@@ -263,6 +263,7 @@ class MapMusic(enum.Enum):
     kerker_batenburg  = "schuur_batenburg",  None
     grensovergang     = "ersin_forest",      "birds"
     kruising          = "ersin_forest",      "birds"
+    huisje_kruising   = "house",             "fire"
     gymnich           = "invernia_town",     "town"
     schuur_gymnich    = "schuur_batenburg",  None
     kerkje_gymnich    = "kerkje_gymnich",    None
@@ -283,6 +284,7 @@ class MapTitle(aenum.NoAliasEnum):
     kerker_batenburg  = ["Kasteel Batenburg"]
     grensovergang     = ["Grensovergang Duitsland"]
     kruising          = ["Kruising"]
+    huisje_kruising   = ["Kruising"]
     gymnich           = ["Gymnich"]
     schuur_gymnich    = ["Gymnich"]
     kerkje_gymnich    = ["Gymnich"]
