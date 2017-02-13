@@ -254,19 +254,23 @@ class MapMusic(enum.Enum):
     Alle tmx kaarten op een rij, met de muziek erachter en ambient sound.
     De key's komen precies overeen met de .tmx namen. De values[0] en [1] komen overeen met de .ogg namen.
     """
-    braserie_ad_waal  = "ersin_forest",      "birds"
-    braserie_altena   = "invernia_town",     "fire"
-    brug_od_waal      = "ersin_forest",      "birds"
-    kasteel_batenburg = "kasteel_batenburg", "birds"
-    schuur_batenburg  = "schuur_batenburg",  None
-    huis_batenburg    = "huis_batenburg",    "fire"
-    kerker_batenburg  = "schuur_batenburg",  None
-    grensovergang     = "ersin_forest",      "birds"
-    kruising          = "ersin_forest",      "birds"
-    huisje_kruising   = "house",             "fire"
-    gymnich           = "invernia_town",     "town"
-    schuur_gymnich    = "schuur_batenburg",  None
-    kerkje_gymnich    = "kerkje_gymnich",    None
+    braserie_ad_waal   = "ersin_forest",      "birds"
+    braserie_altena    = "invernia_town",     "fire"
+    brug_od_waal       = "ersin_forest",      "birds"
+    kasteel_batenburg  = "kasteel_batenburg", "birds"
+    schuur_batenburg   = "schuur_batenburg",  None
+    huis_batenburg     = "huis_batenburg",    "fire"
+    kerker_batenburg   = "schuur_batenburg",  None
+    grensovergang      = "ersin_forest",      "birds"
+    kruising           = "ersin_forest",      "birds"
+    huisje_kruising    = "house",             "fire"
+    gymnich            = "invernia_town",     "town"
+    schuur_gymnich     = "schuur_batenburg",  None
+    kerkje_gymnich     = "kerkje_gymnich",    None
+    romerkanal         = "ersin_forest",      "birds"
+    hol_romerkanal     = "ersin_cave",        None
+    huis_romerkanal_1f = "house",             None
+    huis_romerkanal_2f = "house",             None
 
 
 class MapTitle(aenum.NoAliasEnum):
@@ -275,19 +279,23 @@ class MapTitle(aenum.NoAliasEnum):
     Ze staan in een lijst, want later worden de tmx data's aan de lijst toegevoegd.
     De key's komen precies overeen met de .tmx namen.
     """
-    braserie_ad_waal  = ["Braserie aan de Waal"]
-    braserie_altena   = ["Braserie Altena"]
-    brug_od_waal      = ["Brug over de Waal"]
-    kasteel_batenburg = ["Kasteel Batenburg"]
-    schuur_batenburg  = ["Kasteel Batenburg"]
-    huis_batenburg    = ["Kasteel Batenburg"]
-    kerker_batenburg  = ["Kasteel Batenburg"]
-    grensovergang     = ["Grensovergang Duitsland"]
-    kruising          = ["Kruising"]
-    huisje_kruising   = ["Kruising"]
-    gymnich           = ["Gymnich"]
-    schuur_gymnich    = ["Gymnich"]
-    kerkje_gymnich    = ["Gymnich"]
+    braserie_ad_waal   = ["Braserie aan de Waal"]
+    braserie_altena    = ["Braserie Altena"]
+    brug_od_waal       = ["Brug over de Waal"]
+    kasteel_batenburg  = ["Kasteel Batenburg"]
+    schuur_batenburg   = ["Kasteel Batenburg"]
+    huis_batenburg     = ["Kasteel Batenburg"]
+    kerker_batenburg   = ["Kasteel Batenburg"]
+    grensovergang      = ["Grensovergang Duitsland"]
+    kruising           = ["Kruising"]
+    huisje_kruising    = ["Kruising"]
+    gymnich            = ["Gymnich"]
+    schuur_gymnich     = ["Gymnich"]
+    kerkje_gymnich     = ["Gymnich"]
+    romerkanal         = ["Romerkanal"]
+    hol_romerkanal     = ["Romerkanal"]
+    huis_romerkanal_1f = ["Romerkanal"]
+    huis_romerkanal_2f = ["Romerkanal"]
 
 
 class SFX(enum.Enum):

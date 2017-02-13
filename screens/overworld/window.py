@@ -282,6 +282,8 @@ class Window(object):
         :param mouse_pos: pygame.mouse.get_pos()
         :param dt: self.clock.tick(FPS)/1000.0
         """
+        # bekijk het geluid eerst.
+        self.check_sounds()
 
         # geen key_input mogelijk bij automatisch bewegen
         if not self.auto_move_event:
@@ -320,8 +322,7 @@ class Window(object):
         self.engine.data.map_pos = self.party_sprites[0].rect.topleft
         self.engine.data.map_dir = self.party_sprites[0].last_direction
 
-        # Is de hero tegen een soundobject of een portal aangelopen
-        self.check_sounds()
+        # Is de hero tegen een portal of iets aangelopen
         self.check_text_events()  # deze staat voor portals vanwege een evt vloeiende Transition.
         self.check_portals()
         self.check_move_events()
