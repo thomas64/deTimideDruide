@@ -101,6 +101,7 @@ class Script:
         data.kaart_bekeken = False
         data.barman_gepraat = False
         data.recept_bekeken = False
+        data.orakelsteen_gevonden = False
 
     @staticmethod
     def intro_text():

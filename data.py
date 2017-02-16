@@ -33,3 +33,4 @@ class Data(object):
         self.kaart_bekeken = False
         self.barman_gepraat = False
         self.recept_bekeken = False
+        self.orakelsteen_gevonden = False

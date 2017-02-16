@@ -50,6 +50,7 @@ KNOFLOOKPATH = "resources/sprites/icons/pouch/knoflook.png"
 SHALLOTPATH = "resources/sprites/icons/pouch/shallot.png"
 TOMAATPATH = "resources/sprites/icons/pouch/tomaat.png"
 DOPERWTENPATH = "resources/sprites/icons/pouch/doperwten.png"
+ORAKELSTEEN = "resources/sprites/icons/pouch/orakelsteen.png"
 
 
 class PouchItemDatabase(enum.Enum):
@@ -170,6 +171,7 @@ class PouchItemDatabase(enum.Enum):
     shallot = dict(nam="Shallot",                   srt=23, spr=SHALLOTPATH,        desc="")
     tomaat = dict(nam="Tomaat",                     srt=24, spr=TOMAATPATH,         desc="")
     doperwten = dict(nam="Doperwten",               srt=25, spr=DOPERWTENPATH,      desc="")
+    orakelsteen = dict(nam="Orakelsteen",           srt=26, spr=ORAKELSTEEN,        desc="")
 
 
 for itm in PouchItemDatabase:

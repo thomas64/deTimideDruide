@@ -29,6 +29,7 @@ from database import ShopDatabase
 from database import TrainerDatabase
 from database import NoteDatabase
 from database import SignDatabase
+from database import SparklyDatabase
 from database import TreasureChestDatabase
 
 from database import PouchItemDatabase
@@ -787,6 +788,9 @@ class Window(object):
                 sparkly_data['content'] = dict()
                 push_object = MessageBox(text, spr_image=image, sound=SFX.sparkly)
                 self.engine.gamestate.push(push_object)
+
+                if sparkly_id == SparklyDatabase.sparkly1.name:
+                    self.engine.data.orakelsteen_gevonden = True
 
     def display_loot(self, content_data, text, image):
         """

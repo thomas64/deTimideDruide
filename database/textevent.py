@@ -35,6 +35,9 @@ class TextEventDatabase(enum.Enum):
     def condition5(self, data):
         return data.recept_bekeken
 
+    def condition6(self, data):
+        return data.orakelsteen_gevonden
+
     text99 = dict(condition=condition1,
                   text=[["hoi1"], ["hoi2"]],
                   face=[ALAGOS, HEROFACEPATH+"02f_luana.png"])
@@ -98,3 +101,10 @@ class TextEventDatabase(enum.Enum):
                       "Is het eetbaaaar? Dan is het de moeite waaaaard."]
                  ],
                  face=[ALAGOS, ALAGOS, ALAGOS, ALAGOS])
+
+    text6 = dict(condition=condition6,
+                 text=[
+                     ["Wat een mooie kei. Kraaa.",
+                      "Die zou in mijn tuintje niet misstaan. Jaaa."]
+                 ],
+                 face=[ALAGOS])
