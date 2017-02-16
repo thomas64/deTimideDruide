@@ -552,11 +552,13 @@ class Window(object):
         self.check_schools(self.party_sprites[0].get_check_rect())
         self.check_trainers(self.party_sprites[0].get_check_rect())
         self.check_inns(self.party_sprites[0].get_check_rect())
+        # sparklies boven people gezet vanwege konijnenkeutels voor sieger
+        self.check_sparklies(self.party_sprites[0].get_check_rect())  # sparklys moeten ook van boven kunnen
+
         self.check_people(self.party_sprites[0].get_check_rect())
         self.check_notes(self.party_sprites[0].get_check_rect())
         self.check_signs()
         self.check_chests()
-        self.check_sparklies(self.party_sprites[0].get_check_rect())  # sparklys moeten ook van boven kunnen
 
     def check_heroes(self, check_rect):
         """

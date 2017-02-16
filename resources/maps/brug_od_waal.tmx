@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="96" tilewidth="16" tileheight="16" nextobjectid="153">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="96" tilewidth="16" tileheight="16" nextobjectid="159">
  <tileset firstgid="1" name="brug_od_waal" tilewidth="16" tileheight="16" tilecount="1215" columns="45">
   <image source="brug_od_waal.png" width="720" height="432"/>
  </tileset>
@@ -1203,6 +1203,12 @@
   <object id="150" name="note11" x="544" y="1312" width="32" height="32"/>
   <object id="151" name="note12" x="736" y="1376" width="32" height="32"/>
   <object id="152" name="note10" x="640" y="256" width="32" height="32"/>
+  <object id="153" name="person507" type="w" x="880" y="256" width="32" height="32"/>
+  <object id="154" name="person507" type="w" x="944" y="224" width="32" height="32"/>
+  <object id="155" name="person507" type="w" x="1008" y="272" width="32" height="32"/>
+  <object id="156" name="person507" type="w" x="832" y="304" width="32" height="32"/>
+  <object id="157" name="person507" type="w" x="944" y="272" width="32" height="32"/>
+  <object id="158" name="sparkly3" type="no spr" x="800" y="160" width="336" height="192"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

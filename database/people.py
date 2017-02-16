@@ -68,6 +68,9 @@ class PeopleDatabase(enum.Enum):
     person505 = dict(name='nynke01',        text=[["Huhuhu. MHUAAAA!!!"]])
     person506 = dict(name='boaz01',         text=[["AAP!!"]])
 
+    person507 = dict(name='animal04',       text=[["Eh, what's up, doc?"]])
+
+
     # standard characters
     person1 = dict(name='boy01',         text=[["Hi mister."]])
     person2 = dict(name='boy02',         text=[["Hi mister."]])
