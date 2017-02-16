@@ -272,6 +272,11 @@ class MapMusic(enum.Enum):
     huis_romerkanal_1f = "house",             None
     huis_romerkanal_2f = "house",             None
     kruising2          = "ersin_forest",      "birds"
+    druide_bos         = "ersin_forest",      "birds"
+    druide_grot1       = "ersin_cave",        None
+    druide_grot2       = "ersin_cave",        None
+    druide_grot3       = "ersin_cave",        None
+    trollen_bos        = "trollen_bos",       "river"
 
 
 class MapTitle(aenum.NoAliasEnum):
@@ -283,10 +288,10 @@ class MapTitle(aenum.NoAliasEnum):
     braserie_ad_waal   = ["Braserie aan de Waal"]
     braserie_altena    = ["Braserie Altena"]
     brug_od_waal       = ["Brug over de Waal"]
-    kasteel_batenburg  = ["Kasteel Batenburg"]
-    schuur_batenburg   = ["Kasteel Batenburg"]
-    huis_batenburg     = ["Kasteel Batenburg"]
-    kerker_batenburg   = ["Kasteel Batenburg"]
+    kasteel_batenburg  = ["Kasteel"]
+    schuur_batenburg   = ["Kasteel"]
+    huis_batenburg     = ["Kasteel"]
+    kerker_batenburg   = ["Kasteel"]
     grensovergang      = ["Grensovergang Duitsland"]
     kruising           = ["Kruising"]
     huisje_kruising    = ["Kruising"]
@@ -298,6 +303,11 @@ class MapTitle(aenum.NoAliasEnum):
     huis_romerkanal_1f = ["Romerkanal"]
     huis_romerkanal_2f = ["Romerkanal"]
     kruising2          = ["Kruising"]
+    druide_bos         = ["Druïde bos"]
+    druide_grot1       = ["Druïde grot"]
+    druide_grot2       = ["Druïde grot"]
+    druide_grot3       = ["Druïde grot"]
+    trollen_bos        = ["Trollen bos"]
 
 
 class SFX(enum.Enum):
