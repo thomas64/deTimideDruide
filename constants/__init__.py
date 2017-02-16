@@ -271,6 +271,7 @@ class MapMusic(enum.Enum):
     hol_romerkanal     = "ersin_cave",        None
     huis_romerkanal_1f = "house",             None
     huis_romerkanal_2f = "house",             None
+    kruising2          = "ersin_forest",      "birds"
 
 
 class MapTitle(aenum.NoAliasEnum):
@@ -296,6 +297,7 @@ class MapTitle(aenum.NoAliasEnum):
     hol_romerkanal     = ["Romerkanal"]
     huis_romerkanal_1f = ["Romerkanal"]
     huis_romerkanal_2f = ["Romerkanal"]
+    kruising2          = ["Kruising"]
 
 
 class SFX(enum.Enum):
