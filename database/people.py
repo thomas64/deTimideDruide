@@ -23,7 +23,7 @@ class PeopleDatabase(enum.Enum):
     person200 = dict(name='troll01',     text=[["*Grunt*"]])
 
     person300 = dict(name='soldier01',   text=[["Goedendag."],
-                                               ["Welkom in Batenburg."]])
+                                               ["Welkom in het kasteel."]])
 
     person301 = dict(name='soldier01',   text=[["Het is niet toegestaan de kasteelmuur te betreden."],
                                                ["Dus opzouten!!!"]])

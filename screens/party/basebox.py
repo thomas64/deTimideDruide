@@ -24,8 +24,8 @@ NEGCOLOR1 = pygame.Color("red")
 NEGCOLOR2 = pygame.Color("orangered")
 
 TITLEX, TITLEY = 7, 1
-SCROLLSPEED = 20
-BOTTOMSPACER = 7  # tegen bottom ghosting. deze maakt de layerheight net iets langer.
+SCROLLSPEED = 17
+BOTTOMSPACER = 1  # tegen bottom ghosting. deze maakt de layerheight net iets langer.
 ICONOFFSET = -6
 
 COLFORRECTS = 1  # in alle party boxen zitten de rects in data_list[X][1], behalve statsbox nog(!)
