@@ -1229,11 +1229,11 @@
   <object id="318" name="kruising2" x="-16" y="736" width="16" height="192"/>
  </objectgroup>
  <objectgroup name="start_pos">
-  <object id="171" name="grensovergang" x="0" y="256" width="16" height="16"/>
+  <object id="171" name="grensovergang" x="0" y="240" width="16" height="16"/>
   <object id="311" name="gymnich" x="1216" y="1456" width="16" height="16"/>
   <object id="314" name="huisje_kruising" x="544" y="736" width="16" height="16"/>
   <object id="316" name="romerkanal" x="1120" y="0" width="16" height="16"/>
-  <object id="319" name="kruising2" x="0" y="800" width="16" height="16"/>
+  <object id="319" name="kruising2" x="0" y="784" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="173" name="step_stone" x="0" y="256" width="224" height="32"/>

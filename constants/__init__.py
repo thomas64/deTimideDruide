@@ -275,7 +275,7 @@ class MapMusic(enum.Enum):
     druide_bos             = "ersin_forest",      "birds"
     druide_grot1           = "ersin_cave",        None
     druide_grot2           = "ersin_cave",        None
-    druide_grot3           = "ersin_cave",        None
+    druide_grot3           = "house",             None
     trollen_bos            = "trollen_bos",       "river"
     piesport               = "invernia_town",     "town"
     bieb_piesport          = "house",             None

@@ -580,8 +580,8 @@
   <object id="156" name="kruising" x="1248" y="576" width="16" height="240"/>
  </objectgroup>
  <objectgroup name="start_pos">
-  <object id="112" name="brug_od_waal" x="0" y="288" width="16" height="16"/>
-  <object id="158" name="kruising" x="1216" y="704" width="16" height="16"/>
+  <object id="112" name="brug_od_waal" x="0" y="272" width="16" height="16"/>
+  <object id="158" name="kruising" x="1216" y="688" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="115" name="step_grass" x="576" y="672" width="192" height="64"/>

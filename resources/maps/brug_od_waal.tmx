@@ -1051,17 +1051,17 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="portals">
+ <objectgroup name="portals" visible="0">
   <object id="4" name="braserie_ad_waal" type="1" x="-16" y="128" width="16" height="160"/>
   <object id="5" name="braserie_ad_waal" type="2" x="-16" y="320" width="16" height="112"/>
   <object id="130" name="kasteel_batenburg" x="-16" y="1280" width="16" height="160"/>
   <object id="143" name="grensovergang" x="1248" y="1408" width="16" height="112"/>
  </objectgroup>
  <objectgroup name="start_pos">
-  <object id="2" name="braserie_ad_waal" type="1" x="0" y="192" width="16" height="16"/>
+  <object id="2" name="braserie_ad_waal" type="1" x="0" y="176" width="16" height="16"/>
   <object id="3" name="braserie_ad_waal" type="2" x="0" y="368" width="16" height="16"/>
-  <object id="131" name="kasteel_batenburg" x="0" y="1360" width="16" height="16"/>
-  <object id="145" name="grensovergang" x="1216" y="1440" width="16" height="16"/>
+  <object id="131" name="kasteel_batenburg" x="0" y="1344" width="16" height="16"/>
+  <object id="145" name="grensovergang" x="1216" y="1424" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="79" name="step_wood" x="640" y="320" width="96" height="896"/>
