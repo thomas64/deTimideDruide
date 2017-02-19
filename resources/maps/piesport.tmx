@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="92" height="76" tilewidth="16" tileheight="16" nextobjectid="116">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="92" height="76" tilewidth="16" tileheight="16" nextobjectid="118">
  <tileset firstgid="1" name="piesport" tilewidth="16" tileheight="16" tilecount="3604" columns="106">
   <image source="piesport.png" width="1696" height="544"/>
  </tileset>
@@ -578,6 +578,7 @@
   <object id="106" name="kruising2" x="1408" y="544" width="16" height="160"/>
   <object id="109" name="bank_piesport" x="1120" y="912" width="32" height="16"/>
   <object id="111" name="bieb_piesport" x="1184" y="368" width="32" height="16"/>
+  <object id="116" name="bos_trier2" x="48" y="544" width="16" height="160"/>
  </objectgroup>
  <objectgroup name="start_pos">
   <object id="108" name="kruising2" x="1376" y="592" width="16" height="16"/>
@@ -585,6 +586,7 @@
   <object id="112" name="bieb_piesport" x="1184" y="384" width="16" height="16"/>
   <object id="114" name="wijnproeverij_piesport" x="608" y="256" width="16" height="16"/>
   <object id="115" name="inn_piesport_1f" x="288" y="512" width="16" height="16"/>
+  <object id="117" name="bos_trier2" x="64" y="592" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="78" name="step_grass" x="160" y="896" width="192" height="96"/>
@@ -620,7 +622,7 @@
   <object id="15" x="512" y="320" width="416" height="16"/>
   <object id="17" x="1280" y="384" width="64" height="48"/>
  </objectgroup>
- <objectgroup name="high_blocker" visible="0">
+ <objectgroup name="high_blocker">
   <object id="18" x="-16" y="0" width="112" height="560"/>
   <object id="19" x="96" y="0" width="1376" height="144"/>
   <object id="20" x="1376" y="144" width="96" height="416"/>
