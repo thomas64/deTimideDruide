@@ -285,6 +285,12 @@ class MapMusic(enum.Enum):
     inn_piesport_1f        = "house",             None
     inn_piesport_2f        = "house",             None
     bos_cochem             = "ersin_forest",      "birds"
+    cochem                 = "invernia_town",     "town"
+    kasteel_cochem         = "kasteel_batenburg", "fire"
+    kerk_cochem            = "kerkje_gymnich",    None
+    huis_cochem_1f         = "house",             None
+    huis_cochem_2f         = "house",             None
+    huis_cochem_3f         = "schuur_batenburg",  None
     bos_trier2             = "ersin_forest",      "birds"
     bos_trier1             = "ersin_forest",      "birds"
 
@@ -326,6 +332,12 @@ class MapTitle(aenum.NoAliasEnum):
     inn_piesport_1f        = ["Piesport"]
     inn_piesport_2f        = ["Piesport"]
     bos_cochem             = ["Bos naar Cochem"]
+    cochem                 = ["Cochem"]
+    huis_cochem_1f         = ["Cochem"]
+    huis_cochem_2f         = ["Cochem"]
+    huis_cochem_3f         = ["Cochem"]
+    kasteel_cochem         = ["Kasteel Cochem"]
+    kerk_cochem            = ["Kerk Cochem"]
     bos_trier1             = ["Bos naar Trier"]
     bos_trier2             = ["Bos naar Trier"]
 
