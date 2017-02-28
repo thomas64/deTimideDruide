@@ -293,9 +293,11 @@ class MapMusic(enum.Enum):
     cochem_huis_3f         = "schuur_batenburg",  None
     trier_bos2             = "ersin_forest",      "birds"
     trier_bos1             = "ersin_forest",      "birds"
-
+    trier                  = "invernia_town",     "town"
     trier_theater          = "ersin_cave",        None
-
+    trier_kerk1            = "kerkje_gymnich",    None
+    trier_kerk2            = "kerkje_gymnich",    None
+    trier_klokkentoren     = "kerkje_gymnich",    None
 
 class MapTitle(aenum.NoAliasEnum):
     """
@@ -342,8 +344,11 @@ class MapTitle(aenum.NoAliasEnum):
     cochem_huis_3f         = ["Kerk Cochem"]
     trier_bos2             = ["Bos naar Trier"]
     trier_bos1             = ["Bos naar Trier"]
-
+    trier                  = ["Trier"]
     trier_theater          = ["Trier"]
+    trier_kerk1            = ["Trier"]
+    trier_kerk2            = ["Trier"]
+    trier_klokkentoren     = ["Trier"]
 
 
 class SFX(enum.Enum):
