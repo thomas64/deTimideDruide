@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="40" tilewidth="16" tileheight="16" nextobjectid="63">
- <tileset firstgid="1" name="bos_cochem" tilewidth="16" tileheight="16" tilecount="846" columns="47">
-  <image source="bos_cochem.png" width="752" height="288"/>
+ <tileset firstgid="1" name="cochem_bos" tilewidth="16" tileheight="16" tilecount="846" columns="47">
+  <image source="cochem_bos.png" width="752" height="288"/>
  </tileset>
  <tileset firstgid="847" name="outside_b" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="tilesets/outside_b.png" width="512" height="512"/>

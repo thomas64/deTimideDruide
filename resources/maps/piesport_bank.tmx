@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="42" height="38" tilewidth="16" tileheight="16" nextobjectid="35">
- <tileset firstgid="1" name="bank_piesport" tilewidth="16" tileheight="16" tilecount="646" columns="34">
-  <image source="bank_piesport.png" width="544" height="304"/>
+ <tileset firstgid="1" name="piesport_bank" tilewidth="16" tileheight="16" tilecount="646" columns="34">
+  <image source="piesport_bank.png" width="544" height="304"/>
  </tileset>
  <tileset firstgid="647" name="dungeon_b" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="tilesets/dungeon_b.png" width="512" height="512"/>

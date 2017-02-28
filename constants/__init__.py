@@ -254,23 +254,23 @@ class MapMusic(enum.Enum):
     Alle tmx kaarten op een rij, met de muziek erachter en ambient sound.
     De key's komen precies overeen met de .tmx namen. De values[0] en [1] komen overeen met de .ogg namen.
     """
-    braserie_ad_waal       = "ersin_forest",      "birds"
-    braserie_altena        = "invernia_town",     "fire"
-    brug_od_waal           = "ersin_forest",      "birds"
-    kasteel_batenburg      = "kasteel_batenburg", "birds"
-    schuur_batenburg       = "schuur_batenburg",  None
-    huis_batenburg         = "huis_batenburg",    "fire"
-    kerker_batenburg       = "schuur_batenburg",  None
+    waal_braserie          = "ersin_forest",      "birds"
+    altena                 = "house",             "fire"
+    waal_brug              = "ersin_forest",      "birds"
+    batenburg_kasteel      = "kasteel_batenburg", "birds"
+    batenburg_schuur       = "schuur_batenburg",  None
+    batenburg_huis         = "huis_batenburg",    "fire"
+    batenburg_kerker       = "schuur_batenburg",  None
     grensovergang          = "ersin_forest",      "birds"
     kruising               = "ersin_forest",      "birds"
-    huisje_kruising        = "house",             "fire"
+    kruising_huisje        = "house",             "fire"
     gymnich                = "invernia_town",     "town"
-    schuur_gymnich         = "schuur_batenburg",  None
-    kerkje_gymnich         = "kerkje_gymnich",    None
+    gymnich_schuur         = "schuur_batenburg",  None
+    gymnich_kerkje         = "kerkje_gymnich",    None
     romerkanal             = "ersin_forest",      "birds"
-    hol_romerkanal         = "ersin_cave",        None
-    huis_romerkanal_1f     = "house",             None
-    huis_romerkanal_2f     = "house",             None
+    homerkanal_hol         = "ersin_cave",        None
+    romerkanal_huis_1f     = "house",             None
+    romerkanal_huis_2f     = "house",             None
     kruising2              = "ersin_forest",      "birds"
     druide_bos             = "ersin_forest",      "birds"
     druide_grot1           = "ersin_cave",        None
@@ -278,21 +278,21 @@ class MapMusic(enum.Enum):
     druide_grot3           = "house",             None
     trollen_bos            = "trollen_bos",       "river"
     piesport               = "invernia_town",     "town"
-    bieb_piesport          = "house",             None
-    bank_piesport          = "house",             None
-    kelder_bank_piesport   = "schuur_batenburg",  None
-    wijnproeverij_piesport = "house",             None
-    inn_piesport_1f        = "house",             None
-    inn_piesport_2f        = "house",             None
-    bos_cochem             = "ersin_forest",      "birds"
+    piesport_bieb          = "house",             None
+    piesport_bank          = "house",             None
+    piesport_bank_kelder   = "schuur_batenburg",  None
+    piesport_wijnproeverij = "house",             None
+    piesport_inn_1f        = "house",             None
+    piesport_inn_2f        = "house",             None
+    cochem_bos             = "ersin_forest",      "birds"
     cochem                 = "invernia_town",     "town"
-    kasteel_cochem         = "kasteel_batenburg", "fire"
-    kerk_cochem            = "kerkje_gymnich",    None
-    huis_cochem_1f         = "house",             None
-    huis_cochem_2f         = "house",             None
-    huis_cochem_3f         = "schuur_batenburg",  None
-    bos_trier2             = "ersin_forest",      "birds"
-    bos_trier1             = "ersin_forest",      "birds"
+    cochem_kasteel         = "kasteel_batenburg", "fire"
+    cochem_kerk            = "kerkje_gymnich",    None
+    cochem_huis_1f         = "house",             None
+    cochem_huis_2f         = "house",             None
+    cochem_huis_3f         = "schuur_batenburg",  None
+    trier_bos2             = "ersin_forest",      "birds"
+    trier_bos1             = "ersin_forest",      "birds"
 
 
 class MapTitle(aenum.NoAliasEnum):
@@ -301,23 +301,23 @@ class MapTitle(aenum.NoAliasEnum):
     Ze staan in een lijst, want later worden de tmx data's aan de lijst toegevoegd.
     De key's komen precies overeen met de .tmx namen.
     """
-    braserie_ad_waal       = ["Braserie aan de Waal"]
-    braserie_altena        = ["Braserie Altena"]
-    brug_od_waal           = ["Brug over de Waal"]
-    kasteel_batenburg      = ["Kasteel"]
-    schuur_batenburg       = ["Kasteel"]
-    huis_batenburg         = ["Kasteel"]
-    kerker_batenburg       = ["Kasteel"]
+    waal_braserie          = ["De Waal"]
+    altena                 = ["Braserie Altena"]
+    waal_brug              = ["De Waal"]
+    batenburg_kasteel      = ["Kasteel"]
+    batenburg_schuur       = ["Kasteel"]
+    batenburg_huis         = ["Kasteel"]
+    batenburg_kerker       = ["Kasteel"]
     grensovergang          = ["Grensovergang Duitsland"]
     kruising               = ["Kruising"]
-    huisje_kruising        = ["Kruising"]
+    kruising_huisje        = ["Kruising"]
     gymnich                = ["Gymnich"]
-    schuur_gymnich         = ["Gymnich"]
-    kerkje_gymnich         = ["Gymnich"]
+    gymnich_schuur         = ["Gymnich"]
+    gymnich_kerkje         = ["Gymnich"]
     romerkanal             = ["Romerkanal"]
-    hol_romerkanal         = ["Romerkanal"]
-    huis_romerkanal_1f     = ["Romerkanal"]
-    huis_romerkanal_2f     = ["Romerkanal"]
+    homerkanal_hol         = ["Romerkanal"]
+    romerkanal_huis_1f     = ["Romerkanal"]
+    romerkanal_huis_2f     = ["Romerkanal"]
     kruising2              = ["Kruising"]
     druide_bos             = ["Druïde bos"]
     druide_grot1           = ["Druïde grot"]
@@ -325,21 +325,21 @@ class MapTitle(aenum.NoAliasEnum):
     druide_grot3           = ["Druïde grot"]
     trollen_bos            = ["Trollen bos"]
     piesport               = ["Piesport"]
-    bieb_piesport          = ["Piesport"]
-    bank_piesport          = ["Piesport"]
-    kelder_bank_piesport   = ["Piesport"]
-    wijnproeverij_piesport = ["Piesport"]
-    inn_piesport_1f        = ["Piesport"]
-    inn_piesport_2f        = ["Piesport"]
-    bos_cochem             = ["Bos naar Cochem"]
+    piesport_bieb          = ["Piesport"]
+    piesport_bank          = ["Piesport"]
+    piesport_bank_kelder   = ["Piesport"]
+    piesport_wijnproeverij = ["Piesport"]
+    piesport_inn_1f        = ["Piesport"]
+    piesport_inn_2f        = ["Piesport"]
+    cochem_bos             = ["Bos naar Cochem"]
     cochem                 = ["Cochem"]
-    huis_cochem_1f         = ["Cochem"]
-    huis_cochem_2f         = ["Cochem"]
-    huis_cochem_3f         = ["Cochem"]
-    kasteel_cochem         = ["Kasteel Cochem"]
-    kerk_cochem            = ["Kerk Cochem"]
-    bos_trier1             = ["Bos naar Trier"]
-    bos_trier2             = ["Bos naar Trier"]
+    cochem_kasteel         = ["Cochem"]
+    cochem_kerk            = ["Cochem"]
+    cochem_huis_1f         = ["Cochem"]
+    cochem_huis_2f         = ["Kasteel Cochem"]
+    cochem_huis_3f         = ["Kerk Cochem"]
+    trier_bos2             = ["Bos naar Trier"]
+    trier_bos1             = ["Bos naar Trier"]
 
 
 class SFX(enum.Enum):

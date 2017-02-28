@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="40" tilewidth="16" tileheight="16" nextobjectid="18">
- <tileset firstgid="1" name="wijnproeverij_piesport" tilewidth="16" tileheight="16" tilecount="1008" columns="56">
-  <image source="wijnproeverij_piesport.png" width="896" height="288"/>
+ <tileset firstgid="1" name="piesport_wijnproeverij" tilewidth="16" tileheight="16" tilecount="1008" columns="56">
+  <image source="piesport_wijnproeverij.png" width="896" height="288"/>
  </tileset>
  <layer name="under0 background" width="30" height="40">
   <data encoding="csv">

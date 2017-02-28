@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="96" tilewidth="16" tileheight="16" nextobjectid="299">
- <tileset firstgid="1" name="kasteel_batenburg" tilewidth="16" tileheight="16" tilecount="3948" columns="84">
-  <image source="kasteel_batenburg.png" width="1344" height="752"/>
+ <tileset firstgid="1" name="batenburg_kasteel" tilewidth="16" tileheight="16" tilecount="3948" columns="84">
+  <image source="batenburg_kasteel.png" width="1344" height="752"/>
  </tileset>
  <tileset firstgid="3949" name="outside_a1" tilewidth="16" tileheight="16" tilecount="768" columns="32">
   <image source="tilesets/outside_a1.png" width="512" height="384"/>

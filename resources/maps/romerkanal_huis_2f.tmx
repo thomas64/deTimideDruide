@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="44" height="44" tilewidth="16" tileheight="16" nextobjectid="49">
- <tileset firstgid="1" name="huis_romerkanal_2f" tilewidth="16" tileheight="16" tilecount="969" columns="57">
-  <image source="huis_romerkanal_2f.png" width="912" height="272"/>
+ <tileset firstgid="1" name="romerkanal_huis_2f" tilewidth="16" tileheight="16" tilecount="969" columns="57">
+  <image source="romerkanal_huis_2f.png" width="912" height="272"/>
  </tileset>
  <layer name="under0 background" width="44" height="44">
   <data encoding="csv">

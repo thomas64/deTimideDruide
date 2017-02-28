@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="68" height="34" tilewidth="16" tileheight="16" nextobjectid="28">
- <tileset firstgid="1" name="kerker_batenburg" tilewidth="16" tileheight="16" tilecount="561" columns="33">
-  <image source="kerker_batenburg.png" width="528" height="272"/>
+ <tileset firstgid="1" name="batenburg_kerker" tilewidth="16" tileheight="16" tilecount="561" columns="33">
+  <image source="batenburg_kerker.png" width="528" height="272"/>
  </tileset>
  <tileset firstgid="562" name="dungeon_b" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="tilesets/dungeon_b.png" width="512" height="512"/>

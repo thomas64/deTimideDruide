@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="34" tilewidth="16" tileheight="16" nextobjectid="35">
- <tileset firstgid="1" name="schuur_gymnich" tilewidth="16" tileheight="16" tilecount="1260" columns="70">
-  <image source="schuur_gymnich.png" width="1120" height="288"/>
+ <tileset firstgid="1" name="gymnich_schuur" tilewidth="16" tileheight="16" tilecount="1260" columns="70">
+  <image source="gymnich_schuur.png" width="1120" height="288"/>
  </tileset>
  <tileset firstgid="1261" name="dungeon_b" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="tilesets/dungeon_b.png" width="512" height="512"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="42" tilewidth="16" tileheight="16" nextobjectid="25">
- <tileset firstgid="1" name="huis_cochem_3f" tilewidth="16" tileheight="16" tilecount="551" columns="29">
-  <image source="huis_cochem_3f.png" width="464" height="304"/>
+ <tileset firstgid="1" name="cochem_huis_3f" tilewidth="16" tileheight="16" tilecount="551" columns="29">
+  <image source="cochem_huis_3f.png" width="464" height="304"/>
  </tileset>
  <layer name="under0 background" width="24" height="42">
   <data encoding="csv">

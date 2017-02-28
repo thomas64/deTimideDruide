@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="36" tilewidth="16" tileheight="16" nextobjectid="53">
- <tileset firstgid="1" name="inn_piesport_2f" tilewidth="16" tileheight="16" tilecount="1976" columns="52">
-  <image source="inn_piesport_2f.png" width="832" height="608"/>
+ <tileset firstgid="1" name="piesport_inn_2f" tilewidth="16" tileheight="16" tilecount="1976" columns="52">
+  <image source="piesport_inn_2f.png" width="832" height="608"/>
  </tileset>
  <tileset firstgid="1977" name="outside_b" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="tilesets/outside_b.png" width="512" height="512"/>
