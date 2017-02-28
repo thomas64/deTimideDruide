@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="40" tilewidth="16" tileheight="16" nextobjectid="117">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="40" tilewidth="16" tileheight="16" nextobjectid="119">
  <tileset firstgid="1" name="trier_bos1" tilewidth="16" tileheight="16" tilecount="1302" columns="62">
   <image source="trier_bos1.png" width="992" height="336"/>
  </tileset>
@@ -315,10 +315,12 @@
 </data>
  </layer>
  <objectgroup name="portals">
-  <object id="115" name="bos_trier2" x="48" y="-16" width="256" height="16"/>
+  <object id="115" name="trier_bos2" x="48" y="-16" width="256" height="16"/>
+  <object id="117" name="trier" x="1280" y="384" width="16" height="176"/>
  </objectgroup>
  <objectgroup name="start_pos">
-  <object id="116" name="bos_trier2" x="112" y="0" width="16" height="16"/>
+  <object id="116" name="trier_bos2" x="112" y="0" width="16" height="16"/>
+  <object id="118" name="trier" x="1248" y="432" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="58" name="step_stone" x="640" y="448" width="640" height="64"/>

@@ -1200,18 +1200,18 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="portals" visible="0">
-  <object id="168" name="brug_od_waal" x="1248" y="1184" width="16" height="160"/>
-  <object id="275" name="schuur_batenburg" x="1120" y="1072" width="32" height="16"/>
-  <object id="278" name="huis_batenburg" type="1" x="672" y="368" width="32" height="16"/>
-  <object id="279" name="huis_batenburg" type="2" x="768" y="96" width="16" height="32"/>
-  <object id="288" name="huis_batenburg" type="2" x="736" y="80" width="32" height="16"/>
+ <objectgroup name="portals">
+  <object id="168" name="waal_brug" x="1248" y="1184" width="16" height="160"/>
+  <object id="275" name="batenburg_schuur" x="1120" y="1072" width="32" height="16"/>
+  <object id="278" name="batenburg_huis" type="1" x="672" y="368" width="32" height="16"/>
+  <object id="279" name="batenburg_huis" type="2" x="768" y="96" width="16" height="32"/>
+  <object id="288" name="batenburg_huis" type="2" x="736" y="80" width="32" height="16"/>
  </objectgroup>
  <objectgroup name="start_pos">
-  <object id="167" name="brug_od_waal" x="1216" y="1248" width="16" height="16"/>
-  <object id="274" name="schuur_batenburg" x="1120" y="1088" width="16" height="16"/>
-  <object id="277" name="huis_batenburg" type="1" x="672" y="384" width="16" height="16"/>
-  <object id="280" name="huis_batenburg" type="2" x="720" y="96" width="16" height="16">
+  <object id="167" name="waal_brug" x="1216" y="1248" width="16" height="16"/>
+  <object id="274" name="batenburg_schuur" x="1120" y="1088" width="16" height="16"/>
+  <object id="277" name="batenburg_huis" type="1" x="672" y="384" width="16" height="16"/>
+  <object id="280" name="batenburg_huis" type="2" x="720" y="96" width="16" height="16">
    <properties>
     <property name="direction" value="West"/>
    </properties>

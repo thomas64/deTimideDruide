@@ -624,18 +624,18 @@
 </data>
  </layer>
  <objectgroup name="portals">
-  <object id="111" name="kasteel_batenburg" type="2" x="960" y="144" width="16" height="32"/>
-  <object id="119" name="kasteel_batenburg" type="1" x="592" y="1120" width="128" height="16"/>
-  <object id="122" name="kerker_batenburg" x="368" y="160" width="16" height="32"/>
+  <object id="111" name="batenburg_kasteel" type="2" x="960" y="144" width="16" height="32"/>
+  <object id="119" name="batenburg_kasteel" type="1" x="592" y="1120" width="128" height="16"/>
+  <object id="122" name="batenburg_kerker" x="368" y="160" width="16" height="32"/>
  </objectgroup>
  <objectgroup name="start_pos">
-  <object id="116" name="kasteel_batenburg" type="2" x="912" y="144" width="16" height="16">
+  <object id="116" name="batenburg_kasteel" type="2" x="912" y="144" width="16" height="16">
    <properties>
     <property name="direction" value="West"/>
    </properties>
   </object>
-  <object id="117" name="kasteel_batenburg" type="1" x="640" y="1088" width="16" height="16"/>
-  <object id="124" name="kerker_batenburg" x="400" y="144" width="16" height="16">
+  <object id="117" name="batenburg_kasteel" type="1" x="640" y="1088" width="16" height="16"/>
+  <object id="124" name="batenburg_kerker" x="400" y="144" width="16" height="16">
    <properties>
     <property name="direction" value="East"/>
    </properties>

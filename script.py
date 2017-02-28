@@ -92,7 +92,7 @@ class Script:
             pouch_item = inventoryitems.factory_pouch_item(PouchItemDatabase.doperwten)
             data.pouch.add(pouch_item, 1, verbose=False)
 
-        data.map_name = 'braserie_ad_waal'
+        data.map_name = 'waal_braserie'
         data.map_pos = 'start_game'     # dit is de naam van de startpositie object in de tmx map
         data.map_dir = Direction.West
 

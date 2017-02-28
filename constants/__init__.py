@@ -268,7 +268,7 @@ class MapMusic(enum.Enum):
     gymnich_schuur         = "schuur_batenburg",  None
     gymnich_kerkje         = "kerkje_gymnich",    None
     romerkanal             = "ersin_forest",      "birds"
-    homerkanal_hol         = "ersin_cave",        None
+    romerkanal_hol         = "ersin_cave",        None
     romerkanal_huis_1f     = "house",             None
     romerkanal_huis_2f     = "house",             None
     kruising2              = "ersin_forest",      "birds"
@@ -294,6 +294,8 @@ class MapMusic(enum.Enum):
     trier_bos2             = "ersin_forest",      "birds"
     trier_bos1             = "ersin_forest",      "birds"
 
+    trier_theater          = "ersin_cave",        None
+
 
 class MapTitle(aenum.NoAliasEnum):
     """
@@ -315,7 +317,7 @@ class MapTitle(aenum.NoAliasEnum):
     gymnich_schuur         = ["Gymnich"]
     gymnich_kerkje         = ["Gymnich"]
     romerkanal             = ["Romerkanal"]
-    homerkanal_hol         = ["Romerkanal"]
+    romerkanal_hol         = ["Romerkanal"]
     romerkanal_huis_1f     = ["Romerkanal"]
     romerkanal_huis_2f     = ["Romerkanal"]
     kruising2              = ["Kruising"]
@@ -340,6 +342,8 @@ class MapTitle(aenum.NoAliasEnum):
     cochem_huis_3f         = ["Kerk Cochem"]
     trier_bos2             = ["Bos naar Trier"]
     trier_bos1             = ["Bos naar Trier"]
+
+    trier_theater          = ["Trier"]
 
 
 class SFX(enum.Enum):

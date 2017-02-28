@@ -273,10 +273,10 @@
 </data>
  </layer>
  <objectgroup name="portals">
-  <object id="25" name="huis_batenburg" x="80" y="144" width="16" height="32"/>
+  <object id="25" name="batenburg_huis" x="80" y="144" width="16" height="32"/>
  </objectgroup>
  <objectgroup name="start_pos">
-  <object id="27" name="huis_batenburg" x="112" y="144" width="16" height="16">
+  <object id="27" name="batenburg_huis" x="112" y="144" width="16" height="16">
    <properties>
     <property name="direction" value="East"/>
    </properties>

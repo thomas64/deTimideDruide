@@ -402,10 +402,10 @@
 </data>
  </layer>
  <objectgroup name="portals">
-  <object id="30" name="braserie_ad_waal" x="624" y="640" width="64" height="16"/>
+  <object id="30" name="waal_braserie" x="624" y="640" width="64" height="16"/>
  </objectgroup>
  <objectgroup name="start_pos">
-  <object id="29" name="braserie_ad_waal" x="640" y="592" width="16" height="16">
+  <object id="29" name="waal_braserie" x="640" y="592" width="16" height="16">
    <properties>
     <property name="direction" value="North"/>
    </properties>

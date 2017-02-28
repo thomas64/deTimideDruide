@@ -573,20 +573,20 @@
 </data>
  </layer>
  <objectgroup name="portals">
-  <object id="1" name="inn_piesport_1f" x="288" y="496" width="32" height="16"/>
-  <object id="2" name="wijnproeverij_piesport" x="608" y="240" width="32" height="16"/>
+  <object id="1" name="piesport_inn_1f" x="288" y="496" width="32" height="16"/>
+  <object id="2" name="piesport_wijnproeverij" x="608" y="240" width="32" height="16"/>
   <object id="106" name="kruising2" x="1408" y="544" width="16" height="160"/>
-  <object id="109" name="bank_piesport" x="1120" y="912" width="32" height="16"/>
-  <object id="111" name="bieb_piesport" x="1184" y="368" width="32" height="16"/>
-  <object id="116" name="bos_trier2" x="48" y="544" width="16" height="160"/>
+  <object id="109" name="piesport_bank" x="1120" y="912" width="32" height="16"/>
+  <object id="111" name="piesport_bieb" x="1184" y="368" width="32" height="16"/>
+  <object id="116" name="trier_bos2" x="48" y="544" width="16" height="160"/>
  </objectgroup>
  <objectgroup name="start_pos">
   <object id="108" name="kruising2" x="1376" y="592" width="16" height="16"/>
-  <object id="110" name="bank_piesport" x="1120" y="928" width="16" height="16"/>
-  <object id="112" name="bieb_piesport" x="1184" y="384" width="16" height="16"/>
-  <object id="114" name="wijnproeverij_piesport" x="608" y="256" width="16" height="16"/>
-  <object id="115" name="inn_piesport_1f" x="288" y="512" width="16" height="16"/>
-  <object id="117" name="bos_trier2" x="64" y="592" width="16" height="16"/>
+  <object id="110" name="piesport_bank" x="1120" y="928" width="16" height="16"/>
+  <object id="112" name="piesport_bieb" x="1184" y="384" width="16" height="16"/>
+  <object id="114" name="piesport_wijnproeverij" x="608" y="256" width="16" height="16"/>
+  <object id="115" name="piesport_inn_1f" x="288" y="512" width="16" height="16"/>
+  <object id="117" name="trier_bos2" x="64" y="592" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="78" name="step_grass" x="160" y="896" width="192" height="96"/>

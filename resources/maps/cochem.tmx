@@ -890,24 +890,24 @@
 </data>
  </layer>
  <objectgroup name="portals">
-  <object id="1" name="huis_cochem_1f" type="3" x="944" y="416" width="32" height="16"/>
-  <object id="4" name="bos_cochem" x="-16" y="576" width="16" height="160"/>
-  <object id="5" name="huis_cochem_1f" type="2" x="928" y="496" width="64" height="16"/>
-  <object id="6" name="huis_cochem_1f" type="1" x="1024" y="496" width="32" height="16"/>
-  <object id="7" name="kasteel_cochem" type="1" x="672" y="1424" width="32" height="16"/>
-  <object id="8" name="kasteel_cochem" type="2" x="272" y="1600" width="16" height="16"/>
-  <object id="9" name="kasteel_cochem" type="3" x="992" y="1616" width="16" height="16"/>
-  <object id="799" name="kerk_cochem" x="1792" y="528" width="32" height="16"/>
+  <object id="4" name="cochem_bos" x="-16" y="576" width="16" height="160"/>
+  <object id="1" name="cochem_huis_1f" type="3" x="944" y="416" width="32" height="16"/>
+  <object id="5" name="cochem_huis_1f" type="2" x="928" y="496" width="64" height="16"/>
+  <object id="6" name="cochem_huis_1f" type="1" x="1024" y="496" width="32" height="16"/>
+  <object id="7" name="cochem_kasteel" type="1" x="672" y="1424" width="32" height="16"/>
+  <object id="8" name="cochem_kasteel" type="2" x="272" y="1600" width="16" height="16"/>
+  <object id="9" name="cochem_kasteel" type="3" x="992" y="1616" width="16" height="16"/>
+  <object id="799" name="cochem_kerk" x="1792" y="528" width="32" height="16"/>
  </objectgroup>
  <objectgroup name="start_pos">
-  <object id="761" name="bos_cochem" x="0" y="640" width="16" height="16"/>
-  <object id="795" name="kasteel_cochem" type="2" x="224" y="1584" width="16" height="16"/>
-  <object id="796" name="kasteel_cochem" type="1" x="672" y="1440" width="16" height="16"/>
-  <object id="797" name="kasteel_cochem" type="3" x="1024" y="1584" width="16" height="16"/>
-  <object id="798" name="kerk_cochem" x="1792" y="544" width="16" height="16"/>
-  <object id="811" name="huis_cochem_1f" type="3" x="912" y="368" width="16" height="16"/>
-  <object id="812" name="huis_cochem_1f" type="2" x="944" y="512" width="16" height="16"/>
-  <object id="816" name="huis_cochem_1f" type="1" x="1024" y="512" width="16" height="16"/>
+  <object id="761" name="cochem_bos" x="0" y="640" width="16" height="16"/>
+  <object id="795" name="cochem_kasteel" type="2" x="224" y="1584" width="16" height="16"/>
+  <object id="796" name="cochem_kasteel" type="1" x="672" y="1440" width="16" height="16"/>
+  <object id="797" name="cochem_kasteel" type="3" x="1024" y="1584" width="16" height="16"/>
+  <object id="798" name="cochem_kerk" x="1792" y="544" width="16" height="16"/>
+  <object id="811" name="cochem_huis_1f" type="3" x="912" y="368" width="16" height="16"/>
+  <object id="812" name="cochem_huis_1f" type="2" x="944" y="512" width="16" height="16"/>
+  <object id="816" name="cochem_huis_1f" type="1" x="1024" y="512" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="613" name="step_stone" x="208" y="1104" width="1024" height="816"/>

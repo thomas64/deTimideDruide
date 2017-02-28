@@ -1173,13 +1173,13 @@
  </layer>
  <objectgroup name="portals">
   <object id="208" name="kruising" x="-16" y="48" width="16" height="144"/>
-  <object id="240" name="schuur_gymnich" x="672" y="848" width="32" height="16"/>
-  <object id="242" name="kerkje_gymnich" x="992" y="400" width="32" height="16"/>
+  <object id="240" name="gymnich_schuur" x="672" y="848" width="32" height="16"/>
+  <object id="242" name="gymnich_kerkje" x="992" y="400" width="32" height="16"/>
  </objectgroup>
  <objectgroup name="start_pos">
   <object id="207" name="kruising" x="0" y="96" width="16" height="16"/>
-  <object id="241" name="schuur_gymnich" x="672" y="864" width="16" height="16"/>
-  <object id="243" name="kerkje_gymnich" x="992" y="416" width="16" height="16"/>
+  <object id="241" name="gymnich_schuur" x="672" y="864" width="16" height="16"/>
+  <object id="243" name="gymnich_kerkje" x="992" y="416" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="211" name="step_stone" x="0" y="0" width="192" height="176"/>

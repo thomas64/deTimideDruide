@@ -456,11 +456,11 @@
  </layer>
  <objectgroup name="portals">
   <object id="126" name="piesport" x="960" y="0" width="16" height="176"/>
-  <object id="128" name="bos_trier1" x="144" y="960" width="352" height="16"/>
+  <object id="128" name="trier_bos1" x="144" y="960" width="352" height="16"/>
  </objectgroup>
  <objectgroup name="start_pos">
   <object id="127" name="piesport" x="928" y="80" width="16" height="16"/>
-  <object id="129" name="bos_trier1" x="336" y="928" width="16" height="16"/>
+  <object id="129" name="trier_bos1" x="336" y="928" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="78" name="step_stone" x="704" y="96" width="256" height="32"/>

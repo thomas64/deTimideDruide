@@ -1224,14 +1224,14 @@
  <objectgroup name="portals">
   <object id="172" name="grensovergang" x="-16" y="160" width="16" height="208"/>
   <object id="312" name="gymnich" x="1248" y="1408" width="16" height="128"/>
-  <object id="313" name="huisje_kruising" x="544" y="720" width="32" height="16"/>
+  <object id="313" name="kruising_huisje" x="544" y="720" width="32" height="16"/>
   <object id="315" name="romerkanal" x="1104" y="-16" width="64" height="16"/>
   <object id="318" name="kruising2" x="-16" y="736" width="16" height="192"/>
  </objectgroup>
  <objectgroup name="start_pos">
   <object id="171" name="grensovergang" x="0" y="240" width="16" height="16"/>
   <object id="311" name="gymnich" x="1216" y="1456" width="16" height="16"/>
-  <object id="314" name="huisje_kruising" x="544" y="736" width="16" height="16"/>
+  <object id="314" name="kruising_huisje" x="544" y="736" width="16" height="16"/>
   <object id="316" name="romerkanal" x="1120" y="0" width="16" height="16"/>
   <object id="319" name="kruising2" x="0" y="784" width="16" height="16"/>
  </objectgroup>

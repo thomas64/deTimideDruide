@@ -340,12 +340,12 @@
 </data>
  </layer>
  <objectgroup name="portals">
-  <object id="61" name="huis_romerkanal_2f" x="384" y="144" width="16" height="16"/>
+  <object id="61" name="romerkanal_huis_2f" x="384" y="144" width="16" height="16"/>
   <object id="62" name="romerkanal" x="144" y="640" width="64" height="16"/>
  </objectgroup>
  <objectgroup name="start_pos">
   <object id="63" name="romerkanal" x="160" y="608" width="16" height="16"/>
-  <object id="64" name="huis_romerkanal_2f" x="336" y="144" width="16" height="16"/>
+  <object id="64" name="romerkanal_huis_2f" x="336" y="144" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="45" name="step_stone" x="96" y="112" width="208" height="144"/>

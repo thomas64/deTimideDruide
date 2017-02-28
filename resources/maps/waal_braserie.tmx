@@ -1055,19 +1055,19 @@
 </data>
  </layer>
  <objectgroup name="portals">
-  <object id="144" name="braserie_altena" x="304" y="480" width="16" height="32"/>
-  <object id="150" name="brug_od_waal" type="1" x="1248" y="352" width="16" height="160"/>
-  <object id="151" name="brug_od_waal" type="2" x="1248" y="544" width="16" height="112"/>
+  <object id="144" name="altena" x="304" y="480" width="16" height="32"/>
+  <object id="150" name="waal_brug" type="1" x="1248" y="352" width="16" height="160"/>
+  <object id="151" name="waal_brug" type="2" x="1248" y="544" width="16" height="112"/>
  </objectgroup>
  <objectgroup name="start_pos">
   <object id="85" name="start_game" x="1216" y="1376" width="16" height="16"/>
-  <object id="146" name="braserie_altena" x="320" y="480" width="16" height="16">
+  <object id="146" name="altena" x="320" y="480" width="16" height="16">
    <properties>
     <property name="direction" value="East"/>
    </properties>
   </object>
-  <object id="152" name="brug_od_waal" type="1" x="1216" y="400" width="16" height="16"/>
-  <object id="153" name="brug_od_waal" type="2" x="1216" y="592" width="16" height="16"/>
+  <object id="152" name="waal_brug" type="1" x="1216" y="400" width="16" height="16"/>
+  <object id="153" name="waal_brug" type="2" x="1216" y="592" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="86" name="step_grass" x="288" y="160" width="960" height="96"/>

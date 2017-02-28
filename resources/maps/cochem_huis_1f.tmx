@@ -328,8 +328,8 @@
  <objectgroup name="portals">
   <object id="1" name="cochem" type="3" x="464" y="80" width="192" height="16"/>
   <object id="2" name="cochem" type="2" x="464" y="608" width="192" height="16"/>
-  <object id="3" name="huis_cochem_2f" type="1" x="416" y="144" width="16" height="32"/>
-  <object id="4" name="huis_cochem_2f" type="2" x="688" y="144" width="16" height="32"/>
+  <object id="3" name="cochem_huis_2f" type="1" x="416" y="144" width="16" height="32"/>
+  <object id="4" name="cochem_huis_2f" type="2" x="688" y="144" width="16" height="32"/>
   <object id="5" name="cochem" type="1" x="848" y="608" width="64" height="16"/>
  </objectgroup>
  <objectgroup name="start_pos">
@@ -340,12 +340,12 @@
     <property name="direction" value="south"/>
    </properties>
   </object>
-  <object id="66" name="huis_cochem_2f" type="2" x="720" y="144" width="16" height="16">
+  <object id="66" name="cochem_huis_2f" type="2" x="720" y="144" width="16" height="16">
    <properties>
     <property name="direction" value="east"/>
    </properties>
   </object>
-  <object id="67" name="huis_cochem_2f" type="1" x="368" y="144" width="16" height="16">
+  <object id="67" name="cochem_huis_2f" type="1" x="368" y="144" width="16" height="16">
    <properties>
     <property name="direction" value="west"/>
    </properties>

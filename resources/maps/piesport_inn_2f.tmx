@@ -351,11 +351,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="portals" visible="0">
-  <object id="1" name="inn_piesport_1f" x="80" y="128" width="32" height="16"/>
+ <objectgroup name="portals">
+  <object id="1" name="piesport_inn_1f" x="80" y="128" width="32" height="16"/>
  </objectgroup>
- <objectgroup name="start_pos" visible="0">
-  <object id="2" name="inn_piesport_1f" x="80" y="160" width="16" height="16">
+ <objectgroup name="start_pos">
+  <object id="2" name="piesport_inn_1f" x="80" y="160" width="16" height="16">
    <properties>
     <property name="direction" value="South"/>
    </properties>

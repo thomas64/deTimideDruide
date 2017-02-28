@@ -326,10 +326,10 @@
 </data>
  </layer>
  <objectgroup name="portals">
-  <object id="1" name="huis_cochem_2f" x="128" y="144" width="16" height="16"/>
+  <object id="1" name="cochem_huis_2f" x="128" y="144" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="start_pos">
-  <object id="24" name="huis_cochem_2f" x="160" y="144" width="16" height="16">
+  <object id="24" name="cochem_huis_2f" x="160" y="144" width="16" height="16">
    <properties>
     <property name="direction" value="east"/>
    </properties>

@@ -1191,14 +1191,14 @@
 </data>
  </layer>
  <objectgroup name="portals">
-  <object id="408" name="hol_romerkanal" x="736" y="592" width="32" height="16"/>
-  <object id="409" name="huis_romerkanal_1f" x="544" y="976" width="32" height="16"/>
+  <object id="408" name="romerkanal_hol" x="736" y="592" width="32" height="16"/>
+  <object id="409" name="romerkanal_huis_1f" x="544" y="976" width="32" height="16"/>
   <object id="410" name="kruising" x="336" y="1472" width="64" height="16"/>
  </objectgroup>
  <objectgroup name="start_pos">
   <object id="411" name="kruising" x="352" y="1440" width="16" height="16"/>
-  <object id="412" name="huis_romerkanal_1f" x="544" y="992" width="16" height="16"/>
-  <object id="413" name="hol_romerkanal" x="736" y="608" width="16" height="16"/>
+  <object id="412" name="romerkanal_huis_1f" x="544" y="992" width="16" height="16"/>
+  <object id="413" name="romerkanal_hol" x="736" y="608" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="261" name="step_stone" x="384" y="576" width="32" height="384"/>

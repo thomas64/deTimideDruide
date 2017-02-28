@@ -301,12 +301,12 @@
 </data>
  </layer>
  <objectgroup name="portals">
-  <object id="1" name="kelder_bank_piesport" x="112" y="240" width="16" height="16"/>
+  <object id="1" name="piesport_bank_kelder" x="112" y="240" width="16" height="16"/>
   <object id="2" name="piesport" x="144" y="544" width="64" height="16"/>
  </objectgroup>
  <objectgroup name="start_pos">
   <object id="29" name="piesport" x="160" y="512" width="16" height="16"/>
-  <object id="34" name="kelder_bank_piesport" x="144" y="208" width="16" height="16"/>
+  <object id="34" name="piesport_bank_kelder" x="144" y="208" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="25" name="step_carpet" x="64" y="288" width="320" height="64"/>

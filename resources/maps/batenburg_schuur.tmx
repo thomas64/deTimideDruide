@@ -219,11 +219,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="portals" visible="0">
-  <object id="14" name="kasteel_batenburg" x="304" y="352" width="64" height="16"/>
+ <objectgroup name="portals">
+  <object id="14" name="batenburg_kasteel" x="304" y="352" width="64" height="16"/>
  </objectgroup>
- <objectgroup name="start_pos" visible="0">
-  <object id="13" name="kasteel_batenburg" x="320" y="320" width="16" height="16"/>
+ <objectgroup name="start_pos">
+  <object id="13" name="batenburg_kasteel" x="320" y="320" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="12" name="step_wood" x="96" y="64" width="352" height="288"/>
