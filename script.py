@@ -106,5 +106,5 @@ class Script:
     @staticmethod
     def intro_text():
         """..."""
-        return ["A long time ago in a galaxy far,",
-                "far away...."]
+        return ["Duizend jaar geleden.",
+                "Ergens boven de rivier de Waal..."]
