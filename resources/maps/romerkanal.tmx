@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="94" height="92" tilewidth="16" tileheight="16" nextobjectid="417">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="94" height="92" tilewidth="16" tileheight="16" nextobjectid="432">
  <tileset firstgid="1" name="romerkanal" tilewidth="16" tileheight="16" tilecount="4182" columns="102">
   <image source="romerkanal.png" width="1632" height="656"/>
  </tileset>
@@ -1363,7 +1363,7 @@
   <object id="406" x="1280" y="512" width="32" height="16"/>
   <object id="407" x="1248" y="544" width="32" height="16"/>
  </objectgroup>
- <objectgroup name="high_blocker">
+ <objectgroup name="high_blocker" visible="0">
   <object id="2" x="416" y="864" width="64" height="16"/>
   <object id="3" x="512" y="800" width="64" height="16"/>
   <object id="5" x="416" y="640" width="64" height="16"/>
@@ -1524,6 +1524,20 @@
   <object id="244" x="96" y="656" width="32" height="96"/>
   <object id="259" x="768" y="560" width="64"/>
  </objectgroup>
- <objectgroup name="objects"/>
+ <objectgroup name="objects">
+  <object id="417" name="sparkly24" type="x" x="320" y="1120" width="32" height="64"/>
+  <object id="418" name="sparkly24" type="x" x="352" y="832" width="32" height="64"/>
+  <object id="419" name="sparkly24" type="x" x="576" y="640" width="32" height="64"/>
+  <object id="420" name="sparkly24" type="x" x="544" y="512" width="32" height="64"/>
+  <object id="421" name="sparkly24" type="x" x="704" y="608" width="32" height="64"/>
+  <object id="424" name="sparkly24" type="x" x="1312" y="544" width="32" height="64"/>
+  <object id="425" name="sparkly24" type="x" x="1312" y="448" width="32" height="64"/>
+  <object id="426" name="sparkly24" type="x" x="224" y="544" width="32" height="64"/>
+  <object id="427" name="sparkly24" type="x" x="704" y="352" width="32" height="64"/>
+  <object id="428" name="sparkly24" type="x" x="736" y="256" width="32" height="64"/>
+  <object id="429" name="sparkly24" type="x" x="832" y="224" width="32" height="64"/>
+  <object id="430" name="sparkly24" type="x" x="1248" y="448" width="32" height="64"/>
+  <object id="431" name="sparkly24" type="x" x="1248" y="1184" width="32" height="64"/>
+ </objectgroup>
  <objectgroup name="events"/>
 </map>

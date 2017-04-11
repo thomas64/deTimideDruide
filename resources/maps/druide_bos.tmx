@@ -575,7 +575,7 @@
   <object id="79" x="288" y="544" width="64" height="16"/>
   <object id="80" x="192" y="384" width="32" height="16"/>
  </objectgroup>
- <objectgroup name="high_blocker">
+ <objectgroup name="high_blocker" visible="0">
   <object id="3" x="896" y="96" width="32" height="48"/>
   <object id="4" x="992" y="112" width="32" height="64"/>
   <object id="5" x="1024" y="144" width="64" height="64"/>

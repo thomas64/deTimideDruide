@@ -1072,7 +1072,7 @@
   <object id="105" name="step_grass" x="416" y="256" width="128" height="96"/>
   <object id="106" name="step_grass" x="320" y="256" width="96" height="64"/>
  </objectgroup>
- <objectgroup name="low_blocker">
+ <objectgroup name="low_blocker" visible="0">
   <object id="107" x="672" y="480" width="32" height="16"/>
   <object id="108" x="800" y="480" width="32" height="16"/>
   <object id="109" x="480" y="576" width="32" height="16"/>
@@ -1136,7 +1136,7 @@
   <object id="278" x="224" y="160" height="32"/>
   <object id="279" x="640" y="64" width="32" height="16"/>
  </objectgroup>
- <objectgroup name="high_blocker">
+ <objectgroup name="high_blocker" visible="0">
   <object id="284" x="928" y="736" width="352" height="16"/>
   <object id="285" x="1152" y="704" width="64" height="16"/>
   <object id="294" x="992" y="672" width="128" height="16"/>

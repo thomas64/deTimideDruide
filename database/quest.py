@@ -13,6 +13,18 @@ from .pouchitem import PouchItemDatabase
 class QuestDatabase(enum.Enum):
     """..."""
 
+    quest6 = dict(qtype=QuestType.FetchItemQuest,
+                  condition=dict(itm1=dict(nam=PouchItemDatabase.putsi, qty=1)),
+                  reward=None,
+                  text=([["eerste ontmoeting, vraagstelling van de vrouw"]],
+                        [["tweede of derde etc ontmoeting, herhaling van de vraagstelling"]],
+                        ["Sie haben Putsi gefunden?", "", "Ja mevrouw. Hier is Putsi",
+                         "Sorry. We hebben haast. Zoek het lekker uit met Putsi. Auf wienerschnitsel."],
+                        [["bedankje en overhandiging beloning"]],
+                        [["terugkom tekst wanneer je de beloning al ontvangen hebt eerder."]])
+                  )
+
+
     quest1 = dict(qtype=QuestType.FetchItemQuest,
                   condition=dict(itm1=dict(nam=PouchItemDatabase.herbs, qty=10)),
                   reward=dict(itm1=dict(nam=PouchItemDatabase.gold,     qty=2),

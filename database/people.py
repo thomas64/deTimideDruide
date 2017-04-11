@@ -71,6 +71,8 @@ class PeopleDatabase(enum.Enum):
     person507 = dict(name='animal04',       text=[["Eh, what's up, doc?"]])
     person508 = dict(name='animal05',       text=[["Beehh!"]])
 
+    # huisje kruising1
+    person509 = dict(name='oldwoman01',     quest=QuestDatabase.quest6)
 
     # standard characters
     person1 = dict(name='boy01',         text=[["Hi mister."]])

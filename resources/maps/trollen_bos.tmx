@@ -1074,7 +1074,7 @@
   <object id="137" x="896" y="992" width="32" height="16"/>
   <object id="138" x="96" y="1088" width="32" height="16"/>
  </objectgroup>
- <objectgroup name="high_blocker">
+ <objectgroup name="high_blocker" visible="0">
   <object id="3" x="0" y="1104" width="192" height="224"/>
   <object id="4" x="192" y="1040" width="32" height="288"/>
   <object id="5" x="224" y="1008" width="32" height="224"/>

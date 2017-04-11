@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="34" height="26" tilewidth="16" tileheight="16" nextobjectid="15">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="34" height="26" tilewidth="16" tileheight="16" nextobjectid="16">
  <tileset firstgid="1" name="batenburg_schuur" tilewidth="16" tileheight="16" tilecount="572" columns="44">
   <image source="batenburg_schuur.png" width="704" height="208"/>
  </tileset>
@@ -243,6 +243,8 @@
   <object id="8" x="128" y="144" width="128" height="32"/>
   <object id="9" x="128" y="176" width="32" height="32"/>
  </objectgroup>
- <objectgroup name="objects" visible="0"/>
+ <objectgroup name="objects">
+  <object id="15" name="sparkly28" type="x" x="128" y="192" width="32" height="32"/>
+ </objectgroup>
  <objectgroup name="events"/>
 </map>
