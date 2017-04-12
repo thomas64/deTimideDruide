@@ -283,8 +283,6 @@ class Window(object):
         :param mouse_pos: pygame.mouse.get_pos()
         :param dt: self.clock.tick(FPS)/1000.0
         """
-        # bekijk het geluid eerst.
-        self.check_sounds()
 
         # geen key_input mogelijk bij automatisch bewegen
         if not self.auto_move_event:
@@ -323,16 +321,17 @@ class Window(object):
         self.engine.data.map_pos = self.party_sprites[0].rect.topleft
         self.engine.data.map_dir = self.party_sprites[0].last_direction
 
-        # Is de hero tegen een portal of iets aangelopen
+    def update(self, dt):
+        """
+        :param dt: self.clock.tick(FPS)/1000.0
+        """
+        # Is de hero tegen een soundobject of een portal aangelopen
+        self.check_sounds()
         self.check_text_events()  # deze staat voor portals vanwege een evt vloeiende Transition.
         self.check_portals()
         self.check_move_events()
         self.check_locations()
 
-    def update(self, dt):
-        """
-        :param dt: self.clock.tick(FPS)/1000.0
-        """
         # Update locaties (indien F11).
         # misschien gaat dit een probleem geven wanneer ingame de party grootte wordt gewijzigd.
         # dan heeft bijv een boom een unit.rect.topleft oid.
@@ -387,17 +386,18 @@ class Window(object):
 
             for i in range(1, len(self.party)):
                 ps = self.party_sprites[i]
+                mv = self.party_sprites[0].movespeed
                 # dit was een poging tot een andere manier van trailing. werkt niet goed genoeg.
-                # mv = self.party_sprites[0].movespeed
                 # if mv == 60:
                 #     index = 32 * i
                 # if mv == 120:
                 #     index = 16 * i
                 # if mv == 240:
                 #     index = 8 * i
-                # if mv == 480:
-                #     index = 4 * i
+                # if mv == 960:
+                #     index = 2 * i
 
+                # index = i * (round(mv * dt))
                 index = i * GRIDSIZE
                 ps.rect.x = self.leader_history[index][0]
                 ps.rect.y = self.leader_history[index][1]
@@ -680,10 +680,12 @@ class Window(object):
 
             # of als hij dat niet heeft
             else:
+                person_data['face'].reverse()  # draai de faces om in volgorde
                 for i, text_part in enumerate(reversed(person_data['text'])):
-                    push_object = MessageBox(text_part, face_image=person_data['face'],
+                    push_object = MessageBox(text_part, face_image=person_data['face'][i],
                                              last=(True if i == 0 else False))
                     self.engine.gamestate.push(push_object)
+                person_data['face'].reverse()  # en weer terugzetten nadien.
 
                 if person_sprite.person_id == PeopleDatabase.person400.name:
                     self.engine.data.barman_gepraat = True

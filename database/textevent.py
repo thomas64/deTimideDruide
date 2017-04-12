@@ -63,14 +63,14 @@ class TextEventDatabase(enum.Enum):
                      "Kom! Er is geen tijd te verliezen!",
                      "Ga gauw naar binnen hier. Kraaa."]
                  ],
-                 face=[ALAGOS, ALAGOS, ALAGOS, ALAGOS, ALAGOS])
+                 face=ALAGOS)
 
     text2 = dict(condition=condition2,
                  text=[
                      ["Jaaa. Deze kaart moet het zijn. Kraaa.",
                       "Trek van plaats naar plaats 1 rechte lijn."]
                  ],
-                 face=[ALAGOS])
+                 face=ALAGOS)
 
     text3 = dict(condition=condition3,
                  text=[
@@ -80,14 +80,14 @@ class TextEventDatabase(enum.Enum):
                       "Baaaato is zijn naaaaam."],
                      ["Kraaa. Laaaten we gaaaaan."]
                  ],
-                 face=[ALAGOS, ALAGOS, ALAGOS])
+                 face=ALAGOS)
 
     text4 = dict(condition=condition4,
                  text=[
                      ["Nee, gaaaa nog niet weg.",
                       "Vergeet niet eerst met de barman te praaaten."]
                  ],
-                 face=[ALAGOS])
+                 face=ALAGOS)
 
     text5 = dict(condition=condition5,
                  text=[
@@ -100,11 +100,17 @@ class TextEventDatabase(enum.Enum):
                      ["Zoek in het bos, op de akker en in elke boomgaaaaard.",
                       "Is het eetbaaaar? Dan is het de moeite waaaaard."]
                  ],
-                 face=[ALAGOS, ALAGOS, ALAGOS, ALAGOS])
+                 face=ALAGOS)
 
     text6 = dict(condition=condition6,
                  text=[
                      ["Wat een mooie kei. Kraaa.",
                       "Die zou in mijn tuintje niet misstaan. Jaaa."]
                  ],
-                 face=[ALAGOS])
+                 face=ALAGOS)
+
+
+for text in TextEventDatabase:
+    if type(text.value['face']) == str:  # als het nog geen list is, zet het om naar een list van faces.
+        size = len(text.value['text'])
+        text.value['face'] = [text.value['face']] * size
