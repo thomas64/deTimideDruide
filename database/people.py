@@ -56,7 +56,7 @@ class PeopleDatabase(enum.Enum):
     person402 = dict(name='soldier01',     text=[["Halt! U komt het ryck van Nimmegen niet in.",
                                                   "Ik heb orders van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
-                     time2=datetime.datetime(2017,  5, 13, 12, 00))
+                     time2=datetime.datetime(2017,  5, 13, 11, 30))
 
     person500 = dict(name='roelfke01',      text=[["Hoi. Ik ben Roelfke."],
                                                   ["Wat leuk dat je er bent!"],
@@ -79,6 +79,37 @@ class PeopleDatabase(enum.Enum):
 
     # huisje kruising1
     person509 = dict(name='oldwoman01',     quest=QuestDatabase.quest6)
+
+    # kerkje gymnich
+    person510 = dict(name='priest01',       text=[["En dan zijn we nu aangekomen bij de schriftlezing van vandaag.",
+                                                   "Want zo staat er geschreven in Numeri 21:14:"],
+                                                  ["Daarom wordt gezegd in het boek van de oorlogen des HEEREN:",
+                                                   "Tegen ...SNORK...eb, in een wervelwind, en tegen de beken Arnon,"],
+                                                  ["En dan bladeren we door naar Jesaja 60:6.",
+                                                   "Hier lezen we het volgende:"],
+                                                  ["Een hoop keme...SNORK... zal u bedekken,"],
+                                                  ["Naar deze plaats zult u zich moeten begeven.",
+                                                   "Wie oren heeft om te horen, die hore. Amen!"]])
+    person511 = dict(name='nun01',          text=[["Sssst. Ik luister naar de schriftlezing van mijn man."]])
+    person512 = dict(name='sieger01',       text=[["Pepermuntje?"]])
+    person513 = dict(name='oldman01',       text=[["ZZZZZZZZZZZZ."]])
+    person514 = dict(name='roelfke01',      text=[["Hallelujah!"]])
+    person515 = dict(name='dianne01',       text=[["Shalom."]])
+    person516 = dict(name='oldwoman02',     text=[["Ave Maria."]])
+    person517 = dict(name='machteld01',     text=[["Amen."]])
+    person518 = dict(name='youngman02',     text=[["Kent u Jezus al?"]])
+    person519 = dict(name='man02',          text=[["God loves you and so do I."]])
+    person520 = dict(name='woman01',        text=[["Ik kom u vrede en geluk brengen."]])
+    person521 = dict(name='boy01',          text=[["Wat een saaie preek."]])
+    person522 = dict(name='girl02',         text=[["Duurt veel te lang."]])
+    person523 = dict(name='thomas01',       text=[["Wanneer komt Teun weer eens spreken?"]])
+    person524 = dict(name='youngman01',     text=[["HashiraPaloeriGaftarösti."]])
+    person525 = dict(name='youngwoman01',   text=[["De bijbel vertelt dat tongentaal altijd uitgelegd moet worden.",
+                                                   "Hij zegt: 'Prijs de Heer! Hij is uw verlosser.'"]])
+    person526 = dict(name='youngwoman03',   text=[["Wauw, ik ben echt geboeid."]])
+    person527 = dict(name='woman02',        text=[["Wees gegroet."]])
+    person528 = dict(name='man01',          text=[["Bent u al volwassen gedoopt?"]])
+
 
     # standard characters
     person1 = dict(name='boy01',         text=[["Hi mister."]])
