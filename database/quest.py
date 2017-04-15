@@ -15,15 +15,23 @@ class QuestDatabase(enum.Enum):
 
     quest6 = dict(qtype=QuestType.FetchItemQuest,
                   condition=dict(itm1=dict(nam=PouchItemDatabase.putsi, qty=1)),
-                  reward=None,
-                  text=([["eerste ontmoeting, vraagstelling van de vrouw"]],
-                        [["tweede of derde etc ontmoeting, herhaling van de vraagstelling"]],
-                        ["Sie haben Putsi gefunden?", "", "Ja mevrouw. Hier is Putsi",
-                         "Sorry. We hebben haast. Zoek het lekker uit met Putsi. Auf wienerschnitsel."],
-                        [["bedankje en overhandiging beloning"]],
-                        [["terugkom tekst wanneer je de beloning al ontvangen hebt eerder."]])
+                  reward=dict(itm1=dict(nam=PouchItemDatabase.niers, qty=1),
+                              itm2=dict(nam=PouchItemDatabase.gold, qty=10)),
+                  text=([["Suchen Sie für die Niers? Das ist der Fluss hier draußen.",
+                          "Ich habe seit Jahren auf diesem Fluss gelebt."],
+                         ["Ich habe eine Karte der Niers, die Sie verwenden können.",
+                          "Aber zuerst müssen Sie mir helfen, meine Putsi zu finden."],
+                         ["Putsi war von mein Mann. Vor Jahren nahmen sie ihn.",
+                          "Die Schweine Hunde. Er blies seinen letzten Atemzug",
+                          "in der Gefangenschaft."],
+                         ["Boehoehoe."]],
+                        [["Sie haben Putsi gefunden?"]],
+                        ["Zullen we de mevrouw helpen?", "",
+                         "Ja, laten we het beertje geven.",
+                         "Nee, we hebben haast. Ze zoekt het maar lekker uit met Putsi. Auf wienerschnitsel."],
+                        [["Putsi mein kleines Teddybär!"], ["Wie kann ich Ihnen danken?"]],
+                        [["Gutentag Freunde. Ich bin so froh mit Putsi!"]])
                   )
-
 
     quest1 = dict(qtype=QuestType.FetchItemQuest,
                   condition=dict(itm1=dict(nam=PouchItemDatabase.herbs, qty=10)),

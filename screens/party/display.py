@@ -230,8 +230,8 @@ class Display(object):
                 #     return
                 # if self._handle_skill_box_click(event):  # of skillbox
                 #     return
-                # if self._handle_pouch_box_click(event):  # of pouchbox
-                #     return
+                if self._handle_pouch_box_click(event):  # of pouchbox
+                    return
 
                 # als er op een herobox wordt geklikt of het kruisje daarvan.
                 old_hc = self.hc
