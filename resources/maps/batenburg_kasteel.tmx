@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="96" tilewidth="16" tileheight="16" nextobjectid="305">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="96" tilewidth="16" tileheight="16" nextobjectid="311">
  <tileset firstgid="1" name="batenburg_kasteel" tilewidth="16" tileheight="16" tilecount="3948" columns="84">
   <image source="batenburg_kasteel.png" width="1344" height="752"/>
  </tileset>
@@ -1441,6 +1441,12 @@
   <object id="302" name="sparkly23" type="x" x="64" y="1344" width="32" height="32"/>
   <object id="303" name="sparkly24" type="x" x="1120" y="1408" width="32" height="64"/>
   <object id="304" name="sparkly24" type="x" x="1152" y="1440" width="32" height="64"/>
+  <object id="305" name="sparkly32" type="x" x="0" y="1504" width="1248" height="32"/>
+  <object id="306" name="sparkly32" type="x" x="608" y="1472" width="480" height="32"/>
+  <object id="307" name="sparkly32" type="x" x="768" y="1440" width="192" height="32"/>
+  <object id="308" name="sparkly32" type="x" x="0" y="1472" width="288" height="32"/>
+  <object id="309" name="sparkly32" type="x" x="0" y="1440" width="160" height="32"/>
+  <object id="310" name="sparkly32" type="x" x="0" y="1408" width="96" height="32"/>
  </objectgroup>
  <objectgroup name="events">
   <object id="297" name="text6" x="576" y="768" width="96" height="96"/>

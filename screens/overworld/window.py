@@ -30,6 +30,7 @@ from database import TrainerDatabase
 from database import NoteDatabase
 from database import SignDatabase
 from database import SparklyDatabase
+from database import TextEventDatabase
 from database import TreasureChestDatabase
 
 from database import PouchItemDatabase
@@ -505,6 +506,9 @@ class Window(object):
                         self.engine.data.text_events[event_name]['text'] = None
                         self.engine.data.text_events[event_name]['face'] = None
                         self.engine.data.text_events[event_name]['condition'] = False
+
+                        if event_name == TextEventDatabase.text7.name:
+                            self.engine.data.brug_opgelopen = True
 
     def check_move_events(self):
         """

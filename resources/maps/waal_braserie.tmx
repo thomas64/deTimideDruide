@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="96" tilewidth="16" tileheight="16" nextobjectid="180">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="96" tilewidth="16" tileheight="16" nextobjectid="203">
  <tileset firstgid="1" name="waal_braserie" tilewidth="16" tileheight="16" tilecount="2079" columns="63">
   <image source="waal_braserie.png" width="1008" height="528"/>
  </tileset>
@@ -1205,6 +1205,28 @@
   <object id="177" name="sparkly7" type="x" x="0" y="704" width="32" height="32"/>
   <object id="178" name="sparkly7" type="x" x="224" y="736" width="32" height="32"/>
   <object id="179" name="sparkly7" type="x" x="576" y="672" width="32" height="32"/>
+  <object id="202" name="sparkly34" type="x" x="192" y="704" width="32" height="64"/>
+  <object id="201" name="sparkly34" type="x" x="128" y="736" width="64" height="64"/>
+  <object id="200" name="sparkly34" type="x" x="96" y="800" width="128" height="32"/>
+  <object id="199" name="sparkly34" type="x" x="32" y="800" width="32" height="32"/>
+  <object id="198" name="sparkly34" type="x" x="0" y="736" width="32" height="96"/>
+  <object id="196" name="sparkly34" type="x" x="288" y="768" width="32" height="32"/>
+  <object id="195" name="sparkly34" type="x" x="256" y="800" width="64" height="32"/>
+  <object id="194" name="sparkly34" type="x" x="256" y="864" width="64" height="64"/>
+  <object id="193" name="sparkly34" type="x" x="320" y="896" width="32" height="64"/>
+  <object id="192" name="sparkly34" type="x" x="320" y="960" width="96" height="32"/>
+  <object id="191" name="sparkly34" type="x" x="384" y="896" width="48" height="64"/>
+  <object id="190" name="sparkly34" type="x" x="0" y="832" width="288" height="32"/>
+  <object id="189" name="sparkly34" type="x" x="800" y="832" width="32" height="64"/>
+  <object id="188" name="sparkly34" type="x" x="416" y="768" width="384" height="128"/>
+  <object id="187" name="sparkly34" type="x" x="512" y="736" width="288" height="32"/>
+  <object id="186" name="sparkly34" type="x" x="672" y="672" width="96" height="32"/>
+  <object id="185" name="sparkly34" type="x" x="576" y="704" width="224" height="32"/>
+  <object id="184" name="sparkly34" type="x" x="832" y="704" width="32" height="160"/>
+  <object id="183" name="sparkly34" type="x" x="864" y="672" width="32" height="64"/>
+  <object id="182" name="sparkly34" type="x" x="1088" y="608" width="64" height="32"/>
+  <object id="181" name="sparkly34" type="x" x="960" y="608" width="64" height="32"/>
+  <object id="180" name="sparkly34" type="x" x="896" y="640" width="352" height="48"/>
  </objectgroup>
  <objectgroup name="events">
   <object id="162" name="text1" x="352" y="496" width="16" height="16"/>

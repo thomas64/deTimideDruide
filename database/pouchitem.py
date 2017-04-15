@@ -54,6 +54,10 @@ ORAKELSTEEN = "resources/sprites/icons/pouch/orakelsteen.png"
 
 PUTSI = "resources/sprites/icons/pouch/putsi.png"
 LANDKAART = "resources/sprites/icons/pouch/landkaart.png"
+WATERRIVIER = "resources/sprites/icons/pouch/water_rivier.png"
+BLOEMROOD = "resources/sprites/icons/pouch/bloem_rood.png"
+BLOEMBLAUW = "resources/sprites/icons/pouch/bloem_blauw.png"
+BLOEMGEEL = "resources/sprites/icons/pouch/bloem_geel.png"
 
 
 class PouchItemDatabase(enum.Enum):
@@ -178,6 +182,12 @@ class PouchItemDatabase(enum.Enum):
 
     putsi = dict(nam="Putsi",                       srt=27, spr=PUTSI,              desc="")
     niers = dict(nam="Kaart Niers",                 srt=27, spr=LANDKAART,          desc="", click=IMGPATH+'niers.png')
+    water_waal = dict(nam="Water Waal",             srt=28, spr=WATERRIVIER,        desc="")
+    water_maas = dict(nam="Water Maas",             srt=28, spr=WATERRIVIER,        desc="")
+    water_niers = dict(nam="Water Niers",           srt=28, spr=WATERRIVIER,        desc="")
+    bloem_geel = dict(nam="Gele bloem",             srt=29, spr=BLOEMGEEL,          desc="")
+    bloem_blauw = dict(nam="Blauwe bloem",          srt=29, spr=BLOEMBLAUW,         desc="")
+    bloem_rood = dict(nam="Rode bloem",             srt=29, spr=BLOEMROOD,          desc="")
 
 
 for itm in PouchItemDatabase:

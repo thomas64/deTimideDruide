@@ -27,6 +27,15 @@ class MoveEventDatabase(aenum.NoAliasEnum):
             (PersonState.Moving,  Direction.South, 0.6),
         )
     )
+    move3 = dict(movement=(
+            (PersonState.Moving,  Direction.South, 0.3),
+            (PersonState.Moving,  Direction.North, 2.1),
+            (PersonState.Moving,  Direction.West,  2.1),
+            (PersonState.Moving,  Direction.South, 2.3),
+            (PersonState.Moving,  Direction.West,  1.5),
+            (PersonState.Moving,  Direction.South, 2.5),
+        )
+    )
 
 
 # noinspection PyTypeChecker

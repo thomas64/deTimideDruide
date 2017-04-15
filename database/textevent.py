@@ -38,6 +38,9 @@ class TextEventDatabase(enum.Enum):
     def condition6(self, data):
         return data.orakelsteen_gevonden
 
+    def condition8(self, data):
+        return data.brug_opgelopen
+
     text99 = dict(condition=condition1,
                   text=[["hoi1"], ["hoi2"]],
                   face=[ALAGOS, HEROFACEPATH+"02f_luana.png"])
@@ -106,6 +109,23 @@ class TextEventDatabase(enum.Enum):
                  text=[
                      ["Wat een mooie kei. Kraaa.",
                       "Die zou in mijn tuintje niet misstaan. Jaaa."]
+                 ],
+                 face=ALAGOS)
+
+    text7 = dict(condition=True,
+                 text=[
+                     ["Wacht! Wat we ook nodig hebben is waaaater."]
+                 ],
+                 face=ALAGOS)
+
+    text8 = dict(condition=condition8,
+                 text=[
+                     ["We moeten waaaater uit de rivier.",
+                      "Nee geen waaaater uit de kraaaaan.",
+                      "Want dan gaaaat de druïde eraaaaan."],
+                     ["Kraaa."],
+                     ["Waaaaater van verschillende rivieren",
+                      "zal de druïde erg plezieren."]
                  ],
                  face=ALAGOS)
 

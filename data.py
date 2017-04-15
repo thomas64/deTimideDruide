@@ -34,3 +34,4 @@ class Data(object):
         self.barman_gepraat = False
         self.recept_bekeken = False
         self.orakelsteen_gevonden = False
+        self.brug_opgelopen = False
