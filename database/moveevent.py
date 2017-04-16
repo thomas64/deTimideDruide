@@ -19,7 +19,7 @@ class MoveEventDatabase(aenum.NoAliasEnum):
             (PersonState.Moving,  Direction.West,   4.2)
         )
     )
-    move2 = dict(movement=(
+    move2 = dict(movement=(  # als de movement maar 1 item heeft, dan is movement een list. dus [ ] ipv ( )
             (PersonState.Resting, Direction.South, 1.0),
             (PersonState.Resting, Direction.West,  0.5),
             (PersonState.Resting, Direction.East,  0.5),
