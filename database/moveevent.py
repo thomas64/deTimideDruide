@@ -16,7 +16,7 @@ class MoveEventDatabase(aenum.NoAliasEnum):
     move1 = dict(movement=(                     # seconden
             (PersonState.Moving,  Direction.West,  10.0),
             (PersonState.Moving,  Direction.North, 15.0),
-            (PersonState.Moving,  Direction.West,   4.2),
+            (PersonState.Moving,  Direction.West,   4.2)
         )
     )
     move2 = dict(movement=(
@@ -24,7 +24,7 @@ class MoveEventDatabase(aenum.NoAliasEnum):
             (PersonState.Resting, Direction.West,  0.5),
             (PersonState.Resting, Direction.East,  0.5),
             (PersonState.Resting, Direction.South, 0.5),
-            (PersonState.Moving,  Direction.South, 0.6),
+            (PersonState.Moving,  Direction.South, 0.6)
         )
     )
     move3 = dict(movement=(
@@ -33,7 +33,12 @@ class MoveEventDatabase(aenum.NoAliasEnum):
             (PersonState.Moving,  Direction.West,  2.1),
             (PersonState.Moving,  Direction.South, 2.3),
             (PersonState.Moving,  Direction.West,  1.5),
-            (PersonState.Moving,  Direction.South, 2.5),
+            (PersonState.Moving,  Direction.South, 2.5)
+        )
+    )
+    move4 = dict(movement=(
+            (PersonState.Moving,  Direction.North, 0.5),
+            (PersonState.Moving,  Direction.North, 1.4)
         )
     )
 

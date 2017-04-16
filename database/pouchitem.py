@@ -178,8 +178,8 @@ class PouchItemDatabase(enum.Enum):
     shallot = dict(nam="Shallot",                   srt=23, spr=SHALLOTPATH,        desc="")
     tomaat = dict(nam="Tomaat",                     srt=24, spr=TOMAATPATH,         desc="")
     doperwten = dict(nam="Doperwten",               srt=25, spr=DOPERWTENPATH,      desc="")
-    orakelsteen = dict(nam="Orakelsteen",           srt=26, spr=ORAKELSTEEN,        desc="")
 
+    orakelsteen = dict(nam="Orakelsteen",           srt=26, spr=ORAKELSTEEN,        desc="")
     putsi = dict(nam="Putsi",                       srt=27, spr=PUTSI,              desc="")
     niers = dict(nam="Kaart Niers",                 srt=27, spr=LANDKAART,          desc="", click=IMGPATH+'niers.png')
     water_waal = dict(nam="Water Waal",             srt=28, spr=WATERRIVIER,        desc="")

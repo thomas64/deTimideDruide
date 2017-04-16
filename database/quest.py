@@ -117,19 +117,48 @@ class QuestDatabase(enum.Enum):
                         [["Animals really can talk, can they?"]])
                   )
 
-    quest6 = dict(qtype=QuestType.FetchItemsPartlyQuest,
-                  condition=dict(itm1=dict(nam=PouchItemDatabase.herbs,     qty=5),   # Conditions mogen op dit moment
-                                 itm2=dict(nam=PouchItemDatabase.gemstones, qty=3),   # alleen nog maar items zijn en
-                                 itm3=dict(nam=PouchItemDatabase.spices,    qty=2)),  # geen equipment.
+    quest7 = dict(qtype=QuestType.FetchItemsPartlyQuest,
+                  condition=dict(itm1=dict(nam=PouchItemDatabase.droppings,     qty=1),
+                                 itm2=dict(nam=PouchItemDatabase.shroom,        qty=12),
+                                 itm3=dict(nam=PouchItemDatabase.shallot,       qty=3),
+                                 itm4=dict(nam=PouchItemDatabase.rose,          qty=3),
+                                 itm5=dict(nam=PouchItemDatabase.ladybug,       qty=4),
+                                 itm6=dict(nam=PouchItemDatabase.wool,          qty=1),
+                                 itm7=dict(nam=PouchItemDatabase.shells,        qty=2),
+                                 itm8=dict(nam=PouchItemDatabase.poppy,         qty=2),
+                                 itm9=dict(nam=PouchItemDatabase.cantharel,     qty=4),
+                                 itm10=dict(nam=PouchItemDatabase.weegbree,     qty=2),
+                                 itm11=dict(nam=PouchItemDatabase.berkenschors, qty=1),
+                                 itm12=dict(nam=PouchItemDatabase.maretak,      qty=3),
+                                 itm13=dict(nam=PouchItemDatabase.spiderweb,    qty=3),
+                                 itm14=dict(nam=PouchItemDatabase.fluitekruid,  qty=2),
+                                 itm15=dict(nam=PouchItemDatabase.knoflook,     qty=3),
+                                 itm16=dict(nam=PouchItemDatabase.tomaat,       qty=2),
+                                 itm17=dict(nam=PouchItemDatabase.doperwten,    qty=3)),
                   # de reward mag ook op dit moment nog maar van 1 type zijn.
-                  reward=dict(itm1=dict(nam=PouchItemDatabase.gold,         qty=1)),  # Dit aantal is per geleverde itm.
-                  text=([["testvoorbeeld:",
-                          "geef me de gevraagde items.",
-                          "5 herbs, 3 gemstones, 2 spices."]],
-                        [["ben je er nu klaar voor?"]],
-                        ["geef je ze gedeeltelijk of niet?", "",
-                         "ja", "nee"],
-                        [["okee, hier is je gepaste beloning.",
-                          "zoveel goud terug als items die ik vroeg."]],
-                        [["meer is er niet."]])
+                  reward=dict(itm1=dict(nam=PouchItemDatabase.gold,             qty=1)),  # Dit aantal is per geleverde itm.
+                  text=([["Vrienden. Mijn naam is Zwammix."],
+                         ["*Hikkup*"],
+                         ["Brann en de stenen hebben hun werk goed gedaan."],
+                         ["*Hikkup*"],
+                         ["Jullie hebben mij gevonden.",
+                          "Ik heb jullie nodig om mijn soepje weer te kunnen maken."],
+                         ["Zonder mijn soepje ben ik mijzelf niet,",
+                          "maar het lukt mij niet de soep te maken in mijn huidige staat."],
+                         ["*Hikkup*"],
+                         ["Hebben jullie het hele recept kunnen vinden,",
+                          "en de ingrediënten bij elkaar verzameld?"]],
+                        [["Zijn jullie nu wel gereed om de ingrediënten te overhandigen?"], ["*Hikkup*"]],
+                        ["Indien je het recept niet compleet hebt kun je de ingrediënten aan Zwammix",
+                         "overhandigen maar dan krijg je ook maar een deel van de beloning.",
+                         "Let op! Je hebt tot 10.55 uur de tijd om het recept compleet te maken.",
+                         "Als je nu kiest om te overhandigen krijg je niet nog een tweede mogelijkheid.",
+                         "",
+                         "Ja, ik wil onze ingrediënten overhandigen.",
+                         "Nee, ik doe het later."],
+                        [["Joepie, dankjewel voor de ingrediënten.",
+                          "Ik ga gelijk m'n soepketel zoeken."],
+                         ["*Hikkup*"],
+                         ["Hier is je beloning voor het zoeken van de ingrediënten."]],
+                        [["Waar is m'n ketel?"], ["*Hikkup*"]])
                   )

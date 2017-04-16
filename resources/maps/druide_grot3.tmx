@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="24" tilewidth="16" tileheight="16" nextobjectid="24169">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="24" tilewidth="16" tileheight="16" nextobjectid="24173">
  <tileset firstgid="1" name="outside_a2" tilewidth="16" tileheight="16" tilecount="768" columns="32">
   <image source="tilesets/outside_a2.png" width="512" height="384"/>
  </tileset>
@@ -11,6 +11,9 @@
  </tileset>
  <tileset firstgid="2497" name="dungeon_b" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
   <image source="tilesets/dungeon_b.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="3521" name="inside_c" tilewidth="16" tileheight="16" tilecount="1024" columns="32">
+  <image source="tilesets/inside_c.png" width="512" height="512"/>
  </tileset>
  <layer name="under0 background" width="20" height="24">
   <data encoding="csv">
@@ -135,10 +138,10 @@
 0,0,0,0,0,0,0,0,0,0,0,2745,2746,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,2775,2776,0,0,2777,2778,2705,2706,0,0,0,0,0,
 0,0,0,0,0,0,0,2807,2808,0,0,2809,2810,2737,2738,0,0,0,0,0,
-0,0,0,0,0,2775,2776,0,0,0,0,0,0,2769,2770,0,0,0,0,0,
-0,0,0,0,0,2807,2808,0,0,0,0,0,0,2801,2802,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,2775,2776,3719,3720,0,3593,3594,0,2769,2770,0,0,0,0,0,
+0,0,0,0,0,2807,2808,3751,3752,0,3625,3626,0,2801,2802,0,0,0,0,0,
+0,0,0,0,0,0,3721,3722,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,3753,3754,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -233,6 +236,12 @@
   <object id="24165" x="240" y="160" width="32" height="64"/>
   <object id="24166" x="48" y="160" width="32" height="64"/>
  </objectgroup>
- <objectgroup name="objects"/>
- <objectgroup name="events"/>
+ <objectgroup name="objects">
+  <object id="24169" name="person100" x="144" y="128" width="32" height="32"/>
+ </objectgroup>
+ <objectgroup name="events">
+  <object id="24170" name="move4" x="144" y="256" width="32" height="16"/>
+  <object id="24171" name="text9" x="144" y="240" width="32" height="16"/>
+  <object id="24172" name="text10" x="144" y="144" width="32" height="16"/>
+ </objectgroup>
 </map>

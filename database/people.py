@@ -24,7 +24,9 @@ class PeopleDatabase(enum.Enum):
     Mogelijkheid om face alvast mee te geven, deze moet in een list. person80 is een voorbeeld.
     """
 
-    person100 = dict(name='druid01',     text=[["*Hick*"]])
+    person100 = dict(name='druid01',     quest=QuestDatabase.quest7,
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 16, 11, 00))
 
     person200 = dict(name='troll01',     text=[["*Grunt*"]])
 
@@ -84,10 +86,10 @@ class PeopleDatabase(enum.Enum):
     person510 = dict(name='priest01',       text=[["En dan zijn we nu aangekomen bij de schriftlezing van vandaag.",
                                                    "Want zo staat er geschreven in Numeri 21:14:"],
                                                   ["Daarom wordt gezegd in het boek van de oorlogen des HEEREN:",
-                                                   "Tegen ...SNORK...eb, in een wervelwind, en tegen de beken Arnon,"],
+                                                   "Tegen ...*SNORK*...eb, in een wervelwind, en tegen de beken Arnon,"],
                                                   ["En dan bladeren we door naar Jesaja 60:6.",
                                                    "Hier lezen we het volgende:"],
-                                                  ["Een hoop keme...SNORK... zal u bedekken,"],
+                                                  ["Een hoop keme...*SNORK*... zal u bedekken,"],
                                                   ["Naar deze plaats zult u zich moeten begeven.",
                                                    "Wie oren heeft om te horen, die hore. Amen!"]])
     person511 = dict(name='nun01',          text=[["Sssst. Ik luister naar de schriftlezing van mijn man."]])

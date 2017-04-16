@@ -15,36 +15,36 @@ class SparklyDatabase(aenum.NoAliasEnum):
     """
     # kasteel_batenburg
     sparkly1 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen,  qty=1)))
-    sparkly2 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.doperwten,    qty=59)))
-    sparkly4 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.rose,         qty=5)))
+    sparkly2 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.doperwten,    qty=3)))
+    sparkly4 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.rose,         qty=3)))
 
     # kerker batenburg
-    sparkly26 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.spiderweb,   qty=1)))
+    sparkly26 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.spiderweb,   qty=3)))
 
     # schuur batenburg
-    sparkly28 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,    qty=7)))
+    sparkly28 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,    qty=3)))
 
     # huis batenburg
-    sparkly29 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.tomaat,      qty=10)))
+    sparkly29 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.tomaat,      qty=2)))
     sparkly31 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.putsi,       qty=1)))
 
     # waal_braserie
-    sparkly6 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wool,         qty=32)))
-    sparkly23 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.weegbree,    qty=3)))
+    sparkly6 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wool,         qty=1)))
+    sparkly23 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.weegbree,    qty=2)))
 
     # her en der bij grijze stenen aan de waterkant.
     sparkly7 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.shells,       qty=2)))
     # her en der bij dode bomen
-    sparkly24 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.berkenschors, qty=2)))
+    sparkly24 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.berkenschors, qty=1)))
 
     # brug_over_de_waal
-    sparkly3 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.droppings,    qty=23)))
+    sparkly3 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.droppings,    qty=1)))
 
     # kruising
-    sparkly5 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.ladybug,      qty=3)))
-    sparkly8 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.poppy,        qty=7)))
-    sparkly25 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.maretak,     qty=4)))
-    sparkly27 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.fluitekruid, qty=4)))
+    sparkly5 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.ladybug,      qty=4)))
+    sparkly8 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.poppy,        qty=2)))
+    sparkly25 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.maretak,     qty=3)))
+    sparkly27 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.fluitekruid, qty=2)))
 
     # trollenbos
     sparkly9 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.shroom,       qty=1)))
@@ -62,10 +62,10 @@ class SparklyDatabase(aenum.NoAliasEnum):
     sparkly21 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.shroom,      qty=1)))
 
     # grensovergang
-    sparkly22 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.cantharel,   qty=3)))
+    sparkly22 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.cantharel,   qty=4)))
 
     # schuur gymnich
-    sparkly30 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.shallot,     qty=30)))
+    sparkly30 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.shallot,     qty=3)))
 
     # aan de rivieren
     sparkly32 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.water_maas,  qty=1)))
