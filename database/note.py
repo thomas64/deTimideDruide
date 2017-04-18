@@ -31,11 +31,11 @@ class NoteDatabase(enum.Enum):
               "You might wonder what it's here for."]]
     note7 = [["That's right, it's a pole sticking out of the water."]]
 
-    note8 = [["Brasserie Altena"]]
+
     note9 = PATH+'recept1.png'
-    note10 = [["Oversteek naar", "'t Ryck van Nimmegen"]]
-    note11 = [["Naar Fort Batenburg"]]
-    note12 = [["Naar Germania"]]
+    note10 = [["Gallia Belgica"]]
+    note11 = [["Naar de klokkentoren"]]
+
     note13 = [["Hier rust Bato."],
               ["Door de code van een steen",
                "gaat een wijs man heen."],

@@ -1199,7 +1199,6 @@
   <object id="124" x="1088" y="1136" width="32" height="96"/>
  </objectgroup>
  <objectgroup name="objects">
-  <object id="1" name="sign3" type="2" x="448" y="560" width="32" height="32"/>
   <object id="149" name="sparkly21" type="x" x="112" y="448" width="32" height="32"/>
   <object id="151" name="sparkly20" type="x" x="352" y="416" width="32" height="32"/>
   <object id="152" name="sparkly19" type="x" x="96" y="704" width="32" height="32"/>
