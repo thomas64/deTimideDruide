@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="36" tilewidth="16" tileheight="16" nextobjectid="53">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="36" tilewidth="16" tileheight="16" nextobjectid="56">
  <tileset firstgid="1" name="piesport_inn_2f" tilewidth="16" tileheight="16" tilecount="1976" columns="52">
   <image source="piesport_inn_2f.png" width="832" height="608"/>
  </tileset>
@@ -360,6 +360,7 @@
     <property name="direction" value="South"/>
    </properties>
   </object>
+  <object id="55" name="start_game" x="416" y="208" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="3" name="step_stone" x="48" y="48" width="112" height="480"/>

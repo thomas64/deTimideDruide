@@ -31,7 +31,7 @@ class PeopleDatabase(enum.Enum):
     person200 = dict(name='troll01',     text=[["*Grunt*"]])
 
     person300 = dict(name='soldier01',   text=[["Goedendag."],
-                                               ["Welkom in het kasteel."]])
+                                               ["Welkom in Kasteel Batenburg."]])
 
     person301 = dict(name='soldier01',   text=[["Het is niet toegestaan de kasteelmuur te betreden."],
                                                ["Dus opzouten!!!"]])
@@ -55,10 +55,49 @@ class PeopleDatabase(enum.Enum):
                                               ["Bij hun vertrek zijn ze iets vergeten mee te nemen.",
                                                "Waar heb ik dat toch gelaten? Het moet hier ergens zijn..."]])
 
-    person402 = dict(name='soldier01',     text=[["Halt! U komt het ryck van Nimmegen niet in.",
+    person402 = dict(name='soldier01',     text=[["Halt! U komt het ryck van Nimmegen niet in tot 13-05 11:30 uur.",
                                                   "Ik heb orders van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
                      time2=datetime.datetime(2017,  5, 13, 11, 30))
+    person403 = dict(name='soldier01',     text=[["Sie haben jetzt keinen Zugang zu Germania bis 13-05 13:00 Uhr."]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 13, 13, 00))
+    person404 = dict(name='soldier01',   text=[["Herzlich willkommen in Germania."]])
+    person405 = dict(name='soldier01',   text=[["Halt! U komt Gallia Belgica nooit en te nimmer meer in.",
+                                                "Ik heb order van de keizer. Keer terug!"]],
+                     time1=datetime.datetime(2017, 5, 14, 6, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
+    person406 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 14-05 's ochtends.",
+                                                "Ik heb order van de keizer. Keer terug!"]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 14, 6, 00))
+    person407 = dict(name='soldier01',   text=[["Halt! Het Romerkanal is nooit en te nimmer meer te bereiken.",
+                                                "Ik heb order van de keizer. Keer terug!"]],
+                     time1=datetime.datetime(2017, 5, 14, 21, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
+    person408 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 13-05 15:30 uur.",
+                                                "Ik heb order van de keizer. Keer terug!"]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 13, 15, 30))
+    person409 = dict(name='soldier01',   text=[["Halt! Gymnich is nooit en te nimmer meer te bereiken.",
+                                                "Ik heb order van de keizer. Keer terug!"]],
+                     time1=datetime.datetime(2017, 5, 14, 21, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
+    person410 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 14-05 17:00 uur.",
+                                                "Ik heb order van de keizer. Keer terug!"]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 14, 17, 00))
+    person411 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 17-05 's ochtends.",
+                                                "Ik heb order van de keizer. Keer terug!"]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 17, 6, 00))
+    person412 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 22-05 's ochtends.",
+                                                "Ik heb order van de keizer. Keer terug!"]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 22, 6, 00))
+
+
+
 
     person500 = dict(name='roelfke01',      text=[["Hoi. Ik ben Roelfke."],
                                                   ["Wat leuk dat je er bent!"],
