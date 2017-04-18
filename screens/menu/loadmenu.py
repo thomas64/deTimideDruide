@@ -10,6 +10,7 @@ from components import LoadScreen
 from components import Transition
 from constants import SFX
 from loadsave import Dialog as LoadDialog
+from script import Script
 
 from .basemenu import BaseMenu
 
@@ -75,6 +76,7 @@ class LoadMenu(BaseMenu):
             # als de data niet corrupt is.
             if data:
                 self.engine.data = data
+                Script.load_game(self.engine.data)
                 # als er na de reeks gamestates niets meer op stack ligt, komt overworld er in.
                 self.engine.gamestate.change(Transition())
                 self.engine.gamestate.push(LoadScreen())

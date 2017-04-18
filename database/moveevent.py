@@ -36,10 +36,9 @@ class MoveEventDatabase(aenum.NoAliasEnum):
             (PersonState.Moving,  Direction.South, 2.5)
         )
     )
-    move4 = dict(movement=(
-            (PersonState.Moving,  Direction.North, 0.5),
-            (PersonState.Moving,  Direction.North, 1.4)
-        )
+    move4 = dict(movement=[
+            (PersonState.Moving,  Direction.North, 1.9)  # als het 1 item is, dan moet het in een list. zie [ ] ipv ( )
+        ]
     )
 
 

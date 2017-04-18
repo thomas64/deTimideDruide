@@ -3,6 +3,8 @@
 class: Script
 """
 
+import datetime
+
 import characters
 from constants import Direction
 
@@ -102,6 +104,19 @@ class Script:
         data.recept_bekeken = False
         data.orakelsteen_gevonden = False
         data.brug_opgelopen = False
+
+    @staticmethod
+    def load_game(data):
+        """
+        Als de speler op een bepaalde datum een savegame laadt. Dan verschijnt hij op een bepaalde map.
+        """
+        timestamp = datetime.datetime.now()
+        data.map_pos = 'start_game'
+        data.map_dir = Direction.South
+        if datetime.datetime(2017, 4, 18, 17, 00) < timestamp < datetime.datetime(2017, 4, 18, 18, 00):
+            data.map_name = 'piesport'
+        elif datetime.datetime(2017, 4, 18, 17, 00) < timestamp < datetime.datetime(2017, 4, 18, 18, 00):
+            data.map_name = ''
 
     @staticmethod
     def intro_text():
