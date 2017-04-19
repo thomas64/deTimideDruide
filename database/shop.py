@@ -22,6 +22,14 @@ class ShopDatabase(enum.Enum):
     ...
     """
 
+    shop10 = dict(content=[(EquipmentType.itm,
+                            [PiDb.bloem_rood, PiDb.bloem_blauw, PiDb.bloem_geel,
+                             PiDb.water_maas, PiDb.water_niers, PiDb.water_waal])],
+                  name='youngwoman04')
+
+
+
+
     shop1 = dict(content=[WeaponType.swd, WeaponType.haf, WeaponType.pol, WeaponType.mis, WeaponType.thr],
                  material=[ItemMaterial.brz],
                  name='man01')

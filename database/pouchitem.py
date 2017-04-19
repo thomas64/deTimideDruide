@@ -183,12 +183,12 @@ class PouchItemDatabase(enum.Enum):
     orakelsteen = dict(nam="Orakelsteen",           srt=26, spr=ORAKELSTEEN,        desc="")
     putsi = dict(nam="Putsi",                       srt=27, spr=PUTSI,              desc="")
     niers = dict(nam="Kaart Niers",                 srt=27, spr=LANDKAART,          desc="", click=IMGPATH+'niers.png')
-    water_waal = dict(nam="Water Waal",             srt=28, spr=WATERRIVIER,        desc="")
-    water_maas = dict(nam="Water Maas",             srt=28, spr=WATERRIVIER,        desc="")
-    water_niers = dict(nam="Water Niers",           srt=28, spr=WATERRIVIER,        desc="")
-    bloem_geel = dict(nam="Gele bloem",             srt=29, spr=BLOEMGEEL,          desc="")
-    bloem_blauw = dict(nam="Blauwe bloem",          srt=29, spr=BLOEMBLAUW,         desc="")
-    bloem_rood = dict(nam="Rode bloem",             srt=29, spr=BLOEMROOD,          desc="")
+    water_waal = dict(nam="Water Waal",             srt=28, spr=WATERRIVIER,        desc="", val=1)
+    water_maas = dict(nam="Water Maas",             srt=28, spr=WATERRIVIER,        desc="", val=1)
+    water_niers = dict(nam="Water Niers",           srt=28, spr=WATERRIVIER,        desc="", val=1)
+    bloem_geel = dict(nam="Gele bloem",             srt=29, spr=BLOEMGEEL,          desc="", val=1)
+    bloem_blauw = dict(nam="Blauwe bloem",          srt=29, spr=BLOEMBLAUW,         desc="", val=1)
+    bloem_rood = dict(nam="Rode bloem",             srt=29, spr=BLOEMROOD,          desc="", val=1)
     kleuren_drankje = dict(nam="9-Kleurendrankje",  srt=30, spr=KLEURENDRANKJE,     desc="Handig voor het verjagen van trollen. Na het innemen schijt je 9 kleuren.")
 
 
