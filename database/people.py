@@ -28,7 +28,21 @@ class PeopleDatabase(enum.Enum):
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
                      time2=datetime.datetime(2017,  5, 16, 11, 00))
 
-    person200 = dict(name='troll01',     text=[["*Grunt*"]])
+    person101 = dict(name='druid01',     quest=(QuestDatabase.quest8,
+                                                QuestDatabase.quest9),
+                     time1=datetime.datetime(2017,  5, 16, 11,  1),
+                     # time1=datetime.datetime(2009,  5, 16, 11,  1), # deze tijd is om te testen.
+                     time2=datetime.datetime(2017,  5, 16, 23, 00))
+
+    person200 = dict(name='troll01',     text=[["*Burp*"]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 16, 11, 00))
+    person201 = dict(name='ketel01',     text=[["He kijk nou, dit is de ketel van de Zwammix!"]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 16, 11, 00))
+    person202 = dict(name='steen01',     text=[["Ik hoor gesnurk achter deze steen.", "Wat kan dat zijn?"]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 22, 18, 00))
 
     person300 = dict(name='soldier01',   text=[["Goedendag."],
                                                ["Welkom in Kasteel Batenburg."]])

@@ -58,6 +58,7 @@ WATERRIVIER = "resources/sprites/icons/pouch/water_rivier.png"
 BLOEMROOD = "resources/sprites/icons/pouch/bloem_rood.png"
 BLOEMBLAUW = "resources/sprites/icons/pouch/bloem_blauw.png"
 BLOEMGEEL = "resources/sprites/icons/pouch/bloem_geel.png"
+KLEURENDRANKJE = "resources/sprites/icons/pouch/kleuren_drankje.png"
 
 
 class PouchItemDatabase(enum.Enum):
@@ -188,6 +189,7 @@ class PouchItemDatabase(enum.Enum):
     bloem_geel = dict(nam="Gele bloem",             srt=29, spr=BLOEMGEEL,          desc="")
     bloem_blauw = dict(nam="Blauwe bloem",          srt=29, spr=BLOEMBLAUW,         desc="")
     bloem_rood = dict(nam="Rode bloem",             srt=29, spr=BLOEMROOD,          desc="")
+    kleuren_drankje = dict(nam="9-Kleurendrankje",  srt=30, spr=KLEURENDRANKJE,     desc="Handig voor het verjagen van trollen. Na het innemen schijt je 9 kleuren.")
 
 
 for itm in PouchItemDatabase:
