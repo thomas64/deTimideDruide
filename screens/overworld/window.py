@@ -23,6 +23,7 @@ from constants import SFX
 
 from database import InnDatabase
 from database import HeroDatabase
+from database import LocationDatabase
 from database import PeopleDatabase
 from database import SchoolDatabase
 from database import ShopDatabase
@@ -93,12 +94,8 @@ class Window(object):
         self.surface = self.surface.convert()
 
         self.inn_box = None     # confirmbox
-        self.inn_data = None
         self.hero_box = None    # confirmbox
-        self.hero_data = None
         self.quest_box = None   # confirmbox
-        self.person_face = None
-        self.person_id = None
 
         self.auto_move_event = False
         self.auto_move_script = list()
@@ -168,57 +165,55 @@ class Window(object):
             choice = self.hero_box.cur_item
             yes = self.hero_box.TOPINDEX
             scr_capt = self.hero_box.scr_capt
+            hero_object = self.hero_box.callback
             if choice == yes:
-                if self.engine.data.party.add(self.hero_data):
+                if self.engine.data.party.add(hero_object):
                     self.engine.audio.play_sound(SFX.join)
                     self.engine.key_timer = NEWMAPTIMEOUT
                     self.load_map()
                     self.engine.gamestate.push(Transition())
                 else:
-                    text = ["It seems your party is full already."]
-                    push_object = MessageBox(text, face_image=self.hero_data.FAC, scr_capt=scr_capt, last=True)
+                    text = HeroDatabase.closing()
+                    push_object = MessageBox(text, face_image=hero_object.FAC, scr_capt=scr_capt, last=True)
                     self.engine.gamestate.push(push_object)
             else:
                 self.engine.audio.play_sound(SFX.done)
 
             self.hero_box = None
-            self.hero_data = None
 
         elif self.inn_box:
             choice = self.inn_box.cur_item
             yes = self.inn_box.TOPINDEX
             scr_capt = self.inn_box.scr_capt
+            inn_enum_val = self.inn_box.callback
             if choice == yes:
                 gold = inventoryitems.factory_pouch_item(PouchItemDatabase.gold)
-                if self.engine.data.pouch.remove(gold, self.inn_data['price']):
+                if self.engine.data.pouch.remove(gold, inn_enum_val['price']):
                     self.engine.gamestate.push(Transition())
-                    push_object = MessageBox(InnDatabase.paid_text(), face_image=self.inn_data['face'],
+                    push_object = MessageBox(InnDatabase.paid_text(), face_image=inn_enum_val['face'],
                                              scr_capt=scr_capt, sound=SFX.coins, last=True)
                     self.engine.gamestate.push(push_object)
                     for hero in self.party:
                         hero.recover_full_hp()
                 else:
-                    push_object = MessageBox(InnDatabase.fail_text(), face_image=self.inn_data['face'],
+                    push_object = MessageBox(InnDatabase.fail_text(), face_image=inn_enum_val['face'],
                                              scr_capt=scr_capt, last=True)
                     self.engine.gamestate.push(push_object)
             else:
-                push_object = MessageBox(InnDatabase.deny_text(), face_image=self.inn_data['face'],
+                push_object = MessageBox(InnDatabase.deny_text(), face_image=inn_enum_val['face'],
                                          scr_capt=scr_capt, last=True)
                 self.engine.gamestate.push(push_object)
 
             self.inn_box = None
-            self.inn_data = None
 
         elif self.quest_box:
-            # roept de callback aan die is meegegeven aan confirmbox bij de logbook quest
-            # de callback hier is decided() uit inventoryitems\quest.py
-            self.quest_box.callback(self.engine.gamestate, self.engine.data, self.engine.audio, self.person_face,
-                                    self.quest_box.cur_item, self.quest_box.TOPINDEX, self.quest_box.scr_capt,
-                                    self.person_id, self.display_loot)
+            person_enum_val = self.quest_box.callback
+            the_quest = PeopleDatabase.get_active_quest(person_enum_val['quest'], self.engine.data.logbook)
+            the_quest.decided(self.engine.gamestate, self.engine.data, self.engine.audio, person_enum_val['face'],
+                              self.quest_box.cur_item, self.quest_box.TOPINDEX, self.quest_box.scr_capt,
+                              self.display_loot)
 
             self.quest_box = None
-            self.person_face = None
-            self.person_id = None
 
     def single_input(self, event):
         """
@@ -538,13 +533,16 @@ class Window(object):
             if len(self.party_sprites[0].rect.collidelistall(self.current_map.locations)) == 1:
                 object_nr = self.party_sprites[0].rect.collidelist(self.current_map.locations)
                 location_name = self.current_map.locations[object_nr].name
+                location_enum_val = LocationDatabase[location_name].value
 
-                if location_name.startswith('quest'):
-                    the_quest = self.engine.data.logbook[location_name]
+                if location_enum_val.get('quest'):
+                    quest_key = location_enum_val['quest'].name
+                    the_quest = self.engine.data.logbook[quest_key]
                     the_quest.condition = True
 
-                elif location_name.startswith('chapter'):
-                    chapter_data = self.engine.data.chapters[location_name]
+                elif location_enum_val.get('chapter'):
+                    chapter_key = location_enum_val['chapter'].name
+                    chapter_data = self.engine.data.chapters[chapter_key]
                     chapter_data['condition'] = True
 
     def action_button(self):
@@ -573,11 +571,12 @@ class Window(object):
             hero_sprite = self.current_map.heroes[object_name]
             # ook hier moet een hero in party niet gecheckt worden
             if not self.engine.data.party.contains(hero_sprite.person_id):
-                self.hero_data = self.engine.data.heroes[hero_sprite.person_id]
+                hero_object = self.engine.data.heroes[hero_sprite.person_id]
 
                 hero_sprite.turn(self.party_sprites[0].rect)
 
-                self.hero_box = ConfirmBox(HeroDatabase.opening(self.hero_data.RAW), face_image=self.hero_data.FAC)
+                text = HeroDatabase.opening(hero_object.RAW)
+                self.hero_box = ConfirmBox(text, face_image=hero_object.FAC, callback=hero_object)
                 self.engine.gamestate.push(self.hero_box)
                 self.prev_map_name = self.engine.data.map_name  # deze is voor het geluid recht te breien.
 
@@ -647,15 +646,15 @@ class Window(object):
         if len(check_rect.collidelistall(self.current_map.inns)) == 1:
             object_nr = check_rect.collidelist(self.current_map.inns)
             inn_id = self.current_map.inns[object_nr].person_id
-            self.inn_data = InnDatabase[inn_id].value
+            inn_enum_val = InnDatabase[inn_id].value
 
             for spr in self.current_map.inns:
                 if spr.show_sprite:
                     if spr.person_id == inn_id:
                         spr.turn(self.party_sprites[0].rect)
 
-            self.inn_box = ConfirmBox(InnDatabase.welcome_text(self.inn_data['price']),
-                                      face_image=self.inn_data['face'])
+            self.inn_box = ConfirmBox(InnDatabase.welcome_text(inn_enum_val['price']),
+                                      face_image=inn_enum_val['face'], callback=inn_enum_val)
             self.engine.gamestate.push(self.inn_box)
 
     def check_people(self, check_rect):
@@ -665,49 +664,28 @@ class Window(object):
         if len(check_rect.collidelistall(self.current_map.people)) == 1:
             object_nr = check_rect.collidelist(self.current_map.people)
             person_sprite = self.current_map.people[object_nr]
-            person_data = PeopleDatabase[person_sprite.person_id].value
+            person_id = person_sprite.person_id
+            person_enum_val = PeopleDatabase[person_id].value
 
             # doe gewoon eerst het draaien zoals normaal
             person_sprite.turn(self.party_sprites[0].rect)
 
-            # maar dan, als de persoon meerdere quests heeft
-            if person_data.get('quest') and type(person_data['quest']) == tuple:
-                # loop dan door al zijn quests
-                for index, quest in enumerate(person_data['quest']):
-                    quest_key = quest.name
-                    the_quest = self.engine.data.logbook[quest_key]
-                    # en als er nog eentje niet rewarded is, voer die dan uit.
-                    # OF als je bij de laatste quest bent, die mag je nog wel een keer uitvoeren.
-                    if not the_quest.is_rewarded() or index == len(person_data['quest'])-1:
-                        self._handle_quest(person_data, person_sprite, the_quest)
-                        break
-
-            # of als de persoon 1 quest heeft
-            elif person_data.get('quest'):
-                quest_key = person_data['quest'].name
-                the_quest = self.engine.data.logbook[quest_key]
-                self._handle_quest(person_data, person_sprite, the_quest)
-
+            # maar dan, als de persoon een of meerdere quests heeft
+            if person_enum_val.get('quest'):
+                the_quest = PeopleDatabase.get_active_quest(person_enum_val['quest'], self.engine.data.logbook)
+                # self.quest_box blijft op None als er geen ConfirmBox gereturned wordt.
+                self.quest_box = the_quest.show_message(self.engine.gamestate, self.engine.data, person_enum_val)
             # of als hij dat niet heeft
             else:
-                person_data['face'].reverse()  # draai de faces om in volgorde
-                for i, text_part in enumerate(reversed(person_data['text'])):
-                    push_object = MessageBox(text_part, face_image=person_data['face'][i],
+                person_enum_val['face'].reverse()  # draai de faces om in volgorde
+                for i, text_part in enumerate(reversed(person_enum_val['text'])):
+                    push_object = MessageBox(text_part, face_image=person_enum_val['face'][i],
                                              last=(True if i == 0 else False))
                     self.engine.gamestate.push(push_object)
-                person_data['face'].reverse()  # en weer terugzetten nadien.
+                person_enum_val['face'].reverse()  # en weer terugzetten nadien.
 
-                if person_sprite.person_id == PeopleDatabase.person400.name:
+                if person_id == PeopleDatabase.person400.name:
                     self.engine.data.barman_gepraat = True
-
-    def _handle_quest(self, person_data, person_sprite, the_quest):
-        # het gezicht is in on_enter() weer nodig, vandaar deze declaratie.
-        self.person_face = person_data['face']
-        # idem voor person_id
-        self.person_id = person_sprite.person_id
-
-        self.quest_box = the_quest.show_message(self.engine.gamestate, self.engine.audio, self.engine.data,
-                                                self.person_face, self.person_id, self.display_loot)
 
     def check_notes(self, check_rect):
         """
