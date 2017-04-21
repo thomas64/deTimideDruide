@@ -42,6 +42,15 @@ class TextEventDatabase(enum.Enum):
     def condition8(self, data):
         return data.brug_opgelopen
 
+    def condition11(self, data):
+        import inventoryitems
+        from .pouchitem import PouchItemDatabase
+        negen_kleuren = inventoryitems.factory_pouch_item(PouchItemDatabase.kleuren_drankje)
+        return data.pouch.contains(negen_kleuren, 1)
+
+    def condition12(self, data):
+        return data.logbook['quest10'].is_rewarded()
+
     text99 = dict(condition=condition1,
                   text=[["hoi1"], ["hoi2"]],
                   face=[ALAGOS, HEROFACEPATH+"02f_luana.png"])
@@ -140,8 +149,8 @@ class TextEventDatabase(enum.Enum):
     text10 = dict(condition=True,
                   text=[
                      ["Kraaaa! Toktoktok."], ["Waakker worden Zwaammix!"],
-                     ["*Hikkup*"], ["Brann! Mijn gevleugelde vriend.", "Daar ben je eindelijk."],
-                     ["*Hikkup*"], ["Heb je de personen gevonden die ik zocht?"],
+                     ["*HIPS*"], ["Brann! Mijn gevleugelde vriend.", "Daar ben je eindelijk."],
+                     ["*HIPS*"], ["Heb je de personen gevonden die ik zocht?"],
                      ["Jaaaa. Meester."], ["Ik zie dat u weer te diep in het glaasje heeft gekeken?", "Kraa!"],
                      ["Maak je niet druk.",
                       "Ik heb altijd gedacht dat drinken slecht voor me was,",
@@ -150,6 +159,31 @@ class TextEventDatabase(enum.Enum):
                       "maar niemand over mijn dorst."]
                   ],
                   face=[ALAGOS, ALAGOS, DRUIDE, DRUIDE, DRUIDE, DRUIDE, ALAGOS, ALAGOS, DRUIDE])
+
+    text11 = dict(condition=condition11,
+                  text=[
+                      ["Kraaaa! De trollen zijn weer weg gegaaaaan.",
+                       "En ze hebben de ketel niet laten staaaan."],
+                      ["Wat moeten ze toch met die roestige ketel",
+                       "van de druïde? Dit moet de druïde weten."]
+                  ],
+                  face=ALAGOS)
+
+    text12 = dict(condition=condition12,
+                  text=[
+                      ["Kraaa! Nee niet weer. Hij is weer stil.",
+                       "En we hebben nog steeds geen soep. Kraaa!"],
+                      ["Hoe krijgen we hem weer aan de praat?"],
+                      ["Aaaaaaahaaaa! Nu weet ik het! Zijn wijn was op.",
+                       "Hij mag dan nu wel weer nuchter zijn,",
+                       "maar zonder zijn wijn, is hij weer timide."],
+                      ["Ik ben bang dat we hem weer dronken zullen moeten gaan voeren.",
+                       "Voor nu laten we hem even met rust,",
+                       "maar ik denk dat vanaf 15.00 uur vanmiddag",
+                       "Zwammix wel weer een wijntje zal lusten."],
+                      ["Jaaaaa. Kraaaaaa!"]
+                  ],
+                  face=ALAGOS)
 
 
 for text in TextEventDatabase:

@@ -150,17 +150,17 @@ class QuestDatabase(enum.Enum):
                   # de reward mag ook op dit moment nog maar van 1 type zijn.
                   reward=dict(itm1=dict(nam=PouchItemDatabase.gold,             qty=1)),  # Dit aantal is per geleverde itm.
                   text=([["Vrienden. Mijn naam is Zwammix."],
-                         ["*Hikkup*"],
+                         ["*HIPS*"],
                          ["Brann en de stenen hebben hun werk goed gedaan."],
-                         ["*Hikkup*"],
+                         ["*HIPS*"],
                          ["Jullie hebben mij gevonden.",
                           "Ik heb jullie nodig om mijn soepje weer te kunnen maken."],
                          ["Zonder mijn soepje ben ik mijzelf niet,",
                           "maar het lukt mij niet de soep te maken in mijn huidige staat."],
-                         ["*Hikkup*"],
+                         ["*HIPS*"],
                          ["Hebben jullie het hele recept kunnen vinden,",
                           "en de ingrediënten bij elkaar verzameld?"]],
-                        [["Zijn jullie nu wel gereed om de ingrediënten te overhandigen?"], ["*Hikkup*"]],
+                        [["Zijn jullie nu wel gereed om de ingrediënten te overhandigen?"], ["*HIPS*"]],
                         ["Indien je het recept niet compleet hebt kun je de ingrediënten aan Zwammix",
                          "overhandigen maar dan krijg je ook maar een deel van de beloning.",
                          "Let op! Je hebt tot 10.55 uur de tijd om het recept compleet te maken.",
@@ -170,16 +170,16 @@ class QuestDatabase(enum.Enum):
                          "Nee, ik doe het later."],
                         [["Joepie, dankjewel voor de ingrediënten.",
                           "Ik ga gelijk m'n soepketel zoeken."],
-                         ["*Hikkup*"],
+                         ["*HIPS*"],
                          ["Hier is je beloning voor het zoeken van de ingrediënten."]],
-                        [["Waar is m'n ketel?"], ["*Hikkup*"]])
+                        [["Waar is m'n ketel?"], ["*HIPS*"]])
                   )
 
     quest8 = dict(qtype=QuestType.ReceiveItemQuest,
                   condition=False,  # deze gaat naar True als je op de plek bent geweest.
                   reward=None,  # mag =None zijn.
                   text=([["Uhm. Ik heb een klein probleempje denk ik."],
-                         ["*Hikkup*"],
+                         ["*HIPS*"],
                          ["Mijn ketel is weg.",
                           "Hebben jullie ergens mijn ketel gezien?"]],
                         [["Hebben jullie ergens mijn ketel gezien?"]],
@@ -187,16 +187,16 @@ class QuestDatabase(enum.Enum):
                          "Ja, we hebben een ketel zien staan in het bos hiernaast.",
                          "Nee, we hebben geen ketel gezien."],
                         [["Het bos hiernaast?"],
-                         ["*Hikkup*"],
+                         ["*HIPS*"],
                          ["Maar dat is het trollenbos.",
                           "Zijn jullie daar geweest?!"],
                          ["Dat is heeeeel gevaarlijk.",
                           "De trollen gedragen zich erg raar de laatste jaren."],
-                         ["*Hikkup*"],
+                         ["*HIPS*"],
                          ["Wat moeten ze toch met mijn ketel?",
                           "Ongeleide projectielen lijken het wel.",
                           "Maar als de ketel daar is moeten jullie hem gaan halen."],
-                         ["*Hikkup*"],
+                         ["*HIPS*"],
                          ["Ik zal jullie help...e..."],
                          ["ZZZzzzZZZzzzZZZ..."]],
                         [["Deze zin vervalt."]])
@@ -231,19 +231,190 @@ class QuestDatabase(enum.Enum):
                           "1 Blauw bloemetje"]],
                         ["Wil je de ingrediënten overhandigen?", "", "Ja.", "Nee."],
                         [["Met dit 9 kleurige drankje kunnen jullie de trollen even bezig houden."],
-                         ["*Hikkup*"],
+                         ["*HIPS*"],
                          ["Ze eten toch alles wat je ze voorschotelt."],
-                         ["Hikkup*"],
+                         ["*HIPS*"],
                          ["Het heeft een sterk laxerende werking.",
                           "Ze schijten hiermee 9 kleuren.",
                           "Zo hebben jullie de tijd om de ketel terug te pakken."],
-                         ["Hikkup*"]],
+                         ["*HIPS*"]],
                         [["Met dit 9 kleurige drankje kunnen jullie de trollen even bezig houden."],
-                         ["*Hikkup*"],
+                         ["*HIPS*"],
                          ["Ze eten toch alles wat je ze voorschotelt."],
-                         ["Hikkup*"],
+                         ["*HIPS*"],
                          ["Het heeft een sterk laxerende werking.",
                           "Ze schijten hiermee 9 kleuren.",
                           "Zo hebben jullie de tijd om de ketel terug te pakken."],
-                         ["Hikkup*"]])
+                         ["*HIPS*"]])
                   )
+
+    quest10 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=False,  # gaat naar True als je bij het vuur van de trollen bent geweest waar de ketel stond.
+                   reward=None,
+                   text=(
+                       [["Zijn jullie nu al terug?"]],
+                       [["Zijn jullie nu al terug?"]],
+                       ["Vertel je Zwammix het slechte nieuws dat de ketel en de trollen verdwenen zijn?", "",
+                        "Ja natuurlijk, de waarheid is hard!",
+                        "Neuh, we laten hem lekker in zijn (dronken) waan."],
+                       [[" . . . . . . . . "]],
+                       [[" . . . . . . . . "]])
+                   )
+
+    quest11 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.wine,   qty=1)),
+                   reward=None,
+                   text=(
+                       [[" . . . . . . . . "]],
+                       [[" . . . . . . . . "]],
+                       ["Gaan jullie Zwammix wat wijn geven om hem weer aan de praat te krijgen?", "",
+                        "Ja. Hij heeft ons vast iets belangrijks te vertellen. (Dit kost 1 wijn)",
+                        "Nee. Laten we hem niet nog verder in zijn drankverslaving helpen."],
+                       [["Trollen leven in het bos. Voorwaar ik zeg U.",
+                         "Met trollen ben je zonder drankjes de klos.",
+                         "Zij rieken uren in de wind.",
+                         "Maar met de juiste drank worden zij uw vrind."],
+                        ["Code: DE"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest12 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.wine,   qty=2)),
+                   reward=None,
+                   text=(
+                       [[" . . . . . . . . "]],
+                       [[" . . . . . . . . "]],
+                       ["Gaan jullie Zwammix meer wijn geven om hem weer aan de praat te krijgen?", "",
+                        "Ja. Hij heeft ons vast weer iets belangrijks te vertellen. (Dit kost 2 wijn)",
+                        "Nee. Laten we hem niet nog verder in zijn drankverslaving helpen."],
+                       [["Met dranken die geel zijn als de bloemen,",
+                         "*HIPS* zullen trollen een juiste locatie noemen."],
+                        ["Code: WA"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest13 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.wine,   qty=3)),
+                   reward=None,
+                   text=(
+                       [[" . . . . . . . . "]],
+                       [[" . . . . . . . . "]],
+                       ["Gaan jullie Zwammix meer wijn geven om hem weer aan de praat te krijgen?", "",
+                        "Ja. Hij heeft ons vast weer iets belangrijks te vertellen. (Dit kost 3 wijn)",
+                        "Nee. Laten we hem niet nog verder in zijn drankverslaving helpen."],
+                       [["Dranken die zijn als rood scharlaken,",
+                         "zullen trollen spraakzaam maken.",
+                         "Vertellen zullen zij over een man,",
+                         "die ons ongetwijfeld helpen kan. *HIPS*"],
+                        ["Code: AR"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest14 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.wine,   qty=4)),
+                   reward=None,
+                   text=(
+                       [[" . . . . . . . . "]],
+                       [[" . . . . . . . . "]],
+                       ["Gaan jullie Zwammix meer wijn geven om hem weer aan de praat te krijgen?", "",
+                        "Ja. Hij heeft ons vast weer iets belangrijks te vertellen. (Dit kost 4 wijn)",
+                        "Nee. Laten we hem niet nog verder in zijn drankverslaving helpen."],
+                       [["Door de drankjes in het violet, *HIPS*",
+                         "geven trollen advies waarmee je het zonder niet redt."],
+                        ["Code: HE"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest15 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.wine,   qty=5)),
+                   reward=None,
+                   text=(
+                       [[" . . . . . . . . "]],
+                       [[" . . . . . . . . "]],
+                       ["Gaan jullie Zwammix meer wijn geven om hem weer aan de praat te krijgen?", "",
+                        "Ja. Hij heeft ons vast weer iets belangrijks te vertellen. (Dit kost 5 wijn)",
+                        "Nee. Laten we hem niet nog verder in zijn drankverslaving helpen."],
+                       [["Oranje dranken oh zo zoet, *HIPS*",
+                         "leiden tot advies, maar helaas niet goed."],
+                        ["Code: ID"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest16 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.wine,   qty=6)),
+                   reward=None,
+                   text=(
+                       [[" . . . . . . . . "]],
+                       [[" . . . . . . . . "]],
+                       ["Gaan jullie Zwammix meer wijn geven om hem weer aan de praat te krijgen?", "",
+                        "Ja. Hij heeft ons vast weer iets belangrijks te vertellen. (Dit kost 6 wijn)",
+                        "Nee. Laten we hem niet nog verder in zijn drankverslaving helpen."],
+                       [["De drank die is als ultramarijn,",
+                         "doet de trollen vrijgevig zijn. *HIPS*"],
+                        ["Code: IS"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest17 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.wine,   qty=7)),
+                   reward=None,
+                   text=(
+                       [[" . . . . . . . . "]],
+                       [[" . . . . . . . . "]],
+                       ["Gaan jullie Zwammix meer wijn geven om hem weer aan de praat te krijgen?", "",
+                        "Ja. Hij heeft ons vast weer iets belangrijks te vertellen. (Dit kost 7 wijn)",
+                        "Nee. Laten we hem niet nog verder in zijn drankverslaving helpen."],
+                       [["Met drankjes die groen zijn als blad,",
+                         "verklappen trollen locaties in een stad. *HIPS*"],
+                        ["Code: IN"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest18 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.wine,   qty=8)),
+                   reward=None,
+                   text=(
+                       [[" . . . . . . . . "]],
+                       [[" . . . . . . . . "]],
+                       ["Gaan jullie Zwammix meer wijn geven om hem weer aan de praat te krijgen?", "",
+                        "Ja. Hij heeft ons vast weer iets belangrijks te vertellen. (Dit kost 8 wijn)",
+                        "Nee. Laten we hem niet nog verder in zijn drankverslaving helpen."],
+                       [["Drankjes die zijn zo zwart als roet,",
+                         "leiden tot advies, maar helaas niet goed. *HIPS*"],
+                        ["Code: DE"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest19 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.wine,   qty=9)),
+                   reward=None,
+                   text=(
+                       [[" . . . . . . . . "]],
+                       [[" . . . . . . . . "]],
+                       ["Gaan jullie Zwammix meer wijn geven om hem weer aan de praat te krijgen?", "",
+                        "Ja. Hij heeft ons vast weer iets belangrijks te vertellen. (Dit kost 9 wijn)",
+                        "Nee. Laten we hem niet nog verder in zijn drankverslaving helpen."],
+                       [["Grijs is de kleur van oud. *HIPS*",
+                         "Geef deze drank en ontvang uw beloning in goud."],
+                        ["Code: WI"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest20 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.wine,   qty=10)),
+                   reward=None,
+                   text=(
+                       [[" . . . . . . . . "]],
+                       [[" . . . . . . . . "]],
+                       ["Gaan jullie Zwammix meer wijn geven om hem weer aan de praat te krijgen?", "",
+                        "Ja. Hij heeft ons vast weer iets belangrijks te vertellen. (Dit kost 10 wijn)",
+                        "Nee. Laten we hem niet nog verder in zijn drankverslaving helpen."],
+                       [["De drankjes in het maagdelijk wit, *HIPS*",
+                        "leiden tot advies over plaatsen in een stad waar iets zit."],
+                        ["Code: JN"]],
+                       [["*HIPS*"],
+                        ["Okee, dat waren 55 flessen wijn.",
+                         "Dat is op zich best wel veel.",
+                         "Misschien moet ik maar wat gaan slapen."],
+                        ["*HIPS*"]])
+                   )

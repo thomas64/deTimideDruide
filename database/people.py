@@ -29,9 +29,24 @@ class PeopleDatabase(enum.Enum):
                      time2=datetime.datetime(2017,  5, 16, 11, 00))
 
     person101 = dict(name='druid01',     quest=(QuestDatabase.quest8,
-                                                QuestDatabase.quest9),
+                                                QuestDatabase.quest9,
+                                                QuestDatabase.quest10),
                      time1=datetime.datetime(2017,  5, 16, 11,  1),
                      # time1=datetime.datetime(2009,  5, 16, 11,  1), # deze tijd is om te testen.
+                     time2=datetime.datetime(2017,  5, 16, 15, 00))
+
+    person102 = dict(name='druid01',     quest=(QuestDatabase.quest11,
+                                                QuestDatabase.quest12,
+                                                QuestDatabase.quest13,
+                                                QuestDatabase.quest14,
+                                                QuestDatabase.quest15,
+                                                QuestDatabase.quest16,
+                                                QuestDatabase.quest17,
+                                                QuestDatabase.quest18,
+                                                QuestDatabase.quest19,
+                                                QuestDatabase.quest20),
+                     # time1=datetime.datetime(2017,  5, 16, 15, 1),
+                     time1=datetime.datetime(2009,  5, 16, 11,  1), # deze tijd is om te testen.
                      time2=datetime.datetime(2017,  5, 16, 23, 00))
 
     person200 = dict(name='troll01',     text=[["*Burp*"]],

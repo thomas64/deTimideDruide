@@ -158,8 +158,8 @@ class PouchItemDatabase(enum.Enum):
     #                            "Weakness, Exhaustion, and Wraith Touch. It has no effect out of combat. Creating a "
     #                            "Restore Potion requires 2 Gemstones, 2 Spices and an Alchemist rank of at least 3.")
 
-    grapes = dict(nam="Druiven",                    srt=6, spr=GRAPESPATH,          desc="")
-    wine = dict(nam="Wijn",                         srt=7, spr=WINEPATH,            desc="")
+    grapes = dict(nam="Druiven",                    srt=6, spr=GRAPESPATH,          desc="", val=1)
+    wine = dict(nam="Wijn",                         srt=7, spr=WINEPATH,            desc="", val=5)
     cauldron = dict(nam="Magische Ketel",           srt=8, spr=CAULDRONPATH,        desc="")
 
     droppings = dict(nam="Lepus stercora",          srt=9, spr=DROPPINGSPATH,       desc="")
