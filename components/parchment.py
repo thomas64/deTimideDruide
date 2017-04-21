@@ -165,8 +165,8 @@ class Parchment(object):
                 # return of anders worden sommigen variabelen weer overschreven.
                 if self._handle_leftbox_click(event):
                     return
-                if self._handle_rightbox_click(event):
-                    return
+                # if self._handle_rightbox_click(event):
+                #     return    voor sieger uitgezet om niet te kunnen verkopen.
 
                 for selector in self.selectors:
                     if selector:
