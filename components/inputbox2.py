@@ -15,7 +15,7 @@ BACKGROUNDCOLOR = pygame.Color("black")
 RECTCOLOR = pygame.Color("white")
 
 INPUTLABEL = "Name: "
-INPUTLENGTH = 17
+INPUTLENGTH = 20
 
 FONT = None
 FONTSIZE = 50
@@ -49,6 +49,7 @@ class InputBox2(object):
         De loop waarin hij blijft, totdat de juiste input komt.
         """
         self.running = True
+        self.audio.play_sound(SFX.menu_select)
         while self.running:
 
             for event in pygame.event.get():
@@ -61,8 +62,8 @@ class InputBox2(object):
 
         if self.confirm:
             new_name = "".join(self.textbox[0:-1])  # return de string maar zonder het laatste character
-            if new_name:
-                self.audio.play_sound(SFX.menu_select)
+            # if new_name:
+            #     self.audio.play_sound(SFX.menu_select)  # geen geluidje
             return new_name
         else:
             return None

@@ -756,8 +756,8 @@ class Window(object):
                             if value['anw'] == InputBox2(self.engine.audio, value['ask']).input_loop():
                                 pass
                             else:
-                                push_object = MessageBox(self.engine.gamestate,
-                                                         ["Helaas, fout ingevoerd. De kist opent zich niet."])
+                                push_object = MessageBox(["Helaas, fout ingevoerd. De kist opent zich niet."],
+                                                         sound=SFX.menu_cancel)
                                 self.engine.gamestate.push(push_object)
                                 return
 
