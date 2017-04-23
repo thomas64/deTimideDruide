@@ -185,6 +185,31 @@ class PeopleDatabase(enum.Enum):
     # wijnproeverij
     person529 = dict(name='man52',          quest=QuestDatabase.quest22)
 
+    person530 = dict(name='man01',         text=[["Of ik de Druïde ken?"],
+                                                 ["*Hikkup* Jazeker."],
+                                                 ["Maar ik heb hem hier al een tijdje niet meer gezien.",
+                                                  "*Hikkup* Hij kwam hier vroeger vaak bloemetjes plukken."],
+                                                 ["Dit bos staat bekend om zijn mooie bloemen. *Hikkup*",
+                                                  "Vooral de rode, gele en blauwe bloemen zijn bijzonder.",
+                                                  "Deze komen enkel in dit bos voor, en hebben een",
+                                                  "heilzame werking in de handen van de druïde. *Hikkup*"],
+                                                 ["Ik heb in het verleden het een keer in mijn hoofd",
+                                                  "gehaald om thee te zetten van de bloemetjes.",
+                                                  "Dat heb ik geweten."],
+                                                 ["*Hikkup* *Hikkup*"]])
+
+    person531 = dict(name='man54',         text=[["Ik hoorde jullie praten over een magische soep.",
+                                                  "Klopt dat? Mogelijk dat ik jullie kan helpen."],
+                                                 ["Jaren terug heb ik hier een wezen te logeren gehad.",
+                                                  "Hij betaalde goed, maar ik kon de kamer na zijn",
+                                                  "bezoek gelijk renoveren. Wat een lucht. Blegh!",
+                                                  "Ik word er nog onpasselijk van als ik er aan denk."],
+                                                 ["Hij was geobsedeerd van een of andere soep."],
+                                                 ["Als ik jullie was zou ik de route van het Romer Kanal",
+                                                  "een stuk volgen. Dat heeft hij toen ook gedaan.",
+                                                  "Mogelijk dat jullie nog belangrijke informatie vinden",
+                                                  "over de soep die hij aan het maken was."]])
+
     # standard characters
     person1 = dict(name='boy01',         text=[["Hi mister."]])
     person2 = dict(name='boy02',         text=[["Hi mister."]])

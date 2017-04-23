@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="94" height="92" tilewidth="16" tileheight="16" nextobjectid="495">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="94" height="92" tilewidth="16" tileheight="16" nextobjectid="496">
  <tileset firstgid="1" name="romerkanal" tilewidth="16" tileheight="16" tilecount="4182" columns="102">
   <image source="romerkanal.png" width="1632" height="656"/>
  </tileset>
@@ -1583,6 +1583,7 @@
   <object id="492" name="sparkly37" type="x" x="352" y="224" width="32" height="32"/>
   <object id="493" name="sparkly37" type="x" x="288" y="192" width="32" height="32"/>
   <object id="494" name="sign109" type="2" x="416" y="1248" width="32" height="32"/>
+  <object id="495" name="person530" type="w" x="1088" y="672" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>
