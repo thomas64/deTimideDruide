@@ -41,3 +41,8 @@ class NoteDatabase(enum.Enum):
                "gaat een wijs man heen."],
               ["((B+C+M) x (H+L)) - (I/K) - (J/(E+F+G))",
                "= afstand"]]
+
+    note20 = [["Prijzenkluis 1e plaats"]]
+    note21 = [["Prijzenkluis 2e plaats"]]
+    note22 = [["Prijzenkluis 3e plaats"]]
+    note23 = [["Prijzenkluis 4e plaats"]]

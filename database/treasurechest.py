@@ -19,58 +19,58 @@ class TreasureChestDatabase(aenum.NoAliasEnum):
 
     # romerkanal
     chest100 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=44),
-                                 itm2=dict(nam=PouchItemDatabase.grapes,        qty=1)),
-                    condition=dict(pwd=dict(ask="Code 1e plek:", anw="fgxzy3")))
+                                 itm2=dict(nam=PouchItemDatabase.bottle,        qty=3)),
+                    condition=dict(pwd=dict(ask="Raadsels. Code 1e plek:", anw="fgxzy3")))
     chest101 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=33),
                                  itm2=dict(nam=PouchItemDatabase.grapes,        qty=2)),
-                    condition=dict(pwd=dict(ask="Code 2e plek:", anw="hjkip5")))
+                    condition=dict(pwd=dict(ask="Raadsels. Code 2e plek:", anw="hjkip5")))
     chest102 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=22),
                                  itm2=dict(nam=PouchItemDatabase.wine,          qty=2)),
-                    condition=dict(pwd=dict(ask="Code 3e plek:", anw="jkfrd3")))
+                    condition=dict(pwd=dict(ask="Raadsels. Code 3e plek:", anw="jkfrd3")))
     chest103 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=11),
                                  itm2=dict(nam=PouchItemDatabase.wine,          qty=4)),
-                    condition=dict(pwd=dict(ask="Code 4e plek:", anw="plsrt7")))
+                    condition=dict(pwd=dict(ask="Raadsels. Code 4e plek:", anw="plsrt7")))
 
     # bank dag 2
     chest104 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=44),
-                                 itm2=dict(nam=PouchItemDatabase.grapes,        qty=1)),
-                    condition=dict(pwd=dict(ask="Code 1e plek:", anw="gvfr5t")),
+                                 itm2=dict(nam=PouchItemDatabase.bottle,        qty=1)),
+                    condition=dict(pwd=dict(ask="Ingrediënten. Code 1e plek:", anw="gvfr5t")),
                     time1=datetime.datetime(2017, 5, 14, 17, 00),
                     time2=datetime.datetime(2017, 5, 16, 12, 00))
     chest105 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=33),
                                  itm2=dict(nam=PouchItemDatabase.grapes,        qty=1)),
-                    condition=dict(pwd=dict(ask="Code 2e plek:", anw="jgtr8y")),
+                    condition=dict(pwd=dict(ask="Ingrediënten. Code 2e plek:", anw="jgtr8y")),
                     time1=datetime.datetime(2017, 5, 14, 17, 00),
                     time2=datetime.datetime(2017, 5, 16, 12, 00))
     chest106 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=22),
                                  itm2=dict(nam=PouchItemDatabase.wine,          qty=1)),
-                    condition=dict(pwd=dict(ask="Code 3e plek:", anw="cvfr4w")),
+                    condition=dict(pwd=dict(ask="Ingrediënten. Code 3e plek:", anw="cvfr4w")),
                     time1=datetime.datetime(2017, 5, 14, 17, 00),
                     time2=datetime.datetime(2017, 5, 16, 12, 00))
     chest107 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=11),
                                  itm2=dict(nam=PouchItemDatabase.wine,          qty=1)),
-                    condition=dict(pwd=dict(ask="Code 4e plek:", anw="klyu9n")),
+                    condition=dict(pwd=dict(ask="Ingrediënten. Code 4e plek:", anw="klyu9n")),
                     time1=datetime.datetime(2017, 5, 14, 17, 00),
                     time2=datetime.datetime(2017, 5, 16, 12, 00))
 
     chest108 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=44),
-                                 itm2=dict(nam=PouchItemDatabase.grapes,        qty=1)),
-                    condition=dict(pwd=dict(ask="Code 1e plek:", anw="fcvt90")),
+                                 itm2=dict(nam=PouchItemDatabase.bottle,        qty=2)),
+                    condition=dict(pwd=dict(ask="Champignons. Code 1e plek:", anw="fcvt90")),
                     time1=datetime.datetime(2017, 5, 14, 17, 00),
                     time2=datetime.datetime(2017, 5, 16, 12, 00))
     chest109 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=33),
-                                 itm2=dict(nam=PouchItemDatabase.grapes,        qty=1)),
-                    condition=dict(pwd=dict(ask="Code 2e plek:", anw="hjky87")),
+                                 itm2=dict(nam=PouchItemDatabase.bottle,        qty=2)),
+                    condition=dict(pwd=dict(ask="Champignons. Code 2e plek:", anw="hjky87")),
                     time1=datetime.datetime(2017, 5, 14, 17, 00),
                     time2=datetime.datetime(2017, 5, 16, 12, 00))
     chest110 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=22),
                                  itm2=dict(nam=PouchItemDatabase.wine,          qty=1)),
-                    condition=dict(pwd=dict(ask="Code 3e plek:", anw="vfdr44")),
+                    condition=dict(pwd=dict(ask="Champignons. Code 3e plek:", anw="vfdr44")),
                     time1=datetime.datetime(2017, 5, 14, 17, 00),
                     time2=datetime.datetime(2017, 5, 16, 12, 00))
     chest111 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=11),
                                  itm2=dict(nam=PouchItemDatabase.wine,          qty=1)),
-                    condition=dict(pwd=dict(ask="Code 4e plek:", anw="sxdj12")),
+                    condition=dict(pwd=dict(ask="Champignons. Code 4e plek:", anw="sxdj12")),
                     time1=datetime.datetime(2017, 5, 14, 17, 00),
                     time2=datetime.datetime(2017, 5, 16, 12, 00))
 
@@ -206,30 +206,38 @@ class TreasureChestDatabase(aenum.NoAliasEnum):
                     time2=datetime.datetime(2017, 5, 22, 12, 00))
 
     chest140 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=44)),
+                    condition=dict(pwd=dict(ask="Wijnschip. Code:", anw="fvhgu7")),
                     time1=datetime.datetime(2017, 5, 20, 12, 00),
                     time2=datetime.datetime(2017, 5, 22, 12, 00))
 
     chest144 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=44)),
+                    condition=dict(pwd=dict(ask="Dieren quest. Code:", anw="insomnia")),
                     time1=datetime.datetime(2017, 5, 20, 12, 00),
                     time2=datetime.datetime(2017, 5, 22, 12, 00))
 
     # bank dag 10
     chest145 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=88)),
                     condition=dict(pwd=dict(ask="Trollenoorlog. Code 1e plek:", anw="gddvu8")),
-                    time1=datetime.datetime(2017, 5, 20, 12, 00),
-                    time2=datetime.datetime(2017, 5, 22, 12, 00))
+                    time1=datetime.datetime(2017,  5, 22, 12, 00),
+                    time2=datetime.datetime(2099, 12, 31, 23, 59))
     chest146 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=66)),
                     condition=dict(pwd=dict(ask="Trollenoorlog. Code 2e plek:", anw="zsjhn9")),
-                    time1=datetime.datetime(2017, 5, 20, 12, 00),
-                    time2=datetime.datetime(2017, 5, 22, 12, 00))
+                    time1=datetime.datetime(2017,  5, 22, 12, 00),
+                    time2=datetime.datetime(2099, 12, 31, 23, 59))
     chest147 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=44)),
                     condition=dict(pwd=dict(ask="Trollenoorlog. Code 3e plek:", anw="wbhjo9")),
-                    time1=datetime.datetime(2017, 5, 20, 12, 00),
-                    time2=datetime.datetime(2017, 5, 22, 12, 00))
+                    time1=datetime.datetime(2017,  5, 22, 12, 00),
+                    time2=datetime.datetime(2099, 12, 31, 23, 59))
     chest148 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=22)),
                     condition=dict(pwd=dict(ask="Trollenoorlog. Code 4e plek:", anw="vfduj3")),
-                    time1=datetime.datetime(2017, 5, 20, 12, 00),
-                    time2=datetime.datetime(2017, 5, 22, 12, 00))
+                    time1=datetime.datetime(2017,  5, 22, 12, 00),
+                    time2=datetime.datetime(2099, 12, 31, 23, 59))
+
+    # wijnproeverij
+    chest150 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=44)),
+                    condition=dict(pwd=dict(ask="Wijn quest. Code:", anw="dewaarheidisindewijn")),
+                    time1=datetime.datetime(2017, 5, 16,  7, 00),
+                    time2=datetime.datetime(2017, 5, 16, 21, 00))
 
 
 

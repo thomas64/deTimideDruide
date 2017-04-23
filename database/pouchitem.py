@@ -31,6 +31,7 @@ NOTEPIMG = os.path.join(POUCHPATH, "note.png")
 
 GRAPESPATH = "resources/sprites/icons/pouch/grapes.png"
 WINEPATH = "resources/sprites/icons/pouch/wine.png"
+BOTTLEPATH = "resources/sprites/icons/pouch/bottle.png"
 CAULDRONPATH = "resources/sprites/icons/pouch/cauldron.png"
 
 SHROOMSPATH = "resources/sprites/icons/pouch/shrooms.png"
@@ -158,9 +159,10 @@ class PouchItemDatabase(enum.Enum):
     #                            "Weakness, Exhaustion, and Wraith Touch. It has no effect out of combat. Creating a "
     #                            "Restore Potion requires 2 Gemstones, 2 Spices and an Alchemist rank of at least 3.")
 
-    grapes = dict(nam="Druiven",                    srt=6, spr=GRAPESPATH,          desc="", val=1)
-    wine = dict(nam="Wijn",                         srt=7, spr=WINEPATH,            desc="", val=5)
-    cauldron = dict(nam="Magische Ketel",           srt=8, spr=CAULDRONPATH,        desc="")
+    grapes = dict(nam="Druiven",                    srt=2, spr=GRAPESPATH,          desc="", val=1)
+    wine = dict(nam="Wijn",                         srt=3, spr=WINEPATH,            desc="", val=5)
+    bottle = dict(nam="Lege fles",                  srt=4, spr=BOTTLEPATH,          desc="")
+    cauldron = dict(nam="Magische Ketel",           srt=5, spr=CAULDRONPATH,        desc="")
 
     droppings = dict(nam="Lepus stercora",          srt=9, spr=DROPPINGSPATH,       desc="")
     shroom = dict(nam="Agaricus bisporus",          srt=10, spr=SHROOMSPATH,        desc="")
