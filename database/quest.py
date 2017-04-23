@@ -416,5 +416,40 @@ class QuestDatabase(enum.Enum):
                         ["Okee, dat waren 55 flessen wijn.",
                          "Dat is op zich best wel veel.",
                          "Misschien moet ik maar wat gaan slapen."],
+                        ["Of naar het ziekenhuis..."],
                         ["*HIPS*"]])
+                   )
+
+    quest21 = dict(qtype=QuestType.ReceiveItemQuest,
+                   condition=True,
+                   reward=dict(itm1=dict(nam=PouchItemDatabase.bottle,  qty=8)),
+                   text=([["Hoi. Ik ben Roelfke."], ["Wat leuk dat je er bent!"],
+                         ["Verzamel je eigen team maar snel bij elkaar."]],
+                         [["Hoi. Ik ben Roelfke."], ["Wat leuk dat je er bent!"],
+                          ["Verzamel je eigen team maar snel bij elkaar."]],
+                         ["Heb je er een beetje zin in?", "",
+                          "JAAAA!!! Dit is wordt echt het meest fantastiche spel EVAH!!!!!",
+                          "Nee, mogen we alsjeblieft weer naar huis? *ZUCHT*"],
+                         [["Hier heb je alvast iets wat je nodig gaat hebben."]],
+                         [["Heb je je team al verzameld?"]])
+                   )
+
+    quest22 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.gold,   qty=1),
+                                  itm2=dict(nam=PouchItemDatabase.grapes, qty=1),
+                                  itm3=dict(nam=PouchItemDatabase.bottle, qty=1)),
+                   reward=dict(itm1=dict(nam=PouchItemDatabase.wine,      qty=1)),
+                   text=([["Welkom in mijn wijnproeverij.",
+                           "In mijn vrije tijd maak ik zelf ook wijn.",
+                           "Voor 1 tros druiven, 1 lege fles en 1 goudstuk",
+                           "kan ik voor jullie een fles wijn maken."]],
+                         [["Welkom in mijn wijnproeverij.",
+                           "In mijn vrije tijd maak ik zelf ook wijn.",
+                           "Voor 1 tros druiven, 1 lege fles en 1 goudstuk",
+                           "kan ik voor jullie een fles wijn maken."]],
+                         ["Wil je dat de man een wijn voor je maakt?", "",
+                          "Ja, ik heb wijn tekort. (Dit kost 1 tros druiven, 1 lege fles, 1 goud)",
+                          "Nee, dankje."],
+                         [["Alsjeblieft, hier heb je de wijn."]],
+                         [["Deze regel wordt niet gebruikt."]])
                    )

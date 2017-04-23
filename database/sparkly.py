@@ -77,6 +77,62 @@ class SparklyDatabase(aenum.NoAliasEnum):
     sparkly36 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bloem_blauw, qty=1)))
     sparkly37 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bloem_geel,  qty=1)))
 
+    # altena
+    sparkly50 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=3)))
+    sparkly51 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=3)))
+    # huis batenburg
+    sparkly52 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=1)))
+    sparkly63 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=2)))
+    sparkly64 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=2)))
+    sparkly65 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=6)))
+    sparkly94 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=3)))
+    # huis romer
+    sparkly53 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=2),
+                                  itm2=dict(nam=PouchItemDatabase.bottle,      qty=2)))
+    sparkly60 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=4)))
+    sparkly61 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=2)))
+    sparkly62 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=6)))
+    # wijn piesport
+    sparkly54 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=2)))
+    sparkly55 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=2)))
+    sparkly56 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=2)))
+    sparkly57 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=2)))
+    sparkly58 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=2)))
+    # inn piesport
+    sparkly59 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=1)))
+    # schuur gymnich
+    sparkly66 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=3)))
+    # kruising2
+    sparkly67 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly68 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=2)))
+    sparkly69 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly70 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=2)))
+    sparkly71 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly72 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly73 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly74 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly75 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly76 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly77 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly78 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly79 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly80 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly81 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly82 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly83 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly84 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly85 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly86 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly87 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly88 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=2)))
+    sparkly89 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly90 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=2)))
+    sparkly91 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly92 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
+    sparkly93 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=2)))
+
+
+
 
 # noinspection PyTypeChecker
 for sparkly in SparklyDatabase:

@@ -153,6 +153,12 @@ class BaseQuestItem(object):
         else:
             return False
 
+    def set_unknown(self):
+        """
+        Voor het Sieger spel. Zet een quest weer op unknown.
+        """
+        self.state = QuestState.Unknown
+
     def _is_ready_to_fulfill(self, data):
         """
         Deze moet overridden worden. Anders geeft hij altijd False.

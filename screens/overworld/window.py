@@ -673,6 +673,11 @@ class Window(object):
             # maar dan, als de persoon een of meerdere quests heeft
             if person_enum_val.get('quest'):
                 the_quest = PeopleDatabase.get_active_quest(person_enum_val['quest'], self.engine.data.logbook)
+
+                # extra regel voor sieger spel.
+                if person_id == PeopleDatabase.person529.name:
+                    the_quest.set_unknown()
+
                 # self.quest_box blijft op None als er geen ConfirmBox gereturned wordt.
                 self.quest_box = the_quest.show_message(self.engine.gamestate, self.engine.data, person_enum_val)
             # of als hij dat niet heeft

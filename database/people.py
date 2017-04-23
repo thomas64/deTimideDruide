@@ -45,9 +45,13 @@ class PeopleDatabase(enum.Enum):
                                                 QuestDatabase.quest18,
                                                 QuestDatabase.quest19,
                                                 QuestDatabase.quest20),
-                     # time1=datetime.datetime(2017,  5, 16, 15, 1),
-                     time1=datetime.datetime(2009,  5, 16, 11,  1), # deze tijd is om te testen.
-                     time2=datetime.datetime(2017,  5, 16, 23, 00))
+                     time1=datetime.datetime(2017,  5, 16, 15, 1),
+                     # time1=datetime.datetime(2009,  5, 16, 11,  1),  # deze tijd is om te testen.
+                     time2=datetime.datetime(2017,  5, 17, 3, 00))
+
+    person103 = dict(name='druid01',     text=[[" . . . . . . . . "]],
+                     time1=datetime.datetime(2017,  5, 17,  3, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
 
     person200 = dict(name='troll01',     text=[["*Burp*"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
@@ -128,9 +132,7 @@ class PeopleDatabase(enum.Enum):
 
 
 
-    person500 = dict(name='roelfke01',      text=[["Hoi. Ik ben Roelfke."],
-                                                  ["Wat leuk dat je er bent!"],
-                                                  ["Verzamel je eigen team maar snel bij elkaar."]])
+    person500 = dict(name='roelfke01',      quest=QuestDatabase.quest21)
     person501 = dict(name='sieger01',       text=[["Hi. Ik ben Sieger."],
                                                   ["Zijn jullie klaar voor een avontuur?"],
                                                   ["Maak jullie borst maar nat!"]])
@@ -180,6 +182,8 @@ class PeopleDatabase(enum.Enum):
     person527 = dict(name='woman02',        text=[["Wees gegroet."]])
     person528 = dict(name='man01',          text=[["Bent u al volwassen gedoopt?"]])
 
+    # wijnproeverij
+    person529 = dict(name='man52',          quest=QuestDatabase.quest22)
 
     # standard characters
     person1 = dict(name='boy01',         text=[["Hi mister."]])
