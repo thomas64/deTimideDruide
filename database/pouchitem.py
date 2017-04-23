@@ -55,6 +55,7 @@ ORAKELSTEEN = "resources/sprites/icons/pouch/orakelsteen.png"
 
 PUTSI = "resources/sprites/icons/pouch/putsi.png"
 LANDKAART = "resources/sprites/icons/pouch/landkaart.png"
+RECEPT = "resources/sprites/icons/pouch/recept.png"
 WATERRIVIER = "resources/sprites/icons/pouch/water_rivier.png"
 BLOEMROOD = "resources/sprites/icons/pouch/bloem_rood.png"
 BLOEMBLAUW = "resources/sprites/icons/pouch/bloem_blauw.png"
@@ -163,6 +164,9 @@ class PouchItemDatabase(enum.Enum):
     wine = dict(nam="Wijn",                         srt=3, spr=WINEPATH,            desc="", val=5)
     bottle = dict(nam="Lege fles",                  srt=4, spr=BOTTLEPATH,          desc="")
     cauldron = dict(nam="Magische Ketel",           srt=5, spr=CAULDRONPATH,        desc="")
+    recept1 = dict(nam="Recept blz 1",              srt=6, spr=RECEPT,              desc="", click=IMGPATH+'recept1.png')
+    recept2 = dict(nam="Recept blz 2",              srt=6, spr=RECEPT,              desc="", click=IMGPATH+'recept2.png')
+    recept3 = dict(nam="Recept blz 3",              srt=6, spr=RECEPT,              desc="", click=IMGPATH+'recept3.png')
 
     droppings = dict(nam="Lepus stercora",          srt=9, spr=DROPPINGSPATH,       desc="")
     shroom = dict(nam="Agaricus bisporus",          srt=10, spr=SHROOMSPATH,        desc="")

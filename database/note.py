@@ -32,7 +32,6 @@ class NoteDatabase(enum.Enum):
     note7 = [["That's right, it's a pole sticking out of the water."]]
 
 
-    note9 = PATH+'recept1.png'
     note10 = [["Gallia Belgica"]]
     note11 = [["Naar de klokkentoren"]]
 
@@ -46,3 +45,11 @@ class NoteDatabase(enum.Enum):
     note21 = [["Prijzenkluis 2e plaats"]]
     note22 = [["Prijzenkluis 3e plaats"]]
     note23 = [["Prijzenkluis 4e plaats"]]
+
+    note32 = PATH+'wijnstreek.png'
+    note33 = PATH+'planten1.png'
+    note34 = PATH+'planten2.png'
+    note35 = PATH+'knopen1.png'
+    note36 = PATH+'knopen2.png'
+    note37 = PATH+'knopen3.png'
+    note38 = PATH+'insecten.png'

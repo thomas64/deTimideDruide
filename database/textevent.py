@@ -34,7 +34,10 @@ class TextEventDatabase(enum.Enum):
         return not data.barman_gepraat
 
     def condition5(self, data):
-        return data.recept_bekeken
+        import inventoryitems
+        from .pouchitem import PouchItemDatabase
+        recept1 = inventoryitems.factory_pouch_item(PouchItemDatabase.recept1)
+        return data.pouch.contains(recept1, 1)
 
     def condition6(self, data):
         return data.orakelsteen_gevonden

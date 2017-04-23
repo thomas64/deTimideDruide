@@ -101,7 +101,6 @@ class Script:
 
         data.kaart_bekeken = False
         data.barman_gepraat = False
-        data.recept_bekeken = False
         data.orakelsteen_gevonden = False
         data.brug_opgelopen = False
 

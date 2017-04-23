@@ -712,8 +712,6 @@ class Window(object):
 
             if note_id == NoteDatabase.note3.name:
                 self.engine.data.kaart_bekeken = True
-            elif note_id == NoteDatabase.note9.name:
-                self.engine.data.recept_bekeken = True
 
     def check_signs(self):
         """

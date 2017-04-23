@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="42" tilewidth="16" tileheight="16" nextobjectid="25">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="42" tilewidth="16" tileheight="16" nextobjectid="26">
  <tileset firstgid="1" name="cochem_huis_3f" tilewidth="16" tileheight="16" tilecount="551" columns="29">
   <image source="cochem_huis_3f.png" width="464" height="304"/>
  </tileset>
@@ -360,6 +360,8 @@
   <object id="16" x="96" y="464" width="128" height="32"/>
   <object id="20" x="256" y="144" width="32" height="32"/>
  </objectgroup>
- <objectgroup name="objects" visible="0"/>
+ <objectgroup name="objects">
+  <object id="25" name="sparkly96" type="x" x="192" y="288" width="32" height="32"/>
+ </objectgroup>
  <objectgroup name="events"/>
 </map>

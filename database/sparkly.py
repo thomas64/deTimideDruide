@@ -76,6 +76,7 @@ class SparklyDatabase(aenum.NoAliasEnum):
     sparkly35 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bloem_rood,  qty=1)))
     sparkly36 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bloem_blauw, qty=1)))
     sparkly37 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bloem_geel,  qty=1)))
+    sparkly95 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.recept2,     qty=1)))
 
     # altena
     sparkly50 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=3)))
@@ -131,7 +132,10 @@ class SparklyDatabase(aenum.NoAliasEnum):
     sparkly92 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=1)))
     sparkly93 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=2)))
 
-
+    # cochem
+    sparkly96 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.recept3,     qty=1)))
+    # altena
+    sparkly97 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.recept1,     qty=1)))
 
 
 # noinspection PyTypeChecker
