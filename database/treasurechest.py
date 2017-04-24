@@ -240,6 +240,9 @@ class TreasureChestDatabase(aenum.NoAliasEnum):
                     time2=datetime.datetime(2017, 5, 16, 21, 00))
 
 
+    # huis cochem 1f
+    chest200 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,          qty=1)))
+
 
 
     chest20 = dict(

@@ -137,6 +137,9 @@ class SparklyDatabase(aenum.NoAliasEnum):
     # altena
     sparkly97 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.recept1,     qty=1)))
 
+    # huis cochem 1f
+    sparkly100 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,       qty=1)))
+
 
 # noinspection PyTypeChecker
 for sparkly in SparklyDatabase:

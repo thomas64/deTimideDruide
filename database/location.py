@@ -18,3 +18,4 @@ class LocationDatabase(aenum.NoAliasEnum):
     # location2 = dict(quest=QuestDatabase.quest5)
     location1 = dict(quest=QuestDatabase.quest8)
     location2 = dict(quest=QuestDatabase.quest10)
+    location3 = dict(chapter=ChapterDatabase.chapter1)
