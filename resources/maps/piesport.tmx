@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="92" height="76" tilewidth="16" tileheight="16" nextobjectid="128">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="92" height="76" tilewidth="16" tileheight="16" nextobjectid="131">
  <tileset firstgid="1" name="piesport" tilewidth="16" tileheight="16" tilecount="3604" columns="106">
   <image source="piesport.png" width="1696" height="544"/>
  </tileset>
@@ -572,7 +572,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="portals">
+ <objectgroup name="portals" visible="0">
   <object id="1" name="piesport_inn_1f" x="288" y="496" width="32" height="16"/>
   <object id="2" name="piesport_wijnproeverij" x="608" y="240" width="32" height="16"/>
   <object id="106" name="kruising2" x="1408" y="544" width="16" height="160"/>
@@ -581,7 +581,7 @@
   <object id="116" name="trier_bos2" x="48" y="544" width="16" height="160"/>
   <object id="126" name="piesport_winkel" x="192" y="304" width="32" height="16"/>
  </objectgroup>
- <objectgroup name="start_pos">
+ <objectgroup name="start_pos" visible="0">
   <object id="108" name="kruising2" x="1376" y="592" width="16" height="16"/>
   <object id="110" name="piesport_bank" x="1120" y="928" width="16" height="16"/>
   <object id="112" name="piesport_bieb" x="1184" y="384" width="16" height="16"/>
@@ -624,7 +624,7 @@
   <object id="15" x="512" y="320" width="416" height="16"/>
   <object id="17" x="1280" y="384" width="64" height="48"/>
  </objectgroup>
- <objectgroup name="high_blocker">
+ <objectgroup name="high_blocker" visible="0">
   <object id="18" x="-16" y="0" width="112" height="560"/>
   <object id="19" x="96" y="0" width="1376" height="144"/>
   <object id="20" x="1376" y="144" width="96" height="416"/>
@@ -693,6 +693,9 @@
     <property name="direction" value="east"/>
    </properties>
   </object>
+  <object id="128" name="person550" type="w" x="1120" y="432" width="32" height="32"/>
+  <object id="129" name="person551" type="w" x="224" y="960" width="32" height="32"/>
+  <object id="130" name="person552" type="w" x="992" y="864" width="32" height="32"/>
  </objectgroup>
- <objectgroup name="events"/>
+ <objectgroup name="events" visible="0"/>
 </map>

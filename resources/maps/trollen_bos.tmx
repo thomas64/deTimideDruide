@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="100" tilewidth="16" tileheight="16" nextobjectid="181">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="100" tilewidth="16" tileheight="16" nextobjectid="182">
  <tileset firstgid="1" name="ersin_forest_waterfall" tilewidth="16" tileheight="16" tilecount="3751" columns="121">
   <image source="trollen_bos.png" width="1936" height="496"/>
  </tileset>
@@ -1133,10 +1133,10 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="portals">
+ <objectgroup name="portals" visible="0">
   <object id="147" name="druide_bos" x="-16" y="1312" width="16" height="160"/>
  </objectgroup>
- <objectgroup name="start_pos">
+ <objectgroup name="start_pos" visible="0">
   <object id="148" name="druide_bos" x="0" y="1360" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
@@ -1161,7 +1161,7 @@
   <object id="137" x="896" y="992" width="32" height="16"/>
   <object id="138" x="96" y="1088" width="32" height="16"/>
  </objectgroup>
- <objectgroup name="high_blocker">
+ <objectgroup name="high_blocker" visible="0">
   <object id="3" x="0" y="1104" width="192" height="224"/>
   <object id="4" x="192" y="1040" width="32" height="288"/>
   <object id="5" x="224" y="1008" width="32" height="224"/>
@@ -1287,7 +1287,7 @@
   <object id="178" x="896" y="656" width="64" height="32"/>
   <object id="177" x="992" y="656" width="32" height="32"/>
  </objectgroup>
- <objectgroup name="objects" visible="0">
+ <objectgroup name="objects">
   <object id="149" name="sparkly21" type="x" x="112" y="448" width="32" height="32"/>
   <object id="151" name="sparkly20" type="x" x="352" y="416" width="32" height="32"/>
   <object id="152" name="sparkly19" type="x" x="96" y="704" width="32" height="32"/>
@@ -1335,8 +1335,9 @@
    </properties>
   </object>
   <object id="176" name="person202" x="960" y="688" width="32" height="32"/>
+  <object id="181" name="person561" type="w" x="480" y="1360" width="32" height="32"/>
  </objectgroup>
- <objectgroup name="events">
+ <objectgroup name="events" visible="0">
   <object id="165" name="location1" x="960" y="832" width="160" height="32"/>
   <object id="179" name="text11" x="800" y="976" width="64" height="64"/>
   <object id="180" name="location2" x="800" y="976" width="64" height="64"/>
