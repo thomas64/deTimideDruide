@@ -269,3 +269,13 @@ class Walking(Person):
             if self.step_animation >= len(frame_set):  # lengte van bijv west_states - 1 is 3
                 self.step_animation = 0
         return frame_set[self.step_animation]
+
+
+class Walking2(Walking):
+    """
+    Struinend Persoon met een heel groot radius voor Sieger spel
+    """
+    def __init__(self, person_id, sprite, rect, objectlayer, direction):
+        super().__init__(person_id, sprite, rect, objectlayer, direction)
+
+        self.wander_area = pygame.Rect(self.rect.x - 512, self.rect.y - 512, 1024, 1024)

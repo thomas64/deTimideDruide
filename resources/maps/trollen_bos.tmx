@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="100" tilewidth="16" tileheight="16" nextobjectid="182">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="100" tilewidth="16" tileheight="16" nextobjectid="184">
  <tileset firstgid="1" name="ersin_forest_waterfall" tilewidth="16" tileheight="16" tilecount="3751" columns="121">
   <image source="trollen_bos.png" width="1936" height="496"/>
  </tileset>
@@ -1133,11 +1133,13 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="portals" visible="0">
+ <objectgroup name="portals">
   <object id="147" name="druide_bos" x="-16" y="1312" width="16" height="160"/>
+  <object id="182" name="trollen_grot" x="960" y="656" width="32" height="16"/>
  </objectgroup>
- <objectgroup name="start_pos" visible="0">
+ <objectgroup name="start_pos">
   <object id="148" name="druide_bos" x="0" y="1360" width="16" height="16"/>
+  <object id="183" name="trollen_grot" x="960" y="672" width="16" height="16"/>
  </objectgroup>
  <objectgroup name="sounds" visible="0">
   <object id="139" name="step_grass" x="0" y="112" width="480" height="1456"/>
@@ -1161,7 +1163,7 @@
   <object id="137" x="896" y="992" width="32" height="16"/>
   <object id="138" x="96" y="1088" width="32" height="16"/>
  </objectgroup>
- <objectgroup name="high_blocker" visible="0">
+ <objectgroup name="high_blocker">
   <object id="3" x="0" y="1104" width="192" height="224"/>
   <object id="4" x="192" y="1040" width="32" height="288"/>
   <object id="5" x="224" y="1008" width="32" height="224"/>

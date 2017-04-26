@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="46" height="38" tilewidth="16" tileheight="16" nextobjectid="24076">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="46" height="38" tilewidth="16" tileheight="16" nextobjectid="24077">
  <tileset firstgid="1" name="outside_a2" tilewidth="16" tileheight="16" tilecount="768" columns="32">
   <image source="tilesets/outside_a2.png" width="512" height="384"/>
  </tileset>
@@ -543,6 +543,12 @@
   <object id="24069" x="400" y="336" width="32" height="16"/>
   <object id="24072" x="624" y="288" width="32" height="64"/>
  </objectgroup>
- <objectgroup name="objects"/>
+ <objectgroup name="objects">
+  <object id="24076" name="person106" x="208" y="224" width="32" height="32">
+   <properties>
+    <property name="direction" value="north"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup name="events"/>
 </map>

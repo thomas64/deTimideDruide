@@ -278,6 +278,7 @@ class MapMusic(enum.Enum):
     druide_grot2           = "ersin_cave",        None
     druide_grot3           = "house",             None
     trollen_bos            = "trollen_bos",       "river"
+    trollen_grot           = "ersin_cave",        None
     piesport               = "invernia_town",     "town"
     piesport_bieb          = "house",             None
     piesport_bank          = "house",             None
@@ -331,6 +332,7 @@ class MapTitle(aenum.NoAliasEnum):
     druide_grot2           = ["Druïde grot"]
     druide_grot3           = ["Druïde grot"]
     trollen_bos            = ["Trollen bos"]
+    trollen_grot           = ["Trollen grot"]
     piesport               = ["Piesport"]
     piesport_bieb          = ["Piesport"]
     piesport_bank          = ["Piesport"]

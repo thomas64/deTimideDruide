@@ -109,20 +109,51 @@ class PeopleDatabase(enum.Enum):
                            DRUIDE, DRUIDE, DRUIDE, DRUIDE, DRUIDE, ALAGOS, DRUIDE, DRUIDE, DRUIDE, ALAGOS, DRUIDE,
                            DRUIDE, DRUIDE, DRUIDE],
                      chapter=ChapterDatabase.chapter1,
-                     time1=datetime.datetime(2017, 5, 17, 3, 00),
-                     time2=datetime.datetime(2017, 5, 18, 3, 00))
+                     time1=datetime.datetime(2017, 5, 17,  4, 00),
+                     time2=datetime.datetime(2017, 5, 17, 23, 00))
 
     person104 = dict(name='druid01',     text=[[" . . . . . . . . "],
                                                ["Ik heb het gevoel dat een hoop",
                                                 "kennis vandaag van pas zal komen.",
                                                 "Kraaaa!"]],
                      face=[DRUIDE, ALAGOS],
-                     time1=datetime.datetime(2017, 5, 17,  4, 0),
-                     time2=datetime.datetime(2017, 5, 17, 18, 00))
+                     time1=datetime.datetime(2017, 5, 19,  4, 0),
+                     time2=datetime.datetime(2017, 5, 19, 18, 00))
 
     person105 = dict(name='druid01',     text=[[" . . . . . . . . "]],
-                     time1=datetime.datetime(2017, 5, 17, 18, 00),
-                     time2=datetime.datetime(2999, 5, 17, 18, 00))
+                     time1=datetime.datetime(2017, 5, 19, 18, 00),
+                     time2=datetime.datetime(2017, 5, 22,  6, 00))
+
+    person106 = dict(name='druid01',
+                     time1=datetime.datetime(2017, 5, 22,  6,  1),
+                     time2=datetime.datetime(2017, 5, 22, 13, 00),
+                     face=[DRUIDE, ALAGOS, ALAGOS, DRUIDE, DRUIDE, DRUIDE, DRUIDE, DRUIDE, DRUIDE, DRUIDE, DRUIDE, DRUIDE, DRUIDE],
+                     text=[[" . . . . . . . . "],
+                           ["Oh ja natuurlijk, eerst wijn, dan pas kan hij praten."],
+                           ["Hier Zwammix, drink maar lekker deze fles wijn."],
+                           [" . . . . . . . . "],
+                           ["*KLOK* *KLOK* *KLOK*"],
+                           ["Ik was even aan het pissen, ogenblikje hoor."],
+                           ["*ZIP*"],
+                           ["Ha. Daar zijn jullie weer."],
+                           ["Ok DIO's. Of zal ik ondertussen maar gewoon druïdes zeggen.",
+                            "Jullie hebben jezelf dubbel en dwars bewezen als volwaardige druïdes."],
+                           ["We weten inmiddels waar we Ymir kunnen vinden.",
+                            "Maar om hem wakker te maken moeten we bij",
+                            "mijn sacherijnige broer Grandprix zijn.",
+                            "Hij weet namelijk hóe we Ymir wakker moeten maken,",
+                            "maar ik vrees dat hij dit niet zomaar prijs gaat geven."],
+                           ["Hij woont in Trier en heeft een heel leger trollen in zijn macht.",
+                            "En we zullen dat leger moeten gaan verslaan ben ik bang."],
+                           ["Aan jullie nu eerst de taak om een zo groot mogelijk",
+                            "leger te verzamelen in Trier, en dat dan te gaan trainen."],
+                           ["Als zijn leger verslagen is, kan ik",
+                            "ongestoord mijn kunsten vertonen.",
+                            "Daarna kunnen we door naar de",
+                            "Genovevahohle om daar Ymir te ontwaken."]])
+
+    person107 = dict(name='druid02',
+                     text=[["Ik ben gemeen."]])
 
     person200 = dict(name='troll01',     text=[["*Burp*"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
@@ -199,9 +230,10 @@ class PeopleDatabase(enum.Enum):
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
                      time2=datetime.datetime(2017,  5, 22, 6, 00))
-
-
-
+    person413 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 20-05 's ochtends.",
+                                                "Ik heb order van de keizer. Keer terug!"]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 20, 6, 00))
 
     person500 = dict(name='roelfke01',      quest=QuestDatabase.quest21)
     person501 = dict(name='sieger01',       text=[["Hi. Ik ben Sieger."],
@@ -332,62 +364,62 @@ class PeopleDatabase(enum.Enum):
 
     person550 = dict(name='animal01',   text=[["De druïde die boletenchips maakte eindigde direct",
                                                "voor of direct na de druïde die een kat heeft."]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person551 = dict(name='animal02',   text=[["De druïde met het vogelnestje drinkt rooibos thee.",
                                                "Code: i"]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person552 = dict(name='animal03',   text=[["De druïde uit het grauwe wilgenbos is één plaats",
                                                "hoger geëindigd dan de druïde uit het witte esdoornbos.",
                                                "Code: n"]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person553 = dict(name='animal04',   text=[["De druïde uit het grauwe wilgenbos drinkt wijn.",
                                                "Code: s"]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person554 = dict(name='animal04',   text=[["De druïde die cantharellen in roomsaus maakt heeft een uil."]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person555 = dict(name='animal04',   text=[["De druïde uit het gewone platanenbos maakt schimmelkaas."]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person556 = dict(name='animal05',   text=[["De druïde die als 3e is geëindigd drinkt geitenmelk.",
                                                "Code: o"]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person557 = dict(name='animal05',   text=[["De druïde met de vlechten won de kookwedstrijd."]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person558 = dict(name='animal05',   text=[["De druïde te paard eindigde direct voor of",
                                                "direct na de druïde die schimmelkaas maakte."]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person559 = dict(name='animal06',   text=[["De kale druïde heeft een vos als huisdier.",
                                                "Code: m"]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person560 = dict(name='animal07',   text=[["De druïde die zwarte truffel salade maakte, drinkt bokbier.",
                                                "Code: n"]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person561 = dict(name='animal08',   text=[["De druïde met de baard maakte vliegenzwammensoep.",
                                                "Code: i"]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person562 = dict(name='animal09',   text=[["De druïde met de snor woont in het rode kastanjebos.",
                                                "Code: a"]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person563 = dict(name='animal09',   text=[["De druïde met de vlechten eindigde direct voor of",
                                                "direct na de druïde die uit het blauwe sparrenbos komt."]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
     person564 = dict(name='animal09',   text=[["De druïde die boletenchips maakte is direct voor",
                                                "of direct na de druïde geëindigd die water dronk."]],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
 
     person565 = dict(name='animal08',   text=[["Piep piep piep."],
                                               ["*uche*"],
@@ -396,8 +428,8 @@ class PeopleDatabase(enum.Enum):
                                                "Zouden er meer dieren zijn vandaag",
                                                "die ons iets willen vertellen?"]],
                      face=[PATH + 'animal08' + FEXT, PATH + 'animal08' + FEXT, PATH + 'animal08' + FEXT, ALAGOS],
-                     time1=datetime.datetime(2017, 5, 18,  6, 00),
-                     time2=datetime.datetime(2017, 5, 18, 23, 00))
+                     time1=datetime.datetime(2017, 5, 20,  6, 00),
+                     time2=datetime.datetime(2017, 5, 20, 23, 00))
 
     # standard characters
     person1 = dict(name='boy01',         text=[["Hi mister."]])

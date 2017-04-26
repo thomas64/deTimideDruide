@@ -4,6 +4,7 @@ class: Map
 """
 
 import datetime
+import random
 
 import pygame
 import pyscroll
@@ -11,6 +12,7 @@ import pyscroll
 from .namedrect import NamedRect
 from .person import Person
 from .person import Walking
+from .person import Walking2
 from .portal import Portal
 from .sprites import Sign
 from .sprites import Sparkly
@@ -86,6 +88,8 @@ class Map(object):
         self.chests = []
         self.sparkly = []
 
+        rnd = random.randint(1, 6)
+
         for rect in tmx_data.get_layer_by_name(HIGHBLOCKER):
             self.high_blocker_rects.append(self._pg_rect(rect))
         for rect in tmx_data.get_layer_by_name(LOWBLOCKER):
@@ -135,6 +139,13 @@ class Map(object):
                 if not obj.type:
                     self.high_blocker_rects.append(inn_object.get_blocker())
                 self.inns.append(inn_object)
+            elif obj.name == 'person107':
+                if int(obj.type) == rnd:
+                    person_object = Walking2(obj.name, PeopleDatabase[obj.name].value['sprite'],
+                                             self._pg_rect(obj), OBJECTLAYER, self._has_dir(obj, 'direction'))
+                    self.people.append(person_object)
+                else:
+                    pass
             elif obj.name.startswith('person'):
                 # als er in obj.type iets staat, dan is het een walking person
                 if obj.type:
