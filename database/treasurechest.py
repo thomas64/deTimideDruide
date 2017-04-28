@@ -210,10 +210,10 @@ class TreasureChestDatabase(aenum.NoAliasEnum):
                     time1=datetime.datetime(2017, 5, 20, 12, 00),
                     time2=datetime.datetime(2017, 5, 22, 12, 00))
 
-    chest144 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=44)),
-                    condition=dict(pwd=dict(ask="Dieren quest. Code:", anw="insomnia")),
-                    time1=datetime.datetime(2017, 5, 20, 12, 00),
-                    time2=datetime.datetime(2017, 5, 22, 12, 00))
+    chest144 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=22)),
+                    condition=dict(pwd=dict(ask="Grandprix. Code:", anw="insomnia")),
+                    time1=datetime.datetime(2017, 5, 22,  6, 00),
+                    time2=datetime.datetime(2017, 5, 22, 23, 00))
 
     # bank dag 10
     chest145 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=88)),
@@ -235,7 +235,7 @@ class TreasureChestDatabase(aenum.NoAliasEnum):
 
     # wijnproeverij
     chest150 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=44)),
-                    condition=dict(pwd=dict(ask="Wijn quest. Code:", anw="dewaarheidisindewijn")),
+                    condition=dict(pwd=dict(ask="Wijn zuipen. Code:", anw="dewaarheidisindewijn")),
                     time1=datetime.datetime(2017, 5, 16,  7, 00),
                     time2=datetime.datetime(2017, 5, 16, 21, 00))
 

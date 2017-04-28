@@ -453,3 +453,85 @@ class QuestDatabase(enum.Enum):
                          [["Alsjeblieft, hier heb je de wijn."]],
                          [["Deze regel wordt niet gebruikt."]])
                    )
+
+    quest23 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen,   qty=2)),
+                   reward=dict(itm1=dict(nam=PouchItemDatabase.gold,             qty=20)),
+                   text=(
+                       [["Haai. Mijn naam is Grandprix."],
+                        ["Hoe je een trol wakker maakt die al jaren slaapt, zeg je?"],
+                        ["Tja, dat is voor mij een weet en voor jou een vraag."],
+                        ["Maar voor wat hoort wat maat.",
+                         "Voor twee orakelstenen zal ik je het",
+                         "eerste deel van de spreuk geven."]],
+                       [["En, heb je twee orakelstenen voor me?"]],
+                       ["Overhandig je twee orakelstenen in ruil voor een deel van de spreuk?", "",
+                        "Ja, liever een spreuk dan orakelstenen toch?",
+                        "Nee, hij mag die spreuk steken in een plek waar het daglicht niet kan komen."],
+                       [["Ah mooi. Dankjewel.",
+                         "Het eerste deel van de spreuk luidt:"],
+                        ["Begin de dag met een dansje,",
+                         "Code: IN"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest24 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen,   qty=2)),
+                   reward=dict(itm1=dict(nam=PouchItemDatabase.gold,             qty=20)),
+                   text=(
+                       [["Je wil het tweede deel van de spreuk weten?"],
+                        ["Tja, dat is voor mij een weet en voor jou een vraag."],
+                        ["Maar voor wat hoort wat maat.",
+                         "Voor twee orakelstenen zal ik je het",
+                         "tweede deel van de spreuk geven."]],
+                       [["En, heb je twee orakelstenen voor me?"]],
+                       ["Overhandig je twee orakelstenen in ruil voor een deel van de spreuk?", "",
+                        "Ja, ik ben gek op spreuken.",
+                        "Nee, ik haat spreuken."],
+                       [["Ah mooi. Dankjewel.",
+                         "Het tweede deel van de spreuk luidt:"],
+                        ["begin de dag met een lach.",
+                         "Code: MO"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest25 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen,   qty=2)),
+                   reward=dict(itm1=dict(nam=PouchItemDatabase.gold,             qty=20)),
+                   text=(
+                       [["Je wil het derde deel van de spreuk weten?"],
+                        ["Tja, dat is voor mij een weet en voor jou een vraag."],
+                        ["Maar voor wat hoort wat maat.",
+                         "Voor twee orakelstenen zal ik je het",
+                         "derde deel van de spreuk geven."]],
+                       [["En, heb je twee orakelstenen voor me?"]],
+                       ["Overhandig je twee orakelstenen in ruil voor een deel van de spreuk?", "",
+                        "Ja, ik kan niet raden hoe het liedje verder zal gaan",
+                        "Nee, hij praat toch alleen maar onzin."],
+                       [["Ah mooi. Dankjewel.",
+                         "Het derde deel van de spreuk luidt:"],
+                        ["Want wie vrolijk kijkt in de morgen,",
+                         "Code: SA"]],
+                       [["Deze zin vervalt."]])
+                   )
+
+    quest26 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen,   qty=2)),
+                   reward=dict(itm1=dict(nam=PouchItemDatabase.gold,             qty=20)),
+                   text=(
+                       [["Je wil het laatste deel van de spreuk weten?"],
+                        ["Tja, dat is voor mij een weet en voor jou een vraag."],
+                        ["Maar voor wat hoort wat maat.",
+                         "Voor twee orakelstenen zal ik je het",
+                         "laatste deel van de spreuk geven."]],
+                       [["En, heb je twee orakelstenen voor me?"]],
+                       ["Overhandig je twee orakelstenen in ruil voor een deel van de spreuk?", "",
+                        "Nou vooruit dan maar.",
+                        "Nee echt niet. De laatste orakelstenen houd ik lekker zelf."],
+                       [["Ah mooi. Dankjewel.",
+                         "Het laatste deel van de spreuk luidt:"],
+                        ["die lacht de hele dag.",
+                         "Code: NI"]],
+                       [["Wat nu weer? Je hebt toch de hele spreuk gehad? Nou opbokken!"],
+                        ["Oh ja, en doe de groeten aan m'n broertje Zwamnix."]])
+                   )

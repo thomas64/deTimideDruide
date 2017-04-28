@@ -152,8 +152,20 @@ class PeopleDatabase(enum.Enum):
                             "Daarna kunnen we door naar de",
                             "Genovevahohle om daar Ymir te ontwaken."]])
 
-    person107 = dict(name='druid02',
-                     text=[["Ik ben gemeen."]])
+    person107 = dict(name='druid02',    quest=(QuestDatabase.quest23,
+                                               QuestDatabase.quest24,
+                                               QuestDatabase.quest25,
+                                               QuestDatabase.quest26))
+
+    person108 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in de Keizerthermen in Trier."]])
+    person109 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in de Palastgarten in Trier."]])
+    person110 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in de Porta Nigra in Trier."]])
+    person111 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in de klokkentoren van de Lieve-vrouwe-kerk van Trier."]])
+    person112 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in de Dom van Trier."]])
+    person113 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in een emmer in een achtertuin in Trier."]])
+    person114 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in het Amfitheater van Trier."]])
+    person115 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in de vijver in een achtertuin in Trier."]])
+
 
     person200 = dict(name='troll01',     text=[["*Burp*"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
@@ -366,17 +378,14 @@ class PeopleDatabase(enum.Enum):
                                                "voor of direct na de druïde die een kat heeft."]],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
-    person551 = dict(name='animal02',   text=[["De druïde met het vogelnestje drinkt rooibos thee.",
-                                               "Code: i"]],
+    person551 = dict(name='animal02',   text=[["De druïde met het vogelnestje drinkt rooibos thee."]],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
     person552 = dict(name='animal03',   text=[["De druïde uit het grauwe wilgenbos is één plaats",
-                                               "hoger geëindigd dan de druïde uit het witte esdoornbos.",
-                                               "Code: n"]],
+                                               "hoger geëindigd dan de druïde uit het witte esdoornbos."]],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
-    person553 = dict(name='animal04',   text=[["De druïde uit het grauwe wilgenbos drinkt wijn.",
-                                               "Code: s"]],
+    person553 = dict(name='animal04',   text=[["De druïde uit het grauwe wilgenbos drinkt wijn."]],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
     person554 = dict(name='animal04',   text=[["De druïde die cantharellen in roomsaus maakt heeft een uil."]],
@@ -385,8 +394,7 @@ class PeopleDatabase(enum.Enum):
     person555 = dict(name='animal04',   text=[["De druïde uit het gewone platanenbos maakt schimmelkaas."]],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
-    person556 = dict(name='animal05',   text=[["De druïde die als 3e is geëindigd drinkt geitenmelk.",
-                                               "Code: o"]],
+    person556 = dict(name='animal05',   text=[["De druïde die als 3e is geëindigd drinkt geitenmelk."]],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
     person557 = dict(name='animal05',   text=[["De druïde met de vlechten won de kookwedstrijd."]],
@@ -396,20 +404,16 @@ class PeopleDatabase(enum.Enum):
                                                "direct na de druïde die schimmelkaas maakte."]],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
-    person559 = dict(name='animal06',   text=[["De kale druïde heeft een vos als huisdier.",
-                                               "Code: m"]],
+    person559 = dict(name='animal06',   text=[["De kale druïde heeft een vos als huisdier."]],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
-    person560 = dict(name='animal07',   text=[["De druïde die zwarte truffel salade maakte, drinkt bokbier.",
-                                               "Code: n"]],
+    person560 = dict(name='animal07',   text=[["De druïde die zwarte truffel salade maakte, drinkt bokbier."]],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
-    person561 = dict(name='animal08',   text=[["De druïde met de baard maakte vliegenzwammensoep.",
-                                               "Code: i"]],
+    person561 = dict(name='animal08',   text=[["De druïde met de baard maakte vliegenzwammensoep."]],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
-    person562 = dict(name='animal09',   text=[["De druïde met de snor woont in het rode kastanjebos.",
-                                               "Code: a"]],
+    person562 = dict(name='animal09',   text=[["De druïde met de snor woont in het rode kastanjebos."]],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
     person563 = dict(name='animal09',   text=[["De druïde met de vlechten eindigde direct voor of",

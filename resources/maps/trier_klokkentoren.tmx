@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="50" tilewidth="16" tileheight="16" nextobjectid="35">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="24" height="50" tilewidth="16" tileheight="16" nextobjectid="37">
  <tileset firstgid="1" name="trier_klokkentoren" tilewidth="16" tileheight="16" tilecount="420" columns="35">
   <image source="trier_klokkentoren.png" width="560" height="192"/>
  </tileset>
@@ -114,7 +114,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer name="under2 none" width="24" height="50">
+ <layer name="under2 pot" width="24" height="50">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -156,8 +156,8 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1013,1014,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,1045,1046,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -411,6 +411,7 @@
   <object id="32" x="176" y="208"/>
   <object id="33" x="208" y="176"/>
   <object id="34" x="144" y="144"/>
+  <object id="35" x="112" y="640" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="high_blocker">
   <object id="4" x="64" y="304" width="160" height="32"/>
@@ -426,6 +427,8 @@
   <object id="16" x="64" y="496" width="32" height="192"/>
   <object id="18" x="288" y="496" width="32" height="192"/>
  </objectgroup>
- <objectgroup name="objects" visible="0"/>
+ <objectgroup name="objects">
+  <object id="36" name="sparkly105" x="112" y="640" width="32" height="32"/>
+ </objectgroup>
  <objectgroup name="events"/>
 </map>

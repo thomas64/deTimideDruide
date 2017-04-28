@@ -140,6 +140,16 @@ class SparklyDatabase(aenum.NoAliasEnum):
     # huis cochem 1f
     sparkly100 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,       qty=1)))
 
+    # trier
+    sparkly101 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
+    sparkly102 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
+    sparkly103 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
+    sparkly104 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
+    sparkly105 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
+    sparkly106 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
+    sparkly107 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
+    sparkly108 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
+
 
 # noinspection PyTypeChecker
 for sparkly in SparklyDatabase:
