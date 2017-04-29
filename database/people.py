@@ -17,6 +17,7 @@ SEXT = 's.png'
 HEROFACEPATH = 'resources/sprites/heroes/'
 ALAGOS = HEROFACEPATH+"01f_alagos.png"
 DRUIDE = PATH + 'druid01' + FEXT
+YMIR = PATH + 'troll02' + FEXT
 
 
 class PeopleDatabase(enum.Enum):
@@ -191,6 +192,7 @@ class PeopleDatabase(enum.Enum):
                      time1=datetime.datetime(2017,  5, 22, 18, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
 
+    person124 = dict(name='troll02', text=[["ZZZzzzZZZzzzZZZ..."]], face=[YMIR])
 
 
     person200 = dict(name='troll01',     text=[["*Burp*"]],
@@ -305,7 +307,7 @@ class PeopleDatabase(enum.Enum):
                                                    "Wie oren heeft om te horen, die hore. Amen!"]])
     person511 = dict(name='nun01',          text=[["Sssst. Ik luister naar de schriftlezing van mijn man."]])
     person512 = dict(name='sieger01',       text=[["Pepermuntje?"]])
-    person513 = dict(name='oldman01',       text=[["ZZZZZZZZZZZZ."]])
+    person513 = dict(name='oldman01',       text=[["ZZZzzzZZZzzzZZZ..."]])
     person514 = dict(name='roelfke01',      text=[["Hallelujah!"]])
     person515 = dict(name='dianne01',       text=[["Shalom."]])
     person516 = dict(name='oldwoman02',     text=[["Ave Maria."]])

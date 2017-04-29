@@ -670,7 +670,8 @@ class Window(object):
             person_enum_val = PeopleDatabase[person_id].value
 
             # doe gewoon eerst het draaien zoals normaal
-            person_sprite.turn(self.party_sprites[0].rect)
+            if person_sprite.show_sprite:
+                person_sprite.turn(self.party_sprites[0].rect)
 
             # maar dan, als de persoon een of meerdere quests heeft
             if person_enum_val.get('quest'):

@@ -146,6 +146,10 @@ class Map(object):
                     self.people.append(person_object)
                 else:
                     pass
+            elif obj.name == 'person124':
+                person_object = Person(obj.name, PeopleDatabase[obj.name].value['sprite'],
+                                       self._pg_rect(obj), OBJECTLAYER, self._has_dir(obj, 'direction'), True)
+                self.people.append(person_object)
             elif obj.name.startswith('person'):
                 # als er in obj.type iets staat, dan is het een walking person
                 if obj.type:

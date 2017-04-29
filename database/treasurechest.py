@@ -243,6 +243,9 @@ class TreasureChestDatabase(aenum.NoAliasEnum):
     # huis cochem 1f
     chest200 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,          qty=1)))
 
+    chest300 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.cauldron,      qty=1)),
+                    condition=dict(pwd=dict(ask="Code:", anw="bedanktvoorhetspelen")))
+
 
 
     chest20 = dict(
