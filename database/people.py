@@ -166,6 +166,32 @@ class PeopleDatabase(enum.Enum):
     person114 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in het Amfitheater van Trier."]])
     person115 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in de vijver in een achtertuin in Trier."]])
 
+    person116 = dict(name='troll01',     quest=QuestDatabase.quest27,
+                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
+    person117 = dict(name='troll01',     quest=QuestDatabase.quest28,
+                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
+    person118 = dict(name='troll01',     quest=QuestDatabase.quest29,
+                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
+    person119 = dict(name='troll01',     quest=QuestDatabase.quest30,
+                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
+    person120 = dict(name='troll01',     quest=QuestDatabase.quest31,
+                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
+    person121 = dict(name='troll01',     quest=QuestDatabase.quest32,
+                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
+    person122 = dict(name='troll01',     quest=QuestDatabase.quest33,
+                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
+    person123 = dict(name='troll01',     quest=QuestDatabase.quest34,
+                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time2=datetime.datetime(2099, 12, 31, 23, 59))
+
+
 
     person200 = dict(name='troll01',     text=[["*Burp*"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),

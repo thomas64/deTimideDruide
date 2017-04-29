@@ -92,6 +92,13 @@ class Person(pygame.sprite.Sprite):
         """
         return pygame.Rect(self.rect.x, self.rect.y, HALFBLOCKERWIDTH, HALFBLOCKERHEIGHT)
 
+    def get_zwammix_blocker(self):
+        """
+        :return: speciaal voor zwammix
+        """
+        return pygame.Rect(self.rect.x, self.rect.y, HALFBLOCKERWIDTH, HALFBLOCKERHEIGHT + 64)
+
+
 
 class Walking(Person):
     """

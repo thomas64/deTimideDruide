@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="100" tilewidth="16" tileheight="16" nextobjectid="184">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="100" tilewidth="16" tileheight="16" nextobjectid="201">
  <tileset firstgid="1" name="ersin_forest_waterfall" tilewidth="16" tileheight="16" tilecount="3751" columns="121">
   <image source="trollen_bos.png" width="1936" height="496"/>
  </tileset>
@@ -1338,10 +1338,59 @@
   </object>
   <object id="176" name="person202" x="960" y="688" width="32" height="32"/>
   <object id="181" name="person561" type="w" x="480" y="1360" width="32" height="32"/>
+  <object id="184" name="person116" x="912" y="704" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="185" name="person117" x="864" y="736" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="186" name="person118" x="1008" y="720" width="32" height="32">
+   <properties>
+    <property name="direction" value="west"/>
+   </properties>
+  </object>
+  <object id="187" name="person119" x="1008" y="784" width="32" height="32">
+   <properties>
+    <property name="direction" value="north"/>
+   </properties>
+  </object>
+  <object id="188" name="person120" x="880" y="800" width="32" height="32">
+   <properties>
+    <property name="direction" value="north"/>
+   </properties>
+  </object>
+  <object id="189" name="person121" x="800" y="832" width="32" height="32">
+   <properties>
+    <property name="direction" value="north"/>
+   </properties>
+  </object>
+  <object id="190" name="person122" x="848" y="672" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="191" name="person123" x="848" y="848" width="32" height="32">
+   <properties>
+    <property name="direction" value="north"/>
+   </properties>
+  </object>
+  <object id="193" name="blocker" type="quest34" x="960" y="672" width="32" height="16"/>
+  <object id="194" name="blocker" type="quest33" x="960" y="672" width="32" height="16"/>
+  <object id="195" name="blocker" type="quest32" x="960" y="672" width="32" height="16"/>
+  <object id="196" name="blocker" type="quest31" x="960" y="672" width="32" height="16"/>
+  <object id="197" name="blocker" type="quest30" x="960" y="672" width="32" height="16"/>
+  <object id="198" name="blocker" type="quest29" x="960" y="672" width="32" height="16"/>
+  <object id="199" name="blocker" type="quest28" x="960" y="672" width="32" height="16"/>
+  <object id="192" name="blocker" type="quest27" x="960" y="672" width="32" height="16"/>
  </objectgroup>
- <objectgroup name="events" visible="0">
+ <objectgroup name="events">
   <object id="165" name="location1" x="960" y="832" width="160" height="32"/>
   <object id="179" name="text11" x="800" y="976" width="64" height="64"/>
   <object id="180" name="location2" x="800" y="976" width="64" height="64"/>
+  <object id="200" name="text13" x="960" y="688" width="32" height="16"/>
  </objectgroup>
 </map>

@@ -188,6 +188,9 @@ class TextEventDatabase(enum.Enum):
                   ],
                   face=ALAGOS)
 
+    text13 = dict(condition=True,
+                  text=[["*Grumble* Niet naar binnen jij!"]],
+                  face='resources/sprites/npcs/troll01f.png')
 
 for text in TextEventDatabase:
     if type(text.value['face']) == str:  # als het nog geen list is, zet het om naar een list van faces.

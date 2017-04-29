@@ -206,6 +206,11 @@ class Map(object):
                 sparkly_object = Sparkly(obj.name, self._pg_rect(obj), OBJECTLAYER, obj.type)
                 self.sparkly.append(sparkly_object)
             elif obj.name == 'hero':
+                if obj.type == 'zwammix':
+                    timestamp = datetime.datetime.now()
+                    if timestamp < datetime.datetime(2017, 5, 22, 18, 00):
+                        break
+
                 hero_object = Person(obj.type, HeroDatabase[obj.type].value['spr'],
                                      self._pg_rect(obj), OBJECTLAYER, self._has_dir(obj, 'direction'), None)
                 # geen high_blocker zoals bij bijv shops, omdat hero's er soms niet op de map kunnen staan,

@@ -49,7 +49,9 @@ class Script:
         # Vul de party aan met de eerste hero
         data.party.add(data.heroes['brann'], verbose=False)
 
-        # if debug_mode:
+        if debug_mode:
+            pouch_item = inventoryitems.factory_pouch_item(PouchItemDatabase.kleuren_drankje)
+            data.pouch.add(pouch_item, 8, verbose=False)
         # eqp_item = inventoryitems.factory_equipment_item(WeaponDatabase.bronzemace)
         # data.inventory.add_i(eqp_item, verbose=False)
         # pouch_item = inventoryitems.factory_pouch_item(PouchItemDatabase.gold)

@@ -535,3 +535,107 @@ class QuestDatabase(enum.Enum):
                        [["Wat nu weer? Je hebt toch de hele spreuk gehad? Nou opbokken!"],
                         ["Oh ja, en doe de groeten aan m'n broertje Zwamnix."]])
                    )
+
+    quest27 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.kleuren_drankje, qty=1)),
+                   reward=None,  # geen reward, maar wel remove_quest_blockers() (standaard)
+                   text=([["*Grumbel* Ik dorst. *Burp*",
+                           "Is mooie drankje voor Tully?"]],
+                         [["Tully opdrinken?"]],
+                         ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
+                          "Ja, alle trollen aan de race!",
+                          "Nee, dat is zielig."],
+                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
+                         [["Prrrrt!"]])
+                   )
+
+    quest28 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.kleuren_drankje, qty=1)),
+                   reward=None,  # geen reward, maar wel remove_quest_blockers() (standaard)
+                   text=([["*Grumbel* Ik dorst. *Burp*",
+                           "Is mooie drankje voor Sully?"]],
+                         [["Sully opdrinken?"]],
+                         ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
+                          "Ja, alle trollen aan de race!",
+                          "Nee, dat is zielig."],
+                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
+                         [["Prrrrt!"]])
+                   )
+
+    quest29 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.kleuren_drankje, qty=1)),
+                   reward=None,  # geen reward, maar wel remove_quest_blockers() (standaard)
+                   text=([["*Grumbel* Ik dorst. *Burp*",
+                           "Is mooie drankje voor Sloan?"]],
+                         [["Sloan opdrinken?"]],
+                         ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
+                          "Ja, alle trollen aan de race!",
+                          "Nee, dat is zielig."],
+                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
+                         [["Prrrrt!"]])
+                   )
+
+    quest30 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.kleuren_drankje, qty=1)),
+                   reward=None,  # geen reward, maar wel remove_quest_blockers() (standaard)
+                   text=([["*Grumbel* Ik dorst. *Burp*",
+                           "Is mooie drankje voor Kirwin?"]],
+                         [["Kirwin opdrinken?"]],
+                         ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
+                          "Ja, alle trollen aan de race!",
+                          "Nee, dat is zielig."],
+                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
+                         [["Prrrrt!"]])
+                   )
+
+    quest31 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.kleuren_drankje, qty=1)),
+                   reward=None,  # geen reward, maar wel remove_quest_blockers() (standaard)
+                   text=([["*Grumbel* Ik dorst. *Burp*",
+                           "Is mooie drankje voor Duffy?"]],
+                         [["Duffy opdrinken?"]],
+                         ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
+                          "Ja, alle trollen aan de race!",
+                          "Nee, dat is zielig."],
+                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
+                         [["Prrrrt!"]])
+                   )
+
+    quest32 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.kleuren_drankje, qty=1)),
+                   reward=None,  # geen reward, maar wel remove_quest_blockers() (standaard)
+                   text=([["*Grumbel* Ik dorst. *Burp*",
+                           "Is mooie drankje voor Dorran?"]],
+                         [["Dorran opdrinken?"]],
+                         ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
+                          "Ja, alle trollen aan de race!",
+                          "Nee, dat is zielig."],
+                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
+                         [["Prrrrt!"]])
+                   )
+
+    quest33 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.kleuren_drankje, qty=1)),
+                   reward=None,  # geen reward, maar wel remove_quest_blockers() (standaard)
+                   text=([["*Grumbel* Ik dorst. *Burp*",
+                           "Is mooie drankje voor Cinaed?"]],
+                         [["Cinaed opdrinken?"]],
+                         ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
+                          "Ja, alle trollen aan de race!",
+                          "Nee, dat is zielig."],
+                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
+                         [["Prrrrt!"]])
+                   )
+
+    quest34 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.kleuren_drankje, qty=1)),
+                   reward=None,  # geen reward, maar wel remove_quest_blockers() (standaard)
+                   text=([["*Grumbel* Ik dorst. *Burp*",
+                           "Is mooie drankje voor Boyden?"]],
+                         [["Boyden opdrinken?"]],
+                         ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
+                          "Ja, alle trollen aan de race!",
+                          "Nee, dat is zielig."],
+                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
+                         [["Prrrrt!"]])
+                   )

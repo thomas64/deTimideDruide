@@ -128,14 +128,14 @@ class HeroDatabase(enum.Enum):
                    sld=None, 
                    arm=ArmorDatabase.lightsilverarmor,
                    spl=dict(WebOfStarlight=8, DispelStar=8, StellarGravity=8, DispelNaming=8, SolarWrath=8))
-    faeron = dict(nam="Faeron", spr=PATH+"14s_faeron.png", fac=PATH+"14f_faeron.png",
-                  lev=25, scl=SchoolType.nmg,
-                  int=30, wil=30, dex=30, agi=30, edu=25, str=15, sta=80,
-                  alc=10, dip=10, hlr=0, lor=10, mec=0, mer=10, ran=10, stl=10, thf=10, trb=10, war=10, wiz=-1,
-                  haf=10, mis=0, pol=0, shd=0, swd=10, thr=0,
-                  wpn=WeaponDatabase.titaniummace,
-                  sld=None, 
-                  arm=ArmorDatabase.lighttitaniumarmor)
+    zwammix = dict(nam="Zwammix", spr=PATH+"14s_faeron.png", fac=PATH+"14f_faeron.png",
+                   lev=25, scl=SchoolType.nmg,
+                   int=30, wil=30, dex=30, agi=30, edu=25, str=15, sta=80,
+                   alc=10, dip=10, hlr=0, lor=10, mec=0, mer=10, ran=10, stl=10, thf=10, trb=10, war=10, wiz=-1,
+                   haf=10, mis=0, pol=0, shd=0, swd=10, thr=0,
+                   wpn=WeaponDatabase.titaniummace,
+                   sld=None,
+                   arm=ArmorDatabase.lighttitaniumarmor)
 
     @staticmethod
     def closing():
@@ -235,8 +235,12 @@ class HeroDatabase(enum.Enum):
                     "We are honored.",
                     "Let's continue on our way.")
 
-        elif hero_raw == cls.faeron.name:  # geen idee
-            return ("I can not and will not tell you anything.",
+        elif hero_raw == cls.zwammix.name:  # geen idee
+            return (" . . . . . . . . ",
+                    " . . . . . . . . ",
+                    " . . . . . . . . ",
+                    " . . . . . . . . ",
+                    " . . . . . . . . ",
                     "",
-                    "Yes.",
-                    "No.")
+                    "Hij staat in de weg. Zullen we hem maar meenemen?",
+                    "Nee, Zwammix in het team opnemen?!? Dat nooit!")

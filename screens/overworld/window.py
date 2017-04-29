@@ -136,6 +136,8 @@ class Window(object):
                 # voeg alleen nu een blocker toe als de hero er daadwerkelijk is.
                 # dit zit niet in de map class vanwege imports. maar nu moet hij in window al 2x checken op dit.
                 # self.current_map.high_blocker_rects.append(hero.get_blocker()) uitgezet vanwege niet sidesteppen.
+                if hero.person_id == 'zwammix':
+                    self.current_map.high_blocker_rects.append(hero.get_zwammix_blocker())
         self.group.add(self.current_map.shops)
         self.group.add(self.current_map.schools)
         self.group.add(self.current_map.trainers)
