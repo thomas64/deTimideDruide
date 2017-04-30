@@ -75,7 +75,7 @@ class HeroDatabase(enum.Enum):
                      wpn=WeaponDatabase.ironbroadsword,
                      sld=ShieldDatabase.ironkite,
                      arm=ArmorDatabase.heavyironarmor)
-    teake = dict(nam="Teake", spr=PATH+"08s_kiara.png", fac=PATH+"08f_kiara.png",
+    teake = dict(nam="Taeke", spr=PATH+"08s_kiara.png", fac=PATH+"08f_kiara.png",
                  lev=12, scl=SchoolType.elm,
                  int=15, wil=10, dex=30, agi=30, edu=20, str=15, sta=40,
                  alc=0, dip=0, hlr=1, lor=0, mec=0, mer=4, ran=0, stl=5, thf=8, trb=0, war=0, wiz=4,
@@ -150,46 +150,56 @@ class HeroDatabase(enum.Enum):
         'sale' is totaal van diplomat van hele party.
         """
         if hero_raw == cls.gerdienke.name:  # p(1).xpt >= 3000 - ((3000 / 100) * sale)
-            return ("Ik ben Gerdienke.",
+            return ("Hoi. Ik ben Gerdienke. Ik ben niet op sollicitatiegesprek geweest,",
+                    "daarom heb ik geen tekst hier voor jou."
                     "",
-                    "Welkom.",
-                    "Nee toch niet.")
+                    "Jij weet hoe lang een minuut duurt, jij mag in het team.",
+                    "Nee, jou heb ik liever niet.")
 
         elif hero_raw == cls.anita.name:  # p(1).xpt >= 21000 - ((21000 / 100) * sale)
-            return ("Ik ben Anita.",
+            return ("Hoi. Ik ben Anita Noppe. 33 jaar, en ik kom uit Groningen.",
+                    "Ik ben zeer gemotiveerd voor deze super inspirerende functie.",
                     "",
-                    "Welkom.",
-                    "Nee toch niet.")
+                    "Wat heb je mooie krullen, jij mag in het team.",
+                    "Nee, jou heb ik liever niet.")
 
         elif hero_raw == cls.anja.name:  # p(1).xpt >= 15000 - ((15000 / 100) * sale)
-            return ("Ik ben Anja.",
+            return ("Mijn naam is Anja Belle.",
+                    "Ik ben 34 jaar en ik woon in Utrecht.",
+                    "Ik heb ontzettend veel zin om bij dit mooie bedrijf aan de slag te gaan.",
                     "",
-                    "Welkom.",
-                    "Nee toch niet.")
+                    "Jij kan goed logisch redeneren, jij mag in het team.",
+                    "Nee, jou heb ik liever niet.")
 
         elif hero_raw == cls.lourens.name:  # p(1).xpt >= 9000 - ((9000 / 100) * sale)
-            return ("Ik ben Lourens.",
+            return ("Hallo. Ik ben Lourens Noppe. Ik ben 27 jaar.",
                     "",
-                    "Welkom.",
-                    "Nee toch niet.")
+                    "Jij bent blank! Dus jij mag in het team.",
+                    "Nee, jou heb ik liever niet.")
 
         elif hero_raw == cls.peter.name:
-            return ("Ik ben Peter.",
+            return ("Ik ben Peter Noppe. Ik ben 61 jaar en getrouwd met Nel.",
+                    "Samen gelukkig getrouwd. Wij hebben er heel veel zin in",
+                    "om deze vakantie met elkaar te gaan doen. En we hopen,",
+                    "en we weten bijna wel zeker dat we gaan winnen.",
                     "",
-                    "Welkom.",
-                    "Nee toch niet.")
+                    "Jij moet er nodig even uit. Jij mag in het team.",
+                    "Nee, jou heb ik liever niet.")
 
         elif hero_raw == cls.jurritjan.name:  # p(1).xpt >= 300000 - ((300000 / 100) * sale)
-            return ("Ik ben Jurrit-Jan.",
+            return ("Ik ben Jurrit Jan de Jong.",
+                    "Ik ben 31 jaar en woon in Utrecht. Prachtig Utrecht.",
+                    "En kijk onwijs uit naar deze komende functie. Ik heb er echt veel zin in.",
                     "",
-                    "Welkom.",
-                    "Nee toch niet.")
+                    "Jij bent hoog opgeleid en gemotiveerd. Jij mag in het team.",
+                    "Nee, jou heb ik liever niet.")
 
         elif hero_raw == cls.teake.name:  # gold >= 10000 - ((10000 / 100) * sale)
-            return ("Ik ben Teake.",
+            return ("Ik ben Taeke Hoekstra. Ik ben 27 jaar.",
+                    "En geestelijk verzorgend in het MCL. Nou dat was het.",
                     "",
-                    "Welkom.",
-                    "Nee toch niet.")
+                    "Jij bent all-round heel geschikt. Jij mag in het team.",
+                    "Nee, jou heb ik liever niet.")
 
         elif hero_raw == cls.luthais.name:  # p(1).xpt >= 1200000 - ((1200000 / 100) * sale)
             return ("How do you do?",
@@ -213,16 +223,24 @@ class HeroDatabase(enum.Enum):
                     "Yes, I can.")
 
         elif hero_raw == cls.nel.name:  # p(1).xpt >= 1500000 - ((1500000 / 100) * sale)
-            return ("Ik ben Nel.",
+            return ("In ben Nel Noppe. Ik ben getrouwd met Peter Noppe",
+                    "en supergelukkig getrouwd. We breken er graag uit",
+                    "omdat onze werkzaamheden heel druk zijn en we hebben",
+                    "zo veel zin om de spelletjes te doen. En omdat we",
+                    "zoveel zin hebben gaan we ook vet winnen.",
                     "",
-                    "Welkom.",
-                    "Nee toch niet.")
+                    "Dat klinkt als een hoop zelfvertrouwen. Jij mag in het team.",
+                    "Nee, jou heb ik liever niet.")
 
         elif hero_raw == cls.simon.name:  # gold >= 90000 - ((90000 / 100) * sale)
-            return ("Ik ben Simon.",
+            return ("Ik ben Simon Hulshof. Ik ben 27 jaar, getrouwd met",
+                    "Roelfke en vader van Boaz. Ik studeer voor docent economie.",
+                    "Ik ben erg goed, en vind het leuk om met cijfertjes om te gaan,",
+                    "en vind het leuk om met mensen in gesprek te zijn.",
+                    "Das heel in het kort wie ik ben.",
                     "",
-                    "Welkom.",
-                    "Nee toch niet.")
+                    "We hebben nog geen raDIO DJ. Dus jij mag in het team.",
+                    "Nee, jou heb ik liever niet.")
 
         elif hero_raw == cls.iellwen.name:  # special item?
             return ("Hail, traveler.",

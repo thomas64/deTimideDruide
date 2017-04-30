@@ -15,7 +15,7 @@ BACKGROUNDCOLOR = pygame.Color("black")
 RECTCOLOR = pygame.Color("white")
 
 INPUTLABEL = "Name: "
-INPUTLENGTH = 20
+INPUTLENGTH = 23
 
 FONT = None
 FONTSIZE = 50

@@ -18,6 +18,7 @@ HEROFACEPATH = 'resources/sprites/heroes/'
 ALAGOS = HEROFACEPATH+"01f_alagos.png"
 DRUIDE = PATH + 'druid01' + FEXT
 YMIR = PATH + 'troll02' + FEXT
+THOMAS = PATH + 'thomas01' + FEXT
 
 
 class PeopleDatabase(enum.Enum):
@@ -192,7 +193,61 @@ class PeopleDatabase(enum.Enum):
                      time1=datetime.datetime(2017,  5, 22, 18, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
 
-    person124 = dict(name='troll02', text=[["ZZZzzzZZZzzzZZZ..."]], face=[YMIR])
+    person124 = dict(name='troll02', text=[["ZZZzzzZZZzzzZZZ..."],
+                                           ["Ah kijk, hier ligt Ymir te slaaaapen.",
+                                            "Zullen we de spreuk maaaaar zeggen?"],
+                                           ["Begin de dag met een dansje,",
+                                            "Begin de dag met een lach.",
+                                            "Want wie vrolijk kijkt in de morgen,",
+                                            "die lacht de hele dag."],
+                                           [" . . . . . . . . "],
+                                           ["MHUAAAA!!! Zo dat was een lekker soepje.",
+                                            "Laat het hoofdgerecht maar komen."],
+                                           ["Kraaa. Maaaaar Ymir. Je hebt jaaaaaaren geslaaaapen."],
+                                           ["JA! Zo voelt het inderdaad wel nu je het zegt.",
+                                            "Ik heb een stijve rug van heb ik jou daar. *KRAK*"],
+                                           ["Waaaaarom heb je de zwammix gemaaaaakt?"],
+                                           ["Oh. Ik was nieuwsgierig. Dingen die niet mogen",
+                                            "vragen om uitgeprobeerd te worden. Vind je niet?"],
+                                           ["Jaaaa. Maaaar je was er bijnaaa geweest.",
+                                            "Want zelfs door een enkele druppel zwammix alleen,",
+                                            "veranderen trollen al in steen."],
+                                           ["Tjonge. Vandaar dat Zwammix altijd zo moeilijk deed.",
+                                            "Weet ik veel. Waarom zegt die man ook niks.",
+                                            "Hij had toch kunnen waarschuwen toen ik zijn receptenboek had gepikt."],
+                                           ["Jaaa Ymir. Zwammix zegt nu eenmaal niks zonder wijn of zijn soep.",
+                                            "Je had geluk dat de laaaaatste bladzijde niet in het boek zat."],
+                                           ["Hoezo?"],
+                                           ["Nou zonder de ketel werkt de soep niet.",
+                                            "Gelukkig maaaaar voor jullie."],
+                                           ["Oh? En wat hebben mijn lieve trolleknolletjes",
+                                            "uitgspookt toen ik lekker lag te slapen?"],
+                                           ["Tully heeft de laaaaatste bladzijde gepikt van Zwammix",
+                                            "toen hij zijn roes lag uit te slaaaapen, en ook de ketel",
+                                            "van de druïde meegenomen. Het had niet veel gescheeld",
+                                            "of hij was erin geslaaaagd de soep te maken."],
+                                           ["Je trolleknolletjes zitten nu met zijn allen",
+                                            "het bos te bemesten zal ik maaaaar zeggen."],
+                                           ["Nou. Blijkbaar had het dus niet veel gescheeld",
+                                            "of de Moezeldaltrol was uitgestorven geweest."],
+                                           ["Hoe kan ik jullie bedanken?"],
+                                           ["Het is goed zo, we zouden alleen graaaaag de ketel terug willen."],
+                                           ["Die ketel mogen jullie meenemen.",
+                                            "Ik hoef dat enge ding niet."],
+                                           ["Ik vermoed dat de ketel in onze pannenkist zit hier.",
+                                            "daar stoppen we altijd onze pannen in."],
+                                           ["De code om de kist te openen is:",
+                                            "'tefaljedenktookaanalles'."],
+                                           ["Kraaaa! Dat doen we."],
+                                           ["Let op! Als je de kist opent is het spel voorbij.",
+                                            "Ga dus indien nodig nog eerst naar de bank in",
+                                            "Piesport om je beloningen op te halen, of doe",
+                                            "eventueel nog andere dingen die je moet doen.",
+                                            "Daarna kun je hier altijd alsnog de kist openen."]
+                                           ],
+
+                     face=[YMIR, ALAGOS, ALAGOS, YMIR, YMIR, ALAGOS, YMIR, ALAGOS, YMIR, ALAGOS, YMIR, ALAGOS, YMIR,
+                           ALAGOS, YMIR, ALAGOS, ALAGOS, YMIR, YMIR, ALAGOS, YMIR, YMIR, YMIR, ALAGOS, THOMAS])
 
 
     person200 = dict(name='troll01',     text=[["*Burp*"]],
@@ -347,7 +402,7 @@ class PeopleDatabase(enum.Enum):
                                                   "Hij betaalde goed, maar ik kon de kamer na zijn",
                                                   "bezoek gelijk renoveren. Wat een lucht. Blegh!",
                                                   "Ik word er nog onpasselijk van als ik er aan denk."],
-                                                 ["Hij was geobsedeerd van een of andere soep."],
+                                                 ["Hij was geobsedeerd door een of andere soep."],
                                                  ["Als ik jullie was zou ik de route van het Romer Kanal",
                                                   "een stuk volgen. Dat heeft hij toen ook gedaan.",
                                                   "Mogelijk dat jullie nog belangrijke informatie vinden",
