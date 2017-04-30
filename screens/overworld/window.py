@@ -489,6 +489,10 @@ class Window(object):
 
                         # vanwege omgedraaide volgorde staat dit bovenaan ipv onderaan bij brug opgelopen
                         if event_name == TextEventDatabase.text14.name:
+                            import os
+                            for file in os.listdir('savegame'):
+                                filename = os.path.join('savegame', file)
+                                os.remove(filename)
                             from loadsave import Dialog as SaveDialog
                             SaveDialog.save(self.engine.data, "1_einde.dat")
                             SaveDialog.save(self.engine.data, "2_einde.dat")
