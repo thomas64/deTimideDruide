@@ -105,6 +105,7 @@ class Script:
         data.barman_gepraat = False
         data.orakelsteen_gevonden = False
         data.brug_opgelopen = False
+        data.uitgespeeld = False
 
     @staticmethod
     def load_game(data):

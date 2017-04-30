@@ -487,6 +487,20 @@ class Window(object):
                         # en maak er een boolean van
                     if event_condition:
 
+                        # vanwege omgedraaide volgorde staat dit bovenaan ipv onderaan bij brug opgelopen
+                        if event_name == TextEventDatabase.text14.name:
+                            from loadsave import Dialog as SaveDialog
+                            SaveDialog.save(self.engine.data, "1_einde.dat")
+                            SaveDialog.save(self.engine.data, "2_einde.dat")
+                            SaveDialog.save(self.engine.data, "3_einde.dat")
+                            SaveDialog.save(self.engine.data, "4_einde.dat")
+                            SaveDialog.save(self.engine.data, "5_einde.dat")
+                            from constants import GameState
+                            import screens.menu
+                            push_object = screens.menu.create_menu(GameState.MainMenu, self.engine, select=-1)
+                            self.engine.gamestate.change(push_object, with_on_enter=False)
+                            self.engine.gamestate.push(Transition())
+
                         # zwarte of normale achtergrond?
                         scr_capt = None  # normale achtergrond
                         if self.current_map.text_events[object_nr].opt:  # als er iets in .opt staat
@@ -506,6 +520,10 @@ class Window(object):
 
                         if event_name == TextEventDatabase.text7.name:
                             self.engine.data.brug_opgelopen = True
+
+                        if event_name == TextEventDatabase.text14.name:
+                            self.engine.audio.set_bg_music(self.engine.force_bg_music)
+                            self.engine.force_bg_music = False
 
     def check_move_events(self):
         """
@@ -777,6 +795,9 @@ class Window(object):
                     chest_data['content'] = dict()
                     push_object = MessageBox(text, spr_image=image, sound=SFX.chest)
                     self.engine.gamestate.push(push_object)
+
+                    if chest_id == TreasureChestDatabase.chest300.name:
+                        self.engine.data.uitgespeeld = True
 
     def check_sparklies(self, check_rect):
         """

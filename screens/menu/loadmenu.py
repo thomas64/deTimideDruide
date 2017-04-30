@@ -76,6 +76,19 @@ class LoadMenu(BaseMenu):
             # als de data niet corrupt is.
             if data:
                 self.engine.data = data
+
+                # als je hem hebt uitgespeeld en je probeert een savegame te laden gebeurt er heel iets anders.
+                if self.engine.data.uitgespeeld:
+                    from constants import GameState
+                    import screens.menu
+                    push_object = screens.menu.create_menu(GameState.MainMenu, self.engine, select=-1)
+                    self.engine.gamestate.change(push_object, with_on_enter=False)
+                    from screens import Party
+                    push_object = Party(self.engine)
+                    self.engine.gamestate.push(push_object)
+                    self.engine.gamestate.push(Transition())
+                    return
+
                 Script.load_game(self.engine.data)
                 # als er na de reeks gamestates niets meer op stack ligt, komt overworld er in.
                 self.engine.gamestate.change(Transition())

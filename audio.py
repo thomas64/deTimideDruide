@@ -24,6 +24,7 @@ FADEOUTTIME = 500
 
 # Alle niet overworld kaart muziek.
 TITLESCREEN = 'titlescreen'
+VICTORY = 'victory'
 
 DEFAULTSTEPSOUND = "step_grass"
 
@@ -115,7 +116,10 @@ class Audio(object):
         curr_state = self.engine.gamestate.peek().name
         prev_state = self.engine.gamestate.prev_state
 
-        if curr_state == GameState.MainMenu and \
+        if self.engine.data and self.engine.data.uitgespeeld and curr_state == GameState.MessageBox:
+            self.bg_music_channel.set_volume(1)
+            self.play_bg_music(VICTORY)
+        elif curr_state == GameState.MainMenu and \
                 (prev_state is None or
                  prev_state == GameState.MainMenu or
                  prev_state == GameState.LoadMenu):

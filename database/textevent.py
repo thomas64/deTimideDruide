@@ -54,6 +54,9 @@ class TextEventDatabase(enum.Enum):
     def condition12(self, data):
         return data.logbook['quest10'].is_rewarded()
 
+    def condition14(self, data):
+        return data.uitgespeeld
+
     text99 = dict(condition=condition1,
                   text=[["hoi1"], ["hoi2"]],
                   face=[ALAGOS, HEROFACEPATH+"02f_luana.png"])
@@ -191,6 +194,16 @@ class TextEventDatabase(enum.Enum):
     text13 = dict(condition=True,
                   text=[["*Grumble* Niet naar binnen jij!"]],
                   face='resources/sprites/npcs/troll01f.png')
+
+    text14 = dict(condition=condition14,
+                  text=[
+                      ["Gefeliciteerd!"],
+                      ["Je hebt dit spelverhaal tot een goed einde volbracht."],
+                      ["De ketel en Zwammix leefden nog lang en gelukkig."],
+                      [" . . . . . . . . "],
+                  ],
+                  face=[ALAGOS, ALAGOS, ALAGOS, DRUIDE])
+
 
 for text in TextEventDatabase:
     if type(text.value['face']) == str:  # als het nog geen list is, zet het om naar een list van faces.
