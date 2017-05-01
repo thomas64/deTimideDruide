@@ -151,7 +151,7 @@ class HeroDatabase(enum.Enum):
         """
         if hero_raw == cls.gerdienke.name:  # p(1).xpt >= 3000 - ((3000 / 100) * sale)
             return ("Hoi. Ik ben Gerdienke. Ik ben niet op sollicitatiegesprek geweest,",
-                    "daarom heb ik geen tekst hier voor jou."
+                    "daarom heb ik geen tekst hier voor jou.",
                     "",
                     "Jij weet hoe lang een minuut duurt, jij mag in het team.",
                     "Nee, jou heb ik liever niet.")
