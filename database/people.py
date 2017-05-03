@@ -169,28 +169,28 @@ class PeopleDatabase(enum.Enum):
     person115 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in de vijver in een achtertuin in Trier."]])
 
     person116 = dict(name='troll01',     quest=QuestDatabase.quest27,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person117 = dict(name='troll01',     quest=QuestDatabase.quest28,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person118 = dict(name='troll01',     quest=QuestDatabase.quest29,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person119 = dict(name='troll01',     quest=QuestDatabase.quest30,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person120 = dict(name='troll01',     quest=QuestDatabase.quest31,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person121 = dict(name='troll01',     quest=QuestDatabase.quest32,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person122 = dict(name='troll01',     quest=QuestDatabase.quest33,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person123 = dict(name='troll01',     quest=QuestDatabase.quest34,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
 
     person124 = dict(name='troll02', text=[["ZZZzzzZZZzzzZZZ..."],
@@ -258,7 +258,7 @@ class PeopleDatabase(enum.Enum):
                      time2=datetime.datetime(2017,  5, 16, 11, 00))
     person202 = dict(name='steen01',     text=[["Ik hoor gesnurk achter deze steen.", "Wat kan dat zijn?"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
-                     time2=datetime.datetime(2017,  5, 22, 18, 00))
+                     time2=datetime.datetime(2017,  5, 22, 16, 00))
 
     person300 = dict(name='soldier01',   text=[["Goedendag."],
                                                ["Welkom in Kasteel Batenburg."]])
@@ -285,13 +285,13 @@ class PeopleDatabase(enum.Enum):
                                               ["Bij hun vertrek zijn ze iets vergeten mee te nemen.",
                                                "Waar heb ik dat toch gelaten? Het moet hier ergens zijn..."]])
 
-    person402 = dict(name='soldier01',     text=[["Halt! U komt het ryck van Nimmegen niet in tot 13-05 11:30 uur.",
+    person402 = dict(name='soldier01',     text=[["Halt! U komt het ryck van Nimmegen niet in tot 13-05 12:45 uur.",
                                                   "Ik heb orders van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
-                     time2=datetime.datetime(2017,  5, 13, 11, 30))
-    person403 = dict(name='soldier01',     text=[["Sie haben jetzt keinen Zugang zu Germania bis 13-05 13:00 Uhr."]],
+                     time2=datetime.datetime(2017,  5, 13, 12, 45))
+    person403 = dict(name='soldier01',     text=[["Sie haben jetzt keinen Zugang zu Germania bis 13-05 13:45 Uhr."]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
-                     time2=datetime.datetime(2017,  5, 13, 13, 00))
+                     time2=datetime.datetime(2017,  5, 13, 13, 45))
     person404 = dict(name='soldier01',   text=[["Herzlich willkommen in Germania."]])
     person405 = dict(name='soldier01',   text=[["Halt! U komt Gallia Belgica nooit en te nimmer meer in.",
                                                 "Ik heb order van de keizer. Keer terug!"]],
@@ -305,18 +305,18 @@ class PeopleDatabase(enum.Enum):
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(2017, 5, 14, 21, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
-    person408 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 13-05 15:30 uur.",
+    person408 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 13-05 15:15 uur.",
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
-                     time2=datetime.datetime(2017,  5, 13, 15, 30))
+                     time2=datetime.datetime(2017,  5, 13, 15, 15))
     person409 = dict(name='soldier01',   text=[["Halt! Gymnich is nooit en te nimmer meer te bereiken.",
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(2017, 5, 14, 21, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
-    person410 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 14-05 17:00 uur.",
+    person410 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 16-05 's ochtends.",
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
-                     time2=datetime.datetime(2017,  5, 14, 17, 00))
+                     time2=datetime.datetime(2017,  5, 16,  6, 00))
     person411 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 17-05 's ochtends.",
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),

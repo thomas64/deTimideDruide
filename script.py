@@ -49,9 +49,9 @@ class Script:
         # Vul de party aan met de eerste hero
         data.party.add(data.heroes['brann'], verbose=False)
 
-        if debug_mode:
-            pouch_item = inventoryitems.factory_pouch_item(PouchItemDatabase.kleuren_drankje)
-            data.pouch.add(pouch_item, 8, verbose=False)
+        # if debug_mode:
+        #     pouch_item = inventoryitems.factory_pouch_item(PouchItemDatabase.kleuren_drankje)
+        #     data.pouch.add(pouch_item, 8, verbose=False)
         # eqp_item = inventoryitems.factory_equipment_item(WeaponDatabase.bronzemace)
         # data.inventory.add_i(eqp_item, verbose=False)
         # pouch_item = inventoryitems.factory_pouch_item(PouchItemDatabase.gold)
@@ -113,11 +113,11 @@ class Script:
         Als de speler op een bepaalde datum een savegame laadt. Dan verschijnt hij op een bepaalde map.
         """
         timestamp = datetime.datetime.now()
-        if datetime.datetime(2017, 5, 14, 6, 00) < timestamp < datetime.datetime(2017, 5, 16, 6, 00):
+        if datetime.datetime(2017, 5, 14, 6, 00) < timestamp < datetime.datetime(2017, 5, 16, 11, 00):
             data.map_name = 'kruising'
             data.map_pos = 'start_game'
             data.map_dir = Direction.East
-        elif datetime.datetime(2017, 5, 16, 6, 00) < timestamp < datetime.datetime(2099, 12, 31, 23, 59):
+        elif datetime.datetime(2017, 5, 16, 11, 00) < timestamp < datetime.datetime(2099, 12, 31, 23, 59):
             data.map_name = 'piesport_inn_2f'
             data.map_pos = 'start_game'
             data.map_dir = Direction.South
