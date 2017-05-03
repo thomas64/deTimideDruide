@@ -154,17 +154,22 @@ class TextEventDatabase(enum.Enum):
 
     text10 = dict(condition=True,
                   text=[
-                     ["Kraaaa! Toktoktok."], ["Waakker worden Zwaammix!"],
-                     ["*HIPS*"], ["Brann! Mijn gevleugelde vriend.", "Daar ben je eindelijk."],
-                     ["*HIPS*"], ["Heb je de personen gevonden die ik zocht?"],
-                     ["Jaaaa. Meester."], ["Ik zie dat u weer te diep in het glaasje heeft gekeken?", "Kraa!"],
-                     ["Maak je niet druk.",
-                      "Ik heb altijd gedacht dat drinken slecht voor me was,",
-                      "dus ik ben gestopt met denken.",
-                      "Iedereen praat over mijn drinken,",
-                      "maar niemand over mijn dorst."]
+                      ["Kraaaa! Toktoktok."], ["Waakker worden Zwaammix!"],
+                      ["*HIPS*"], ["Brann! Mijn gevleugelde vriend.", "Daar ben je eindelijk."],
+                      ["*HIPS*"], ["Heb je de personen gevonden die ik zocht?"],
+                      ["Jaaaa. Meester."], ["Ik zie dat u weer te diep in het glaasje heeft gekeken?", "Kraa!"],
+                      ["Maak je niet druk.",
+                       "Ik heb altijd gedacht dat drinken slecht voor me was,",
+                       "dus ik ben gestopt met denken.",
+                       "Iedereen praat over mijn drinken,",
+                       "maar niemand over mijn dorst."],
+                      ["Oké teamgenoten, soort van goed nieuws.",
+                       "We hebben 'geluk'. Zwammix is nu dronken en dus praatgraag.",
+                       "We moeten van dit moment gebruik maken om nu zoveel",
+                       "mogelijk uit deze timide druïde te halen."],
+
                   ],
-                  face=[ALAGOS, ALAGOS, DRUIDE, DRUIDE, DRUIDE, DRUIDE, ALAGOS, ALAGOS, DRUIDE])
+                  face=[ALAGOS, ALAGOS, DRUIDE, DRUIDE, DRUIDE, DRUIDE, ALAGOS, ALAGOS, DRUIDE, ALAGOS])
 
     text11 = dict(condition=condition11,
                   text=[
