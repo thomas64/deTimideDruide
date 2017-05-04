@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="16" tileheight="16" nextobjectid="1273">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="16" tileheight="16" nextobjectid="1283">
  <tileset firstgid="1" name="trier" tilewidth="16" tileheight="16" tilecount="20900" columns="275">
   <image source="trier.png" width="4400" height="1216"/>
  </tileset>
@@ -2601,6 +2601,16 @@
   <object id="1270" name="person112" type="w" x="1536" y="3024" width="32" height="32"/>
   <object id="1271" name="person113" type="w" x="2976" y="2336" width="32" height="32"/>
   <object id="1272" name="person115" type="w" x="2288" y="2656" width="32" height="32"/>
+  <object id="1273" name="person616" type="w" x="1600" y="2256" width="32" height="32"/>
+  <object id="1274" name="person616" type="w" x="1552" y="2400" width="32" height="32"/>
+  <object id="1275" name="person616" type="w" x="1648" y="2432" width="32" height="32"/>
+  <object id="1276" name="person616" type="w" x="1728" y="2320" width="32" height="32"/>
+  <object id="1277" name="person622" type="w" x="2736" y="2896" width="32" height="32"/>
+  <object id="1278" name="person622" type="w" x="1472" y="864" width="32" height="32"/>
+  <object id="1279" name="person622" type="w" x="1520" y="464" width="32" height="32"/>
+  <object id="1280" name="person623" type="w" x="880" y="416" width="32" height="32"/>
+  <object id="1281" name="person663" type="w" x="2944" y="1664" width="32" height="32"/>
+  <object id="1282" name="person663" type="w" x="3024" y="2176" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

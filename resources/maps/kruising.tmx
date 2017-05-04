@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="96" tilewidth="16" tileheight="16" nextobjectid="371">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="96" tilewidth="16" tileheight="16" nextobjectid="373">
  <tileset firstgid="1" name="kruising" tilewidth="16" tileheight="16" tilecount="2600" columns="65">
   <image source="kruising.png" width="1040" height="640"/>
  </tileset>
@@ -1559,6 +1559,8 @@
   </object>
   <object id="369" name="sign107" type="1" x="352" y="320" width="32" height="32"/>
   <object id="370" name="sign108" type="1" x="864" y="1184" width="32" height="32"/>
+  <object id="371" name="person616" type="w" x="416" y="1088" width="32" height="32"/>
+  <object id="372" name="person616" type="w" x="560" y="1056" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="44" height="44" tilewidth="16" tileheight="16" nextobjectid="73">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="44" height="44" tilewidth="16" tileheight="16" nextobjectid="78">
  <tileset firstgid="1" name="romerkanal_huis_1f" tilewidth="16" tileheight="16" tilecount="1449" columns="69">
   <image source="romerkanal_huis_1f.png" width="1104" height="336"/>
  </tileset>
@@ -359,7 +359,6 @@
   <object id="53" name="step_wood" x="304" y="112" width="128" height="144"/>
  </objectgroup>
  <objectgroup name="low_blocker">
-  <object id="43" x="256" y="384" width="96" height="112"/>
   <object id="54" x="448" y="144" width="64" height="32"/>
   <object id="55" x="544" y="144" width="64" height="64"/>
   <object id="56" x="192" y="144" width="96" height="32"/>
@@ -382,6 +381,8 @@
   <object id="42" x="416" y="400" width="32" height="160"/>
   <object id="57" x="368" y="176" width="16" height="16"/>
   <object id="60" x="400" y="160" width="16"/>
+  <object id="73" x="256" y="384" width="64" height="112"/>
+  <object id="74" x="320" y="384" width="32" height="96"/>
  </objectgroup>
  <objectgroup name="objects">
   <object id="65" name="chest100" x="112" y="496" width="32" height="32"/>
@@ -392,6 +393,13 @@
   <object id="70" name="sparkly61" type="x" x="96" y="144" width="32" height="32"/>
   <object id="71" name="sparkly62" type="x" x="256" y="256" width="64" height="48"/>
   <object id="72" name="person531" type="w" x="160" y="176" width="32" height="32"/>
+  <object id="75" name="person601" x="320" y="480" width="32" height="32">
+   <properties>
+    <property name="direction" value="north"/>
+   </properties>
+  </object>
+  <object id="76" name="person505" type="w" x="352" y="368" width="32" height="32"/>
+  <object id="77" name="person506" type="w" x="320" y="352" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

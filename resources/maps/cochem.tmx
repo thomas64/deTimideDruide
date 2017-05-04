@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="120" height="120" tilewidth="16" tileheight="16" nextobjectid="818">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="120" height="120" tilewidth="16" tileheight="16" nextobjectid="835">
  <tileset firstgid="1" name="cochem" tilewidth="16" tileheight="16" tilecount="6832" columns="122">
   <image source="cochem.png" width="1952" height="896"/>
  </tileset>
@@ -1315,6 +1315,28 @@
  </objectgroup>
  <objectgroup name="objects">
   <object id="817" name="sign113" type="2" x="32" y="544" width="32" height="32"/>
+  <object id="818" name="person626" type="w" x="608" y="464" width="32" height="32"/>
+  <object id="819" name="person627" x="864" y="688" width="32" height="32"/>
+  <object id="822" name="person628" x="1152" y="416" width="32" height="32"/>
+  <object id="823" name="person629" x="1664" y="416" width="32" height="32"/>
+  <object id="824" name="person630" x="352" y="720" width="32" height="32"/>
+  <object id="825" name="person631" x="576" y="288" width="32" height="32"/>
+  <object id="826" name="person632" x="176" y="544" width="32" height="32"/>
+  <object id="827" name="person627" x="1776" y="1120" width="32" height="32"/>
+  <object id="828" name="person627" x="416" y="880" width="32" height="32"/>
+  <object id="830" name="person629" x="304" y="432" width="32" height="32"/>
+  <object id="831" name="person630" x="1152" y="640" width="32" height="32"/>
+  <object id="832" name="person632" x="832" y="528" width="32" height="32"/>
+  <object id="833" name="person662" x="640" y="1760" width="32" height="32">
+   <properties>
+    <property name="direction" value="south"/>
+   </properties>
+  </object>
+  <object id="834" name="person662" x="704" y="1760" width="32" height="32">
+   <properties>
+    <property name="direction" value="south"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="events" visible="0"/>
 </map>

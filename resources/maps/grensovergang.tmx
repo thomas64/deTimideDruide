@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="64" tilewidth="16" tileheight="16" nextobjectid="166">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="78" height="64" tilewidth="16" tileheight="16" nextobjectid="169">
  <tileset firstgid="1" name="grensovergang" tilewidth="16" tileheight="16" tilecount="1536" columns="64">
   <image source="grensovergang.png" width="1024" height="384"/>
  </tileset>
@@ -734,6 +734,9 @@
    </properties>
   </object>
   <object id="165" name="note10" x="1024" y="608" width="32" height="32"/>
+  <object id="166" name="person611" type="w" x="512" y="368" width="32" height="32"/>
+  <object id="167" name="person611" type="w" x="688" y="464" width="32" height="32"/>
+  <object id="168" name="person611" type="w" x="880" y="464" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

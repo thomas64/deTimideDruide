@@ -518,6 +518,105 @@ class PeopleDatabase(enum.Enum):
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
 
+    person600 = dict(name='animal03',   text=[["Tok tok tok."]])
+    person601 = dict(name='dianne01',   text=[["Sommige bloemen zijn zó mooi",
+                                               "dat ze er om vragen om geplukt te worden."]])
+    person602 = dict(name='koning01',   text=[["Wat doen jullie in mijn kasteel?",
+                                               "Zoeken jullie Bato?",
+                                               "Die is helaas al een tijdje dood."]])
+    person603 = dict(name='koningin01', text=[["Ieieieieie! Gaan jullie eens weg.",
+                                               "Ik ben me aan het omkleden."]])
+    person604 = dict(name='prins01',    text=[["1, 2, 3, 4, 5, 6, 7, 8, 9, 10.",
+                                               "Wie niet weg is, is gezien!"]])
+    person605 = dict(name='prinses01',  text=[["Ssssst! Niet zeggen dat ik hiet zit."]])
+    person606 = dict(name='boy02',      text=[["Ssssst! We doen verstoppertje."]])
+    person607 = dict(name='maid01',     text=[["Sorry. Geen tijd. Druk druk druk."]])
+    person608 = dict(name='oldman02',   text=[["..."]])
+    person609 = dict(name='man54',      text=[["..."]])
+    person610 = dict(name='soldier01',  text=[["U komt de gevangenen bezoeken?"]])
+    person611 = dict(name='animal09',   text=[["..."]])
+    person612 = dict(name='woman52',    text=[["Wilt u beleggen?"],
+                                              ["Let wel op!",
+                                               "De waarde van uw belegging kan flucturen."],
+                                              ["In het verleden behaalde resultaten",
+                                               "bieden geen gerantie voor de toekomst"]])
+    person613 = dict(name='man01',        text=[["Verse vis!"]])
+    person614 = dict(name='man02',        text=[["He daar! Kiek'n jullie 'n bietje út foar mien pleantjes."]])
+    person615 = dict(name='animal08',     text=[["Piep"]])
+    person616 = dict(name='animal04',     text=[["..."]])
+    person617 = dict(name='man02',        text=[["Groente en fruit voor een prikkie!"]])
+    person618 = dict(name='man53',        text=[["Tropische bomen en planten te koop! Wie maakt me los?"]])
+    person619 = dict(name='youngwoman03', text=[["Kerstversiering te koop!",
+                                                 "Alles van vorig jaar voor de helft van de prijs!"]])
+    person620 = dict(name='woman02',      text=[["Workumer aardewerk. Op is op!"]])
+    person621 = dict(name='woman03',      text=[["Biologische groentes. Vers van het land!"]])
+    person622 = dict(name='animal01',     text=[["Miauw"]])
+    person623 = dict(name='animal02',     text=[["Woef woef"]])
+    person624 = dict(name='woman01',      text=[["De Johannesbron. Wat een kunstwerk. Vind je niet?"]])
+    person625 = dict(name='man02',        text=[["Oh. U komt van ver?"],
+                                                ["Wist u dat Piesport met 413 hectare aan wijngaarden,",
+                                                 "het grootste wijnbouwdorp van de streek is?"],
+                                                ["Al in de Romeinse tijd werden hiervoor de fundamenten gelegd."]])
+    person626 = dict(name='youngwoman02', text=[["Mooi weertje hè?"]])
+    person627 = dict(name='oldman02',     text=[["Goedendag."]])
+    person628 = dict(name='youngman01',   text=[["Boks ouwe!"]])
+    person629 = dict(name='youngwoman04', text=[["Hallo."]])
+    person630 = dict(name='youngman02',   text=[["Hoi."]])
+    person631 = dict(name='oldman01',     text=[["Gegroet pratende vogel."]])
+    person632 = dict(name='oldwoman01',   text=[["Tututuuuu."]])
+    person633 = dict(name='youngwoman02', text=[["Kan ik u helpen? Heeft u leespas bij u?"]])
+    person634 = dict(name='oldman02',     text=[["Hahaha. Obelix mag weer geen toverdrank."]])
+    person635 = dict(name='youngman01',   text=[["Dit is een vet spannend boek."]])
+    person636 = dict(name='youngwoman04', text=[["Sssst!"]])
+    person637 = dict(name='youngman02',   text=[["Pfff. Wat weinig plaatjes."]])
+    person638 = dict(name='oldman01',     text=[["Sssst!"]])
+    person639 = dict(name='oldwoman01',   text=[["Wat zegt u?"]])
+    person640 = dict(name='youngwoman01', text=[["Goedendag. U wilt een nachtje blijven slapen?"]])
+    person641 = dict(name='youngwoman02', text=[["Heerlijk eten."]])
+    person642 = dict(name='youngman01',   text=[["Mwjam mwjam mwjam."]])
+    person643 = dict(name='youngman03',   text=[["Ik zit vol."]])
+    person644 = dict(name='youngwoman02', text=[["Wanneer komt het toetje?"]])
+    person645 = dict(name='oldwoman02',   text=[["Heerlijke wijn."]])
+    person646 = dict(name='oldman01',     text=[["Deze soep is exquise."]])
+    person647 = dict(name='man03',        text=[["Predicaat ok."]])
+    person648 = dict(name='woman02',      text=[["Ober!"]])
+    person649 = dict(name='man50',        text=[["Heeft u een verzoek nummer?"]])
+    person650 = dict(name='priest01',     text=[["Mogen liefde en trouw je nooit verlaten,",
+                                                 "wind ze om je hals, schrijf ze in je hart."]])
+    person651 = dict(name='youngwoman02', text=[["Japie! Afblijven! Even luisteren naar de meneer!"]])
+    person652 = dict(name='man52',        text=[["Na de dood van de kinderloze graaf Willem van Ballenstedt,",
+                                                 "brandde er een erfstrijd los tussen Herman van Stahleck",
+                                                 "en Otto de Jongere van Rheineck."],
+                                                ["Koning Koenraad III maakte een einde aan de schermutselingen",
+                                                 "en veroverde in 1151 de burcht. Daarmee bevestigde Koenraad",
+                                                 "zijn koninklijke autoriteit."],
+                                                ["Aansluitend werd de burcht de bestuurszetel voor het omliggende",
+                                                 "rijksgoed en vanaf dat moment behoorde Cochem tot de rijksburchten."],
+                                                ["In de daarop volgende periode werd de burcht bestuurd door",
+                                                 "burchtmannen en later ook door ministerialen."]])
+    person653 = dict(name='boy01',        text=[["Wil jij mijn vriendje zijn?"]])
+    person654 = dict(name='boy02',        text=[["Nee."]])
+    person655 = dict(name='girl01',       text=[["Ik vind juf lief."]])
+    person656 = dict(name='girl02',       text=[["Wat een mooi kasteel."]])
+    person657 = dict(name='boy02',        text=[["Meisjes zijn slap."]])
+    person658 = dict(name='girl02',       text=[["Ik word later prinses."]])
+    person659 = dict(name='boy01',        text=[["Ik word later een ridder."]])
+    person660 = dict(name='girl01',       text=[["Wat een toffe draak."]])
+    person661 = dict(name='boy02',        text=[["Waar is de koning?"]])
+    person662 = dict(name='soldier01',    text=[["Welkom in de Rijksburcht van Cochem."]])
+    person663 = dict(name='nun01',        text=[["Ave Maria."]])
+    person664 = dict(name='priest01',     text=[["Vrede zij met u."]])
+
+
+
+
+
+
+
+
+
+
+
     # standard characters
     person1 = dict(name='boy01',         text=[["Hi mister."]])
     person2 = dict(name='boy02',         text=[["Hi mister."]])

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="82" height="90" tilewidth="16" tileheight="16" nextobjectid="115">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="82" height="90" tilewidth="16" tileheight="16" nextobjectid="132">
  <tileset firstgid="1" name="cochem_kasteel" tilewidth="16" tileheight="16" tilecount="1204" columns="43">
   <image source="cochem_kasteel.png" width="688" height="448"/>
  </tileset>
@@ -833,6 +833,72 @@
   <object id="104" x="64" y="1264" width="48" height="32"/>
   <object id="105" x="96" y="1232" width="16"/>
  </objectgroup>
- <objectgroup name="objects" visible="0"/>
+ <objectgroup name="objects">
+  <object id="115" name="person651" x="800" y="592" width="32" height="32">
+   <properties>
+    <property name="direction" value="west"/>
+   </properties>
+  </object>
+  <object id="118" name="person652" x="864" y="640" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="119" name="person659" x="752" y="592" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="120" name="person658" x="752" y="624" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="122" name="person657" x="704" y="592" width="32" height="32">
+   <properties>
+    <property name="direction" value="north"/>
+   </properties>
+  </object>
+  <object id="123" name="person656" x="704" y="624" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="124" name="person655" x="656" y="592" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="125" name="person654" x="656" y="624" width="32" height="32">
+   <properties>
+    <property name="direction" value="south"/>
+   </properties>
+  </object>
+  <object id="126" name="person653" x="608" y="592" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="127" name="person652" x="608" y="624" width="32" height="32">
+   <properties>
+    <property name="direction" value="east"/>
+   </properties>
+  </object>
+  <object id="128" name="person651" type="w" x="704" y="448" width="32" height="32">
+   <properties>
+    <property name="direction" value="west"/>
+   </properties>
+  </object>
+  <object id="130" name="person662" x="512" y="1072" width="32" height="32">
+   <properties>
+    <property name="direction" value="south"/>
+   </properties>
+  </object>
+  <object id="131" name="person662" x="768" y="1072" width="32" height="32">
+   <properties>
+    <property name="direction" value="south"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup name="events" visible="0"/>
 </map>
