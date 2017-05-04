@@ -516,7 +516,7 @@
   <object id="52" name="person501" type="w" x="256" y="432" width="32" height="32"/>
   <object id="65" name="sparkly51" type="x" x="512" y="144" width="32" height="32"/>
   <object id="66" name="sparkly50" type="x" x="736" y="144" width="32" height="32"/>
-  <object id="67" name="sparkly200" x="192" y="112" width="32" height="32"/>
+  <object id="67" name="sparkly200" type="x" x="192" y="128" width="32" height="16"/>
  </objectgroup>
  <objectgroup name="events">
   <object id="60" name="text2" x="128" y="160" width="96" height="16"/>

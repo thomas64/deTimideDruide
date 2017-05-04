@@ -265,7 +265,7 @@ class MapMusic(enum.Enum):
     grensovergang          = "ersin_forest",      "birds"
     kruising               = "ersin_forest",      "birds"
     kruising_huisje        = "house",             "fire"
-    gymnich                = "invernia_town",     "town"
+    gymnich                = "gymnich",           None
     gymnich_schuur         = "schuur_batenburg",  None
     gymnich_kerkje         = "kerkje_gymnich",    None
     romerkanal             = "ersin_forest",      "birds"
