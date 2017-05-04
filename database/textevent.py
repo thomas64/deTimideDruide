@@ -9,6 +9,12 @@ HEROFACEPATH = 'resources/sprites/heroes/'
 ALAGOS = HEROFACEPATH+"01f_alagos.png"
 DRUIDE = 'resources/sprites/npcs/druid01f.png'
 THOMAS = 'resources/sprites/npcs/thomas01f.png'
+YMIR = 'resources/sprites/npcs/troll02f.png'
+TROL = 'resources/sprites/npcs/troll01f.png'
+HERNE = 'resources/sprites/npcs/man53f.png'
+LODEWIJK = 'resources/sprites/npcs/man50f.png'
+PUTSI = 'resources/sprites/npcs/oldwoman01f.png'
+DRUIDE2 = 'resources/sprites/npcs/druid02f.png'
 
 
 # noinspection PyMethodMayBeStatic,PyMissingOrEmptyDocstring
@@ -210,9 +216,44 @@ class TextEventDatabase(enum.Enum):
                       ["Gefeliciteerd!"],
                       ["Je hebt dit spelverhaal tot een goed einde volbracht."],
                       ["De ketel en Zwammix leefden nog lang en gelukkig."],
+                      ["Zwammix maakte zijn soep, en is nu spraakzaam als nooit tevoren.",
+                       "Nu het voortbestaan van het ambacht 'druïde' is veiliggesteld met",
+                       "negen vers klaargestoomde druïdes heeft hij ervoor gekozen zijn",
+                       "carrière voort te zetten in de rap scene.",
+                       "Wel blijft hij nog parttime zorg dragen voor alle bewoners van het Moezeldal.",
+                       "De wijn heeft hij sindsdien niet meer aangeraakt.",
+                       "Zijn lever is bijna weer hersteld."],
+                      ["Ymir nam weer de leiding over de trollen van het Moezeldal.",
+                       "Na deze ervaring is hij een klein beetje minder dom,",
+                       "wetende dat de druïde het beste voor heeft met de trollen.",
+                       "Slapen heeft hij sindsdien niet meer gedaan,",
+                       "net als overigens alle andere moezeldaltrollen."],
+                      ["Tully en de andere trollen hebben nog weken last gehad van hun darmen.",
+                       "Het trollenbos is hierdoor in geen tijden zo vruchtbaar geweest als nu.",
+                       "Na een bezoekje aan de druïde is hun stoelgang weer de oude geworden."],
+                      ["Herne kon na lange tijd zijn vriendschap met Ymir weer oppakken.",
+                       "Eens per twee weken trekken zij er op uit om te jagen."],
+                      ["Lodewijk deed goede zaken met zijn Brasserie Altena.",
+                       "Zijn nakomelingen hebben de brasserie uitgebouwd tot wat het nu is.",
+                       "U kunt hier nog altijd terecht voor uw feesten en partijen."],
+                      ["Het oude vrouwtje kon na herenigd te zijn met haar Putsi rusten.",
+                       "Zij stierf met Putsi in haar armen."],
+                      ["Grandprix bleef nog lang druïde.",
+                       "Hij heeft zich in de later gestort op het ontwikkelen van een zeer snelle formule.",
+                       "Vandaag de dag is deze formule nog bekend als de Formule 1."],
+                      ["Brann heeft nog jaren lang met Zwammix opgetrokken.",
+                       "Ze hadden na al die jaren stilte samen nog een hoop te bespreken."],
                       [" . . . . . . . . "],
+                      ["En jullie? Jullie mogen jezelf nu druïde noemen.",
+                       "Na dit spannende avontuur zijn jullie nu zeker los vertrouwd.",
+                       "En onthoudt! Wij maken deel uit van het geheel, 'het universum'.",
+                       "Onze taak moet zijn dat we onze cirkel van compassie vergroten,",
+                       "zodat alle levende wezens en de gehele natuur in al haar schoonheid",
+                       "erdoor omvat worden."],
+                      ["Bedankt voor het spelen!"]
                   ],
-                  face=[ALAGOS, ALAGOS, ALAGOS, DRUIDE])
+                  face=[THOMAS, THOMAS, THOMAS, DRUIDE, YMIR, TROL, HERNE, LODEWIJK, PUTSI, DRUIDE2, ALAGOS,
+                        DRUIDE, DRUIDE, THOMAS])
 
 
 for text in TextEventDatabase:
