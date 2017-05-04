@@ -1424,7 +1424,7 @@
   <object id="291" x="1120" y="1424" width="32" height="32"/>
   <object id="292" x="1152" y="1424" width="32" height="80"/>
  </objectgroup>
- <objectgroup name="objects" visible="0">
+ <objectgroup name="objects">
   <object id="281" name="person301" x="928" y="144" width="32" height="32"/>
   <object id="282" name="person301" x="416" y="144" width="32" height="32"/>
   <object id="283" name="person300" x="640" y="624" width="32" height="32"/>
@@ -1445,7 +1445,7 @@
   <object id="309" name="sparkly32" type="x" x="0" y="1440" width="160" height="32"/>
   <object id="310" name="sparkly32" type="x" x="0" y="1408" width="96" height="32"/>
   <object id="311" name="sparkly29" type="x" x="800" y="864" width="32" height="32"/>
-  <object id="312" name="sign102" type="1" x="352" y="1072" width="32" height="32"/>
+  <object id="312" name="sign102" type="1" x="432" y="1104" width="32" height="32"/>
   <object id="313" name="sign103" type="1" x="960" y="960" width="32" height="32"/>
   <object id="314" name="sign104" type="1" x="896" y="960" width="32" height="32"/>
  </objectgroup>

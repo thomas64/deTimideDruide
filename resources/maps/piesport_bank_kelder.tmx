@@ -378,10 +378,10 @@
   <object id="122" name="chest146" x="448" y="240" width="32" height="32"/>
   <object id="123" name="chest147" x="576" y="240" width="32" height="32"/>
   <object id="124" name="chest148" x="704" y="240" width="32" height="32"/>
-  <object id="128" name="note20" x="320" y="352" width="32" height="32"/>
-  <object id="129" name="note21" x="448" y="352" width="32" height="32"/>
-  <object id="130" name="note22" x="576" y="352" width="32" height="32"/>
-  <object id="131" name="note23" x="704" y="352" width="32" height="32"/>
+  <object id="128" name="note20" x="320" y="352" width="32" height="48"/>
+  <object id="129" name="note21" x="448" y="352" width="32" height="48"/>
+  <object id="130" name="note22" x="576" y="352" width="32" height="48"/>
+  <object id="131" name="note23" x="704" y="352" width="32" height="48"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

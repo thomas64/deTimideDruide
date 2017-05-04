@@ -245,7 +245,6 @@
  </objectgroup>
  <objectgroup name="objects">
   <object id="15" name="sparkly28" type="x" x="128" y="192" width="32" height="32"/>
-  <object id="16" name="sparkly26" type="x" x="224" y="160" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>
