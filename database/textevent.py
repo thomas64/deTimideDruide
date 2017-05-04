@@ -8,6 +8,7 @@ import enum
 HEROFACEPATH = 'resources/sprites/heroes/'
 ALAGOS = HEROFACEPATH+"01f_alagos.png"
 DRUIDE = 'resources/sprites/npcs/druid01f.png'
+THOMAS = 'resources/sprites/npcs/thomas01f.png'
 
 
 # noinspection PyMethodMayBeStatic,PyMissingOrEmptyDocstring
@@ -117,9 +118,13 @@ class TextEventDatabase(enum.Enum):
                      ["Voor de smaaaaak kunnen we veel meer ingrediënten gebruiken uit de naaatuur.",
                       "Nee geen winkel of markt. Kraaa. De natuur."],
                      ["Zoek in het bos, op de akker en in elke boomgaaaaard.",
-                      "Is het eetbaaaar? Dan is het de moeite waaaaard."]
+                      "Is het eetbaaaar? Dan is het de moeite waaaaard."],
+                     ["Het recept zit nu in je 'Inventory'.",
+                      "Deze is benaderbaar met de 'I' knop.",
+                      "In je Inventory kun je het recept aanklikken",
+                      "om het in te zien. Belangrijk! Vergeet dat niet."]
                  ],
-                 face=ALAGOS)
+                 face=[ALAGOS, ALAGOS, ALAGOS, ALAGOS, THOMAS])
 
     text6 = dict(condition=condition6,
                  text=[

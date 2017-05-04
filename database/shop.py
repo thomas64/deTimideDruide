@@ -50,16 +50,16 @@ class ShopDatabase(enum.Enum):
     @staticmethod
     def welcome_text():
         """..."""
-        return ("Good day sir, and welcome to my shop.",
-                "In the 'Buy' box you can find all what",
-                "my shop has to offer.  And in the 'Sell'",
-                "box your own inventory is shown.",
-                "Click once on a selected item to buy or to sell.",
-                "You can scroll through the lists with your mouse-",
-                "wheel if the list is longer than what you can see.",
-                "Below here, you see one or multiple icons.",
-                "They represent different sections of my shop.",
-                "Click on it to enter one of those sections.")
+        return ("Goedendag, welkom in mijn winkel.",
+                "In het 'Buy' gedeelte zie je wat je",
+                "kunt kopen. Het 'Sell' gedeelte geeft",
+                "weer wat je al in je bezit hebt. Maar het daadwerkelijk",
+                "verkopen van spullen is uitgeschakeld voor dit spel.",
+                "Hier kun je spullen kopen die je nodig hebt voor",
+                "quests, maar tegen een boete. Deze spullen zijn",
+                "namelijke gratis te vinden in deze spelwereld, maar",
+                "hier kun je ze kopen voor goud, mocht je ze echt",
+                "nergens kunnen vinden.")
 
 for shop in ShopDatabase:
     shop.value['face'] = PATH+shop.value['name']+FEXT
