@@ -126,4 +126,5 @@ class Script:
     def intro_text():
         """..."""
         return ["Duizend jaar geleden.",
-                "Ergens boven de rivier de Waal..."]
+                "Hier niet ver vandaan,",
+                "vlak boven de rivier de Waal..."]

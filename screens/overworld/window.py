@@ -495,10 +495,6 @@ class Window(object):
                                 os.remove(filename)
                             from loadsave import Dialog as SaveDialog
                             SaveDialog.save(self.engine.data, "1_einde.dat")
-                            SaveDialog.save(self.engine.data, "2_einde.dat")
-                            SaveDialog.save(self.engine.data, "3_einde.dat")
-                            SaveDialog.save(self.engine.data, "4_einde.dat")
-                            SaveDialog.save(self.engine.data, "5_einde.dat")
                             from constants import GameState
                             import screens.menu
                             push_object = screens.menu.create_menu(GameState.MainMenu, self.engine, select=-1)

@@ -134,10 +134,10 @@ class Display(object):
                 audio.play_sound(SFX.menu_select)
                 self.menu_content_object.on_select(self.list_text_objects[self.cur_item],
                                                    self.title, self.animation, self.scr_capt, self.cur_item)
-            elif event.key == Keys.Delete.value:
-                audio.play_sound(SFX.menu_select)
-                self.menu_content_object.on_delete(self.list_text_objects[self.cur_item],
-                                                   self.scr_capt, self.cur_item)
+            # elif event.key == Keys.Delete.value:
+            #     audio.play_sound(SFX.menu_select)
+            #     self.menu_content_object.on_delete(self.list_text_objects[self.cur_item],
+            #                                        self.scr_capt, self.cur_item)
             elif event.key == Keys.Exit.value:
                 audio.play_sound(SFX.menu_select)
                 self.menu_content_object.on_quit()
