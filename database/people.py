@@ -536,21 +536,22 @@ class PeopleDatabase(enum.Enum):
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
 
     person600 = dict(name='animal03',   text=[["Tok tok tok."]])
-    person601 = dict(name='dianne01',   text=[["Sommige bloemen zijn zó mooi",
-                                               "dat ze er om vragen om geplukt te worden."]])
-    person602 = dict(name='koning01',   text=[["Wat doen jullie in mijn kasteel?",
-                                               "Zoeken jullie Bato?",
-                                               "Die is helaas al een tijdje dood."]])
+    person601 = dict(name='dianne01',   text=[["Sommige bloemen zijn zó mooi,",
+                                               "dat ze er om vragen geplukt te worden."]])
+    person602 = dict(name='koning01',   text=[["Wat doen jullie in mijn kasteel?"],
+                                              ["Zoeken jullie Bato?"],
+                                              ["Die is helaas al een tijdje dood."]])
     person603 = dict(name='koningin01', text=[["Ieieieieie! Gaan jullie eens weg.",
                                                "Ik ben me aan het omkleden."]])
-    person604 = dict(name='prins01',    text=[["1, 2, 3, 4, 5, 6, 7, 8, 9, 10.",
-                                               "Wie niet weg is, is gezien!"]])
+    person604 = dict(name='prins01',    text=[["1, 2, 3, 4, 5, 6, 7, 8, 9, 10."],
+                                              ["Wie niet weg is..."],
+                                              ["is gezien!"]])
     person605 = dict(name='prinses01',  text=[["Ssssst! Niet zeggen dat ik hiet zit."]])
     person606 = dict(name='boy02',      text=[["Ssssst! We doen verstoppertje."]])
     person607 = dict(name='maid01',     text=[["Sorry. Geen tijd. Druk druk druk."]])
     person608 = dict(name='oldman02',   text=[["..."]])
     person609 = dict(name='man54',      text=[["..."]])
-    person610 = dict(name='soldier01',  text=[["U komt de gevangenen bezoeken?"]])
+    person610 = dict(name='soldier01',  text=[["Komt u de gevangenen bezoeken?"]])
     person611 = dict(name='animal09',   text=[["..."]])
     person612 = dict(name='woman52',    text=[["Wilt u beleggen?"],
                                               ["Let wel op!",
@@ -558,15 +559,16 @@ class PeopleDatabase(enum.Enum):
                                               ["In het verleden behaalde resultaten",
                                                "bieden geen gerantie voor de toekomst"]])
     person613 = dict(name='man01',        text=[["Verse vis!"]])
-    person614 = dict(name='man02',        text=[["He daar! Kiek'n jullie 'n bietje út foar mien pleantjes."]])
+    person614 = dict(name='man02',        text=[["Hei doar! Kiek'n jullie 'n betjen út voar mien pleantjes?"]])
     person615 = dict(name='animal08',     text=[["Piep"]])
     person616 = dict(name='animal04',     text=[["..."]])
     person617 = dict(name='man02',        text=[["Groente en fruit voor een prikkie!"]])
-    person618 = dict(name='man53',        text=[["Tropische bomen en planten te koop! Wie maakt me los?"]])
+    person618 = dict(name='man53',        text=[["Tropische bomen en planten te koop!",
+                                                 "Wie maakt me los?"]])
     person619 = dict(name='youngwoman03', text=[["Kerstversiering te koop!",
                                                  "Alles van vorig jaar voor de helft van de prijs!"]])
-    person620 = dict(name='woman02',      text=[["Workumer aardewerk. Op is op!"]])
-    person621 = dict(name='woman03',      text=[["Biologische groentes. Vers van het land!"]])
+    person620 = dict(name='woman02',      text=[["Workumer aardewerk! Op is op!"]])
+    person621 = dict(name='woman03',      text=[["Biologische groente! Vers van het land!"]])
     person622 = dict(name='animal01',     text=[["Miauw"]])
     person623 = dict(name='animal02',     text=[["Woef woef"]])
     person624 = dict(name='woman01',      text=[["De Johannesbron. Wat een kunstwerk. Vind je niet?"]])
@@ -581,8 +583,9 @@ class PeopleDatabase(enum.Enum):
     person630 = dict(name='youngman02',   text=[["Hoi."]])
     person631 = dict(name='oldman01',     text=[["Gegroet pratende vogel."]])
     person632 = dict(name='oldwoman01',   text=[["Tututuuuu."]])
-    person633 = dict(name='youngwoman02', text=[["Kan ik u helpen? Heeft u leespas bij u?"]])
-    person634 = dict(name='oldman02',     text=[["Hahaha. Obelix mag weer geen toverdrank."]])
+    person633 = dict(name='youngwoman02', text=[["Kan ik u helpen?",
+                                                 "Heeft u uw leespas bij u?"]])
+    person634 = dict(name='oldman02',     text=[["Hahaha!"], ["Obelix mag weer geen toverdrank."]])
     person635 = dict(name='youngman01',   text=[["Dit is een vet spannend boek."]])
     person636 = dict(name='youngwoman04', text=[["Sssst!"]])
     person637 = dict(name='youngman02',   text=[["Pfff. Wat weinig plaatjes."]])
