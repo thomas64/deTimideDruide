@@ -75,7 +75,7 @@ class HeroDatabase(enum.Enum):
                      wpn=WeaponDatabase.ironbroadsword,
                      sld=ShieldDatabase.ironkite,
                      arm=ArmorDatabase.heavyironarmor)
-    teake = dict(nam="Taeke", spr=PATH+"08s_kiara.png", fac=PATH+"08f_kiara.png",
+    taeke = dict(nam="Taeke", spr=PATH+"08s_kiara.png", fac=PATH+"08f_kiara.png",
                  lev=12, scl=SchoolType.elm,
                  int=15, wil=10, dex=30, agi=30, edu=20, str=15, sta=40,
                  alc=0, dip=0, hlr=1, lor=0, mec=0, mer=4, ran=0, stl=5, thf=8, trb=0, war=0, wiz=4,
@@ -151,7 +151,7 @@ class HeroDatabase(enum.Enum):
         """
         if hero_raw == cls.gerdienke.name:  # p(1).xpt >= 3000 - ((3000 / 100) * sale)
             return ("Hoi. Ik ben Gerdienke. Ik ben niet op sollicitatiegesprek geweest,",
-                    "daarom heb ik geen tekst hier voor jou."
+                    "daarom heb ik geen tekst hier voor jou.",
                     "",
                     "Jij weet hoe lang een minuut duurt, jij mag in het team.",
                     "Nee, jou heb ik liever niet.")
@@ -194,7 +194,7 @@ class HeroDatabase(enum.Enum):
                     "Jij bent hoog opgeleid en gemotiveerd. Jij mag in het team.",
                     "Nee, jou heb ik liever niet.")
 
-        elif hero_raw == cls.teake.name:  # gold >= 10000 - ((10000 / 100) * sale)
+        elif hero_raw == cls.taeke.name:  # gold >= 10000 - ((10000 / 100) * sale)
             return ("Ik ben Taeke Hoekstra. Ik ben 27 jaar.",
                     "En geestelijk verzorgend in het MCL. Nou dat was het.",
                     "",

@@ -19,6 +19,7 @@ ALAGOS = HEROFACEPATH+"01f_alagos.png"
 DRUIDE = PATH + 'druid01' + FEXT
 YMIR = PATH + 'troll02' + FEXT
 THOMAS = PATH + 'thomas01' + FEXT
+SOLDIER = PATH + 'soldier01' + FEXT
 
 
 class PeopleDatabase(enum.Enum):
@@ -169,28 +170,28 @@ class PeopleDatabase(enum.Enum):
     person115 = dict(name='troll01',     text=[["*Grumbel* Een steen is te vinden in de vijver in een achtertuin in Trier."]])
 
     person116 = dict(name='troll01',     quest=QuestDatabase.quest27,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person117 = dict(name='troll01',     quest=QuestDatabase.quest28,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person118 = dict(name='troll01',     quest=QuestDatabase.quest29,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person119 = dict(name='troll01',     quest=QuestDatabase.quest30,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person120 = dict(name='troll01',     quest=QuestDatabase.quest31,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person121 = dict(name='troll01',     quest=QuestDatabase.quest32,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person122 = dict(name='troll01',     quest=QuestDatabase.quest33,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
     person123 = dict(name='troll01',     quest=QuestDatabase.quest34,
-                     time1=datetime.datetime(2017,  5, 22, 18, 00),
+                     time1=datetime.datetime(2017,  5, 22, 16, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
 
     person124 = dict(name='troll02', text=[["ZZZzzzZZZzzzZZZ..."],
@@ -258,7 +259,7 @@ class PeopleDatabase(enum.Enum):
                      time2=datetime.datetime(2017,  5, 16, 11, 00))
     person202 = dict(name='steen01',     text=[["Ik hoor gesnurk achter deze steen.", "Wat kan dat zijn?"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
-                     time2=datetime.datetime(2017,  5, 22, 18, 00))
+                     time2=datetime.datetime(2017,  5, 22, 16, 00))
 
     person300 = dict(name='soldier01',   text=[["Goedendag."],
                                                ["Welkom in Kasteel Batenburg."]])
@@ -285,13 +286,20 @@ class PeopleDatabase(enum.Enum):
                                               ["Bij hun vertrek zijn ze iets vergeten mee te nemen.",
                                                "Waar heb ik dat toch gelaten? Het moet hier ergens zijn..."]])
 
-    person402 = dict(name='soldier01',     text=[["Halt! U komt het ryck van Nimmegen niet in tot 13-05 11:30 uur.",
-                                                  "Ik heb orders van de keizer. Keer terug!"]],
+    person402 = dict(name='soldier01',     text=[["Halt! U komt het ryck van Nimmegen niet in tot 13-05 12:45 uur.",
+                                                  "Ik heb orders van de keizer. Keer terug!"],
+                                                 ["Let op! Als je blijft wachten gaat de",
+                                                  "bewaker niet weg op het genoemde tijdstip.",
+                                                  "Hij gaat pas weg na het tijdstip als je de",
+                                                  "kaart opnieuw inloopt of het spel opnieuw opstart.",
+                                                  "Als je dat doet, vergeet dan niet te saven!"]
+                                                 ],
+                     face=[SOLDIER, THOMAS],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
-                     time2=datetime.datetime(2017,  5, 13, 11, 30))
-    person403 = dict(name='soldier01',     text=[["Sie haben jetzt keinen Zugang zu Germania bis 13-05 13:00 Uhr."]],
+                     time2=datetime.datetime(2017,  5, 13, 12, 45))
+    person403 = dict(name='soldier01',     text=[["Sie haben jetzt keinen Zugang zu Germania bis 13-05 13:45 Uhr."]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
-                     time2=datetime.datetime(2017,  5, 13, 13, 00))
+                     time2=datetime.datetime(2017,  5, 13, 13, 45))
     person404 = dict(name='soldier01',   text=[["Herzlich willkommen in Germania."]])
     person405 = dict(name='soldier01',   text=[["Halt! U komt Gallia Belgica nooit en te nimmer meer in.",
                                                 "Ik heb order van de keizer. Keer terug!"]],
@@ -305,18 +313,18 @@ class PeopleDatabase(enum.Enum):
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(2017, 5, 14, 21, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
-    person408 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 13-05 15:30 uur.",
+    person408 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 13-05 15:15 uur.",
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
-                     time2=datetime.datetime(2017,  5, 13, 15, 30))
+                     time2=datetime.datetime(2017,  5, 13, 15, 15))
     person409 = dict(name='soldier01',   text=[["Halt! Gymnich is nooit en te nimmer meer te bereiken.",
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(2017, 5, 14, 21, 00),
                      time2=datetime.datetime(2099, 12, 31, 23, 59))
-    person410 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 14-05 17:00 uur.",
+    person410 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 16-05 's ochtends.",
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
-                     time2=datetime.datetime(2017,  5, 14, 17, 00))
+                     time2=datetime.datetime(2017,  5, 16,  6, 00))
     person411 = dict(name='soldier01',   text=[["Halt! Deze weg is afgesloten tot 17-05 's ochtends.",
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
@@ -333,9 +341,18 @@ class PeopleDatabase(enum.Enum):
     person500 = dict(name='roelfke01',      quest=QuestDatabase.quest21)
     person501 = dict(name='sieger01',       text=[["Hi. Ik ben Sieger."],
                                                   ["Zijn jullie klaar voor een avontuur?"],
-                                                  ["Maak jullie borst maar nat!"]])
+                                                  ["Maak jullie borst maar nat!"],
+                                                  ["Wie uiteindelijk het meeste goud heeft verzameld die wint."],
+                                                  ["Het gaat dus om het goud!"]])
     person502 = dict(name='thomas01',       text=[["Hallo. Ik ben Thomas.", "Het brein achter deze wereld."],
-                                                  ["Doet iets het niet? Dan kun je bij mij terecht."]])
+                                                  ["Doet iets het niet, of gaat er iets fout?",
+                                                   "Dan kun je bij mij terecht."],
+                                                  ["Let op! In dit spel moet je je voortgang regelmatig saven.",
+                                                   "Denk daaraan! Je kunt dit doen door in het spel op 'Esc' te drukken.",
+                                                   "Kies vervolgens 'Save Game'. De eerste keer moet je een naam opgeven.",
+                                                   "De volgende keren hoef je alleen maar bij SaveGame op 'Enter' te drukken.",
+                                                   "Je kunt zien dat het saven gelukt is als de huidige datum in beeld staat.",
+                                                   "Vergeet dit niet!"]])
     person503 = dict(name='machteld01',     text=[["Hoi. Ik ben Machteld."],
                                                   ["Ik zal lekker voor jullie koken als",
                                                    "jullie goed je best doen! Succes!"]])
@@ -372,7 +389,7 @@ class PeopleDatabase(enum.Enum):
     person520 = dict(name='woman01',        text=[["Ik kom u vrede en geluk brengen."]])
     person521 = dict(name='boy01',          text=[["Wat een saaie preek."]])
     person522 = dict(name='girl02',         text=[["Duurt veel te lang."]])
-    person523 = dict(name='thomas01',       text=[["Wanneer komt Teun weer eens spreken?"]])
+    person523 = dict(name='thomas01',       text=[["Wacht ff. Ik heb bijna m'n highscore verbeterd."]])
     person524 = dict(name='youngman01',     text=[["HashiraPaloeriGaftarösti."]])
     person525 = dict(name='youngwoman01',   text=[["De bijbel vertelt dat tongentaal altijd uitgelegd moet worden.",
                                                    "Hij zegt: 'Prijs de Heer! Hij is uw verlosser.'"]])

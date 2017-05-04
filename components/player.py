@@ -442,10 +442,14 @@ class Player(Person):
         check_rect = self.rect
         if self.last_direction == Direction.North:
             check_rect = self.rect.move(0, GRIDSIZE / -2)  # -16
+            check_rect = check_rect.inflate(GRIDSIZE * -0.75, 0)  # 3/4 van de grootte eraf.
         elif self.last_direction == Direction.South:
             check_rect = self.rect.move(0, GRIDSIZE / 2)   # 16
+            check_rect = check_rect.inflate(GRIDSIZE * -0.75, 0)
         elif self.last_direction == Direction.West:
             check_rect = self.rect.move(GRIDSIZE / -2, 0)
+            check_rect = check_rect.inflate(0, GRIDSIZE * -0.75)
         elif self.last_direction == Direction.East:
             check_rect = self.rect.move(GRIDSIZE / 2, 0)
+            check_rect = check_rect.inflate(0, GRIDSIZE * -0.75)
         return check_rect

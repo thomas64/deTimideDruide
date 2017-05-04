@@ -16,7 +16,7 @@ from .basemenu import BaseMenu
 
 
 SAVEPATH = 'savegame'
-MAXSLOTS = 5
+MAXSLOTS = 1
 
 
 class LoadMenu(BaseMenu):

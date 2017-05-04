@@ -126,7 +126,7 @@ class Display(object):
             self.hero_boxes.append(HeroBox((HEROBOXX + index * HEROBOXVAR, HEROBOXY), HEROBOXW, HEROBOXH, index, hero))
 
         # self.stats_box = StatsBox((STATBOXX,        STATBOXY), STATBOXW, STATBOXH)
-        # self.infobox = TextBox((INFOBOXX,           INFOBOXY), INFOBOXW, INFOBOXH)
+        self.infobox = TextBox((INFOBOXX,           INFOBOXY), INFOBOXW, INFOBOXH)
         # self.skills_box = SkillsBox((SKILBOXX,      SKILBOXY), SKILBOXW, SKILBOXH)
         # self.inventory_box = InventoryBox((INVBOXX, INVBOXY),  INVBOXW,  INVBOXH)
         # self.spells_box = SpellsBox((SPELBOXX,      SPELBOXY), SPELBOXW, SPELBOXH)
@@ -198,7 +198,7 @@ class Display(object):
             # self.stats_box.cur_item = None
             # self.skills_box.cur_item = None
             # self.spells_box.cur_item = None
-            # self.pouch_box.cur_item = None
+            self.pouch_box.cur_item = None
 
             # if self.invclick_box and self.invclick_box.rect.collidepoint(event.pos):
             #     self.info_label, self.hovered_equipment_item = self.invclick_box.mouse_hover(event)
@@ -210,8 +210,8 @@ class Display(object):
             #     self.info_label = self.inventory_box.mouse_hover(event)
             # elif self.spells_box.rect.collidepoint(event.pos):
             #     self.info_label = self.spells_box.mouse_hover(event)
-            # elif self.pouch_box.rect.collidepoint(event.pos):
-            #     self.info_label = self.pouch_box.mouse_hover(event)
+            if self.pouch_box.rect.collidepoint(event.pos):
+                self.info_label = self.pouch_box.mouse_hover(event)
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
 
@@ -288,8 +288,8 @@ class Display(object):
                 self._previous()
             elif event.key == Keys.Next.value:
                 self._next()
-            elif event.key == Keys.Delete.value:
-                self._leave_party()
+            # elif event.key == Keys.Delete.value:
+            #     self._leave_party()
             # elif event.key == pygame.K_m:
             #     self.party[0].lev.qty += 1
 
@@ -335,7 +335,7 @@ class Display(object):
         self.screen.fill(BACKGROUNDCOLOR)
         self.screen.blit(self.background, (0, 0))
 
-        # self.infobox.render(self.screen, self.info_label)
+        self.infobox.render(self.screen, self.info_label)
 
         for button in self.buttons:
             button.render(self.screen, LINECOLOR)

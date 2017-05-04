@@ -61,7 +61,7 @@ class GameEngine(object):
         self.mouse_input = None
 
         self.show_debug = False
-        self.debug_mode = True
+        self.debug_mode = False
         self.fps = FPS
 
         threading.Thread(target=self.load_all_maps).start()

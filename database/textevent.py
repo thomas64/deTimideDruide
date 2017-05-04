@@ -8,6 +8,13 @@ import enum
 HEROFACEPATH = 'resources/sprites/heroes/'
 ALAGOS = HEROFACEPATH+"01f_alagos.png"
 DRUIDE = 'resources/sprites/npcs/druid01f.png'
+THOMAS = 'resources/sprites/npcs/thomas01f.png'
+YMIR = 'resources/sprites/npcs/troll02f.png'
+TROL = 'resources/sprites/npcs/troll01f.png'
+HERNE = 'resources/sprites/npcs/man53f.png'
+LODEWIJK = 'resources/sprites/npcs/man50f.png'
+PUTSI = 'resources/sprites/npcs/oldwoman01f.png'
+DRUIDE2 = 'resources/sprites/npcs/druid02f.png'
 
 
 # noinspection PyMethodMayBeStatic,PyMissingOrEmptyDocstring
@@ -117,9 +124,13 @@ class TextEventDatabase(enum.Enum):
                      ["Voor de smaaaaak kunnen we veel meer ingrediënten gebruiken uit de naaatuur.",
                       "Nee geen winkel of markt. Kraaa. De natuur."],
                      ["Zoek in het bos, op de akker en in elke boomgaaaaard.",
-                      "Is het eetbaaaar? Dan is het de moeite waaaaard."]
+                      "Is het eetbaaaar? Dan is het de moeite waaaaard."],
+                     ["Het recept zit nu in je 'Inventory'.",
+                      "Deze is benaderbaar met de 'I' knop.",
+                      "In je Inventory kun je het recept aanklikken",
+                      "om het in te zien. Belangrijk! Vergeet dat niet."]
                  ],
-                 face=ALAGOS)
+                 face=[ALAGOS, ALAGOS, ALAGOS, ALAGOS, THOMAS])
 
     text6 = dict(condition=condition6,
                  text=[
@@ -154,17 +165,22 @@ class TextEventDatabase(enum.Enum):
 
     text10 = dict(condition=True,
                   text=[
-                     ["Kraaaa! Toktoktok."], ["Waakker worden Zwaammix!"],
-                     ["*HIPS*"], ["Brann! Mijn gevleugelde vriend.", "Daar ben je eindelijk."],
-                     ["*HIPS*"], ["Heb je de personen gevonden die ik zocht?"],
-                     ["Jaaaa. Meester."], ["Ik zie dat u weer te diep in het glaasje heeft gekeken?", "Kraa!"],
-                     ["Maak je niet druk.",
-                      "Ik heb altijd gedacht dat drinken slecht voor me was,",
-                      "dus ik ben gestopt met denken.",
-                      "Iedereen praat over mijn drinken,",
-                      "maar niemand over mijn dorst."]
+                      ["Kraaaa! Toktoktok."], ["Waakker worden Zwaammix!"],
+                      ["*HIPS*"], ["Brann! Mijn gevleugelde vriend.", "Daar ben je eindelijk."],
+                      ["*HIPS*"], ["Heb je de personen gevonden die ik zocht?"],
+                      ["Jaaaa. Meester."], ["Ik zie dat u weer te diep in het glaasje heeft gekeken?", "Kraa!"],
+                      ["Maak je niet druk.",
+                       "Ik heb altijd gedacht dat drinken slecht voor me was,",
+                       "dus ik ben gestopt met denken.",
+                       "Iedereen praat over mijn drinken,",
+                       "maar niemand over mijn dorst."],
+                      ["Oké teamgenoten, soort van goed nieuws.",
+                       "We hebben 'geluk'. Zwammix is nu dronken en dus praatgraag.",
+                       "We moeten van dit moment gebruik maken om nu zoveel",
+                       "mogelijk uit deze timide druïde te halen."],
+
                   ],
-                  face=[ALAGOS, ALAGOS, DRUIDE, DRUIDE, DRUIDE, DRUIDE, ALAGOS, ALAGOS, DRUIDE])
+                  face=[ALAGOS, ALAGOS, DRUIDE, DRUIDE, DRUIDE, DRUIDE, ALAGOS, ALAGOS, DRUIDE, ALAGOS])
 
     text11 = dict(condition=condition11,
                   text=[
@@ -200,9 +216,44 @@ class TextEventDatabase(enum.Enum):
                       ["Gefeliciteerd!"],
                       ["Je hebt dit spelverhaal tot een goed einde volbracht."],
                       ["De ketel en Zwammix leefden nog lang en gelukkig."],
+                      ["Zwammix maakte zijn soep, en is nu spraakzaam als nooit tevoren.",
+                       "Nu het voortbestaan van het ambacht 'druïde' is veiliggesteld met",
+                       "negen vers klaargestoomde druïdes heeft hij ervoor gekozen zijn",
+                       "carrière voort te zetten in de rap scene.",
+                       "Wel blijft hij nog parttime zorg dragen voor alle bewoners van het Moezeldal.",
+                       "De wijn heeft hij sindsdien niet meer aangeraakt.",
+                       "Zijn lever is bijna weer hersteld."],
+                      ["Ymir nam weer de leiding over de trollen van het Moezeldal.",
+                       "Na deze ervaring is hij een klein beetje minder dom,",
+                       "wetende dat de druïde het beste voor heeft met de trollen.",
+                       "Slapen heeft hij sindsdien niet meer gedaan,",
+                       "net als overigens alle andere moezeldaltrollen."],
+                      ["Tully en de andere trollen hebben nog weken last gehad van hun darmen.",
+                       "Het trollenbos is hierdoor in geen tijden zo vruchtbaar geweest als nu.",
+                       "Na een bezoekje aan de druïde is hun stoelgang weer de oude geworden."],
+                      ["Herne kon na lange tijd zijn vriendschap met Ymir weer oppakken.",
+                       "Eens per twee weken trekken zij er op uit om te jagen."],
+                      ["Lodewijk deed goede zaken met zijn Brasserie Altena.",
+                       "Zijn nakomelingen hebben de brasserie uitgebouwd tot wat het nu is.",
+                       "U kunt hier nog altijd terecht voor uw feesten en partijen."],
+                      ["Het oude vrouwtje kon na herenigd te zijn met haar Putsi rusten.",
+                       "Zij stierf met Putsi in haar armen."],
+                      ["Grandprix bleef nog lang druïde.",
+                       "Hij heeft zich in de later gestort op het ontwikkelen van een zeer snelle formule.",
+                       "Vandaag de dag is deze formule nog bekend als de Formule 1."],
+                      ["Brann heeft nog jaren lang met Zwammix opgetrokken.",
+                       "Ze hadden na al die jaren stilte samen nog een hoop te bespreken."],
                       [" . . . . . . . . "],
+                      ["En jullie? Jullie mogen jezelf nu druïde noemen.",
+                       "Na dit spannende avontuur zijn jullie nu zeker los vertrouwd.",
+                       "En onthoudt! Wij maken deel uit van het geheel, 'het universum'.",
+                       "Onze taak moet zijn dat we onze cirkel van compassie vergroten,",
+                       "zodat alle levende wezens en de gehele natuur in al haar schoonheid",
+                       "erdoor omvat worden."],
+                      ["Bedankt voor het spelen!"]
                   ],
-                  face=[ALAGOS, ALAGOS, ALAGOS, DRUIDE])
+                  face=[THOMAS, THOMAS, THOMAS, DRUIDE, YMIR, TROL, HERNE, LODEWIJK, PUTSI, DRUIDE2, ALAGOS,
+                        DRUIDE, DRUIDE, THOMAS])
 
 
 for text in TextEventDatabase:
