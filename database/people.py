@@ -19,6 +19,7 @@ ALAGOS = HEROFACEPATH+"01f_alagos.png"
 DRUIDE = PATH + 'druid01' + FEXT
 YMIR = PATH + 'troll02' + FEXT
 THOMAS = PATH + 'thomas01' + FEXT
+SOLDIER = PATH + 'soldier01' + FEXT
 
 
 class PeopleDatabase(enum.Enum):
@@ -286,7 +287,14 @@ class PeopleDatabase(enum.Enum):
                                                "Waar heb ik dat toch gelaten? Het moet hier ergens zijn..."]])
 
     person402 = dict(name='soldier01',     text=[["Halt! U komt het ryck van Nimmegen niet in tot 13-05 12:45 uur.",
-                                                  "Ik heb orders van de keizer. Keer terug!"]],
+                                                  "Ik heb orders van de keizer. Keer terug!"],
+                                                 ["Let op! Als je blijft wachten gaat de",
+                                                  "bewaker niet weg op het genoemde tijdstip.",
+                                                  "Hij gaat pas weg na het tijdstip als je de",
+                                                  "kaart opnieuw inloopt of het spel opnieuw opstart.",
+                                                  "Als je dat doet, vergeet dan niet te saven!"]
+                                                 ],
+                     face=[SOLDIER, THOMAS],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
                      time2=datetime.datetime(2017,  5, 13, 12, 45))
     person403 = dict(name='soldier01',     text=[["Sie haben jetzt keinen Zugang zu Germania bis 13-05 13:45 Uhr."]],
@@ -333,9 +341,18 @@ class PeopleDatabase(enum.Enum):
     person500 = dict(name='roelfke01',      quest=QuestDatabase.quest21)
     person501 = dict(name='sieger01',       text=[["Hi. Ik ben Sieger."],
                                                   ["Zijn jullie klaar voor een avontuur?"],
-                                                  ["Maak jullie borst maar nat!"]])
+                                                  ["Maak jullie borst maar nat!"],
+                                                  ["Wie uiteindelijk het meeste goud heeft verzameld die wint."],
+                                                  ["Het gaat dus om het goud!"]])
     person502 = dict(name='thomas01',       text=[["Hallo. Ik ben Thomas.", "Het brein achter deze wereld."],
-                                                  ["Doet iets het niet? Dan kun je bij mij terecht."]])
+                                                  ["Doet iets het niet, of gaat er iets fout?",
+                                                   "Dan kun je bij mij terecht."],
+                                                  ["Let op! In dit spel moet je je voortgang regelmatig saven.",
+                                                   "Denk daaraan! Je kunt dit doen door in het spel op 'Esc' te drukken.",
+                                                   "Kies vervolgens 'Save Game'. De eerste keer moet je een naam opgeven.",
+                                                   "De volgende keren hoef je alleen maar bij SaveGame op 'Enter' te drukken.",
+                                                   "Je kunt zien dat het saven gelukt is als de huidige datum in beeld staat.",
+                                                   "Vergeet dit niet!"]])
     person503 = dict(name='machteld01',     text=[["Hoi. Ik ben Machteld."],
                                                   ["Ik zal lekker voor jullie koken als",
                                                    "jullie goed je best doen! Succes!"]])
@@ -372,7 +389,7 @@ class PeopleDatabase(enum.Enum):
     person520 = dict(name='woman01',        text=[["Ik kom u vrede en geluk brengen."]])
     person521 = dict(name='boy01',          text=[["Wat een saaie preek."]])
     person522 = dict(name='girl02',         text=[["Duurt veel te lang."]])
-    person523 = dict(name='thomas01',       text=[["Wanneer komt Teun weer eens spreken?"]])
+    person523 = dict(name='thomas01',       text=[["Wacht ff. Ik heb bijna m'n highscore verbeterd."]])
     person524 = dict(name='youngman01',     text=[["HashiraPaloeriGaftarösti."]])
     person525 = dict(name='youngwoman01',   text=[["De bijbel vertelt dat tongentaal altijd uitgelegd moet worden.",
                                                    "Hij zegt: 'Prijs de Heer! Hij is uw verlosser.'"]])
