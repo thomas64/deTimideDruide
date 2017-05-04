@@ -81,18 +81,26 @@ class SparklyDatabase(aenum.NoAliasEnum):
     # altena
     sparkly50 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=3)))
     sparkly51 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=3)))
+    sparkly200 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=1)))
+
     # huis batenburg
     sparkly52 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=1)))
     sparkly63 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=2)))
     sparkly64 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=2)))
     sparkly65 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=6)))
     sparkly94 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.grapes,      qty=3)))
+    sparkly202 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=2)))
+    sparkly203 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=2)))
+    sparkly204 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=2)))
+    sparkly205 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=2)))
+
     # huis romer
     sparkly53 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=2),
                                   itm2=dict(nam=PouchItemDatabase.bottle,      qty=2)))
     sparkly60 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=4)))
     sparkly61 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=2)))
     sparkly62 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=6)))
+    sparkly201 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=1)))
     # wijn piesport
     sparkly54 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=2)))
     sparkly55 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=2)))
@@ -101,6 +109,12 @@ class SparklyDatabase(aenum.NoAliasEnum):
     sparkly58 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=2)))
     # inn piesport
     sparkly59 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,        qty=1)))
+    # bank piesport
+    sparkly206 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=2)))
+    sparkly207 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=3)))
+    sparkly208 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=1)))
+    sparkly209 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=1)))
+
     # schuur gymnich
     sparkly66 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.bottle,      qty=3)))
     # kruising2
@@ -139,6 +153,13 @@ class SparklyDatabase(aenum.NoAliasEnum):
 
     # huis cochem 1f
     sparkly100 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,       qty=1)))
+    sparkly210 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=1)))
+
+    # kerk cochem 1f
+    sparkly211 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=1)))
+
+    # kasteel cochem 1f
+    sparkly212 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.wine,       qty=10)))
 
     # trier
     sparkly101 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
@@ -149,6 +170,15 @@ class SparklyDatabase(aenum.NoAliasEnum):
     sparkly106 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
     sparkly107 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
     sparkly108 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen, qty=1)))
+
+    # kerk trier
+    sparkly213 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,        qty=3)))
+    sparkly214 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,        qty=2)))
+    sparkly215 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,        qty=1)))
+
+    # theater trier
+    sparkly216 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,        qty=3)))
+
 
 
 # noinspection PyTypeChecker

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="16" tileheight="16" nextobjectid="1283">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="16" tileheight="16" nextobjectid="1299">
  <tileset firstgid="1" name="trier" tilewidth="16" tileheight="16" tilecount="20900" columns="275">
   <image source="trier.png" width="4400" height="1216"/>
  </tileset>
@@ -2611,6 +2611,21 @@
   <object id="1280" name="person623" type="w" x="880" y="416" width="32" height="32"/>
   <object id="1281" name="person663" type="w" x="2944" y="1664" width="32" height="32"/>
   <object id="1282" name="person663" type="w" x="3024" y="2176" width="32" height="32"/>
+  <object id="1283" name="person632" type="w" x="1808" y="816" width="32" height="32"/>
+  <object id="1284" name="person631" type="w" x="1808" y="528" width="32" height="32"/>
+  <object id="1285" name="person630" type="w" x="2240" y="448" width="32" height="32"/>
+  <object id="1286" name="person629" type="w" x="2368" y="864" width="32" height="32"/>
+  <object id="1287" name="person628" type="w" x="2448" y="832" width="32" height="32"/>
+  <object id="1288" name="person627" type="w" x="2496" y="1200" width="32" height="32"/>
+  <object id="1289" name="person626" type="w" x="2096" y="1616" width="32" height="32"/>
+  <object id="1290" name="person632" type="w" x="2352" y="1952" width="32" height="32"/>
+  <object id="1291" name="person631" type="w" x="2432" y="1792" width="32" height="32"/>
+  <object id="1292" name="person630" type="w" x="2592" y="2208" width="32" height="32"/>
+  <object id="1293" name="person629" type="w" x="2720" y="2576" width="32" height="32"/>
+  <object id="1294" name="person628" type="w" x="1952" y="1952" width="32" height="32"/>
+  <object id="1295" name="person627" type="w" x="1232" y="1936" width="32" height="32"/>
+  <object id="1296" name="person626" type="w" x="1056" y="1520" width="32" height="32"/>
+  <object id="1298" name="person623" type="w" x="2672" y="624" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>
