@@ -441,7 +441,7 @@
     <property name="direction" value="north"/>
    </properties>
   </object>
-  <object id="88" name="sparkly210" x="928" y="144" width="32" height="32"/>
+  <object id="88" name="sparkly210" type="x" x="928" y="144" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events">
   <object id="70" name="location3" x="832" y="192" width="96" height="128"/>

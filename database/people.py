@@ -594,11 +594,11 @@ class PeopleDatabase(enum.Enum):
     person640 = dict(name='youngwoman01', text=[["Goedendag. U wilt een nachtje blijven slapen?"]])
     person641 = dict(name='youngwoman02', text=[["Heerlijk eten."]])
     person642 = dict(name='youngman01',   text=[["Mwjam mwjam mwjam."]])
-    person643 = dict(name='youngman03',   text=[["Ik zit vol."]])
+    person643 = dict(name='youngman02',   text=[["Ik zit vol."]])
     person644 = dict(name='youngwoman02', text=[["Wanneer komt het toetje?"]])
     person645 = dict(name='oldwoman02',   text=[["Heerlijke wijn."]])
     person646 = dict(name='oldman01',     text=[["Deze soep is exquise."]])
-    person647 = dict(name='man03',        text=[["Predicaat ok."]])
+    person647 = dict(name='man02',        text=[["Predicaat ok."]])
     person648 = dict(name='woman02',      text=[["Ober!"]])
     person649 = dict(name='man50',        text=[["Heeft u een verzoek nummer?"]])
     person650 = dict(name='priest01',     text=[["Mogen liefde en trouw je nooit verlaten,",

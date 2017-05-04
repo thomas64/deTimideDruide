@@ -787,7 +787,7 @@
   </object>
   <object id="140" name="sparkly202" type="x" x="320" y="144" width="32" height="64"/>
   <object id="141" name="sparkly203" type="x" x="800" y="784" width="64" height="32"/>
-  <object id="142" name="sparkly204" x="896" y="784" width="64" height="32"/>
+  <object id="142" name="sparkly204" type="x" x="896" y="784" width="64" height="32"/>
   <object id="143" name="sparkly205" type="x" x="800" y="848" width="32" height="80"/>
  </objectgroup>
  <objectgroup name="events"/>

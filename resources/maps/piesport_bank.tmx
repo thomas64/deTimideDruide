@@ -343,7 +343,7 @@
   <object id="24" x="576" y="144" width="32" height="320"/>
  </objectgroup>
  <objectgroup name="objects">
-  <object id="36" name="sparkly209" x="160" y="256" width="32" height="32"/>
+  <object id="36" name="sparkly209" type="x" x="160" y="256" width="32" height="32"/>
   <object id="37" name="sparkly208" type="x" x="352" y="224" width="32" height="32"/>
   <object id="38" name="sparkly207" type="x" x="192" y="128" width="96" height="48"/>
   <object id="39" name="sparkly206" type="x" x="128" y="144" width="32" height="32"/>

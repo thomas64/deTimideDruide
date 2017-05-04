@@ -400,7 +400,7 @@
   </object>
   <object id="76" name="person505" type="w" x="352" y="368" width="32" height="32"/>
   <object id="77" name="person506" type="w" x="320" y="352" width="32" height="32"/>
-  <object id="78" name="sparkly201" x="576" y="464" width="32" height="32"/>
+  <object id="78" name="sparkly201" type="x" x="576" y="464" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>
