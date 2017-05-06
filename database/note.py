@@ -53,3 +53,23 @@ class NoteDatabase(enum.Enum):
     note36 = PATH+'knopen2.png'
     note37 = PATH+'knopen3.png'
     note38 = PATH+'insecten.png'
+
+    note40 = [["Dit lijkt op het boek waar alle reserveringen in staan."]]
+    note41 = [["Wijsheid verwerven: het is zoveel beter dan goud."]]
+    note42 = [["Wat een hoop zangbundels."]]
+    note43 = [["Een vlinder kan niet zonder vleugels."],
+              ["Een ijsbeer kan niet zonder kou."],
+              ["En ik..."],
+              ["ik kan niet zonder jou."]]
+    note44 = [["Dankjewel Herne.",
+               "We hebben hier een weekendje heerlijk bij kunnen komen in het mooie Cochem.",
+               "De kamer was schoon en netjes, en het eten heerlijk.",
+               "We komen graag nog een keer langs.",
+               "Tot gauw!",
+               "Truus en Gerard"]]
+    note45 = [["Zie erop toe dat niemand kwaad met kwaad vergeldt en streef",
+               "altijd naar het goede, zowel voor elkaar als voor ieder ander."]]
+    note46 = [["Goede raad ligt op de bodem van een mensenhart,",
+               "als water in een diepe put, wie inzicht heeft weet eruit te putten."]]
+    note47 = [["Hier vereren wij Baäl en Astarte."]]
+    note48 = [["Aantekeningen van het spel De Timide Druïde"]]

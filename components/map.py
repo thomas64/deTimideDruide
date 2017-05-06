@@ -212,7 +212,7 @@ class Map(object):
             elif obj.name == 'hero':
                 if obj.type == 'zwammix':
                     timestamp = datetime.datetime.now()
-                    if timestamp < datetime.datetime(2017, 5, 22, 18, 00):
+                    if timestamp < datetime.datetime(2017, 5, 22, 16, 00):
                         break
 
                 hero_object = Person(obj.type, HeroDatabase[obj.type].value['spr'],

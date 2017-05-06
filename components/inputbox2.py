@@ -7,7 +7,7 @@ import pygame
 from constants import Keys
 from constants import SFX
 
-BOXWIDTH = 500
+BOXWIDTH = 600
 BOXHEIGHT = 106
 BOXY = 200
 
@@ -15,7 +15,7 @@ BACKGROUNDCOLOR = pygame.Color("black")
 RECTCOLOR = pygame.Color("white")
 
 INPUTLABEL = "Name: "
-INPUTLENGTH = 23
+INPUTLENGTH = 30
 
 FONT = None
 FONTSIZE = 50

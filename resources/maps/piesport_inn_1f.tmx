@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="36" tilewidth="16" tileheight="16" nextobjectid="53">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="36" tilewidth="16" tileheight="16" nextobjectid="55">
  <tileset firstgid="1" name="piesport_inn_1f" tilewidth="16" tileheight="16" tilecount="1976" columns="52">
   <image source="piesport_inn_1f.png" width="832" height="608"/>
  </tileset>
@@ -405,11 +405,13 @@
   <object id="33" x="48" y="128" width="16" height="32"/>
  </objectgroup>
  <objectgroup name="objects">
-  <object id="52" name="person640" x="176" y="240" width="32" height="32">
+  <object id="52" name="person640" x="176" y="240" width="32" height="48">
    <properties>
     <property name="direction" value="south"/>
    </properties>
   </object>
+  <object id="53" name="note40" x="144" y="240" width="32" height="32"/>
+  <object id="54" name="note43" x="688" y="208" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

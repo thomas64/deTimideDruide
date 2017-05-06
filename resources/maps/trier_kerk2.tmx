@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="68" height="56" tilewidth="16" tileheight="16" nextobjectid="98">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="68" height="56" tilewidth="16" tileheight="16" nextobjectid="99">
  <tileset firstgid="1" name="trier_kerk2" tilewidth="16" tileheight="16" tilecount="1242" columns="54">
   <image source="trier_kerk2.png" width="864" height="368"/>
  </tileset>
@@ -532,6 +532,7 @@
   </object>
   <object id="96" name="sparkly214" type="x" x="192" y="576" width="32" height="32"/>
   <object id="97" name="sparkly215" type="x" x="192" y="384" width="32" height="32"/>
+  <object id="98" name="note46" x="896" y="448" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

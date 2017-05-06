@@ -215,6 +215,12 @@ class TreasureChestDatabase(aenum.NoAliasEnum):
                     time1=datetime.datetime(2017, 5, 22,  6, 00),
                     time2=datetime.datetime(2017, 5, 22, 23, 00))
 
+    chest400 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=22)),
+                    condition=dict(pwd=dict(ask="Dierenquest. Code:",   anw="papegaaieei")),
+                    time1=datetime.datetime(2017,  5, 20, 6, 00),
+                    time2=datetime.datetime(2099, 12, 31, 23, 59))
+
+
     # bank dag 10
     chest145 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=88)),
                     condition=dict(pwd=dict(ask="Trollenoorlog. Code 1e plek:", anw="gddvu8")),
@@ -245,6 +251,16 @@ class TreasureChestDatabase(aenum.NoAliasEnum):
 
     chest300 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.cauldron,      qty=1)),
                     condition=dict(pwd=dict(ask="Code:", anw="tefaljedenktookaanalles")))
+
+    # bank boven
+    chest401 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,      qty=15)),
+                    condition=dict(pwd=dict(ask="Munt 1:", anw="eendrachtmaaktmacht1f1887")))
+    chest402 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,      qty=11)),
+                    condition=dict(pwd=dict(ask="Munt 2:", anw="epluribusunum1889")))
+    chest403 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,      qty=18)),
+                    condition=dict(pwd=dict(ask="Munt 3:", anw="sanfranciscocaliforniatwentyd")))
+    chest404 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,      qty=6)),
+                    condition=dict(pwd=dict(ask="Munt 4:", anw="liberty1882")))
 
 
 

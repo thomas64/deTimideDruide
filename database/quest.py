@@ -238,17 +238,10 @@ class QuestDatabase(enum.Enum):
                           "Ze schijten hiermee 9 kleuren.",
                           "Zo hebben jullie de tijd om de ketel terug te pakken."],
                          ["*HIPS*"]],
-                        [["Met dit 9 kleurige drankje kunnen jullie de trollen even bezig houden."],
-                         ["*HIPS*"],
-                         ["Ze eten toch alles wat je ze voorschotelt."],
-                         ["*HIPS*"],
-                         ["Het heeft een sterk laxerende werking.",
-                          "Ze schijten hiermee 9 kleuren.",
-                          "Zo hebben jullie de tijd om de ketel terug te pakken."],
-                         ["*HIPS*"]])
+                        [["Deze zin vervalt."]])
                   )
 
-    quest10 = dict(qtype=QuestType.FetchItemQuest,
+    quest10 = dict(qtype=QuestType.ReceiveItemQuest,
                    condition=False,  # gaat naar True als je bij het vuur van de trollen bent geweest waar de ketel stond.
                    reward=None,
                    text=(
