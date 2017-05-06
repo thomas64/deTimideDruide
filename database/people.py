@@ -625,7 +625,7 @@ class PeopleDatabase(enum.Enum):
     person661 = dict(name='boy02',        text=[["Waar is de koning?"]])
     person662 = dict(name='soldier01',    text=[["Welkom in de Rijksburcht van Cochem."]])
     person663 = dict(name='nun01',        text=[["Ave Maria."]])
-    person664 = dict(name='priest01',     text=[["Vrede zij met u."]])
+    person664 = dict(name='priest01',     text=[["Zeg mij wie uw vrienden zijn, en ik zeg u wie gij zijt"]])
 
 
 

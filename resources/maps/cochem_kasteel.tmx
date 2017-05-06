@@ -879,12 +879,12 @@
     <property name="direction" value="east"/>
    </properties>
   </object>
-  <object id="127" name="person652" x="608" y="624" width="32" height="32">
+  <object id="127" name="person660" x="608" y="624" width="32" height="32">
    <properties>
     <property name="direction" value="east"/>
    </properties>
   </object>
-  <object id="128" name="person651" type="w" x="704" y="448" width="32" height="32">
+  <object id="128" name="person661" type="w" x="704" y="448" width="32" height="32">
    <properties>
     <property name="direction" value="west"/>
    </properties>
@@ -899,7 +899,7 @@
     <property name="direction" value="south"/>
    </properties>
   </object>
-  <object id="132" name="sparkly212" x="1056" y="368" width="160" height="32"/>
+  <object id="132" name="sparkly212" type="x" x="1056" y="368" width="160" height="32"/>
  </objectgroup>
  <objectgroup name="events" visible="0"/>
 </map>

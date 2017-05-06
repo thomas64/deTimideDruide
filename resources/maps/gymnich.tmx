@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="82" height="88" tilewidth="16" tileheight="16" nextobjectid="260">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="82" height="88" tilewidth="16" tileheight="16" nextobjectid="264">
  <tileset firstgid="1" name="gymnich" tilewidth="16" tileheight="16" tilecount="7546" columns="154">
   <image source="gymnich.png" width="2464" height="784"/>
  </tileset>
@@ -1358,6 +1358,10 @@
     <property name="direction" value="north"/>
    </properties>
   </object>
+  <object id="260" name="person611" x="832" y="1200" width="32" height="32"/>
+  <object id="261" name="person611" type="w" x="912" y="1232" width="32" height="32"/>
+  <object id="262" name="person611" type="w" x="960" y="1184" width="32" height="32"/>
+  <object id="263" name="person611" type="w" x="1024" y="1264" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

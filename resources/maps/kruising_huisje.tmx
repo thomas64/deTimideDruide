@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="34" height="32" tilewidth="16" tileheight="16" nextobjectid="32">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="34" height="32" tilewidth="16" tileheight="16" nextobjectid="33">
  <tileset firstgid="1" name="kruising_huisje" tilewidth="16" tileheight="16" tilecount="936" columns="52">
   <image source="kruising_huisje.png" width="832" height="288"/>
  </tileset>
@@ -369,6 +369,7 @@
     <property name="direction" value="north"/>
    </properties>
   </object>
+  <object id="32" name="sparkly222" type="x" x="320" y="144" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

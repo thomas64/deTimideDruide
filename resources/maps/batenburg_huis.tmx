@@ -762,7 +762,7 @@
   </object>
   <object id="134" name="person603" x="288" y="576" width="32" height="32">
    <properties>
-    <property name="direction" value="east"/>
+    <property name="direction" value="west"/>
    </properties>
   </object>
   <object id="135" name="person604" x="800" y="144" width="32" height="32">

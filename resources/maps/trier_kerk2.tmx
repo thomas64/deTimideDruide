@@ -531,7 +531,7 @@
    </properties>
   </object>
   <object id="96" name="sparkly214" type="x" x="192" y="576" width="32" height="32"/>
-  <object id="97" name="sparkly215" x="192" y="384" width="32" height="32"/>
+  <object id="97" name="sparkly215" type="x" x="192" y="384" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

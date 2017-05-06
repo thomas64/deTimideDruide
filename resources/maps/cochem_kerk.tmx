@@ -520,7 +520,7 @@
     <property name="direction" value="south"/>
    </properties>
   </object>
-  <object id="105" name="sparkly211" x="96" y="336" width="32" height="32"/>
+  <object id="105" name="sparkly211" type="x" x="96" y="336" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events" visible="0"/>
 </map>
