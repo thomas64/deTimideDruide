@@ -165,21 +165,22 @@ class Map(object):
                     timestamp = datetime.datetime.now()
                     # print(timestamp)
                     if time1 < timestamp < time2:
-                        self.people.append(person_object)
-                        # geen blocker voor walking people, die worden actueel in window geladen bij check_blocker.
-                        if not obj.type:
-                            self.high_blocker_rects.append(person_object.get_blocker())
-                elif PeopleDatabase[obj.name].value.get('chapter'):
-                    # zoek de .name op van de chapter in de peopledatabase. (als die er is)
-                    chapter_name = PeopleDatabase[obj.name].value['chapter'].name
-                    # die bevat een dict met 1 waarde
-                    chapter_dict = data.chapters[chapter_name]
-                    # dat is een boolean
-                    chapter_bool = chapter_dict['condition']
-                    if chapter_bool:
-                        self.people.append(person_object)
-                        if not obj.type:
-                            self.high_blocker_rects.append(person_object.get_blocker())
+
+                        if PeopleDatabase[obj.name].value.get('chapter'):
+                            # zoek de .name op van de chapter in de peopledatabase. (als die er is)
+                            chapter_name = PeopleDatabase[obj.name].value['chapter'].name
+                            # die bevat een dict met 1 waarde
+                            chapter_dict = data.chapters[chapter_name]
+                            # dat is een boolean
+                            chapter_bool = chapter_dict['condition']
+                            if chapter_bool:
+                                self.people.append(person_object)
+                                if not obj.type:
+                                    self.high_blocker_rects.append(person_object.get_blocker())
+                        else:
+                            self.people.append(person_object)
+                            if not obj.type:
+                                self.high_blocker_rects.append(person_object.get_blocker())
                 else:
                     self.people.append(person_object)
                     # geen blocker voor walking people, die worden actueel in window geladen bij check_blocker.

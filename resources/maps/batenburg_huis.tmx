@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="82" height="74" tilewidth="16" tileheight="16" nextobjectid="147">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="82" height="74" tilewidth="16" tileheight="16" nextobjectid="149">
  <tileset firstgid="1" name="batenburg_huis" tilewidth="16" tileheight="16" tilecount="3198" columns="82">
   <image source="batenburg_huis.png" width="1312" height="624"/>
  </tileset>
@@ -777,7 +777,7 @@
   </object>
   <object id="137" name="person606" x="864" y="464" width="32" height="32">
    <properties>
-    <property name="direction" value="west"/>
+    <property name="direction" value="east"/>
    </properties>
   </object>
   <object id="138" name="person607" type="w" x="1104" y="176" width="32" height="32">
@@ -792,6 +792,8 @@
   <object id="144" name="note47" x="192" y="144" width="32" height="32"/>
   <object id="145" name="note16" x="864" y="752" width="32" height="32"/>
   <object id="146" name="note16" x="320" y="432" width="32" height="32"/>
+  <object id="147" name="note50" x="288" y="800" width="32" height="32"/>
+  <object id="148" name="note51" x="320" y="800" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

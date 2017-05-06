@@ -238,17 +238,12 @@
  </objectgroup>
  <objectgroup name="objects">
   <object id="24169" name="person100" x="144" y="128" width="32" height="32"/>
-  <object id="24173" name="person101" x="176" y="176" width="32" height="32">
+  <object id="24173" name="person101" x="208" y="176" width="32" height="32">
    <properties>
     <property name="location" value="west"/>
    </properties>
   </object>
-  <object id="24175" name="person102" x="80" y="176" width="32" height="32">
-   <properties>
-    <property name="direction" value="east"/>
-   </properties>
-  </object>
-  <object id="24176" name="person103" type="w" x="144" y="176" width="32" height="32"/>
+  <object id="24176" name="person103" type="w" x="144" y="160" width="32" height="32"/>
   <object id="24178" name="person104" x="112" y="144" width="32" height="32"/>
   <object id="24179" name="person105" x="112" y="144" width="32" height="32"/>
  </objectgroup>
@@ -256,6 +251,6 @@
   <object id="24170" name="move4" x="144" y="256" width="32" height="16"/>
   <object id="24171" name="text9" x="144" y="240" width="32" height="16"/>
   <object id="24172" name="text10" x="144" y="144" width="32" height="16"/>
-  <object id="24174" name="text12" x="144" y="272" width="32" height="16"/>
+  <object id="24174" name="text12" x="192" y="160" width="16" height="64"/>
  </objectgroup>
 </map>

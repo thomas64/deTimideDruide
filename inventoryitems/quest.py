@@ -136,6 +136,13 @@ class BaseQuestItem(object):
         """
         return self.text[self.state.value]
 
+    def is_unknown(self):
+        """..."""
+        if self.state == QuestState.Unknown:
+            return True
+        else:
+            return False
+
     def is_running(self):
         """..."""
         if self.state == QuestState.Running:

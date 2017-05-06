@@ -34,12 +34,8 @@ class PeopleDatabase(enum.Enum):
 
     person101 = dict(name='druid01',     quest=(QuestDatabase.quest8,
                                                 QuestDatabase.quest9,
-                                                QuestDatabase.quest10),
-                     time1=datetime.datetime(2017,  5, 16, 11,  1),
-                     # time1=datetime.datetime(2009,  5, 16, 11,  1), # deze tijd is om te testen.
-                     time2=datetime.datetime(2017,  5, 16, 15, 00))
-
-    person102 = dict(name='druid01',     quest=(QuestDatabase.quest11,
+                                                QuestDatabase.quest10,
+                                                QuestDatabase.quest11,
                                                 QuestDatabase.quest12,
                                                 QuestDatabase.quest13,
                                                 QuestDatabase.quest14,
@@ -49,9 +45,9 @@ class PeopleDatabase(enum.Enum):
                                                 QuestDatabase.quest18,
                                                 QuestDatabase.quest19,
                                                 QuestDatabase.quest20),
-                     time1=datetime.datetime(2017,  5, 16, 15, 1),
-                     # time1=datetime.datetime(2009,  5, 16, 11,  1),  # deze tijd is om te testen.
-                     time2=datetime.datetime(2017,  5, 17, 3, 00))
+                     time1=datetime.datetime(2017,  5, 16, 11,  1),
+                     # time1=datetime.datetime(2009,  5, 16, 11,  1), # deze tijd is om te testen.
+                     time2=datetime.datetime(2017,  5, 16, 23, 00))
 
     person103 = dict(name='druid01',     text=[["Zwaaaammix!"],
                                                [" . . . . . . . . "],
@@ -112,7 +108,7 @@ class PeopleDatabase(enum.Enum):
                            DRUIDE, DRUIDE, DRUIDE, DRUIDE, DRUIDE, ALAGOS, DRUIDE, DRUIDE, DRUIDE, ALAGOS, DRUIDE,
                            DRUIDE, DRUIDE, DRUIDE],
                      chapter=ChapterDatabase.chapter1,
-                     time1=datetime.datetime(2017, 5, 17,  4, 00),
+                     time1=datetime.datetime(2017, 5, 17,  6, 00),
                      time2=datetime.datetime(2017, 5, 17, 23, 00))
 
     person104 = dict(name='druid01',     text=[[" . . . . . . . . "],
@@ -251,7 +247,7 @@ class PeopleDatabase(enum.Enum):
                            ALAGOS, YMIR, ALAGOS, ALAGOS, YMIR, YMIR, ALAGOS, YMIR, YMIR, YMIR, ALAGOS, THOMAS])
 
 
-    person200 = dict(name='troll01',     text=[["*Burp*"]],
+    person200 = dict(name='troll01',     text=[["*Burp* Mooie ketel van Zwammix."]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
                      time2=datetime.datetime(2017,  5, 16, 11, 00))
     person201 = dict(name='ketel01',     text=[["He kijk nou, dit is de ketel van de Zwammix!"]],
@@ -337,11 +333,14 @@ class PeopleDatabase(enum.Enum):
                                                 "Ik heb order van de keizer. Keer terug!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
                      time2=datetime.datetime(2017,  5, 20, 6, 00))
-
     person414 = dict(name='soldier01',   text=[["Halt! Deze bibliotheek wordt gerenoveerd.",
                                                 "De renovatiewerkzaamheden zullen klaar zijn op de 19e."]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
                      time2=datetime.datetime(2017,  5, 19,  6, 00))
+    person415 = dict(name='soldier01',     text=[["Halt! Deze weg is afgesloten tot 16-05 11:00 uur.",
+                                                  "Ik heb order van de keizer. Keer terug!"]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 16, 11, 00))
 
     person500 = dict(name='roelfke01',      quest=QuestDatabase.quest21)
     person501 = dict(name='sieger01',       text=[["Hi. Ik ben Sieger."],
@@ -474,10 +473,12 @@ class PeopleDatabase(enum.Enum):
                                                    "Maar een paar dagen terug had ik Tully hier te slapen.",
                                                    "Hij is een van de trollen en hij had een briefje bij zich,",
                                                    "maar heeft het niet meer mee genomen.",
-                                                   "Misschien dat je het boven nog ergens kan vinden."]],
+                                                   "Misschien dat je het boven nog ergens kan vinden."],
+                                                  ["Wanneer we hier klaar zijn moeten we direct naar de druïde",
+                                                   "gaan om dit te vertellen. Hij zal wel opkijken."]],
                      face=[PATH + 'man53' + FEXT, ALAGOS, PATH + 'man53' + FEXT, PATH + 'man53' + FEXT, ALAGOS,
                            PATH + 'man53' + FEXT, ALAGOS, PATH + 'man53' + FEXT, ALAGOS, PATH + 'man53' + FEXT,
-                           PATH + 'man53' + FEXT, ALAGOS, PATH + 'man53' + FEXT])
+                           PATH + 'man53' + FEXT, ALAGOS, PATH + 'man53' + FEXT, ALAGOS])
 
     person550 = dict(name='animal01',   text=[["De druïde die boletenchips maakte eindigde direct",
                                                "voor of direct na de druïde die een kat heeft."]],
@@ -564,7 +565,7 @@ class PeopleDatabase(enum.Enum):
                                               ["In het verleden behaalde resultaten",
                                                "bieden geen gerantie voor de toekomst"]])
     person613 = dict(name='man01',        text=[["Verse vis!"]])
-    person614 = dict(name='man02',        text=[["Hei doar! Kiek'n jullie 'n betjen út voar mien pleantjes?"]])
+    person614 = dict(name='man02',        text=[["Hei doar! Kiek'n jullie 'n betjen út veur mien pleantjes?"]])
     person615 = dict(name='animal08',     text=[["Piep"]])
     person616 = dict(name='animal04',     text=[["..."]])
     person617 = dict(name='man02',        text=[["Groente en fruit voor een prikkie!"]])

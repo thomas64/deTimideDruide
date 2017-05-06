@@ -82,3 +82,6 @@ class NoteDatabase(enum.Enum):
     note48 = [["Aantekeningen van het spel De Timide Druïde"]]
     note49 = [["'Op het vergeten terug te brengen van een boek staat een boete van 1349 goud per dag.'"],
               ["Hmmm... Deze bibliotheek zal wel rijk zijn."]]
+    note50 = [["Je gaat toch niet post van de koning zitten lezen?"]]
+    note51 = [["Dat ziet eruit als een interessant wetsvoorstel."]]
+    note52 = [["Goud maakt niet gelukkig."]]

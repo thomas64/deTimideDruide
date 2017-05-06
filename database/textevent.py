@@ -64,6 +64,12 @@ class TextEventDatabase(enum.Enum):
     def condition14(self, data):
         return data.uitgespeeld
 
+    def condition15(self, data):
+        if data.logbook['quest8'].is_rewarded() and data.logbook['quest9'].is_unknown():
+            return True
+        else:
+            return False
+
     text99 = dict(condition=condition1,
                   text=[["hoi1"], ["hoi2"]],
                   face=[ALAGOS, HEROFACEPATH+"02f_luana.png"])
@@ -196,13 +202,10 @@ class TextEventDatabase(enum.Enum):
                       ["Kraaa! Nee niet weer. Hij is weer stil.",
                        "En we hebben nog steeds geen soep. Kraaa!"],
                       ["Hoe krijgen we hem weer aan de praat?"],
-                      ["Aaaaaaahaaaa! Nu weet ik het! Zijn wijn was op.",
+                      ["Aaaaaaahaaaa! Nu weet ik het! Zijn wijn is op.",
                        "Hij mag dan nu wel weer nuchter zijn,",
                        "maar zonder zijn wijn, is hij weer timide."],
-                      ["Ik ben bang dat we hem weer dronken zullen moeten gaan voeren.",
-                       "Voor nu laten we hem even met rust,",
-                       "maar ik denk dat vanaf 15.00 uur vanmiddag",
-                       "Zwammix wel weer een wijntje zal lusten."],
+                      ["Ik ben bang dat we hem weer dronken zullen moeten gaan voeren."],
                       ["Jaaaaa. Kraaaaaa!"]
                   ],
                   face=ALAGOS)
@@ -254,6 +257,15 @@ class TextEventDatabase(enum.Enum):
                   ],
                   face=[THOMAS, THOMAS, THOMAS, DRUIDE, YMIR, TROL, HERNE, LODEWIJK, PUTSI, DRUIDE2, ALAGOS,
                         DRUIDE, DRUIDE, THOMAS])
+
+    text15 = dict(condition=condition15,
+                  text=[["Nee, we moeten eerst naar Zwammix gaaaaan!"]],
+                  face=ALAGOS)
+
+    text16 = dict(condition=True,
+                  text=[["Kraaaa. Laaaaten we eerst hier rechts gaan."],
+                        ["Het bos daar heeft een hoop goede ingrediënten."]],
+                  face=[ALAGOS, ALAGOS])
 
 
 for text in TextEventDatabase:
