@@ -625,9 +625,17 @@ class PeopleDatabase(enum.Enum):
     person661 = dict(name='boy02',        text=[["Waar is de koning?"]])
     person662 = dict(name='soldier01',    text=[["Welkom in de Rijksburcht van Cochem."]])
     person663 = dict(name='nun01',        text=[["Ave Maria."]])
-    person664 = dict(name='priest01',     text=[["Zeg mij wie uw vrienden zijn, en ik zeg u wie gij zijt"]])
-
-
+    person664 = dict(name='priest01',     text=[["Zeg mij wie uw vrienden zijn, en ik zeg u wie gij zijt."]])
+    person665 = dict(name='woman52',      text=[["Hey Schatje. Ik ben Conchita."]])
+    person666 = dict(name='youngwoman01', text=[["Wat een prachtig kasteel."]])
+    person667 = dict(name='youngwoman02', text=[["Het ruikt hier naar knoflook."]])
+    person668 = dict(name='youngman01',   text=[["Wat een brave kindertjes."]])
+    person669 = dict(name='youngman02',   text=[["Wat een ouwe meuk hierzo"]])
+    person670 = dict(name='youngwoman02', text=[["Reuze interessant deze ouwe literatuur"]])
+    person671 = dict(name='oldwoman02',   text=[["Ik lust nog wel een wijntje"]])
+    person672 = dict(name='oldman01',     text=[["Goh. Ons oude huis staat zelfs nog op deze kaart"]])
+    person673 = dict(name='man02',        text=[["Zullen we op de kasteelmuur gaan kijken?"]])
+    person674 = dict(name='woman02',      text=[["Hebben ze hier geen verwarming? Brrrrr."]])
 
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="16" tileheight="16" nextobjectid="1301">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="16" tileheight="16" nextobjectid="1302">
  <tileset firstgid="1" name="trier" tilewidth="16" tileheight="16" tilecount="20900" columns="275">
   <image source="trier.png" width="4400" height="1216"/>
  </tileset>
@@ -2574,6 +2574,7 @@
   <object id="1235" x="2656" y="944" width="16" height="240"/>
   <object id="1240" x="2400" y="3184" width="128" height="16"/>
   <object id="1264" x="2112" y="1536" width="32" height="16"/>
+  <object id="1301" x="2912" y="224" width="64" height="16"/>
  </objectgroup>
  <objectgroup name="objects">
   <object id="1241" name="sign114" type="2" x="192" y="128" width="32" height="32"/>

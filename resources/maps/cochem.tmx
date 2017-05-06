@@ -1320,7 +1320,7 @@
   <object id="822" name="person628" type="w" x="1152" y="416" width="32" height="32"/>
   <object id="823" name="person629" type="w" x="1664" y="416" width="32" height="32"/>
   <object id="824" name="person630" type="w" x="352" y="720" width="32" height="32"/>
-  <object id="825" name="person631" type="w" x="576" y="288" width="32" height="32"/>
+  <object id="825" name="person631" x="576" y="288" width="32" height="32"/>
   <object id="826" name="person632" type="w" x="176" y="544" width="32" height="32"/>
   <object id="827" name="person627" type="w" x="1776" y="1120" width="32" height="32"/>
   <object id="828" name="person627" type="w" x="416" y="880" width="32" height="32"/>
