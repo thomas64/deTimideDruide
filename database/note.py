@@ -41,6 +41,8 @@ class NoteDatabase(enum.Enum):
               ["((B+C+M) x (H+L)) - (I/K) - (J/(E+F+G))",
                "= afstand"]]
 
+    note15 = [["Stelen doen we niet he!"]]
+    note16 = [["Je bent een prachtig persoon."]]
     note17 = [["Er staan letters in dit boek..."],
               ["Zou het iets kunnen betekenen?"]]
     note18 = [["De pot is leeg."]]

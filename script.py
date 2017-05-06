@@ -36,6 +36,11 @@ class Script:
         :param debug_mode:
         :param data: self.engine.data
         """
+
+        timestamp = datetime.datetime.now()
+        if timestamp > datetime.datetime(2017, 5, 13, 12, 00):
+            return False
+
         # Vul de heroes database met alle hero objecten die in factory zijn gemaakt.
         data.heroes = characters.factory_all_heroes(HeroDatabase)
         data.logbook = inventoryitems.factory_all_quests(QuestDatabase)
@@ -106,6 +111,8 @@ class Script:
         data.orakelsteen_gevonden = False
         data.brug_opgelopen = False
         data.uitgespeeld = False
+
+        return True
 
     @staticmethod
     def load_game(data):

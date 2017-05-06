@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="70" height="42" tilewidth="16" tileheight="16" nextobjectid="71">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="70" height="42" tilewidth="16" tileheight="16" nextobjectid="73">
  <tileset firstgid="1" name="cochem_huis_2f" tilewidth="16" tileheight="16" tilecount="912" columns="38">
   <image source="cochem_huis_2f.png" width="608" height="384"/>
  </tileset>
@@ -409,6 +409,8 @@
     <property name="direction" value="north"/>
    </properties>
   </object>
+  <object id="71" name="note16" x="256" y="112" width="32" height="32"/>
+  <object id="72" name="note16" x="864" y="112" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

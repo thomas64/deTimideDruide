@@ -38,15 +38,15 @@ class MainMenu(BaseMenu):
         if menu_item.text == "New Game":
             self.engine.audio.fade_bg_music()
             self.engine.data = Data()
-            Script.new_game(self.engine.data, self.engine.debug_mode)
-            # als deze stack leeg is, komt Overworld er op.
-            self.engine.gamestate.push(Transition())
-            self.engine.gamestate.deep_pop()
-            self.engine.gamestate.push(MessageBox(Script.intro_text(), scr_capt=False, last=True))
-            self.engine.gamestate.push(Transition())
-            self.engine.gamestate.push(LoadScreen())
-            self.engine.gamestate.push(Transition(wait=2))
-            self.engine.force_bg_music = True
+            if Script.new_game(self.engine.data, self.engine.debug_mode):  # als het voor de datum is
+                # als deze stack leeg is, komt Overworld er op.
+                self.engine.gamestate.push(Transition())
+                self.engine.gamestate.deep_pop()
+                self.engine.gamestate.push(MessageBox(Script.intro_text(), scr_capt=False, last=True))
+                self.engine.gamestate.push(Transition())
+                self.engine.gamestate.push(LoadScreen())
+                self.engine.gamestate.push(Transition(wait=2))
+                self.engine.force_bg_music = True
 
         elif menu_item.text == "Load Game":
             push_object = screens.menu.create_menu(GameState.LoadMenu, self.engine)

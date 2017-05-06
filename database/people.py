@@ -338,6 +338,11 @@ class PeopleDatabase(enum.Enum):
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
                      time2=datetime.datetime(2017,  5, 20, 6, 00))
 
+    person414 = dict(name='soldier01',   text=[["Halt! Deze bibliotheek wordt gerenoveerd.",
+                                                "De renovatiewerkzaamheden zullen klaar zijn op de 19e."]],
+                     time1=datetime.datetime(1999, 12, 31, 23, 59),
+                     time2=datetime.datetime(2017,  5, 19,  6, 00))
+
     person500 = dict(name='roelfke01',      quest=QuestDatabase.quest21)
     person501 = dict(name='sieger01',       text=[["Hi. Ik ben Sieger."],
                                                   ["Zijn jullie klaar voor een avontuur?"],
