@@ -312,14 +312,14 @@
   <object id="30" name="sparkly26" type="x" x="800" y="128" width="32" height="32"/>
   <object id="31" name="sparkly26" type="x" x="832" y="288" width="32" height="32"/>
   <object id="34" name="sparkly26" type="x" x="96" y="128" width="32" height="32"/>
-  <object id="36" name="person608" type="w" x="432" y="208" width="32" height="32"/>
+  <object id="36" name="person608" type="w" x="448" y="144" width="32" height="32"/>
   <object id="37" name="person609" type="w" x="608" y="144" width="32" height="32"/>
   <object id="38" name="person610" x="192" y="304" width="32" height="32">
    <properties>
     <property name="direction" value="south"/>
    </properties>
   </object>
-  <object id="39" name="person615" type="w" x="928" y="208" width="32" height="32"/>
+  <object id="39" name="person615" type="w" x="928" y="144" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>

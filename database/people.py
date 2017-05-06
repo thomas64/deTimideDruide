@@ -587,7 +587,7 @@ class PeopleDatabase(enum.Enum):
                                                  "Heeft u uw leespas bij u?"]])
     person634 = dict(name='oldman02',     text=[["Hahaha!"], ["Obelix mag weer geen toverdrank."]])
     person635 = dict(name='youngman01',   text=[["Dit is een vet spannend boek."]])
-    person636 = dict(name='youngwoman04', text=[["Sssst!"]])
+    person636 = dict(name='youngwoman01', text=[["Sssst!"]])
     person637 = dict(name='youngman02',   text=[["Pfff. Wat weinig plaatjes."]])
     person638 = dict(name='oldman01',     text=[["Sssst!"]])
     person639 = dict(name='oldwoman01',   text=[["Wat zegt u?"]])

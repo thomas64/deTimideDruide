@@ -41,6 +41,11 @@ class NoteDatabase(enum.Enum):
               ["((B+C+M) x (H+L)) - (I/K) - (J/(E+F+G))",
                "= afstand"]]
 
+    note17 = [["Er staan letters in dit boek..."],
+              ["Zou het iets kunnen betekenen?"]]
+    note18 = [["De pot is leeg."]]
+    note19 = [["De put is leeg."]]
+
     note20 = [["Prijzenkluis 1e plaats"]]
     note21 = [["Prijzenkluis 2e plaats"]]
     note22 = [["Prijzenkluis 3e plaats"]]
@@ -73,3 +78,5 @@ class NoteDatabase(enum.Enum):
                "als water in een diepe put, wie inzicht heeft weet eruit te putten."]]
     note47 = [["Hier vereren wij Baäl en Astarte."]]
     note48 = [["Aantekeningen van het spel De Timide Druïde"]]
+    note49 = [["'Op het vergeten terug te brengen van een boek staat een boete van 1349 goud per dag.'"],
+              ["Hmmm... Deze bibliotheek zal wel rijk zijn."]]

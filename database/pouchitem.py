@@ -66,7 +66,7 @@ KLEURENDRANKJE = "resources/sprites/icons/pouch/kleuren_drankje.png"
 class PouchItemDatabase(enum.Enum):
     """..."""
     gold = dict(nam="Gold",           srt=1,  spr=GOLDIMG,
-                desc="Gold can be used to pay for goods or services.")
+                desc="Het team dat hiervan het meeste heeft, die heeft het spel gewonnen.")
     herbs = dict(nam="Herbs",         srt=2,  spr=HERBIMG,        val=1,
                  desc="Herbs are used in magical spells (Wizard Skill) and in creating potions (Alchemist Skill). "
                       "They also contain healing possibilities (Healer Skill).")
