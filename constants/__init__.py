@@ -289,7 +289,7 @@ class MapMusic(enum.Enum):
     piesport_winkel        = "house",             None
     cochem_bos             = "ersin_forest",      "birds"
     cochem                 = "invernia_town",     "town"
-    cochem_kasteel         = "kasteel_batenburg", "fire"
+    cochem_kasteel         = "huis_batenburg",    "fire"
     cochem_kerk            = "kerkje_gymnich",    None
     cochem_huis_1f         = "house",             None
     cochem_huis_2f         = "house",             None

@@ -2628,7 +2628,6 @@
   <object id="1296" name="person626" type="w" x="1056" y="1520" width="32" height="32"/>
   <object id="1298" name="person623" type="w" x="2672" y="624" width="32" height="32"/>
   <object id="1299" name="sparkly225" type="x" x="416" y="2896" width="32" height="32"/>
-  <object id="1300" x="640" y="2560"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>
