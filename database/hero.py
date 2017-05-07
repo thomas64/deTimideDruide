@@ -237,7 +237,7 @@ class HeroDatabase(enum.Enum):
                     "Roelfke en vader van Boaz. Ik studeer voor docent economie.",
                     "Ik ben erg goed, en vind het leuk om met cijfertjes om te gaan,",
                     "en vind het leuk om met mensen in gesprek te zijn.",
-                    "Das heel in het kort wie ik ben.",
+                    "Dat is heel in het kort wie ik ben.",
                     "",
                     "We hebben nog geen raDIO DJ. Dus jij mag in het team.",
                     "Nee, jou heb ik liever niet.")

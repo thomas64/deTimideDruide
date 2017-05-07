@@ -83,7 +83,7 @@ class TextEventDatabase(enum.Enum):
                     ["Deze wereld loopt parallel aan de wereld waar jullie je nu in bevinden.",
                      "Echt waaaaar.",
                      "Maaaar wat jullie nu meemaken gebeurt pas over duizend jaaar.",
-                     "Jaaaaa. Het duurt lang heel lang."],
+                     "Jaaaaa. Het duurt lang, heel lang."],
                     ["Jaaa. Je zult het misschien niet geloven,",
                      "maar jullie zitten nu hiernaaaaaast bij Lodewijk Altenaaaaa.",
                      "Lekker aan de koffie. Kraaa. ",
@@ -110,7 +110,8 @@ class TextEventDatabase(enum.Enum):
                       "We moeten die zien te vinden."],
                      ["Jaaa. Bij zijn kasteel zijn de stenen begraaaaven.",
                       "Baaaato is zijn naaaaam."],
-                     ["Kraaa. Laaaten we gaaaaan."]
+                     ["Ga vlug de kaaaart bekijken en gaaa ook datgene hier",
+                      "binnen zoeken wat de barman zei over de soep."]
                  ],
                  face=ALAGOS)
 
@@ -259,7 +260,8 @@ class TextEventDatabase(enum.Enum):
                         DRUIDE, DRUIDE, THOMAS])
 
     text15 = dict(condition=condition15,
-                  text=[["Nee, we moeten eerst naar Zwammix gaaaaan!"]],
+                  text=[["Nee, we moeten eerst naar Zwammix gaaaaan!",
+                         "Hij alleen kan ons helpen met de trollen."]],
                   face=ALAGOS)
 
     text16 = dict(condition=True,

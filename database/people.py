@@ -247,7 +247,8 @@ class PeopleDatabase(enum.Enum):
                            ALAGOS, YMIR, ALAGOS, ALAGOS, YMIR, YMIR, ALAGOS, YMIR, YMIR, YMIR, ALAGOS, THOMAS])
 
 
-    person200 = dict(name='troll01',     text=[["*Burp* Mooie ketel van Zwammix."]],
+    person200 = dict(name='troll01',     text=[["*Burp* Mooie ketel van Zwammix.",
+                                                "Jij afblijven!"]],
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
                      time2=datetime.datetime(2017,  5, 16, 11, 00))
     person201 = dict(name='ketel01',     text=[["He kijk nou, dit is de ketel van de Zwammix!"]],
@@ -275,10 +276,10 @@ class PeopleDatabase(enum.Enum):
                                                "Daar zou je het kasteel op moeten kunnen vinden."],
                                               ["Waarom deze stenen daar waren begraven kon ik niet verstaan.",
                                                "Maar uit de gebaren van de druïde meende ik te begrijpen dat",
-                                               "jaren later deze stenen nog van pas zouden komen. "],
-                                              ["Zijn vriend had het over een soep. ",
-                                               "Maar vanwege zijn zwakke gestel kon hij de druïde niet ",
-                                               "helpen om de soep te maken. "],
+                                               "jaren later deze stenen nog van pas zouden komen."],
+                                              ["Zijn vriend had het over een soep.",
+                                               "Maar vanwege zijn zwakke gestel kon hij de druïde niet",
+                                               "helpen om de soep te maken."],
                                               ["Bij hun vertrek zijn ze iets vergeten mee te nemen.",
                                                "Waar heb ik dat toch gelaten? Het moet hier ergens zijn..."]])
 
@@ -447,9 +448,9 @@ class PeopleDatabase(enum.Enum):
                                                    "De trollen hebben de ketel",
                                                    "gepikt van Zwammix.",
                                                    "Het is van groot belang dat",
-                                                   "Zwamnix zijn ketel terug krijgt."],
+                                                   "Zwammix zijn ketel terug krijgt."],
                                                   ["Oh Zwammix zeg je?",
-                                                   "Nou zeg maar Zwamnix hoor.",
+                                                   "Nou zeg maar Zwamniks hoor.",
                                                    "Zo spraakzaam is hij niet."],
                                                   ["Ja daaaaarom juist.",
                                                    "Hij moet nodig zijn soepje drinken."],
@@ -457,7 +458,7 @@ class PeopleDatabase(enum.Enum):
                                                    "mogen zoals gewoonlijk niet eens even proeven?",
                                                    "Klinkt niet echt eerlijk. Denk jij wel?!",
                                                    "Niet zo raar toch dat de trollen de ketel hebben gejat.",
-                                                   "Zwamnix heeft het er zelf naar gemaakt!"],
+                                                   "Zwamniks heeft het er zelf naar gemaakt!"],
                                                   ["Hoe bedoel je?"],
                                                   ["Oh heel simpel. De trollen hebben nooit van de zwammix",
                                                    "mogen proeven. Verder mochten Jan en alleman dat wel.",
@@ -563,7 +564,7 @@ class PeopleDatabase(enum.Enum):
                                               ["Let wel op!",
                                                "De waarde van uw belegging kan flucturen."],
                                               ["In het verleden behaalde resultaten",
-                                               "bieden geen gerantie voor de toekomst"]])
+                                               "bieden geen garantie voor de toekomst"]])
     person613 = dict(name='man01',        text=[["Verse vis!"]])
     person614 = dict(name='man02',        text=[["Hei doar! Kiek'n jullie 'n betjen út veur mien pleantjes?"]])
     person615 = dict(name='animal08',     text=[["Piep"]])
