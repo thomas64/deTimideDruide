@@ -205,8 +205,20 @@ class TreasureChestDatabase(aenum.NoAliasEnum):
                     time1=datetime.datetime(2017, 5, 20, 12, 00),
                     time2=datetime.datetime(2017, 5, 22, 12, 00))
 
-    chest140 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=22)),
-                    condition=dict(pwd=dict(ask="Wijnschip. Code:", anw="fvhgu7")),
+    chest140 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=44)),
+                    condition=dict(pwd=dict(ask="Wijnschip 5 of 4 goed. Code:", anw="wghp3")),
+                    time1=datetime.datetime(2017, 5, 20, 12, 00),
+                    time2=datetime.datetime(2017, 5, 22, 12, 00))
+    chest141 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=33)),
+                    condition=dict(pwd=dict(ask="Wijnschip 6 of 3 goed. Code:", anw="xhux9")),
+                    time1=datetime.datetime(2017, 5, 20, 12, 00),
+                    time2=datetime.datetime(2017, 5, 22, 12, 00))
+    chest142 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=22)),
+                    condition=dict(pwd=dict(ask="Wijnschip 7 of 2 goed. Code:", anw="geiv5")),
+                    time1=datetime.datetime(2017, 5, 20, 12, 00),
+                    time2=datetime.datetime(2017, 5, 22, 12, 00))
+    chest143 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=11)),
+                    condition=dict(pwd=dict(ask="Wijnschip 8 of 1 goed. Code:", anw="mdth0")),
                     time1=datetime.datetime(2017, 5, 20, 12, 00),
                     time2=datetime.datetime(2017, 5, 22, 12, 00))
 

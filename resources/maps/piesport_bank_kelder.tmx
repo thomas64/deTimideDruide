@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="54" height="38" tilewidth="16" tileheight="16" nextobjectid="133">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="54" height="38" tilewidth="16" tileheight="16" nextobjectid="136">
  <tileset firstgid="1" name="piesport_bank_kelder" tilewidth="16" tileheight="16" tilecount="504" columns="36">
   <image source="piesport_bank_kelder.png" width="576" height="224"/>
  </tileset>
@@ -368,12 +368,15 @@
   <object id="109" name="chest133" x="480" y="240" width="32" height="32"/>
   <object id="110" name="chest134" x="608" y="240" width="32" height="32"/>
   <object id="111" name="chest135" x="736" y="240" width="32" height="32"/>
-  <object id="112" name="chest136" x="320" y="176" width="32" height="32"/>
-  <object id="113" name="chest137" x="448" y="176" width="32" height="32"/>
-  <object id="114" name="chest138" x="576" y="176" width="32" height="32"/>
-  <object id="115" name="chest139" x="704" y="176" width="32" height="32"/>
-  <object id="116" name="chest140" x="224" y="224" width="32" height="32"/>
-  <object id="120" name="chest144" x="224" y="272" width="32" height="32"/>
+  <object id="112" name="chest136" x="320" y="144" width="32" height="32"/>
+  <object id="113" name="chest137" x="448" y="144" width="32" height="32"/>
+  <object id="114" name="chest138" x="576" y="144" width="32" height="32"/>
+  <object id="115" name="chest139" x="704" y="144" width="32" height="32"/>
+  <object id="116" name="chest140" x="320" y="208" width="32" height="32"/>
+  <object id="133" name="chest141" x="448" y="208" width="32" height="32"/>
+  <object id="134" name="chest142" x="576" y="208" width="32" height="32"/>
+  <object id="135" name="chest143" x="704" y="208" width="32" height="32"/>
+  <object id="120" name="chest144" x="224" y="208" width="32" height="32"/>
   <object id="121" name="chest145" x="320" y="240" width="32" height="32"/>
   <object id="122" name="chest146" x="448" y="240" width="32" height="32"/>
   <object id="123" name="chest147" x="576" y="240" width="32" height="32"/>
@@ -382,7 +385,7 @@
   <object id="129" name="note21" x="448" y="352" width="32" height="48"/>
   <object id="130" name="note22" x="576" y="352" width="32" height="48"/>
   <object id="131" name="note23" x="704" y="352" width="32" height="48"/>
-  <object id="132" name="chest400" x="224" y="320" width="32" height="32"/>
+  <object id="132" name="chest400" x="224" y="272" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events"/>
 </map>
