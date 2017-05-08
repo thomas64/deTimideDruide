@@ -28,6 +28,20 @@ class PeopleDatabase(enum.Enum):
     Mogelijkheid om face alvast mee te geven, deze moet in een list. person80 is een voorbeeld.
     """
 
+    person901 = dict(name='sieger01',     text=[["Hee! Op de kamer blijven jullie!"]],
+                     time1=datetime.datetime(2017, 5, 16, 20, 00),
+                     time2=datetime.datetime(2017, 5, 17,  7, 00))
+    person902 = dict(name='sieger01',     text=[["Hee! Op de kamer blijven jullie!"]],
+                     time1=datetime.datetime(2017, 5, 17, 20, 00),
+                     time2=datetime.datetime(2017, 5, 19,  7, 00))
+    person903 = dict(name='sieger01',     text=[["Hee! Op de kamer blijven jullie!"]],
+                     time1=datetime.datetime(2017, 5, 19, 20, 00),
+                     time2=datetime.datetime(2017, 5, 20,  7, 00))
+    person904 = dict(name='sieger01',     text=[["Hee! Op de kamer blijven jullie!"]],
+                     time1=datetime.datetime(2017, 5, 20, 20, 00),
+                     time2=datetime.datetime(2017, 5, 22,  7, 00))
+
+
     person100 = dict(name='druid01',     quest=QuestDatabase.quest7,
                      time1=datetime.datetime(1999, 12, 31, 23, 59),
                      time2=datetime.datetime(2017,  5, 16, 11, 00))
