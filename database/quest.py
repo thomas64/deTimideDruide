@@ -151,7 +151,7 @@ class QuestDatabase(enum.Enum):
                   reward=dict(itm1=dict(nam=PouchItemDatabase.gold,             qty=1)),  # Dit aantal is per geleverde itm.
                   text=([["Vrienden. Mijn naam is Zwammix."],
                          ["*HIPS*"],
-                         ["Brann en de stenen hebben hun werk goed gedaan."],
+                         ["Brann en de steen hebben hun werk goed gedaan."],
                          ["*HIPS*"],
                          ["Jullie hebben mij gevonden.",
                           "Ik heb jullie nodig om mijn soepje weer te kunnen maken."],
@@ -534,16 +534,16 @@ class QuestDatabase(enum.Enum):
                    )
 
     quest26 = dict(qtype=QuestType.FetchItemQuest,
-                   condition=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen,   qty=2)),
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.orakelsteen,   qty=3)),
                    reward=dict(itm1=dict(nam=PouchItemDatabase.gold,             qty=20)),
                    text=(
                        [["Je wil het laatste deel van de spreuk weten?"],
                         ["Tja, dat is voor mij een weet en voor jou een vraag."],
                         ["Maar voor wat hoort wat maat.",
-                         "Voor twee orakelstenen zal ik je het",
+                         "Voor drie orakelstenen zal ik je het",
                          "laatste deel van de spreuk geven."]],
-                       [["En, heb je twee orakelstenen voor me?"]],
-                       ["Overhandig je twee orakelstenen in ruil voor een deel van de spreuk?", "",
+                       [["En, heb je drie orakelstenen voor me?"]],
+                       ["Overhandig je drie orakelstenen in ruil voor een deel van de spreuk?", "",
                         "Nou vooruit dan maar.",
                         "Nee echt niet. De laatste orakelstenen houd ik lekker zelf."],
                        [["Ah mooi. Dankjewel.",

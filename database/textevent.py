@@ -106,9 +106,9 @@ class TextEventDatabase(enum.Enum):
 
     text3 = dict(condition=condition3,
                  text=[
-                     ["Kraaa. Die stenen waar de barman het over heeft. Kraa.",
+                     ["Kraaa. Die steen waar de barman het over heeft. Kraa.",
                       "We moeten die zien te vinden."],
-                     ["Jaaa. Bij zijn kasteel zijn de stenen begraaaaven.",
+                     ["Jaaa. Bij zijn kasteel is de steen begraaaaven.",
                       "Baaaato is zijn naaaaam."],
                      ["Ga vlug de kaaaart bekijken en gaaa ook datgene hier",
                       "binnen zoeken wat de barman zei over de soep."]
