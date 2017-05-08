@@ -1,4 +1,6 @@
-# pyRPG2
+# de Timide Druide
+
+Zomerspel Familie Noppe 2017
 
 Dependencies for this Python 3 game are:
 - pygame
