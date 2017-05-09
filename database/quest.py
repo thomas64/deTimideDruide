@@ -673,3 +673,17 @@ class QuestDatabase(enum.Enum):
                           ["*Prrrrt*"]],
                          [["*Prrrrt*"]])
                    )
+
+    quest35 = dict(qtype=QuestType.FetchItemQuest,
+                   condition=dict(itm1=dict(nam=PouchItemDatabase.knoflook, qty=1)),
+                   reward=dict(itm1=dict(nam=PouchItemDatabase.gold,        qty=1)),
+                   text=([["Pssst! Heb je knoflook voor me?"]],
+                         [["Ja? Heb je knoflook?"],
+                          ["Ik ben te vertrouwen hoor."]],
+                         ["Is het wel verstandig deze onbekende man knoflook te geven?", "",
+                          "Ja, het is niet onze verantwoordelijkheid wat iemand anders met z'n knoflook doet.",
+                          "Nee, knoflook is niet goed voor hem. Het is onze plicht om hem te beschermen tegen zichzelf."],
+                         [["Dankjewel. Niet verder vertellen."],
+                          ["Hier."]],
+                         [["Deze regel wordt niet gebruikt."]])
+                   )

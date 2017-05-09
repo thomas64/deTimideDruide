@@ -696,7 +696,7 @@ class Window(object):
                 the_quest = PeopleDatabase.get_active_quest(person_enum_val['quest'], self.engine.data.logbook)
 
                 # extra regel voor sieger spel.
-                if person_id == PeopleDatabase.person529.name:
+                if person_id in (PeopleDatabase.person529.name, PeopleDatabase.person566.name):
                     the_quest.set_unknown()
 
                 # self.quest_box blijft op None als er geen ConfirmBox gereturned wordt.

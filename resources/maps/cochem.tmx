@@ -1326,7 +1326,7 @@
   <object id="828" name="person627" type="w" x="416" y="880" width="32" height="32"/>
   <object id="830" name="person629" type="w" x="304" y="432" width="32" height="32"/>
   <object id="831" name="person630" type="w" x="1152" y="640" width="32" height="32"/>
-  <object id="832" name="person632" type="w" x="832" y="528" width="32" height="32"/>
+  <object id="832" name="person567" x="832" y="528" width="32" height="32"/>
   <object id="833" name="person662" x="640" y="1760" width="32" height="32">
    <properties>
     <property name="direction" value="south"/>

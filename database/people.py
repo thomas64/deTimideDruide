@@ -75,7 +75,7 @@ class PeopleDatabase(enum.Enum):
                                                ["Ja. Hij vertelde ons dat de trollen de zwammix hebben gemaaaaaakt,",
                                                 "omdat ze die ook zo graaaaag eens zouden proeven."],
                                                ["Wat zeg je? Maar dat is een ramp! *HIPS*",
-                                                "De Zwammix heeft een verschrikkelijke werking op trollen.",
+                                                "De zwammix heeft een verschrikkelijke werking op trollen.",
                                                 "Ze deden de laatste tijd ook al zo raar.",
                                                 "Heeft hij ook iets gezegd over Ymir, de leider van de trollen?"],
                                                ["Jaaaaa. Ymir slaaaaaaapt de laatste tijd alleen maaaaaar.",
@@ -555,6 +555,12 @@ class PeopleDatabase(enum.Enum):
                      face=[PATH + 'animal08' + FEXT, PATH + 'animal08' + FEXT, PATH + 'animal08' + FEXT, ALAGOS],
                      time1=datetime.datetime(2017, 5, 20,  6, 00),
                      time2=datetime.datetime(2017, 5, 20, 23, 00))
+
+    person566 = dict(name='duister01',          quest=QuestDatabase.quest35,
+                     time1=datetime.datetime(1999, 1,  1,  1, 00),
+                     time2=datetime.datetime(2017, 5, 17, 11, 00))
+    person567 = dict(name='soldier01', text=[["Pas goed op voor knoflookdealers."]])
+
 
     person600 = dict(name='animal03',   text=[["Tok tok tok."]])
     person601 = dict(name='dianne01',   text=[["Sommige bloemen zijn zó mooi,",
