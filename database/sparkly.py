@@ -177,6 +177,8 @@ class SparklyDatabase(aenum.NoAliasEnum):
     sparkly238 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
     sparkly239 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
     sparkly240 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly241 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+
 
     # altena
     sparkly97 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.recept1,     qty=1)))
