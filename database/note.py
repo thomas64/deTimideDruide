@@ -41,6 +41,7 @@ class NoteDatabase(enum.Enum):
               ["((B+C+M) x (H+L)) - (I/K) - (J/(E+F+G))",
                "= afstand"]]
 
+    note14 = [["Dong!"]]
     note15 = [["Stelen doen we niet he!"]]
     note16 = [["Je bent een prachtig persoon."]]
     note17 = [["Er staan letters in dit boek..."],
@@ -85,3 +86,9 @@ class NoteDatabase(enum.Enum):
     note50 = [["Je gaat toch niet post van de koning zitten lezen?"]]
     note51 = [["Dat ziet eruit als een interessant wetsvoorstel."]]
     note52 = [["Goud maakt niet gelukkig."]]
+    note53 = [["Wat denk je nou werkelijk te kunnen vinden",
+               "tussen de beenderen van een dood dier?"]]
+    note54 = [["Ledenadministratie."]]
+    note55 = [["Het is een oude bijbel."],
+              ["Heeft er nou werkelijk iemand een bladzijde uitgescheurd?"],
+              ["Diegene had wel heel erg honger naar het woord."]]

@@ -925,7 +925,7 @@
     <property name="direction" value="west"/>
    </properties>
   </object>
-  <object id="149" name="sparkly226" x="1120" y="144" width="32" height="32"/>
+  <object id="149" name="sparkly226" type="x" x="1120" y="144" width="32" height="32"/>
  </objectgroup>
  <objectgroup name="events" visible="0"/>
 </map>
