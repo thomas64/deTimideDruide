@@ -15,6 +15,7 @@ HERNE = 'resources/sprites/npcs/man53f.png'
 LODEWIJK = 'resources/sprites/npcs/man50f.png'
 PUTSI = 'resources/sprites/npcs/oldwoman01f.png'
 DRUIDE2 = 'resources/sprites/npcs/druid02f.png'
+DEALER = 'resources/sprites/npcs/duister01f.png'
 
 
 # noinspection PyMethodMayBeStatic,PyMissingOrEmptyDocstring
@@ -223,8 +224,8 @@ class TextEventDatabase(enum.Enum):
                       ["Zwammix maakte zijn soep, en is nu spraakzaam als nooit tevoren.",
                        "Nu het voortbestaan van het ambacht 'druïde' is veiliggesteld met",
                        "negen vers klaargestoomde druïdes heeft hij ervoor gekozen zijn",
-                       "carrière voort te zetten in de rap scene.",
-                       "Wel blijft hij nog parttime zorg dragen voor alle bewoners van het Moezeldal.",
+                       "carrière voort te zetten in de rap scene. Wel blijft hij nog",
+                       "parttime zorg dragen voor alle bewoners van het Moezeldal.",
                        "De wijn heeft hij sindsdien niet meer aangeraakt.",
                        "Zijn lever is bijna weer hersteld."],
                       ["Ymir nam weer de leiding over de trollen van het Moezeldal.",
@@ -237,11 +238,15 @@ class TextEventDatabase(enum.Enum):
                        "Na een bezoekje aan de druïde is hun stoelgang weer de oude geworden."],
                       ["Herne kon na lange tijd zijn vriendschap met Ymir weer oppakken.",
                        "Eens per twee weken trekken zij er op uit om te jagen."],
+                      ["De knoflookdealer Frederick-Bernard raakte steeds dieper verwikkeld",
+                       "in het knoflook circuit. Echter op een gegeven moment gaf hij zijn",
+                       "hart aan Jezus en nu smokkelt hij bijbels in Noord Korea. Hij is",
+                       "een grote steun voor de vervolgde kerk daar."],
                       ["Lodewijk deed goede zaken met zijn Brasserie Altena.",
                        "Zijn nakomelingen hebben de brasserie uitgebouwd tot wat het nu is.",
                        "U kunt hier nog altijd terecht voor uw feesten en partijen."],
-                      ["Het oude vrouwtje kon na herenigd te zijn met haar Putsi rusten.",
-                       "Zij stierf met Putsi in haar armen."],
+                      ["Het oude vrouwtje kon na herenigd te zijn met haar",
+                       "Putsi eindelijk rusten. Zij stierf met Putsi in haar armen."],
                       ["Grandprix bleef nog lang druïde.",
                        "Hij heeft zich gestort op het ontwikkelen van een zeer snelle formule.",
                        "Vandaag de dag staat deze formule nog steeds bekend als de Formule 1."],
@@ -250,13 +255,13 @@ class TextEventDatabase(enum.Enum):
                       [" . . . . . . . . "],
                       ["En jullie? Jullie mogen jezelf nu druïde noemen.",
                        "Na dit spannende avontuur zijn jullie nu zeker los vertrouwd.",
-                       "En onthoudt! Wij maken deel uit van het geheel, 'het universum'.",
+                       "En onthoud! Wij maken deel uit van het geheel, 'het universum'.",
                        "Onze taak moet zijn dat we onze cirkel van compassie vergroten,",
                        "zodat alle levende wezens en de gehele natuur in al haar schoonheid",
                        "erdoor omvat worden."],
                       ["Bedankt voor het spelen!"]
                   ],
-                  face=[THOMAS, THOMAS, THOMAS, DRUIDE, YMIR, TROL, HERNE, LODEWIJK, PUTSI, DRUIDE2, ALAGOS,
+                  face=[THOMAS, THOMAS, THOMAS, DRUIDE, YMIR, TROL, HERNE, DEALER, LODEWIJK, PUTSI, DRUIDE2, ALAGOS,
                         DRUIDE, DRUIDE, THOMAS])
 
     text15 = dict(condition=condition15,

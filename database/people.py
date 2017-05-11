@@ -560,7 +560,8 @@ class PeopleDatabase(enum.Enum):
     person566 = dict(name='duister01',          quest=QuestDatabase.quest35,
                      time1=datetime.datetime(1999, 1,  1,  1, 00),
                      time2=datetime.datetime(2017, 5, 17, 11, 00))
-    person567 = dict(name='soldier01', text=[["Pas goed op voor knoflookdealers."]])
+    person567 = dict(name='soldier01', text=[["Pas goed op voor knoflookdealers."],
+                                             ["Ze veroorzaken veel overlast bij toeristen."]])
 
 
     person600 = dict(name='animal03',   text=[["Tok tok tok."]])
