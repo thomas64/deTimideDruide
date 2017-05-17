@@ -162,6 +162,22 @@ class SparklyDatabase(aenum.NoAliasEnum):
     sparkly221 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=1)))
     sparkly224 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,       qty=4)))
 
+    sparkly226 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly227 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly228 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly229 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly230 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly231 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=2)))
+    sparkly232 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly233 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly234 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly235 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly236 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly237 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly238 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly239 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+    sparkly240 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.knoflook,   qty=1)))
+
     # altena
     sparkly97 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.recept1,     qty=1)))
 
