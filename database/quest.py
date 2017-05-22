@@ -543,10 +543,12 @@ class QuestDatabase(enum.Enum):
                            "Is mooie drankje voor Tully?"]],
                          [["Tully opdrinken?"]],
                          ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
-                          "Ja, alle trollen aan de race!",
+                          "Ja, alle trollen aan de rees!",
                           "Nee, dat is zielig."],
-                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
-                         [["Prrrrt!"]])
+                         [["Lekker. *Burp* *Prrrrt*",
+                           "Ik mij eventjes excuseren."],
+                          ["*Prrrrt*"]],
+                         [["*Prrrrt*"]])
                    )
 
     quest28 = dict(qtype=QuestType.FetchItemQuest,
@@ -556,10 +558,12 @@ class QuestDatabase(enum.Enum):
                            "Is mooie drankje voor Sully?"]],
                          [["Sully opdrinken?"]],
                          ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
-                          "Ja, alle trollen aan de race!",
+                          "Ja, alle trollen aan de spetterpoep!",
                           "Nee, dat is zielig."],
-                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
-                         [["Prrrrt!"]])
+                         [["Lekker. *Burp* *Prrrrt*",
+                           "Ik mij eventjes excuseren."],
+                          ["*Prrrrt*"]],
+                         [["*Prrrrt*"]])
                    )
 
     quest29 = dict(qtype=QuestType.FetchItemQuest,
@@ -569,10 +573,12 @@ class QuestDatabase(enum.Enum):
                            "Is mooie drankje voor Sloan?"]],
                          [["Sloan opdrinken?"]],
                          ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
-                          "Ja, alle trollen aan de race!",
+                          "Ja, alle trollen aan de sproeipoep!",
                           "Nee, dat is zielig."],
-                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
-                         [["Prrrrt!"]])
+                         [["Lekker. *Burp* *Prrrrt*",
+                           "Ik mij eventjes excuseren."],
+                          ["*Prrrrt*"]],
+                         [["*Prrrrt*"]])
                    )
 
     quest30 = dict(qtype=QuestType.FetchItemQuest,
@@ -582,10 +588,12 @@ class QuestDatabase(enum.Enum):
                            "Is mooie drankje voor Kirwin?"]],
                          [["Kirwin opdrinken?"]],
                          ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
-                          "Ja, alle trollen aan de race!",
+                          "Ja, alle trollen aan de dunne!",
                           "Nee, dat is zielig."],
-                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
-                         [["Prrrrt!"]])
+                         [["Lekker. *Burp* *Prrrrt*",
+                           "Ik mij eventjes excuseren."],
+                          ["*Prrrrt*"]],
+                         [["*Prrrrt*"]])
                    )
 
     quest31 = dict(qtype=QuestType.FetchItemQuest,
@@ -595,10 +603,12 @@ class QuestDatabase(enum.Enum):
                            "Is mooie drankje voor Duffy?"]],
                          [["Duffy opdrinken?"]],
                          ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
-                          "Ja, alle trollen aan de race!",
+                          "Ja, alle trollen aan de racekak!",
                           "Nee, dat is zielig."],
-                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
-                         [["Prrrrt!"]])
+                         [["Lekker. *Burp* *Prrrrt*",
+                           "Ik mij eventjes excuseren."],
+                          ["*Prrrrt*"]],
+                         [["*Prrrrt*"]])
                    )
 
     quest32 = dict(qtype=QuestType.FetchItemQuest,
@@ -608,10 +618,12 @@ class QuestDatabase(enum.Enum):
                            "Is mooie drankje voor Dorran?"]],
                          [["Dorran opdrinken?"]],
                          ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
-                          "Ja, alle trollen aan de race!",
+                          "Ja, alle trollen aan de schijterij!",
                           "Nee, dat is zielig."],
-                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
-                         [["Prrrrt!"]])
+                         [["Lekker. *Burp* *Prrrrt*",
+                           "Ik mij eventjes excuseren."],
+                          ["*Prrrrt*"]],
+                         [["*Prrrrt*"]])
                    )
 
     quest33 = dict(qtype=QuestType.FetchItemQuest,
@@ -621,10 +633,12 @@ class QuestDatabase(enum.Enum):
                            "Is mooie drankje voor Cinaed?"]],
                          [["Cinaed opdrinken?"]],
                          ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
-                          "Ja, alle trollen aan de race!",
+                          "Ja, alle trollen aan de spuitpoep!",
                           "Nee, dat is zielig."],
-                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
-                         [["Prrrrt!"]])
+                         [["Lekker. *Burp* *Prrrrt*",
+                           "Ik mij eventjes excuseren."],
+                          ["*Prrrrt*"]],
+                         [["*Prrrrt*"]])
                    )
 
     quest34 = dict(qtype=QuestType.FetchItemQuest,
@@ -634,8 +648,10 @@ class QuestDatabase(enum.Enum):
                            "Is mooie drankje voor Boyden?"]],
                          [["Boyden opdrinken?"]],
                          ["Geef je hem het laxerende 9 kleuren drankje van Zwammix?", "",
-                          "Ja, alle trollen aan de race!",
+                          "Ja, alle trollen aan de diarree!",
                           "Nee, dat is zielig."],
-                         [["Lekker. Burp. Prrrrt! Ik mij eventjes excuseren. Prrrrt!"]],
-                         [["Prrrrt!"]])
+                         [["Lekker. *Burp* *Prrrrt*",
+                           "Ik mij eventjes excuseren."],
+                          ["*Prrrrt*"]],
+                         [["*Prrrrt*"]])
                    )

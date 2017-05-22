@@ -1343,7 +1343,7 @@
     <property name="direction" value="east"/>
    </properties>
   </object>
-  <object id="185" name="person117" x="864" y="736" width="32" height="32">
+  <object id="185" name="person117" x="832" y="736" width="32" height="32">
    <properties>
     <property name="direction" value="east"/>
    </properties>
@@ -1358,7 +1358,7 @@
     <property name="direction" value="north"/>
    </properties>
   </object>
-  <object id="188" name="person120" x="880" y="800" width="32" height="32">
+  <object id="188" name="person120" x="896" y="800" width="32" height="32">
    <properties>
     <property name="direction" value="north"/>
    </properties>
