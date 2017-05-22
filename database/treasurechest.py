@@ -205,7 +205,7 @@ class TreasureChestDatabase(aenum.NoAliasEnum):
                     time1=datetime.datetime(2017, 5, 20, 12, 00),
                     time2=datetime.datetime(2017, 5, 22, 12, 00))
 
-    chest140 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=44)),
+    chest140 = dict(content=dict(itm1=dict(nam=PouchItemDatabase.gold,          qty=22)),
                     condition=dict(pwd=dict(ask="Wijnschip. Code:", anw="fvhgu7")),
                     time1=datetime.datetime(2017, 5, 20, 12, 00),
                     time2=datetime.datetime(2017, 5, 22, 12, 00))
